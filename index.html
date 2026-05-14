@@ -1,0 +1,1389 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Urban Eye Security Preview</title><script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><style>html,body,#root{margin:0;min-height:100%;}</style></head><body><div id="root"></div><script type="text/babel" data-presets="react">const brand = {
+  navy: "#1B2C6E",
+  red: "#C4272E",
+  light: "#F2F4F7",
+  charcoal: "#1A1A1A",
+  muted: "#4A4A4A",
+};
+
+const contact = {
+  whatsapp: "+254 714 007 114",
+  whatsappRaw: "254714007114",
+  phone: "+254 768 055 555",
+  email: "urbaneyeltd@gmail.com",
+  location: "St. Ellis, Wabera Street, Nairobi",
+  hours: "Monday–Saturday, 7:00 AM–5:00 PM",
+};
+
+const localAsset = (path) => {
+  const fileName = path.split("\\").pop();
+  const hostedBase =
+    typeof window !== "undefined" && window.location.protocol !== "file:"
+      ? window.URBAN_EYE_ASSET_BASE || "/urban-eye-assets"
+      : "";
+
+  if (hostedBase) {
+    return `${hostedBase.replace(/\/$/, "")}/${encodeURIComponent(fileName)}`;
+  }
+
+  return `file:///${encodeURI(path.replace(/\\/g, "/"))}`;
+};
+
+const images = {
+  mark: localAsset("C:\\Users\\osama\\Downloads\\Icon-only version.png"),
+  hero: localAsset("C:\\Users\\osama\\Downloads\\guards.png"),
+  gate: localAsset("C:\\Users\\osama\\Downloads\\guard opening gate.png"),
+  electricFence: localAsset("C:\\Users\\osama\\Documents\\Codex\\2026-05-14\\files-mentioned-by-the-user-urban\\urban-eye-assets\\electric fence.webp"),
+  patrol: localAsset("C:\\Users\\osama\\Documents\\Codex\\2026-05-14\\files-mentioned-by-the-user-urban\\urban-eye-assets\\patrol.png"),
+  cctv: localAsset("C:\\Users\\osama\\Downloads\\CCTV camera installed at a real property.png"),
+  technician: localAsset("C:\\Users\\osama\\Downloads\\Technician installing equipment.png"),
+  alarm: localAsset("C:\\Users\\osama\\Downloads\\alarm system.webp"),
+  keypad: localAsset("C:\\Users\\osama\\Downloads\\keypad.webp"),
+  packageGuide: localAsset("C:\\Users\\osama\\Downloads\\package guide.png"),
+};
+
+const heroSlides = [
+  {
+    eyebrow: "Modern security for Kenya",
+    headline: "Smart Security for Homes & Businesses in Kenya",
+    text: "Urban Eye Security combines trained personnel, CCTV, alarm systems, access control, and clear response procedures to help you protect your property with confidence.",
+    primaryCta: "Book a Site Survey",
+    primaryHref: `https://wa.me/${contact.whatsappRaw}`,
+    secondaryCta: "View Security Packages",
+    secondaryHref: "#packages",
+    image: images.patrol,
+    imageLabel: "Guarding, patrol, and site support.",
+    visual: "photo",
+  },
+  {
+    eyebrow: "Package guide",
+    headline: "Client Package Guide & Proposal",
+    subheadline: "Residential & Commercial Security Solutions",
+    text: "Explore clear protection options for homes, estates, offices, shops, warehouses, and institutions. Choose a starting package, then customize after a site survey.",
+    primaryCta: "View Packages",
+    primaryHref: "#packages",
+    secondaryCta: "Request Client Guide",
+    secondaryHref: "#contact",
+    imageLabel: "Urban Eye client package guide and proposal",
+    visual: "mockup",
+  },
+  {
+    eyebrow: "Risk-based protection",
+    headline: "Understand Your Property's Security Risks",
+    text: "Every property has a unique risk profile. Urban Eye uses a risk-based approach to identify weak points, review access points, assess people and technology gaps, and recommend the right mix of guarding, CCTV, alarms, access control, and response procedures.",
+    primaryCta: "Start Security Review",
+    primaryHref: "#who-we-protect",
+    secondaryCta: "Book Site Survey",
+    secondaryHref: `https://wa.me/${contact.whatsappRaw}`,
+    image: images.technician,
+    imageLabel: "Access control and technical site review",
+    visual: "photo",
+  },
+];
+
+const services = [
+  {
+    title: "Manned Guarding",
+    copy: "Professional personnel for access control, visitor management, patrol routines, and incident reporting.",
+    cta: "Request Guarding Assessment",
+    src: images.patrol,
+    imageLabel: "Guarding, patrol, and site support.",
+    objectPosition: "center center",
+  },
+  {
+    title: "CCTV Installation",
+    copy: "Camera planning based on your property layout, blind spots, gates, parking areas, and monitoring needs.",
+    cta: "Get CCTV Recommendation",
+    src: images.cctv,
+    imageLabel: "CCTV installation and technical site review.",
+    objectPosition: "center center",
+  },
+  {
+    title: "Alarm Systems",
+    copy: "Intrusion detection for doors, windows, motion areas, and vulnerable spaces with clear action guidance.",
+    cta: "Ask About Alarm Packages",
+    src: images.alarm,
+    imageLabel: "Alarm kit and detection devices.",
+    contain: true,
+  },
+  {
+    title: "Access Control",
+    copy: "Structured entry control using visitor procedures, gate routines, keypads, cards, biometric options, and smart access systems.",
+    cta: "Plan Access Control",
+    src: images.keypad,
+    imageLabel: "Keypad and access-control device.",
+    contain: true,
+  },
+  {
+    title: "Electric Fence Support",
+    copy: "Perimeter review, electric fence assessment, integration planning, and maintenance coordination.",
+    cta: "Assess My Perimeter",
+    src: images.electricFence,
+    imageLabel: "Electric fence and perimeter security review.",
+    objectPosition: "center center",
+  },
+  {
+    title: "Security Site Survey",
+    copy: "Identify weak points, blind spots, poor lighting, risky access points, and unclear response procedures before spending money.",
+    cta: "Book Site Survey",
+    src: images.technician,
+    imageLabel: "Technical site survey and equipment review.",
+    objectPosition: "center center",
+  },
+];
+
+const systemGallery = [
+  {
+    title: "Alarm Systems",
+    label: "Intrusion detection",
+    copy: "Clean alarm packages for doors, motion areas, and vulnerable entry points.",
+    src: images.alarm,
+    contain: true,
+  },
+  {
+    title: "Access Keypads",
+    label: "Controlled entry",
+    copy: "Modern keypad access for staff zones, gates, stores, and restricted rooms.",
+    src: images.keypad,
+    contain: true,
+  },
+  {
+    title: "Electric Fencing",
+    label: "Perimeter support",
+    copy: "Perimeter review, fence assessment, integration planning, and maintenance support.",
+    src: images.electricFence,
+  },
+];
+
+const propertyTypes = [
+  ["Private Homes", "CCTV, alarm systems, access control, perimeter review, and site survey."],
+  ["Apartments & Estates", "Guarding, CCTV, visitor management, gate control, and guard post instructions."],
+  ["Offices", "Access control, CCTV, alarm systems, reception procedures, and after-hours protection."],
+  ["Retail Shops", "CCTV, alarm systems, staff-only access, cash point visibility, and incident guidance."],
+  ["Warehouses", "Guarding, perimeter control, loading zone visibility, access control, and reporting routines."],
+  ["Schools & Institutions", "Visitor management, gate control, CCTV, access procedures, and emergency review."],
+  ["Clinics & Healthcare", "Controlled access, reception monitoring, restricted room protection, and visitor procedures."],
+  ["Construction Sites", "Night guarding, temporary perimeter review, access control, CCTV where possible, and incident reporting."],
+];
+
+const packages = [
+  {
+    name: "Essential Protection",
+    bestFor: "Small homes, shops, small offices",
+    description: "A simple starting point for basic detection, visibility, and access-point protection.",
+    includes: "Site survey, basic risk review, CCTV or alarm recommendation, entry-point review, response guidance.",
+    cta: "Request Essential Quote",
+  },
+  {
+    name: "Smart Protection",
+    bestFor: "Homes, offices, apartments, SMEs",
+    description: "Connected protection for clients who want visibility, alerts, and better property control.",
+    includes: "CCTV option, alarm option, mobile alert option, access control option, maintenance option, incident guidance.",
+    cta: "Request Smart Quote",
+    featured: true,
+  },
+  {
+    name: "Complete Protection",
+    bestFor: "Estates, warehouses, offices, commercial premises",
+    description: "A complete protection package combining personnel, systems, reporting, and response procedures.",
+    includes: "Guarding option, CCTV option, alarm option, access control option, reporting procedure, escalation plan.",
+    cta: "Book Complete Assessment",
+  },
+  {
+    name: "Custom Protection",
+    bestFor: "High-risk sites, larger compounds, institutions",
+    description: "A tailored protection plan for complex properties requiring a more detailed security approach.",
+    includes: "Full assessment, custom plan, personnel and systems integration, reporting structure, maintenance plan.",
+    cta: "Talk to Urban Eye",
+  },
+];
+
+const whyChoose = [
+  "Risk-based recommendations",
+  "Integrated people + technology",
+  "Written quotations",
+  "Professional handover records",
+  "Maintenance/support options",
+  "Built for Kenyan homes and businesses",
+];
+
+const riskChecklist = [
+  "Access points",
+  "CCTV visibility",
+  "Alarm coverage",
+  "Guarding routines",
+  "Response steps",
+];
+
+const process = [
+  ["01", "Client Inquiry", "Tell us about your property, location, service interest, and urgency."],
+  ["02", "Site Survey", "We assess access points, blind spots, lighting, perimeter condition, and existing security."],
+  ["03", "Risk Assessment", "We identify likely risks and match them with practical protection options."],
+  ["04", "Protection Plan", "You receive a clear recommendation showing people, systems, procedures, and priorities."],
+  ["05", "Quotation", "We prepare a written scope of work with equipment, service options, and upgrades."],
+  ["06", "Deployment", "We install, configure, deploy, or coordinate the approved security solution."],
+  ["07", "Handover", "You receive basic training, documentation, service records, and support guidance."],
+  ["08", "Support", "We help maintain, review, and improve your protection as your property needs change."],
+];
+
+const proofDocs = [
+  "Site Survey Checklist",
+  "Risk Assessment Notes",
+  "Written Quotation",
+  "Installation Handover Form",
+  "Equipment Checklist",
+  "Incident Report Template",
+  "Maintenance Record",
+  "Guard Post Instructions",
+];
+
+function ImageSlot({ label, dark = false, src, objectPosition = "center" }) {
+  return (
+    <figure className={`image-slot ${dark ? "image-slot-dark" : ""}`}>
+      {src ? <img src={src} alt={label} loading="lazy" style={{ objectPosition }} /> : null}
+      <figcaption>
+        <span>Urban Eye Security</span>
+        <strong>{label}</strong>
+      </figcaption>
+    </figure>
+  );
+}
+
+function SectionLabel({ children }) {
+  return <p className="section-label">{children}</p>;
+}
+
+function PackageGuideMockup({ compact = false }) {
+  return (
+    <div className={`guide-mockup ${compact ? "guide-mockup-compact" : ""}`}>
+      <div className="guide-cover">
+        <div className="guide-logo">URBAN EYE SECURITY</div>
+        <h3>Client Package Guide & Proposal</h3>
+        <p>Residential & Commercial Security Solutions</p>
+        <span>Site survey led recommendations</span>
+      </div>
+      <div className="guide-page">
+        <div className="guide-page-head">
+          <strong>Protection Options</strong>
+          <span>Draft scope</span>
+        </div>
+        <div className="guide-columns">
+          <div><strong>Essential</strong><span>Survey + key gaps</span></div>
+          <div><strong>Smart</strong><span>CCTV, alarms, access options</span></div>
+          <div><strong>Complete</strong><span>People, systems, procedures</span></div>
+        </div>
+        <div className="guide-ring">
+          <span>People</span>
+          <span>Process</span>
+          <span>Technology</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function UrbanEyeWebsite() {
+  const [activeSlide, setActiveSlide] = React.useState(0);
+  const [heroPaused, setHeroPaused] = React.useState(false);
+
+  React.useEffect(() => {
+    if (heroPaused) return undefined;
+
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length);
+    }, 6000);
+
+    return () => window.clearInterval(timer);
+  }, [heroPaused]);
+
+  const showSlide = (direction) => {
+    setActiveSlide((current) => (current + direction + heroSlides.length) % heroSlides.length);
+  };
+
+  return (
+    <main className="site-shell">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+        :root {
+          --navy: ${brand.navy};
+          --red: ${brand.red};
+          --light: ${brand.light};
+          --charcoal: ${brand.charcoal};
+          --muted: ${brand.muted};
+          --white: #ffffff;
+          --border: #d7dce6;
+          --softNavy: rgba(27, 44, 110, 0.08);
+          --shadow: 0 20px 55px rgba(17, 24, 39, 0.12);
+          --radius: 8px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; background: var(--light); overflow-x: hidden; }
+        .site-shell {
+          color: var(--charcoal);
+          font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+          background: linear-gradient(180deg, #ffffff 0%, #F2F4F7 42%, #ffffff 100%);
+          min-height: 100vh;
+          overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .brand-name, .nav-link, .btn, .section-label {
+          font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+        }
+        h1, h2, h3, p { margin-top: 0; }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; }
+        .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+        .topbar {
+          position: sticky; top: 0; z-index: 50;
+          background: #ffffff;
+          border-bottom: 1px solid #D9DEE8;
+          box-shadow: 0 12px 30px rgba(17,24,39,.07);
+        }
+        .nav {
+          height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+        }
+        .brand { display: flex; align-items: center; gap: 14px; min-width: 230px; }
+        .brand-mark {
+          width: 52px; height: 52px; border-radius: 10px;
+          background: #ffffff; color: white;
+          display: grid; place-items: center;
+          border: 1px solid #D9DEE8;
+          box-shadow: 0 10px 22px rgba(17,24,39,.08);
+          position: relative; overflow: hidden;
+          padding: 8px;
+        }
+        .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .brand-name { font-weight: 800; color: var(--navy); letter-spacing: 0; line-height: 1; text-transform: uppercase; }
+        .brand-name small { display: block; margin-top: 5px; color: var(--muted); font: 600 11px 'Open Sans'; letter-spacing: 0; }
+        .nav-links { display: flex; align-items: center; gap: 24px; color: #2f3850; font-size: 14px; }
+        .nav-link {
+          font-weight: 700;
+          position: relative;
+          padding: 8px 0;
+          transition: color .2s ease;
+        }
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 2px;
+          height: 2px;
+          background: var(--red);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform .24s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus-visible {
+          color: var(--navy);
+        }
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after {
+          transform: scaleX(1);
+        }
+        .actions { display: flex; align-items: center; gap: 12px; }
+        .btn {
+          display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+          border: 1px solid transparent; border-radius: 8px; padding: 14px 19px;
+          min-height: 46px; font-size: 13px; font-weight: 800; letter-spacing: 0;
+          cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+          white-space: nowrap; position: relative; overflow: hidden;
+        }
+        .btn::after {
+          content: ""; position: absolute; inset: 0; pointer-events: none;
+          background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.28) 48%, transparent 60%);
+          transform: translateX(-130%);
+          transition: transform .55s ease;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn:hover::after { transform: translateX(130%); }
+        .btn:focus-visible { outline: 3px solid rgba(196,39,46,.24); outline-offset: 2px; }
+        .btn-primary { background: linear-gradient(135deg, #D52F36 0%, #B51F27 100%); color: white; box-shadow: 0 16px 32px rgba(196,39,46,.25); }
+        .btn-navy { background: linear-gradient(135deg, #223982 0%, #14255F 100%); color: white; box-shadow: 0 16px 32px rgba(27,44,110,.22); }
+        .btn-ghost { background: rgba(255,255,255,.92); color: var(--navy); border-color: rgba(27,44,110,.14); box-shadow: 0 10px 26px rgba(17,24,39,.06); }
+        .hero { padding: 46px 0 44px; overflow: hidden; }
+        .hero-carousel {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          isolation: isolate;
+        }
+        .hero-track { position: relative; min-height: 535px; }
+        .hero-slide {
+          position: absolute; inset: 0;
+          display: grid; grid-template-columns: 1.02fr .98fr; gap: 48px; align-items: center;
+          opacity: 0; pointer-events: none;
+          translate: 26px 0;
+          transition: opacity .7s ease, translate .7s ease;
+        }
+        .hero-slide.active {
+          position: relative;
+          opacity: 1; pointer-events: auto;
+          translate: 0 0;
+        }
+        .hero-content { max-width: 690px; }
+        .eyebrow {
+          display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px;
+          border: 1px solid rgba(27,44,110,.15); border-radius: 8px;
+          color: var(--navy); background: white; font-weight: 700; font-size: 13px; margin-bottom: 22px;
+        }
+        .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+        h1 { font-size: clamp(48px, 5vw, 72px); line-height: 1.02; letter-spacing: 0; color: var(--navy); margin-bottom: 20px; }
+        .hero-subheadline { color: var(--red); font: 800 18px 'Montserrat'; margin: -8px 0 18px; }
+        .hero-copy { font-size: 17px; line-height: 1.65; color: var(--muted); max-width: 650px; margin-bottom: 22px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
+        .trust-line { color: #596172; font-size: 14px; font-weight: 700; line-height: 1.55; }
+        .hero-card {
+          background: #172862; border-radius: 8px; padding: 8px; box-shadow: var(--shadow); overflow: hidden; position: relative;
+        }
+        .hero-card::before {
+          content: ""; position: absolute; inset: 0;
+          background: linear-gradient(135deg, rgba(255,255,255,.12), transparent 38%);
+          pointer-events: none;
+        }
+        .hero-visual {
+          min-height: 410px; border-radius: 8px; border: 1px solid rgba(255,255,255,.16);
+          position: relative; overflow: hidden; margin: 0;
+          background: #d9dee8;
+          box-shadow: 0 18px 45px rgba(17,24,39,.14);
+        }
+        .hero-visual img {
+          width: 100%; height: 100%; min-height: 410px; object-fit: cover; object-position: center;
+          display: block; filter: saturate(1.02) contrast(1.02);
+        }
+        .hero-visual::after {
+          content: ""; position: absolute; inset: 0;
+          background: linear-gradient(180deg, transparent 34%, rgba(16,25,54,.82) 100%);
+          pointer-events: none;
+        }
+        .hero-visual-document,
+        .hero-visual-mockup {
+          display: grid; place-items: center;
+          background: linear-gradient(135deg, #eef2f7, #ffffff);
+          padding: 18px;
+        }
+        .hero-visual-document img {
+          min-height: 0;
+          height: auto;
+          max-height: 410px;
+          object-fit: contain;
+          border-radius: 6px;
+          box-shadow: 0 20px 48px rgba(17,24,39,.18);
+        }
+        .hero-visual-document::after { background: linear-gradient(135deg, rgba(27,44,110,.06), rgba(196,39,46,.05)); }
+        .hero-visual figcaption {
+          position: absolute; left: 24px; right: 24px; bottom: 24px; z-index: 2;
+          color: white; font: 800 24px 'Montserrat'; line-height: 1.1;
+        }
+        .hero-visual-document figcaption { color: var(--navy); text-shadow: none; }
+        .hero-visual-mockup figcaption { display: none; }
+        .hero-control-row {
+          position: relative; z-index: 5; margin-top: 18px;
+          display: flex; align-items: center; justify-content: center; gap: 14px;
+          pointer-events: none;
+        }
+        .hero-arrow,
+        .hero-dot {
+          pointer-events: auto;
+          border: 1px solid rgba(27,44,110,.16);
+          background: rgba(255,255,255,.92);
+          color: var(--navy);
+          cursor: pointer;
+          transition: transform .2s ease, border-color .2s ease, background .2s ease;
+        }
+        .hero-arrow {
+          width: 38px; height: 38px; border-radius: 8px;
+          position: relative;
+          box-shadow: 0 12px 28px rgba(17,24,39,.08);
+        }
+        .hero-arrow::before {
+          content: ""; position: absolute; top: 50%; left: 50%;
+          width: 9px; height: 9px; border-top: 2px solid currentColor; border-left: 2px solid currentColor;
+        }
+        .hero-arrow-prev::before { transform: translate(-35%, -50%) rotate(-45deg); }
+        .hero-arrow-next::before { transform: translate(-65%, -50%) rotate(135deg); }
+        .hero-arrow:hover,
+        .hero-dot:hover {
+          transform: translateY(-2px);
+          border-color: rgba(196,39,46,.42);
+        }
+        .hero-dots { display: flex; align-items: center; gap: 8px; }
+        .hero-dot {
+          width: 9px; height: 9px; border-radius: 999px; padding: 0;
+          background: rgba(27,44,110,.22);
+        }
+        .hero-dot.active {
+          width: 24px;
+          background: var(--red);
+          border-color: var(--red);
+        }
+        .guide-mockup {
+          width: min(100%, 520px);
+          display: grid;
+          grid-template-columns: .72fr 1fr;
+          gap: 14px;
+          align-items: stretch;
+          transform: rotate(-1deg);
+        }
+        .guide-cover,
+        .guide-page {
+          min-height: 330px;
+          border-radius: 8px;
+          background: white;
+          box-shadow: 0 22px 45px rgba(17,24,39,.16);
+          border: 1px solid rgba(27,44,110,.1);
+          overflow: hidden;
+        }
+        .guide-cover {
+          display: flex; flex-direction: column; justify-content: center;
+          padding: 26px;
+          color: white;
+          background:
+            linear-gradient(180deg, rgba(196,39,46,.92) 0 22%, transparent 22%),
+            linear-gradient(145deg, #101936, #1B2C6E);
+        }
+        .guide-logo { color: white; font: 800 13px 'Montserrat'; margin-bottom: 38px; }
+        .guide-cover h3 { color: white; font-size: 25px; line-height: 1.08; margin: 0 0 14px; }
+        .guide-cover p { color: rgba(255,255,255,.82); line-height: 1.45; margin-bottom: 40px; }
+        .guide-cover span { color: rgba(255,255,255,.68); font-weight: 700; font-size: 12px; }
+        .guide-page { padding: 22px; }
+        .guide-page-head { display: flex; justify-content: space-between; gap: 12px; color: var(--navy); margin-bottom: 18px; }
+        .guide-page-head span { color: var(--red); font-weight: 800; font-size: 12px; }
+        .guide-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
+        .guide-columns div { border: 1px solid var(--border); border-radius: 8px; padding: 12px 10px; min-height: 118px; }
+        .guide-columns strong { display: block; color: var(--navy); font-size: 12px; margin-bottom: 8px; }
+        .guide-columns span { color: var(--muted); font-size: 11px; line-height: 1.35; }
+        .guide-ring {
+          border: 1px solid var(--border); border-radius: 8px; padding: 18px;
+          display: grid; gap: 8px;
+        }
+        .guide-ring span { color: var(--navy); font-weight: 800; font-size: 12px; border-left: 3px solid var(--red); padding-left: 9px; }
+        .guide-mockup-compact {
+          width: 100%;
+          grid-template-columns: 1fr;
+          transform: none;
+        }
+        .guide-mockup-compact .guide-cover { display: none; }
+        .guide-mockup-compact .guide-page { min-height: 240px; box-shadow: none; }
+        .image-slot {
+          min-height: 390px; border-radius: 8px; border: 1px solid rgba(255,255,255,.16);
+          display: flex; align-items: flex-end; padding: 0;
+          background: #d9dee8;
+          position: relative; overflow: hidden; margin: 0;
+          box-shadow: 0 18px 45px rgba(17,24,39,.12);
+        }
+        .image-slot img {
+          position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+          transform: scale(1.01); transition: transform .5s ease, filter .5s ease;
+        }
+        .image-slot:hover img { transform: scale(1.045); filter: saturate(1.04) contrast(1.02); }
+        .image-slot::after {
+          content: ""; position: absolute; inset: 0;
+          background: linear-gradient(180deg, transparent 36%, rgba(16,25,54,.82) 100%);
+          pointer-events: none;
+        }
+        .image-slot-dark { border-color: rgba(255,255,255,.26); background: rgba(255,255,255,.08); color: white; }
+        .image-slot figcaption { position: relative; z-index: 2; padding: 24px; color: white; }
+        .image-slot span { display: inline-block; color: var(--red); background: white; border-radius: 8px; padding: 7px 10px; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0; margin-bottom: 10px; }
+        .image-slot strong { display: block; font: 800 25px 'Montserrat'; color: white; max-width: 360px; line-height: 1.08; }
+        section { padding: 82px 0; }
+        section[id] { scroll-margin-top: 112px; }
+        .section-head { display: grid; grid-template-columns: .82fr 1fr; gap: 40px; align-items: end; margin-bottom: 34px; }
+        .section-label { color: var(--red); text-transform: uppercase; font-size: 12px; letter-spacing: 0; font-weight: 800; margin-bottom: 14px; }
+        h2 { color: var(--navy); font-size: clamp(31px, 4vw, 52px); line-height: 1.03; letter-spacing: 0; margin-bottom: 0; }
+        .section-intro { color: var(--muted); font-size: 17px; line-height: 1.7; margin: 0; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .card {
+          background: white; border: 1px solid rgba(217,222,232,.9); border-radius: var(--radius); padding: 26px;
+          box-shadow: 0 16px 50px rgba(17,24,39,.05);
+          position: relative; overflow: hidden;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+        }
+        .card::before,
+        .property-card::before,
+        .step::before,
+        .proof-item::before,
+        .value::before,
+        .system-card::before {
+          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+          background: linear-gradient(90deg, var(--red), var(--navy));
+          opacity: 0; transform: scaleX(.32); transform-origin: left;
+          transition: opacity .28s ease, transform .28s ease;
+        }
+        .card:hover,
+        .property-card:hover,
+        .step:hover,
+        .proof-item:hover,
+        .value:hover,
+        .system-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(196,39,46,.35);
+          box-shadow: 0 24px 60px rgba(17,24,39,.11);
+          background: linear-gradient(145deg, rgba(27,44,110,.035), rgba(196,39,46,.045)), #ffffff;
+        }
+        .card:hover::before,
+        .property-card:hover::before,
+        .step:hover::before,
+        .proof-item:hover::before,
+        .value:hover::before,
+        .system-card:hover::before {
+          opacity: 1; transform: scaleX(1);
+        }
+        .card:hover h3,
+        .property-card:hover h3,
+        .step:hover h3,
+        .system-card:hover h3 {
+          color: #122466;
+        }
+        .card h3 { color: var(--navy); font-size: 20px; letter-spacing: 0; margin-bottom: 10px; }
+        .card p { color: var(--muted); line-height: 1.65; margin: 0; font-size: 15px; }
+        .problem { background: var(--navy); color: white; }
+        .problem h2, .problem .section-label { color: white; }
+        .problem .section-label { color: #ffffff; opacity: .7; }
+        .problem .section-intro { color: rgba(255,255,255,.76); }
+        .problem .card { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); box-shadow: none; }
+        .problem .card:hover {
+          border-color: rgba(255,255,255,.28);
+          box-shadow: 0 22px 55px rgba(0,0,0,.2);
+          background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(196,39,46,.14));
+        }
+        .problem .card h3 { color: white; }
+        .problem .card:hover h3 { color: white; }
+        .problem .card p { color: rgba(255,255,255,.76); }
+        .service-card { min-height: 235px; display: flex; flex-direction: column; justify-content: space-between; }
+        .service-grid { align-items: stretch; }
+        .service-card {
+          min-height: 100%;
+          padding: 0;
+          overflow: hidden;
+          justify-content: flex-start;
+        }
+        .service-card-media {
+          height: 220px;
+          background: #d9dee8;
+          border-bottom: 1px solid var(--border);
+          overflow: hidden;
+          display: block;
+        }
+        .service-card-media img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform .45s ease, filter .45s ease;
+        }
+        .service-card:hover .service-card-media img {
+          transform: scale(1.04);
+          filter: saturate(1.05) contrast(1.02);
+        }
+        .service-card-contain .service-card-media {
+          display: grid;
+          place-items: center;
+          padding: clamp(22px, 3vw, 36px);
+          background: #ffffff;
+        }
+        .service-card-contain .service-card-media img {
+          max-width: 260px;
+          max-height: 160px;
+          object-fit: contain;
+          object-position: center;
+          transform: none;
+        }
+        .service-card-contain:hover .service-card-media img {
+          transform: translateY(-2px);
+          filter: saturate(1.03) contrast(1.02);
+        }
+        .service-body {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 24px 26px 26px;
+        }
+        .image-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 22px; align-items: stretch; }
+        .image-strip .image-slot { min-height: 290px; box-shadow: var(--shadow); }
+        .image-strip .image-slot:first-child { min-height: 290px; }
+        .text-link { color: var(--red); font-weight: 800; font-size: 13px; margin-top: 18px; display: inline-block; }
+        .system-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+        .system-card {
+          background: white; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+          box-shadow: 0 16px 40px rgba(17,24,39,.06);
+          position: relative;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+        }
+        .system-image {
+          height: 230px; background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
+          display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--border);
+        }
+        .system-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease, filter .45s ease; }
+        .system-card:hover .system-image img { transform: scale(1.04); filter: saturate(1.05) contrast(1.02); }
+        .system-card.contain .system-image {
+          height: 230px;
+          padding: clamp(24px, 3vw, 38px);
+          background: #ffffff;
+        }
+        .system-card.contain .system-image img {
+          width: 100%;
+          height: 100%;
+          max-width: 260px;
+          max-height: 168px;
+          object-fit: contain;
+          object-position: center;
+          transform: none;
+        }
+        .system-card.contain:hover .system-image img {
+          transform: translateY(-2px);
+          filter: saturate(1.03) contrast(1.02);
+        }
+        .system-copy { padding: 22px; }
+        .system-copy span { color: var(--red); display: block; font-weight: 800; font-size: 12px; margin-bottom: 8px; }
+        .system-copy h3 { margin: 0 0 8px; color: var(--navy); font-size: 20px; }
+        .system-copy p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+        .risk-review { background: white; }
+        .risk-panel {
+          display: grid; grid-template-columns: .88fr 1.12fr; gap: 44px; align-items: center;
+          border: 1px solid var(--border); border-radius: 8px; padding: clamp(28px, 4vw, 46px);
+          background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
+          box-shadow: 0 22px 60px rgba(17,24,39,.08);
+          overflow: hidden;
+        }
+        .risk-content .section-intro { margin-bottom: 26px; }
+        .risk-checklist {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 10px;
+          margin: 24px 0 4px;
+        }
+        .risk-checklist span {
+          background: #ffffff;
+          border: 1px solid var(--border);
+          border-left: 3px solid var(--red);
+          border-radius: 8px;
+          color: var(--navy);
+          font-weight: 800;
+          font-size: 13px;
+          padding: 11px 12px;
+          box-shadow: 0 10px 28px rgba(17,24,39,.04);
+        }
+        .risk-visual {
+          min-height: 430px; position: relative; border-radius: 8px; overflow: hidden;
+          background: linear-gradient(135deg, #101936, #223982);
+          border: 1px solid rgba(27,44,110,.18);
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+        }
+        .risk-visual::before {
+          content: ""; position: absolute; inset: 0;
+          background:
+            linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+            linear-gradient(180deg, rgba(255,255,255,.05) 1px, transparent 1px);
+          background-size: 34px 34px;
+          opacity: .45;
+        }
+        .risk-report {
+          position: absolute; left: 30px; top: 30px; width: min(360px, 68%);
+          background: white; border-radius: 8px; padding: 22px;
+          box-shadow: 0 24px 55px rgba(0,0,0,.22);
+        }
+        .risk-report h3 { margin: 0 0 8px; color: var(--navy); font-size: 22px; }
+        .risk-report p { color: var(--muted); margin: 0 0 18px; line-height: 1.55; font-size: 14px; }
+        .risk-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 0; border-top: 1px solid var(--border); color: #36415a; font-weight: 700; font-size: 13px; }
+        .risk-row span:last-child { color: var(--red); font-weight: 800; }
+        .risk-thumb {
+          position: absolute; right: 26px; bottom: 28px; width: min(390px, 54%);
+          border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,.3);
+          box-shadow: 0 26px 60px rgba(0,0,0,.28);
+          background: #ffffff;
+          padding: 14px;
+        }
+        .risk-thumb img { display: block; width: 100%; height: 240px; object-fit: cover; }
+        .risk-mini {
+          position: absolute; right: 44px; top: 42px;
+          width: 176px; border-radius: 8px; overflow: hidden;
+          border: 1px solid rgba(255,255,255,.32);
+          box-shadow: 0 18px 40px rgba(0,0,0,.22);
+          background: white;
+        }
+        .risk-mini img { width: 100%; height: 118px; object-fit: cover; display: block; }
+        .risk-mini span { display: block; padding: 10px 12px; color: var(--navy); font-weight: 800; font-size: 12px; }
+        .property-support { background: #f7f9fc; }
+        .property-support .section-head { margin-bottom: 28px; }
+        .property-grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 14px;
+          max-width: 100%;
+        }
+        .process-grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 14px;
+          max-width: 100%;
+          overflow: visible;
+        }
+        .property-card {
+          padding: 22px; border-radius: 8px; background: white; border: 1px solid var(--border); min-height: 155px;
+          position: relative; overflow: hidden;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+        }
+        .property-card h3 { font-size: 18px; margin-bottom: 8px; color: var(--navy); }
+        .property-card p { font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0; }
+        .step {
+          min-width: 0;
+          min-height: 176px;
+          background: white; border-radius: 8px; padding: 22px; border: 1px solid var(--border);
+          position: relative; overflow: hidden;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+        }
+        .step-number {
+          color: var(--red); font: 800 13px 'Montserrat'; margin-bottom: 20px;
+          display: inline-flex; align-items: center; justify-content: center;
+          min-width: 34px; height: 28px; border-radius: 6px;
+          background: rgba(196,39,46,.08);
+          transition: background .28s ease, color .28s ease, transform .28s ease;
+        }
+        .step:hover .step-number { background: var(--red); color: white; transform: translateY(-2px); }
+        .step h3 { color: var(--navy); font-size: 18px; margin-bottom: 8px; }
+        .step p { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
+        .package-card { position: relative; min-height: 390px; display: flex; flex-direction: column; }
+        .package-card.featured { border: 2px solid var(--red); transform: translateY(-8px); box-shadow: var(--shadow); }
+        .package-card:hover { transform: translateY(-6px); }
+        .package-card.featured:hover { transform: translateY(-12px); }
+        .badge { align-self: flex-start; display: inline-flex; background: var(--red); color: white; border-radius: 8px; padding: 7px 11px; font-size: 11px; font-weight: 800; margin-bottom: 14px; }
+        .best-for { color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 14px; }
+        .includes { background: var(--light); border-radius: 8px; padding: 15px; color: #4d5565; font-size: 13px; line-height: 1.55; margin-top: 18px; }
+        .package-card .btn { margin-top: auto; width: 100%; }
+        .why-choose { background: #ffffff; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .why-item {
+          background: linear-gradient(145deg, #ffffff, #f7f9fc);
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          padding: 22px;
+          min-height: 130px;
+          box-shadow: 0 16px 42px rgba(17,24,39,.05);
+          position: relative;
+          overflow: hidden;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+        }
+        .why-item:hover { transform: translateY(-5px); border-color: rgba(196,39,46,.28); box-shadow: 0 22px 50px rgba(17,24,39,.08); }
+        .why-item::before {
+          content: ""; position: absolute; inset: 0 auto 0 0; width: 4px;
+          background: linear-gradient(180deg, var(--red), var(--navy));
+        }
+        .why-item span { color: var(--red); font: 800 12px 'Montserrat'; display: block; margin-bottom: 12px; }
+        .why-item strong { color: var(--navy); font: 800 18px 'Montserrat'; line-height: 1.25; display: block; }
+        .split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 38px; align-items: center; }
+        .proof-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .proof-item {
+          background: white; border: 1px solid var(--border); padding: 16px 18px; border-radius: 8px; font-weight: 800; color: var(--navy);
+          position: relative; overflow: hidden;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+        }
+        .about { background: white; }
+        .values {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 14px;
+          margin-top: 28px;
+          align-items: stretch;
+        }
+        .value {
+          padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--light);
+          min-height: 132px;
+          position: relative; overflow: hidden;
+          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+        }
+        .value strong { display: block; color: var(--navy); font: 800 16px 'Montserrat'; margin-bottom: 8px; line-height: 1.25; }
+        .value span { color: var(--muted); display: block; font-size: 14px; line-height: 1.55; overflow-wrap: anywhere; }
+        .contact { background: var(--navy); color: white; }
+        .contact h2, .contact .section-label { color: white; }
+        .contact .section-intro { color: rgba(255,255,255,.82); }
+        .contact-box { display: grid; grid-template-columns: .8fr 1.2fr; gap: 24px; }
+        .contact-card {
+          background: #FFFFFF;
+          color: var(--charcoal);
+          border: 1px solid #D9DEE8;
+          border-radius: 28px;
+          padding: 32px;
+          box-shadow: 0 24px 58px rgba(0,0,0,.18);
+        }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        label { display: block; font-weight: 800; color: var(--navy); font-size: 14px; margin-bottom: 9px; }
+        input, select, textarea {
+          width: 100%;
+          border: 1.5px solid #D9DEE8;
+          border-radius: 14px;
+          padding: 14px 15px;
+          font: 600 15px 'Open Sans';
+          color: #1A1A1A;
+          background: #FFFFFF;
+        }
+        input::placeholder, textarea::placeholder { color: #6B7280; opacity: 1; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 4px rgba(27,44,110,.10); }
+        textarea { min-height: 120px; resize: vertical; }
+        .full { grid-column: 1 / -1; }
+        .contact-method {
+          border: 1px solid rgba(255,255,255,.24);
+          border-radius: 14px;
+          padding: 22px;
+          background: rgba(255,255,255,.11);
+          margin-bottom: 14px;
+          box-shadow: 0 16px 36px rgba(0,0,0,.10);
+          transition: transform .28s ease, border-color .28s ease, background .28s ease, box-shadow .28s ease;
+        }
+        .contact-method:hover { transform: translateX(4px); border-color: rgba(255,255,255,.42); background: rgba(255,255,255,.16); box-shadow: 0 20px 44px rgba(0,0,0,.14); }
+        .contact-method strong { display: block; color: #FFFFFF; font: 800 18px 'Montserrat'; margin-bottom: 6px; }
+        .contact-method span { color: rgba(255,255,255,.9); font-weight: 700; }
+        @keyframes revealUp {
+          from { opacity: .18; translate: 0 28px; }
+          to { opacity: 1; translate: 0 0; }
+        }
+        @supports (animation-timeline: view()) {
+          .card,
+          .property-card,
+          .step,
+          .system-card,
+          .proof-item,
+          .why-item,
+          .value,
+          .image-slot {
+            animation: revealUp .8s cubic-bezier(.2,.8,.2,1) both;
+            animation-timeline: view();
+            animation-range: entry 0% cover 34%;
+          }
+          .grid-4 > *:nth-child(2),
+          .grid-3 > *:nth-child(2),
+          .property-grid > *:nth-child(2n),
+          .process-grid > *:nth-child(2n),
+          .proof-list > *:nth-child(2n),
+          .values > *:nth-child(2n) {
+            animation-range: entry 6% cover 38%;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+          *,
+          *::before,
+          *::after {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+        footer { background: #101936; color: white; padding: 40px 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 28px; }
+        footer h4 { font-family: 'Montserrat'; margin: 0 0 14px; }
+        footer p, footer li { color: rgba(255,255,255,.68); line-height: 1.7; font-size: 14px; }
+        footer ul { list-style: none; padding: 0; margin: 0; }
+        .footer-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+        .footer-actions .btn { padding: 12px 14px; min-height: 42px; font-size: 12px; }
+        .footer-disclaimer {
+          border-top: 1px solid rgba(255,255,255,.12);
+          margin-top: 30px;
+          padding-top: 18px;
+          color: rgba(255,255,255,.66);
+          font-size: 13px;
+        }
+        .mobile-cta { display: none; }
+        @media (max-width: 1120px) {
+          .nav-links { display: none; }
+          .grid-4, .why-grid, .property-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .package-card.featured { transform: none; }
+          .package-card.featured:hover { transform: translateY(-6px); }
+        }
+        @media (max-width: 980px) {
+          .nav-links { display: none; }
+          .system-gallery { grid-template-columns: 1fr; }
+          .image-strip { grid-template-columns: 1fr; }
+          .image-strip .image-slot, .image-strip .image-slot:first-child { min-height: 300px; }
+          .hero-track { min-height: auto; }
+          .hero-slide, .section-head, .split, .contact-box, .risk-panel { grid-template-columns: 1fr; }
+          .hero-control-row { position: static; margin-top: 20px; }
+          .risk-visual { min-height: 500px; }
+          .grid-4, .grid-3, .why-grid, .property-grid, .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .hero { padding-top: 52px; }
+        }
+        @media (max-width: 640px) {
+          .container { width: min(100% - 28px, 1180px); }
+          .nav { height: 76px; }
+          .brand-name { font-size: 13px; }
+          .actions .btn-ghost { display: none; }
+          .actions .btn-primary { padding: 12px 15px; font-size: 12px; }
+          section { padding: 60px 0; }
+          .grid-4, .grid-3, .why-grid, .property-grid, .process-grid, .proof-list, .form-grid, .footer-grid { grid-template-columns: 1fr; }
+          .hero-slide { gap: 28px; }
+          .hero-visual, .hero-visual img { min-height: 320px; }
+          .hero-visual-document img { max-height: 300px; }
+          .risk-panel { padding: 22px; }
+          .risk-visual { min-height: 560px; }
+          .risk-report { left: 16px; right: 16px; top: 16px; width: auto; }
+          .risk-mini { left: 16px; right: auto; top: 282px; width: 170px; }
+          .risk-thumb { left: 16px; right: 16px; bottom: 18px; width: auto; }
+          .risk-thumb img { height: 190px; }
+          .package-card.featured { transform: none; }
+          .mobile-cta { display: block; position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 60; }
+          .mobile-cta .btn { width: 100%; box-shadow: 0 18px 40px rgba(196,39,46,.35); }
+        }
+      `}</style>
+
+      <header className="topbar">
+        <div className="container nav">
+          <a className="brand" href="#home" aria-label="Urban Eye Security home">
+            <div className="brand-mark" aria-hidden="true"><img src={images.mark} alt="" /></div>
+            <div className="brand-name">Urban Eye Security<small>Smart. Connected. Protected.</small></div>
+          </a>
+          <nav className="nav-links" aria-label="Main navigation">
+            <a className="nav-link" href="#services">Services</a>
+            <a className="nav-link" href="#packages">Packages</a>
+            <a className="nav-link" href="#who-we-protect">Who We Protect</a>
+            <a className="nav-link" href="#process">Process</a>
+            <a className="nav-link" href="#about">About</a>
+            <a className="nav-link" href="#contact">Contact</a>
+          </nav>
+          <div className="actions">
+            <a className="btn btn-ghost" href="tel:+254768055555">Call</a>
+            <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Book a Site Survey</a>
+          </div>
+        </div>
+      </header>
+
+      <section id="home" className="hero">
+        <div className="container">
+          <div className="hero-carousel" aria-label="Urban Eye Security highlights" onMouseEnter={() => setHeroPaused(true)} onMouseLeave={() => setHeroPaused(false)}>
+            <div className="hero-track">
+              {heroSlides.map((slide, index) => (
+                <article className={`hero-slide ${index === activeSlide ? "active" : ""}`} aria-hidden={index !== activeSlide} key={slide.headline}>
+                  <div className="hero-content">
+                    <div className="eyebrow"><span className="eyebrow-dot" /> {slide.eyebrow}</div>
+                    <h1>{slide.headline}</h1>
+                    {slide.subheadline && <p className="hero-subheadline">{slide.subheadline}</p>}
+                    <p className="hero-copy">{slide.text}</p>
+                    <div className="hero-actions">
+                      <a className="btn btn-primary" href={slide.primaryHref}>{slide.primaryCta}</a>
+                      <a className="btn btn-ghost" href={slide.secondaryHref}>{slide.secondaryCta}</a>
+                    </div>
+                    <p className="trust-line">Site survey &bull; Risk assessment &bull; Clear quotation &bull; Deployment support</p>
+                  </div>
+                  <div className="hero-card">
+                    <figure className={`hero-visual ${slide.visual === "document" ? "hero-visual-document" : ""} ${slide.visual === "mockup" ? "hero-visual-mockup" : ""}`}>
+                      {slide.visual === "mockup" ? <PackageGuideMockup /> : <img src={slide.image} alt={slide.imageLabel} />}
+                      <figcaption>{slide.imageLabel}</figcaption>
+                    </figure>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="hero-control-row" aria-label="Hero carousel controls">
+              <button className="hero-arrow hero-arrow-prev" type="button" aria-label="Previous slide" onClick={() => showSlide(-1)} />
+              <div className="hero-dots">
+                {heroSlides.map((slide, index) => (
+                  <button
+                    className={`hero-dot ${index === activeSlide ? "active" : ""}`}
+                    type="button"
+                    aria-label={`Show slide ${index + 1}: ${slide.headline}`}
+                    aria-current={index === activeSlide}
+                    key={slide.headline}
+                    onClick={() => setActiveSlide(index)}
+                  />
+                ))}
+              </div>
+              <button className="hero-arrow hero-arrow-next" type="button" aria-label="Next slide" onClick={() => showSlide(1)} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="problem">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>The problem</SectionLabel>
+              <h2>Security should not leave you guessing.</h2>
+            </div>
+            <p className="section-intro">Many properties have guards, cameras, or alarms, but they are not connected by a clear protection plan. Urban Eye helps turn separate security pieces into one organized system.</p>
+          </div>
+          <div className="grid-3">
+            <div className="card"><h3>You do not know what triggered the alarm</h3><p>Most systems only alert you. They do not clearly show what happened or what action should follow.</p></div>
+            <div className="card"><h3>Your guard and technology are not connected</h3><p>CCTV, alarms, access control, and guarding should work together as one protection system.</p></div>
+            <div className="card"><h3>You only react after something goes wrong</h3><p>Good security should reduce risk before incidents happen, not only respond afterwards.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>The solution</SectionLabel>
+              <h2>One security partner. Complete protection.</h2>
+            </div>
+            <p className="section-intro">We combine personnel, smart systems, documented procedures, and ongoing support so your property is easier to protect, manage, and improve.</p>
+          </div>
+          <div className="grid-4">
+            <div className="card"><h3>Trained Personnel</h3><p>Guards and site teams for access control, visitor management, patrols, and incident reporting.</p></div>
+            <div className="card"><h3>Smart Security Systems</h3><p>CCTV, alarms, sensors, and access control systems that help you detect and verify incidents.</p></div>
+            <div className="card"><h3>Clear Procedures</h3><p>Site instructions, escalation steps, emergency contacts, and reporting routines.</p></div>
+            <div className="card"><h3>Ongoing Support</h3><p>Maintenance, follow-up, service records, and support to keep protection working properly.</p></div>
+          </div>
+          <div className="system-gallery">
+            {systemGallery.map((item) => (
+              <article className={`system-card ${item.contain ? "contain" : ""}`} key={item.title}>
+                <div className="system-image"><img src={item.src} alt={item.title} loading="lazy" /></div>
+                <div className="system-copy">
+                  <span>{item.label}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="who-we-protect" className="risk-review">
+        <div className="container">
+          <div className="risk-panel">
+            <div className="risk-content">
+              <SectionLabel>Security risk review</SectionLabel>
+              <h2>Understand Your Property's Security Risks</h2>
+              <p className="section-intro">Every home, estate, office, shop, warehouse, school, institution, or construction site has a different risk profile. We help you identify vulnerabilities, understand your current security gaps, and choose the right people, process, and technology solutions for your property.</p>
+              <div className="risk-checklist" aria-label="Security risk review checklist">
+                {riskChecklist.map((item) => <span key={item}>{item}</span>)}
+              </div>
+              <div className="hero-actions" style={{ marginTop: 26 }}>
+                <a className="btn btn-primary" href="#contact">Start Security Review</a>
+                <a className="btn btn-ghost" href={`https://wa.me/${contact.whatsappRaw}`}>Book Site Survey</a>
+              </div>
+            </div>
+            <div className="risk-visual" aria-label="Security risk review mockup">
+              <div className="risk-report">
+                <h3>Site Risk Review</h3>
+                <p>Survey notes, access points, system gaps, and recommended protection priorities.</p>
+                {riskChecklist.map((item) => <div className="risk-row" key={item}><span>{item}</span><span>Review</span></div>)}
+              </div>
+              <div className="risk-mini">
+                <img src={images.cctv} alt="CCTV camera installed at a real property" loading="lazy" />
+                <span>CCTV installation and technical site review.</span>
+              </div>
+              <div className="risk-thumb">
+                <PackageGuideMockup compact />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>Services</SectionLabel>
+              <h2>Integrated security services for homes & businesses.</h2>
+            </div>
+            <p className="section-intro">Urban Eye is not just selling guards or equipment. We combine people, technology, and procedures around how your property actually operates.</p>
+          </div>
+          <div className="grid-3 service-grid">
+            {services.map((service) => (
+              <article className={`card service-card ${service.contain ? "service-card-contain" : ""}`} key={service.title}>
+                <div className="service-card-media">
+                  <img src={service.src} alt={service.imageLabel} loading="lazy" style={{ objectPosition: service.objectPosition || "center" }} />
+                </div>
+                <div className="service-body">
+                  <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.copy}</p>
+                  </div>
+                  <a className="text-link" href="#contact">{service.cta}</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="property-support">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>Property types</SectionLabel>
+              <h2>Protection Built Around Your Property Type</h2>
+            </div>
+            <p className="section-intro">After the risk review, we tailor the protection mix around how your property operates, who uses it, and where the weak points are.</p>
+          </div>
+          <div className="property-grid">
+            {propertyTypes.map(([title, copy]) => (
+              <div className="property-card" key={title}>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>How we work</SectionLabel>
+              <h2>A clear process from inquiry to support.</h2>
+            </div>
+            <p className="section-intro">A professional security project should not feel random. We use a structured process to understand your property, recommend the right solution, document the scope, and support you after deployment.</p>
+          </div>
+          <div className="process-grid">
+            {process.map(([num, title, copy]) => (
+              <div className="step" key={num}>
+                <div className="step-number">{num}</div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="packages">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>Packages</SectionLabel>
+              <h2>Security packages that fit your property.</h2>
+            </div>
+            <p className="section-intro">Choose a starting point, then customize after a site survey. Final pricing depends on property size, layout, risk level, equipment needs, personnel, and response requirements.</p>
+          </div>
+          <div className="grid-4">
+            {packages.map((pkg) => (
+              <article className={`card package-card ${pkg.featured ? "featured" : ""}`} key={pkg.name}>
+                {pkg.featured && <span className="badge">Recommended</span>}
+                <h3>{pkg.name}</h3>
+                <div className="best-for">Best for: {pkg.bestFor}</div>
+                <p>{pkg.description}</p>
+                <div className="includes"><strong>Includes:</strong> {pkg.includes}</div>
+                <a className={pkg.featured ? "btn btn-primary" : "btn btn-navy"} href="#contact">{pkg.cta}</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="why-choose">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>Why choose us</SectionLabel>
+              <h2>Why Choose Urban Eye Security</h2>
+            </div>
+            <p className="section-intro">We keep recommendations practical, documented, and matched to the way each property actually operates.</p>
+          </div>
+          <div className="why-grid">
+            {whyChoose.map((item, index) => (
+              <div className="why-item" key={item}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item}</strong>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container split">
+          <div>
+            <SectionLabel>Trust & documentation</SectionLabel>
+            <h2>Professional security you can understand and verify.</h2>
+            <p className="section-intro">We make the work clear through survey notes, written scope, handover records, maintenance documentation, and incident reporting. This helps clients know what was recommended, what was installed, and what action should follow.</p>
+            <div className="hero-actions" style={{ marginTop: 26 }}>
+              <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Request Assessment</a>
+              <a className="btn btn-ghost" href="#process">View Process</a>
+            </div>
+          </div>
+          <div className="proof-list">
+            {proofDocs.map((doc) => <div className="proof-item" key={doc}>{doc}</div>)}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="about">
+        <div className="container split">
+          <div>
+            <ImageSlot src={images.patrol} label="Guarding, patrol, and site support." />
+          </div>
+          <div>
+            <SectionLabel>About Urban Eye</SectionLabel>
+            <h2>Built to make security clear, modern, and reliable.</h2>
+            <p className="section-intro">Urban Eye Security was created for property owners and businesses that want more than basic guarding or standalone alarms. We believe security should not be guesswork.</p>
+            <p className="section-intro" style={{ marginTop: 16 }}>Technology is powerful, but people and procedures still matter. That is why Urban Eye combines smart systems with trained personnel, clear instructions, reporting, and support.</p>
+            <div className="values">
+              <div className="value"><strong>Vigilance</strong><span>We notice what others miss.</span></div>
+              <div className="value"><strong>Professionalism</strong><span>We show up prepared and presentable.</span></div>
+              <div className="value"><strong>Accountability</strong><span>We document, report, and follow through.</span></div>
+              <div className="value"><strong>Integrity</strong><span>We recommend what your property truly needs.</span></div>
+              <div className="value"><strong>Innovation</strong><span>We use smart systems to improve protection.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <SectionLabel>Contact</SectionLabel>
+              <h2>Let's assess your security needs.</h2>
+            </div>
+            <p className="section-intro">Tell us about your property and we will recommend the best starting point. Not sure what you need? That is normal - we help you compare your options clearly.</p>
+          </div>
+          <div className="contact-box">
+            <div>
+              <div className="contact-method"><strong>WhatsApp</strong><span>{contact.whatsapp}</span></div>
+              <div className="contact-method"><strong>Phone</strong><span>{contact.phone}</span></div>
+              <div className="contact-method"><strong>Email</strong><span>{contact.email}</span></div>
+              <div className="contact-method"><strong>Office</strong><span>{contact.location}</span></div>
+              <div className="contact-method"><strong>Business hours</strong><span>{contact.hours}</span></div>
+            </div>
+            <form className="contact-card">
+              <div className="form-grid">
+                <div><label>Full name</label><input placeholder="Your name" /></div>
+                <div><label>Phone number</label><input placeholder="+254..." /></div>
+                <div><label>Email address</label><input placeholder="name@email.com" /></div>
+                <div><label>Property type</label><select><option>Home</option><option>Apartment / estate</option><option>Office</option><option>Shop</option><option>Warehouse</option><option>School / institution</option><option>Clinic / healthcare facility</option><option>Construction site</option><option>Other</option></select></div>
+                <div><label>Location</label><input placeholder="County, town, estate, or area" /></div>
+                <div><label>Service interest</label><select><option>Not sure yet</option><option>Manned guarding</option><option>CCTV</option><option>Alarm system</option><option>Access control</option><option>Electric fence support</option><option>Full security package</option><option>Site survey</option></select></div>
+                <div><label>Urgency</label><select><option>This week</option><option>Immediate</option><option>This month</option><option>Planning ahead</option></select></div>
+                <div><label>Preferred contact</label><select><option>WhatsApp</option><option>Phone call</option><option>Email</option></select></div>
+                <div className="full"><label>Message</label><textarea placeholder="Briefly describe your property, concerns, or what you want protected." /></div>
+                <div className="full"><a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Submit Inquiry on WhatsApp</a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div className="container footer-grid">
+          <div>
+            <h4>Urban Eye Security</h4>
+            <p>Smart Protection. Human Response.</p>
+            <p>Modern integrated protection for homes, estates, offices, and businesses in Kenya.</p>
+            <div className="footer-actions">
+              <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Book a Site Survey</a>
+              <a className="btn btn-ghost" href={`https://wa.me/${contact.whatsappRaw}`}>Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div><h4>Services</h4><ul><li>Manned Guarding</li><li>CCTV Installation</li><li>Alarm Systems</li><li>Access Control</li></ul></div>
+          <div><h4>Company</h4><ul><li>About</li><li>How We Work</li><li>Packages</li><li>Contact</li></ul></div>
+          <div><h4>Contact</h4><ul><li>WhatsApp: {contact.whatsapp}</li><li>Phone: {contact.phone}</li><li>Email: {contact.email}</li><li>{contact.location}</li><li>{contact.hours}</li></ul></div>
+        </div>
+        <div className="container footer-disclaimer">Final recommendations are confirmed after a site survey and agreed scope of work.</div>
+      </footer>
+
+      <div className="mobile-cta"><a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>WhatsApp / Book Site Survey</a></div>
+    </main>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<UrbanEyeWebsite />);
+</script></body></html>
