@@ -1,14 +1,1 @@
-{
-  "cleanUrls": true,
-  "headers": [
-    {
-      "source": "/urban-eye-assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ]
-}
+'{"headers":[{"source":"/(.*)", "headers":[{"key":"Content-Security-Policy","value":"default-src * data: blob: filesystem: about: ws: wss: '"'"'unsafe-inline'"'"' '"'"'unsafe-eval'"'"'; script-src * data: blob: '"'"'unsafe-inline'"'"' '"'"'unsafe-eval'"'"'; connect-src * data: blob: '"'"'unsafe-inline'"'"'; img-src * data: blob: '"'"'unsafe-inline'"'"'; frame-src * data: blob:"}]}]}' 
