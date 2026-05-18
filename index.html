@@ -436,10 +436,12 @@ function UrbanEyeWebsite() {
           object-fit: cover; object-position: center;
           display: block;
           filter: saturate(1.05) contrast(1.02);
+          transition: transform .5s ease;
         }
+        .hero-image-wrap:hover img { transform: scale(1.05); }
         .hero-image-wrap::after {
           content: ""; position: absolute; inset: 0;
-          background: linear-gradient(180deg, transparent 40%, rgba(8,14,38,.8) 100%);
+          background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.88) 100%);
           pointer-events: none;
         }
         .hero-image-caption {
