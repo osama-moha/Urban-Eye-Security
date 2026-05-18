@@ -11,33 +11,51 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://urbaneyesecurity.co.ke/"/>
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
 <link rel="stylesheet" href="/style.css"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SecurityService", "name": "Urban Eye Security", "url": "https://urbaneyesecurity.co.ke/", "logo": "https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png", "telephone": "+254 768 055 555", "email": "info@urbaneyesecurity.co.ke", "address": {"@type": "PostalAddress", "streetAddress": "St. Ellis, Wabera Street, Nairobi CBD", "addressLocality": "Nairobi", "addressCountry": "KE"}, "areaServed": ["Nairobi", "Kenya"], "slogan": "Smart Protection. Human Response."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What security services does Urban Eye provide?", "acceptedAnswer": {"@type": "Answer", "text": "Urban Eye provides CCTV installation, Ajax smart alarms, access control, manned guarding, site surveys, and property security planning in Nairobi."}}, {"@type": "Question", "name": "Do I need a site survey before installation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A site survey identifies access points, blind spots, lighting gaps, perimeter risks, and the right mix of people, technology, and procedures."}}, {"@type": "Question", "name": "Can Urban Eye combine guards, CCTV, and alarms?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Urban Eye focuses on integrated security where guarding, CCTV, alarms, access control, documentation, and support work together."}}]}</script>
 </head>
 <body>
 
-<header class="topbar">
+<header class="topbar" id="header">
   <div class="container nav">
     <a class="brand" href="/" aria-label="Urban Eye Security home">
-      <span class="brand-mark"><img src="/urban-eye-assets/Icon-only%20version.png" alt="Urban Eye Security logo"/></span>
+      <span class="brand-mark">
+        <img src="/urban-eye-assets/Icon-only%20version.png" alt="Urban Eye Security logo"/>
+      </span>
       <span class="brand-name">Urban Eye Security<small>Smart Protection. Human Response.</small></span>
     </a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a class="nav-link" href="/#services">Services</a>
-      <a class="nav-link" href="/#industries">Who We Protect</a>
-      <a class="nav-link" href="/#process">Process</a>
-      <a class="nav-link" href="/#case-studies">Case Studies</a>
-      <a class="nav-link" href="/#contact">Contact</a>
-    </nav>
+
+    <div class="nav-menu" id="nav-menu">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="/#services"><i class="ri-arrow-right-up-line"></i><span>Services</span></a>
+        <a class="nav-link" href="/#industries"><i class="ri-arrow-right-up-line"></i><span>Who We Protect</span></a>
+        <a class="nav-link" href="/#process"><i class="ri-arrow-right-up-line"></i><span>Process</span></a>
+        <a class="nav-link" href="/#case-studies"><i class="ri-arrow-right-up-line"></i><span>Case Studies</span></a>
+        <a class="nav-link" href="/#contact"><i class="ri-arrow-right-up-line"></i><span>Contact</span></a>
+      </nav>
+
+      <div class="nav-mobile-actions">
+        <a class="btn btn-primary" href="https://wa.me/254714007114">Book a Site Survey</a>
+        <a class="btn btn-outline-white" href="tel:+254768055555">Call +254 768 055 555</a>
+      </div>
+
+      <div class="nav-social">
+        <a href="https://wa.me/254714007114" target="_blank" class="nav-social-link" aria-label="WhatsApp Urban Eye Security"><i class="ri-whatsapp-line"></i></a>
+        <a href="tel:+254768055555" class="nav-social-link" aria-label="Call Urban Eye Security"><i class="ri-phone-line"></i></a>
+        <a href="mailto:info@urbaneyesecurity.co.ke" class="nav-social-link" aria-label="Email Urban Eye Security"><i class="ri-mail-line"></i></a>
+      </div>
+
+      <button class="nav-close" id="nav-close" aria-label="Close menu"><i class="ri-close-large-line"></i></button>
+    </div>
+
     <div class="nav-actions">
-      <a class="nav-phone" href="tel:+254768055555">☎ +254 768 055 555</a>
+      <a class="nav-phone" href="tel:+254768055555"><i class="ri-phone-line"></i>+254 768 055 555</a>
       <a class="btn btn-primary" href="https://wa.me/254714007114">Book a Site Survey</a>
     </div>
-    <a class="mobile-menu-note" href="https://wa.me/254714007114">WhatsApp</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><i class="ri-menu-line"></i></button>
   </div>
 </header>
 
@@ -111,7 +129,7 @@
     <div><p class="section-label">Security Risk Review</p><h2>Start with a short property review.</h2><p class="section-intro">Tell us what you want to protect and Urban Eye will recommend a practical next step.</p></div>
     <div>
 <form class="form-card" action="#" method="POST">
-  <h3 style="margin-top:0;color:var(--navy)">Request a security recommendation</h3>
+  <h3 style="margin-top:0;color:var(--deep-navy)">Request a security recommendation</h3>
   <p style="color:var(--muted);line-height:1.65">Share a few details and Urban Eye will advise on the right next step.</p>
   <input type="hidden" name="service_interest" value="homepage-risk-review"/>
   <div class="form-grid">
@@ -155,4 +173,34 @@
     <div class="footer-bottom"><span>© 2026 Urban Eye Security. All rights reserved.</span><span>Smart. Connected. Protected.</span></div>
   </div>
 </footer>
+
+<script>
+  const navMenu = document.getElementById("nav-menu");
+  const navToggle = document.getElementById("nav-toggle");
+  const navClose = document.getElementById("nav-close");
+
+  function openMenu() {
+    if (!navMenu) return;
+    navMenu.classList.add("show-menu");
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    if (!navMenu) return;
+    navMenu.classList.remove("show-menu");
+    document.body.classList.remove("menu-open");
+  }
+
+  if (navToggle) navToggle.addEventListener("click", openMenu);
+  if (navClose) navClose.addEventListener("click", closeMenu);
+
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+</script>
+
 </body></html>
