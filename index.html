@@ -786,6 +786,8 @@ function UrbanEyeWebsite() {
         }
         @media (max-width: 900px) {
           .hero-inner, .section-head, .split, .contact-box, .risk-panel { grid-template-columns: 1fr; }
+          .hero-inner { max-width: 100%; min-height: auto; padding-bottom: 32px; }
+          .hero-image-card { position: relative; width: 100%; min-height: 340px; right: auto; top: auto; bottom: auto; }
           .grid-3, .system-gallery, .testimonial-grid { grid-template-columns: repeat(2,1fr); }
           .risk-visual { min-height: 420px; }
           .footer-grid { grid-template-columns: repeat(2,1fr); }
@@ -875,8 +877,8 @@ function UrbanEyeWebsite() {
             </div>
             <p className="hero-trust-strip">Site survey &bull; Risk assessment &bull; Clear quotation &bull; Deployment support</p>
           </div>
-          </div>
         </div>
+
         <div className="hero-image-card">
           <div className="hero-image-wrap">
             <img src={heroSlide.image} alt={heroSlide.imageLabel} />
