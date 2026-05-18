@@ -381,7 +381,7 @@ function UrbanEyeWebsite() {
         }
         .hero-inner {
           position: relative; z-index: 2;
-          display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px,5vw,64px); align-items: center;
+          display: grid; grid-template-columns: 1.05fr .95fr; gap: 0; align-items: stretch;
         }
         .hero-eyebrow {
           display: inline-flex; align-items: center; gap: 8px;
@@ -426,12 +426,23 @@ function UrbanEyeWebsite() {
           border-radius: 0;
           padding: 0;
           box-shadow: none;
+          position: relative;
         }
         .hero-image-wrap {
-          border-radius: 0; overflow: hidden;
-          position: relative; min-height: 420px;
+          position: absolute; inset: 0;
+          overflow: hidden;
+          min-height: unset;
           background: transparent;
         }
+        .hero-image-wrap img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center;
+          display: block;
+          filter: saturate(1.05) contrast(1.02);
+          transition: transform .5s ease;
+        }
+        .hero-image-wrap:hover img { transform: scale(1.05); }
+        
         .hero-image-wrap img {
           width: 100%; height: 100%; min-height: 420px;
           object-fit: cover; object-position: center;
