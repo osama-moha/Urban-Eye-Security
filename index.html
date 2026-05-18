@@ -303,16 +303,17 @@ function UrbanEyeWebsite() {
         }
         .brand { display: flex; align-items: center; gap: 12px; min-width: 200px; flex-shrink: 0; }
         .brand-mark {
-          width: 48px; height: 48px; border-radius: 10px;
+          width: 54px; height: 54px; border-radius: 12px;
           background: #ffffff;
           display: grid; place-items: center;
           border: 1px solid #D9DEE8;
-          padding: 7px;
+          padding: 4px;
+          box-shadow: 0 8px 20px rgba(17,24,39,.06);
         }
-        .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+        .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; transform: scale(1.08); }
         /* PHASE 1 FIX: Consistent tagline */
-        .brand-name { font-weight: 800; color: var(--navy); font-size: 14px; line-height: 1; text-transform: uppercase; }
-        .brand-name small { display: block; margin-top: 5px; color: var(--muted); font: 600 10px 'Open Sans'; text-transform: none; }
+        .brand-name { font-weight: 800; color: var(--navy); font-size: 15px; line-height: 1.02; text-transform: uppercase; letter-spacing: -.01em; }
+        .brand-name small { display: block; margin-top: 5px; color: var(--muted); font: 600 10.5px 'Open Sans'; text-transform: none; letter-spacing: 0; }
         .nav-links { display: flex; align-items: center; gap: 22px; flex: 1; }
         .nav-link {
           font-weight: 700; font-size: 13px; color: #2f3850;
@@ -787,47 +788,167 @@ function UrbanEyeWebsite() {
           .grid-4, .property-grid, .process-grid { grid-template-columns: repeat(2,1fr); }
           .package-card.featured { transform: none; }
         }
+
         @media (max-width: 900px) {
-          .hero-inner, .section-head, .split, .contact-box, .risk-panel { grid-template-columns: 1fr; }
-          .hero-inner { display: block; min-height: auto; padding: 56px 0 34px; }
-          .hero-content { max-width: 100%; }
-          .hero-image-card { position: relative; top: auto; right: auto; bottom: auto; width: 100%; height: 360px; z-index: 2; }
-          .hero-image-wrap { position: absolute; inset: 0; }
+          .hero {
+            padding: 0;
+          }
+          .hero-inner {
+            display: block;
+            max-width: none;
+            width: min(1180px, calc(100% - 40px));
+            min-height: auto;
+            padding: 56px 0 34px;
+            margin: 0 auto;
+          }
+          .hero-image-card {
+            position: relative;
+            top: auto; right: auto; bottom: auto;
+            width: 100%;
+            height: 380px;
+            z-index: 2;
+          }
+          .hero-image-wrap {
+            position: absolute;
+            inset: 0;
+          }
           .hero-image-wrap::after {
             background:
-              linear-gradient(to bottom, rgba(13,27,75,.18) 0%, rgba(13,27,75,.2) 55%, rgba(13,27,75,.76) 100%);
+              linear-gradient(to bottom, rgba(13,27,75,.06) 0%, rgba(13,27,75,.1) 50%, rgba(8,15,42,.78) 100%);
           }
+          .section-head, .split, .contact-box, .risk-panel { grid-template-columns: 1fr; }
           .grid-3, .system-gallery, .testimonial-grid { grid-template-columns: repeat(2,1fr); }
           .risk-visual { min-height: 420px; }
           .footer-grid { grid-template-columns: repeat(2,1fr); }
         }
+
         @media (max-width: 640px) {
           .container { width: calc(100% - 28px); }
-          .nav { height: 70px; }
+          .topbar { overflow: hidden; }
+          .nav {
+            height: 82px;
+            gap: 10px;
+            justify-content: flex-start;
+          }
+          .brand {
+            min-width: 0;
+            flex: 1 1 auto;
+            gap: 10px;
+          }
+          .brand-mark {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            padding: 3px;
+          }
+          .brand-mark img {
+            transform: scale(1.16);
+          }
+          .brand-name {
+            font-size: 14.5px;
+            line-height: 1.05;
+          }
+          .brand-name small {
+            font-size: 10px;
+            line-height: 1.25;
+            margin-top: 4px;
+          }
+          .actions {
+            display: none;
+          }
           section { padding: 56px 0; }
-          .hero h1 { font-size: clamp(34px, 10vw, 46px); }
-          .hero-image-card { height: 300px; }
-          .grid-4, .grid-3, .why-grid, .property-grid, .process-grid, .proof-list, .form-grid, .footer-grid, .testimonial-grid { grid-template-columns: 1fr; }
-          .hero-image-wrap, .hero-image-wrap img { min-height: 300px; }
+
+          .hero-inner {
+            width: calc(100% - 32px);
+            padding: 46px 0 28px;
+          }
+          .hero-eyebrow {
+            max-width: 100%;
+            font-size: 10.5px;
+            line-height: 1.35;
+            white-space: normal;
+          }
+          .hero h1 {
+            font-size: clamp(38px, 11vw, 48px);
+            line-height: 1.08;
+            margin-bottom: 18px;
+          }
+          .hero-copy {
+            font-size: 16.5px;
+            line-height: 1.62;
+          }
+          .hero-trust {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+          .hero-trust-badge {
+            width: 100%;
+            justify-content: flex-start;
+          }
+          .hero-actions {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+          }
+          .hero-actions .btn {
+            width: 100%;
+          }
+          .hero-trust-strip {
+            font-size: 13px;
+            line-height: 1.5;
+          }
+          .hero-image-card {
+            height: 360px;
+          }
+          .hero-image-wrap, .hero-image-wrap img {
+            min-height: 360px;
+          }
+          .hero-image-caption {
+            left: 22px;
+            right: 22px;
+            bottom: 24px;
+            font-size: 26px;
+            line-height: 1.12;
+          }
+
+          .trust-bar {
+            padding: 24px 0;
+          }
+          .trust-bar-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: start;
+            justify-content: start;
+            gap: 16px;
+          }
+          .trust-bar-divider {
+            display: none;
+          }
+          .trust-bar-item {
+            align-items: flex-start;
+            gap: 12px;
+          }
+          .trust-bar-item-icon {
+            width: 42px;
+            height: 42px;
+            font-size: 17px;
+          }
+
+          .grid-4, .grid-3, .why-grid, .property-grid, .process-grid, .proof-list, .form-grid, .footer-grid, .testimonial-grid {
+            grid-template-columns: 1fr;
+          }
           .risk-visual { min-height: 480px; }
           .risk-report { left: 14px; right: 14px; top: 14px; width: auto; }
           .risk-mini { display: none; }
           .package-card.featured { transform: none; }
-          .mobile-cta { display: block; position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 60; }
-          .mobile-cta .btn { width: 100%; box-shadow: 0 16px 36px rgba(196,39,46,.32); }
-        }
 
-        @keyframes revealUp {
-          from { opacity: .15; translate: 0 24px; }
-          to { opacity: 1; translate: 0 0; }
-        }
-        @supports (animation-timeline: view()) {
-          .card, .property-card, .step, .system-card, .proof-item, .why-item, .value, .testimonial-card {
-            animation: revealUp .75s cubic-bezier(.2,.8,.2,1) both;
-            animation-timeline: view();
-            animation-range: entry 0% cover 34%;
+          /* Fixed mobile CTA removed because it covered content on iPhone browser. */
+          .mobile-cta {
+            display: none !important;
           }
         }
+
         @media (prefers-reduced-motion: reduce) {
           html { scroll-behavior: auto; }
           *, *::before, *::after { animation: none !important; transition: none !important; }
