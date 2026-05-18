@@ -380,11 +380,16 @@ function UrbanEyeWebsite() {
           pointer-events: none;
         }
         .hero-inner {
-          position: relative; z-index: 2;
-          display: block;
-          max-width: 55%;
-          padding: clamp(32px,4vw,52px) 0 clamp(32px,4vw,52px);
-          min-height: 520px;
+          position: relative; z-index: 3;
+          display: flex;
+          align-items: center;
+          min-height: 560px;
+          padding: clamp(42px,5vw,68px) 0;
+        }
+        .hero-content {
+          position: relative;
+          z-index: 3;
+          max-width: 560px;
         }
 
         .hero-eyebrow {
@@ -397,7 +402,7 @@ function UrbanEyeWebsite() {
         }
         .hero-eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
         .hero h1 {
-          font-size: clamp(38px, 4.5vw, 66px); line-height: 1.04;
+          font-size: clamp(36px, 4.2vw, 60px); line-height: 1.04;
           color: #ffffff; margin-bottom: 18px;
           text-shadow: 0 12px 36px rgba(0,0,0,.2);
         }
@@ -455,10 +460,8 @@ function UrbanEyeWebsite() {
         .hero-image-wrap::after {
           content: ""; position: absolute; inset: 0;
           background:
-            linear-gradient(to left, #0D1B4B 0%, transparent 55%),
-            linear-gradient(to right, #0D1B4B 0%, transparent 40%),
-            linear-gradient(to bottom, #0D1B4B 0%, transparent 40%),
-            linear-gradient(to top, rgba(8,15,42,.9) 0%, transparent 55%);
+            linear-gradient(to right, #0D1B4B 0%, rgba(13,27,75,.65) 35%, transparent 70%),
+            linear-gradient(to top, rgba(8,15,42,.75) 0%, transparent 55%);
           pointer-events: none;
         }
         .hero-image-caption {
@@ -786,8 +789,14 @@ function UrbanEyeWebsite() {
         }
         @media (max-width: 900px) {
           .hero-inner, .section-head, .split, .contact-box, .risk-panel { grid-template-columns: 1fr; }
-          .hero-inner { max-width: 100%; min-height: auto; padding-bottom: 32px; }
-          .hero-image-card { position: relative; width: 100%; min-height: 340px; right: auto; top: auto; bottom: auto; }
+          .hero-inner { display: block; min-height: auto; padding: 56px 0 34px; }
+          .hero-content { max-width: 100%; }
+          .hero-image-card { position: relative; top: auto; right: auto; bottom: auto; width: 100%; height: 360px; z-index: 2; }
+          .hero-image-wrap { position: absolute; inset: 0; }
+          .hero-image-wrap::after {
+            background:
+              linear-gradient(to bottom, rgba(13,27,75,.18) 0%, rgba(13,27,75,.2) 55%, rgba(13,27,75,.76) 100%);
+          }
           .grid-3, .system-gallery, .testimonial-grid { grid-template-columns: repeat(2,1fr); }
           .risk-visual { min-height: 420px; }
           .footer-grid { grid-template-columns: repeat(2,1fr); }
@@ -796,6 +805,8 @@ function UrbanEyeWebsite() {
           .container { width: calc(100% - 28px); }
           .nav { height: 70px; }
           section { padding: 56px 0; }
+          .hero h1 { font-size: clamp(34px, 10vw, 46px); }
+          .hero-image-card { height: 300px; }
           .grid-4, .grid-3, .why-grid, .property-grid, .process-grid, .proof-list, .form-grid, .footer-grid, .testimonial-grid { grid-template-columns: 1fr; }
           .hero-image-wrap, .hero-image-wrap img { min-height: 300px; }
           .risk-visual { min-height: 480px; }
@@ -855,13 +866,15 @@ function UrbanEyeWebsite() {
       {/* PHASE 2: Hero — dark navy, PSRA eyebrow, trust badges, single focused slide */}
       <section id="home" className="hero">
         <div className="container hero-inner">
-          <div>
+          <div className="hero-content">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
               {heroSlide.eyebrow}
             </div>
+
             <h1>{heroSlide.headline}</h1>
             <p className="hero-copy">{heroSlide.text}</p>
+
             {/* PHASE 2: Trust badges */}
             <div className="hero-trust">
               {trustBadges.map((b) => (
@@ -871,10 +884,12 @@ function UrbanEyeWebsite() {
                 </div>
               ))}
             </div>
+
             <div className="hero-actions">
               <a className="btn btn-primary" href={heroSlide.primaryHref}>{heroSlide.primaryCta}</a>
               <a className="btn btn-outline-white" href={heroSlide.secondaryHref}>{heroSlide.secondaryCta}</a>
             </div>
+
             <p className="hero-trust-strip">Site survey &bull; Risk assessment &bull; Clear quotation &bull; Deployment support</p>
           </div>
         </div>
