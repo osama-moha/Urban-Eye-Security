@@ -382,10 +382,11 @@ function UrbanEyeWebsite() {
         .hero-inner {
           position: relative; z-index: 2;
           display: block;
-          max-width: 52%;
+          max-width: 55%;
+          padding: clamp(32px,4vw,52px) 0 clamp(32px,4vw,52px);
           min-height: 520px;
-          padding: clamp(32px,4vw,52px) 0;
         }
+
         .hero-eyebrow {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 7px 12px; border-radius: 6px;
@@ -426,7 +427,7 @@ function UrbanEyeWebsite() {
         .hero-image-card {
           position: absolute;
           top: 0; right: 0; bottom: 0;
-          width: 52%;
+          width: 50%;
           z-index: 1;
         }
         .hero-image-wrap {
@@ -874,11 +875,12 @@ function UrbanEyeWebsite() {
             </div>
             <p className="hero-trust-strip">Site survey &bull; Risk assessment &bull; Clear quotation &bull; Deployment support</p>
           </div>
-          <div className="hero-image-card">
-            <div className="hero-image-wrap">
-              <img src={heroSlide.image} alt={heroSlide.imageLabel} />
-              <div className="hero-image-caption">{heroSlide.imageLabel}</div>
-            </div>
+          </div>
+        </div>
+        <div className="hero-image-card">
+          <div className="hero-image-wrap">
+            <img src={heroSlide.image} alt={heroSlide.imageLabel} />
+            <div className="hero-image-caption">{heroSlide.imageLabel}</div>
           </div>
         </div>
       </section>
