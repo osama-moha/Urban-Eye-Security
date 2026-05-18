@@ -1,1451 +1,318 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Urban Eye Security | Smart Protection. Human Response.</title><script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script><script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><script src="https://unpkg.com/@babel/standalone/babel.min.js"></script><style>html,body,#root{margin:0;min-height:100%;}</style></head><body><div id="root"></div><script type="text/babel" data-presets="react">const brand = {
-  navy: "#1B2C6E",
-  red: "#C4272E",
-  light: "#F2F4F7",
-  charcoal: "#1A1A1A",
-  muted: "#4A4A4A",
-};
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Urban Eye Security | Nairobi Integrated Security Company</title>
+  <meta name="description" content="Urban Eye Security provides CCTV installation, Ajax smart alarms, access control, manned guarding, site surveys, and property security planning in Nairobi."/>
+  <link rel="canonical" href="https://urbaneyesecurity.co.ke/"/>
+  <meta property="og:title" content="Urban Eye Security | Nairobi Integrated Security Company"/>
+  <meta property="og:description" content="Urban Eye Security provides CCTV installation, Ajax smart alarms, access control, manned guarding, site surveys, and property security planning in Nairobi."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://urbaneyesecurity.co.ke/"/>
+  <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/style.css"/>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SecurityService", "name": "Urban Eye Security", "url": "https://urbaneyesecurity.co.ke/", "logo": "https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png", "telephone": "+254 768 055 555", "email": "info@urbaneyesecurity.co.ke", "address": {"@type": "PostalAddress", "streetAddress": "St. Ellis, Wabera Street, Nairobi CBD", "addressLocality": "Nairobi", "addressCountry": "KE"}, "areaServed": ["Nairobi", "Kenya"], "slogan": "Smart Protection. Human Response.", "sameAs": []}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Urban Eye Security", "url": "https://urbaneyesecurity.co.ke/", "potentialAction": {"@type": "SearchAction", "target": "https://urbaneyesecurity.co.ke/?s={search_term_string}", "query-input": "required name=search_term_string"}}</script>
+</head>
+<body>
 
-// PHASE 1 FIX: Updated email to domain email
-const contact = {
-  whatsapp: "+254 714 007 114",
-  whatsappRaw: "254714007114",
-  phone: "+254 768 055 555",
-  email: "info@urbaneyesecurity.co.ke",
-  location: "St. Ellis, Wabera Street, Nairobi CBD",
-  hours: "Monday–Saturday, 7:00 AM–5:00 PM",
-  psra: "", // Replace with actual number
-};
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="Urban Eye Security home">
+      <span class="brand-mark"><img src="/urban-eye-assets/Icon-only%20version.png" alt="Urban Eye Security logo"/></span>
+      <span class="brand-name">Urban Eye Security<small>Smart Protection. Human Response.</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link" href="/#services">Services</a>
+      <a class="nav-link" href="/#industries">Who We Protect</a>
+      <a class="nav-link" href="/#process">Process</a>
+      <a class="nav-link" href="/#case-studies">Case Studies</a>
+      <a class="nav-link" href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-phone" href="tel:+254768055555">☎ +254 768 055 555</a>
+      <a class="btn btn-primary" href="https://wa.me/254714007114">Book a Site Survey</a>
+    </div>
+    <a class="mobile-menu-note" href="https://wa.me/254714007114">WhatsApp</a>
+  </div>
+</header>
 
-const localAsset = (path) => {
-  const fileName = path.split("\\").pop();
-  const hostedBase =
-    typeof window !== "undefined" && window.location.protocol !== "file:"
-      ? window.URBAN_EYE_ASSET_BASE || "/urban-eye-assets"
-      : "";
-  if (hostedBase) {
-    return `${hostedBase.replace(/\/$/, "")}/${encodeURIComponent(fileName)}`;
-  }
-  return `file:///${encodeURIComponent(path.replace(/\\/g, "/"))}`;
-};
-
-const images = {
-  mark: localAsset("C:\\Users\\osama\\Downloads\\Icon-only version.png"),
-  hero: localAsset("C:\\Users\\osama\\Downloads\\guard3.png"),
-  gate: localAsset("C:\\Users\\osama\\Downloads\\man2.jpg"),
-  electricFence: localAsset("C:\\Users\\osama\\Documents\\Codex\\2026-05-14\\files-mentioned-by-the-user-urban\\urban-eye-assets\\electric fence.webp"),
-  patrol: localAsset("C:\\Users\\osama\\Downloads\\patrol.png"),
-    cctv: localAsset("C:\\Users\\osama\\Downloads\\CCTV camera installed at a real property.png"),
-  technician: localAsset("C:\\Users\\osama\\Downloads\\Technician installing equipment.png"),
-  alarm: localAsset("C:\\Users\\osama\\Downloads\\alarm system.webp"),
-  keypad: localAsset("C:\\Users\\osama\\Downloads\\keypad.webp"),
-};
-
-// PHASE 2: Hero updated — single strong cinematic slide, no carousel clutter
-const heroSlide = {
-  eyebrow: "PSRA Registered • Nairobi, Kenya",
-  headline: "Nairobi's Integrated Security Company",
-  text: "We combine trained guards, Ajax smart alarm systems, CCTV, and access control into one protection plan built around your property.",
-  primaryCta: "Book a Site Survey",
-  primaryHref: `https://wa.me/${contact.whatsappRaw}`,
-  secondaryCta: "View Security Packages",
-  secondaryHref: "#packages",
-  image: images.hero,
-  imageLabel: "Guarding, patrol, and site support across Nairobi",
-};
-
-const trustBadges = [
-  { label: "PSRA Registered", icon: "✓" },
-  { label: "Ajax Systems Partner", icon: "✓" },
-  { label: "Est. 2021", icon: "✓" },
-];
-
-// PHASE 2: Real client testimonials added
-const testimonials = [
-  {
-    quote: "Urban Eye's team is professional, punctual, and thorough. They identified vulnerabilities we had never considered and deployed a solution within days.",
-    client: "Likoni Connectors",
-    role: "Operations Manager",
-    initial: "L",
-  },
-  {
-    quote: "We needed a security partner who understood a milling environment. Urban Eye designed a guarding and CCTV plan that actually works for our site layout.",
-    client: "NAS Millers",
-    role: "Site Supervisor",
-    initial: "N",
-  },
-  {
-    quote: "Reliance City Housing relies on Urban Eye across multiple sites. Their documentation and handover process is the most professional we have encountered.",
-    client: "Reliance City Housing",
-    role: "Project Director",
-    initial: "R",
-  },
-];
-
-const services = [
-  {
-    title: "Manned Guarding",
-    copy: "Professional personnel for access control, visitor management, patrol routines, and incident reporting.",
-    cta: "Request Guarding Assessment",
-    src: images.gate,
-    imageLabel: "Guarding, patrol, and site support.",
-    objectPosition: "center center",
-  },
-  {
-    title: "CCTV Installation",
-    copy: "Camera planning based on your property layout, blind spots, gates, parking areas, and monitoring needs.",
-    cta: "Get CCTV Recommendation",
-    src: images.cctv,
-    imageLabel: "CCTV installation and technical site review.",
-    objectPosition: "center center",
-  },
-  {
-    title: "Ajax Alarm Systems",
-    copy: "Wireless Ajax intrusion detection for doors, windows, motion areas, and vulnerable spaces — with mobile alerts and clear action guidance.",
-    cta: "Ask About Ajax Packages",
-    src: images.alarm,
-    imageLabel: "Ajax alarm kit and detection devices.",
-    contain: true,
-  },
-  {
-    title: "Access Control",
-    copy: "Structured entry control using visitor procedures, gate routines, keypads, cards, biometric options, and smart access systems.",
-    cta: "Plan Access Control",
-    src: images.keypad,
-    imageLabel: "Keypad and access-control device.",
-    contain: true,
-  },
-  {
-    title: "Electric Fence Support",
-    copy: "Perimeter review, electric fence assessment, integration planning, and maintenance coordination.",
-    cta: "Assess My Perimeter",
-    src: images.technician,
-    imageLabel: "Perimeter security review and support.",
-    objectPosition: "center center",
-  },
-  {
-    title: "Security Site Survey",
-    copy: "Identify weak points, blind spots, poor lighting, risky access points, and unclear response procedures before spending money.",
-    cta: "Book Site Survey",
-    src: images.cctv,
-    imageLabel: "Technical site survey and equipment review.",
-    objectPosition: "center center",
-  },
-];
-
-const systemGallery = [
-  {
-    title: "Ajax Alarm Systems",
-    label: "Intrusion detection",
-    copy: "Wireless alarm packages for doors, motion areas, and vulnerable entry points. Mobile alerts included.",
-    src: images.alarm,
-    contain: true,
-  },
-  {
-    title: "Access Keypads",
-    label: "Controlled entry",
-    copy: "Modern keypad access for staff zones, gates, stores, and restricted rooms.",
-    src: images.keypad,
-    contain: true,
-  },
-  {
-    title: "CCTV & Cameras",
-    label: "Visual verification",
-    copy: "Camera planning, installation, and monitoring setup based on your property's actual blind spots.",
-    src: images.cctv,
-  },
-];
-
-const propertyTypes = [
-  ["Private Homes", "CCTV, alarm systems, access control, perimeter review, and site survey."],
-  ["Apartments & Estates", "Guarding, CCTV, visitor management, gate control, and guard post instructions."],
-  ["Offices", "Access control, CCTV, alarm systems, reception procedures, and after-hours protection."],
-  ["Retail Shops", "CCTV, alarm systems, staff-only access, cash point visibility, and incident guidance."],
-  ["Warehouses", "Guarding, perimeter control, loading zone visibility, access control, and reporting routines."],
-  ["Schools & Institutions", "Visitor management, gate control, CCTV, access procedures, and emergency review."],
-  ["Clinics & Healthcare", "Controlled access, reception monitoring, restricted room protection, and visitor procedures."],
-  ["Construction Sites", "Night guarding, temporary perimeter review, access control, CCTV where possible, and incident reporting."],
-];
-
-const packages = [
-  {
-    name: "Essential Protection",
-    bestFor: "Small homes, shops, small offices",
-    description: "A simple starting point for basic detection, visibility, and access-point protection.",
-    includes: "Site survey, basic risk review, CCTV or alarm recommendation, entry-point review, response guidance.",
-    cta: "Request Essential Quote",
-  },
-  {
-    name: "Smart Protection",
-    bestFor: "Homes, offices, apartments, SMEs",
-    description: "Connected protection for clients who want visibility, alerts, and better property control.",
-    includes: "CCTV option, Ajax alarm option, mobile alert option, access control option, maintenance option, incident guidance.",
-    cta: "Request Smart Quote",
-    featured: true,
-  },
-  {
-    name: "Complete Protection",
-    bestFor: "Estates, warehouses, offices, commercial premises",
-    description: "A complete protection package combining personnel, systems, reporting, and response procedures.",
-    includes: "Guarding option, CCTV option, Ajax alarm option, access control option, reporting procedure, escalation plan.",
-    cta: "Book Complete Assessment",
-  },
-  {
-    name: "Custom Protection",
-    bestFor: "High-risk sites, larger compounds, institutions",
-    description: "A tailored protection plan for complex properties requiring a more detailed security approach.",
-    includes: "Full assessment, custom plan, personnel and systems integration, reporting structure, maintenance plan.",
-    cta: "Talk to Urban Eye",
-  },
-];
-
-const whyChoose = [
-  "PSRA Licensed & Compliant",
-  "Risk-based recommendations",
-  "Integrated people + technology",
-  "Ajax certified systems",
-  "Written quotations",
-  "Professional handover records",
-  "Maintenance/support options",
-  "Built for Kenyan homes and businesses",
-];
-
-const riskChecklist = [
-  "Access points",
-  "CCTV visibility",
-  "Alarm coverage",
-  "Guarding routines",
-  "Response steps",
-];
-
-const process = [
-  ["01", "Client Inquiry", "Tell us about your property, location, service interest, and urgency."],
-  ["02", "Site Survey", "We assess access points, blind spots, lighting, perimeter condition, and existing security."],
-  ["03", "Risk Assessment", "We identify likely risks and match them with practical protection options."],
-  ["04", "Protection Plan", "You receive a clear recommendation showing people, systems, procedures, and priorities."],
-  ["05", "Quotation", "We prepare a written scope of work with equipment, service options, and upgrades."],
-  ["06", "Deployment", "We install, configure, deploy, or coordinate the approved security solution."],
-  ["07", "Handover", "You receive basic training, documentation, service records, and support guidance."],
-  ["08", "Support", "We help maintain, review, and improve your protection as your property needs change."],
-];
-
-const proofDocs = [
-  "Site Survey Checklist",
-  "Risk Assessment Notes",
-  "Written Quotation",
-  "Installation Handover Form",
-  "Equipment Checklist",
-  "Incident Report Template",
-  "Maintenance Record",
-  "Guard Post Instructions",
-];
-
-function SectionLabel({ children }) {
-  return <p className="section-label">{children}</p>;
-}
-
-function UrbanEyeWebsite() {
-  const [scrolled, setScrolled] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <main className="site-shell">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap');
-
-        :root {
-          --navy: ${brand.navy};
-          --red: ${brand.red};
-          --light: ${brand.light};
-          --charcoal: ${brand.charcoal};
-          --muted: ${brand.muted};
-          --white: #ffffff;
-          --border: #d7dce6;
-          --shadow: 0 20px 55px rgba(17, 24, 39, 0.12);
-          --radius: 8px;
-        }
-
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { margin: 0; background: var(--light); overflow-x: hidden; }
-        .site-shell {
-          color: var(--charcoal);
-          font-family: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
-          background: #ffffff;
-          min-height: 100vh;
-          overflow-x: hidden;
-        }
-        h1,h2,h3,h4,.brand-name,.nav-link,.btn,.section-label {
-          font-family: 'Montserrat', ui-sans-serif, sans-serif;
-        }
-        h1,h2,h3,p { margin-top: 0; }
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; }
-        .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-
-        /* PHASE 2: Navbar with phone number, scrolled shadow */
-        .topbar {
-          position: sticky; top: 0; z-index: 50;
-          background: #ffffff;
-          border-bottom: 1px solid #D9DEE8;
-          transition: box-shadow .3s ease;
-        }
-        .topbar.scrolled {
-          box-shadow: 0 12px 30px rgba(17,24,39,.10);
-        }
-        .nav {
-          height: 76px; display: flex; align-items: center; gap: 20px;
-        }
-        .brand { display: flex; align-items: center; gap: 12px; min-width: 200px; flex-shrink: 0; }
-        .brand-mark {
-          width: 54px; height: 54px; border-radius: 12px;
-          background: #ffffff;
-          display: grid; place-items: center;
-          border: 1px solid #D9DEE8;
-          padding: 4px;
-          box-shadow: 0 8px 20px rgba(17,24,39,.06);
-        }
-        .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; transform: scale(1.08); }
-        /* PHASE 1 FIX: Consistent tagline */
-        .brand-name { font-weight: 800; color: var(--navy); font-size: 15px; line-height: 1.02; text-transform: uppercase; letter-spacing: -.01em; }
-        .brand-name small { display: block; margin-top: 5px; color: var(--muted); font: 600 10.5px 'Open Sans'; text-transform: none; letter-spacing: 0; }
-        .nav-links { display: flex; align-items: center; gap: 22px; flex: 1; }
-        .nav-link {
-          font-weight: 700; font-size: 13px; color: #2f3850;
-          position: relative; padding: 6px 0;
-          white-space: nowrap;
-          transition: color .2s ease;
-        }
-        .nav-link::after {
-          content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
-          background: var(--red); transform: scaleX(0); transform-origin: left;
-          transition: transform .24s ease;
-        }
-        .nav-link:hover { color: var(--navy); }
-        .nav-link:hover::after { transform: scaleX(1); }
-
-        /* PHASE 2: Phone number in nav */
-        .nav-phone {
-          display: flex; align-items: center; gap: 7px;
-          color: var(--navy); font: 700 13px 'Montserrat';
-          white-space: nowrap; padding: 8px 14px;
-          border: 1px solid var(--border); border-radius: 8px;
-          background: var(--light);
-          transition: border-color .2s ease, background .2s ease;
-          flex-shrink: 0;
-        }
-        .nav-phone:hover { border-color: var(--navy); background: #eef2f7; }
-        .nav-phone-icon { color: var(--red); font-size: 14px; }
-        .actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-        .btn {
-          display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-          border: 1px solid transparent; border-radius: 8px; padding: 13px 18px;
-          min-height: 44px; font-size: 13px; font-weight: 800;
-          cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-          white-space: nowrap;
-        }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-primary { background: linear-gradient(135deg, #D52F36 0%, #B51F27 100%); color: white; box-shadow: 0 14px 28px rgba(196,39,46,.22); }
-        .btn-navy { background: linear-gradient(135deg, #223982 0%, #14255F 100%); color: white; box-shadow: 0 14px 28px rgba(27,44,110,.2); }
-        .btn-ghost { background: rgba(255,255,255,.92); color: var(--navy); border-color: rgba(27,44,110,.2); }
-        .btn-outline-white { background: transparent; color: white; border-color: rgba(255,255,255,.45); }
-        .btn-outline-white:hover { background: rgba(255,255,255,.1); }
-
-        /* PHASE 2: Hero redesign — dark navy, trust bar */
-        .hero {
-          background: linear-gradient(135deg, #0d1a45 0%, #1B2C6E 55%, #0a1230 100%);
-          position: relative; overflow: hidden;
-          padding: clamp(32px, 4vw, 52px) 0 0;
-        }
-        .hero::before {
-          content: "";
-          position: absolute; inset: 0;
-          background:
-            radial-gradient(circle at 8% 14%, rgba(196,39,46,.28), transparent 36%),
-            radial-gradient(circle at 82% 72%, rgba(255,255,255,.07), transparent 32%);
-          pointer-events: none;
-        }
-        .hero::after {
-          content: "";
-          position: absolute; inset: 0;
-          background:
-            linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
-            linear-gradient(180deg, rgba(255,255,255,.03) 1px, transparent 1px);
-          background-size: 44px 44px;
-          opacity: .5;
-          pointer-events: none;
-        }
-        .hero-inner {
-          position: relative; z-index: 3;
-          display: flex;
-          align-items: center;
-          min-height: 560px;
-          padding: clamp(42px,5vw,68px) 0;
-        }
-        .hero-content {
-          position: relative;
-          z-index: 3;
-          max-width: 560px;
-        }
-
-        .hero-eyebrow {
-          display: inline-flex; align-items: center; gap: 8px;
-          padding: 7px 12px; border-radius: 6px;
-          background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
-          color: rgba(255,255,255,.9); font: 700 12px 'Montserrat';
-          text-transform: uppercase; letter-spacing: .04em;
-          margin-bottom: 20px;
-        }
-        .hero-eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
-        .hero h1 {
-          font-size: clamp(36px, 4.2vw, 60px); line-height: 1.04;
-          color: #ffffff; margin-bottom: 18px;
-          text-shadow: 0 12px 36px rgba(0,0,0,.2);
-        }
-        .hero-copy {
-          font-size: 17px; line-height: 1.68;
-          color: rgba(255,255,255,.78); margin-bottom: 28px; max-width: 580px;
-        }
-        /* PHASE 2: Trust badges in hero */
-        .hero-trust {
-          display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;
-        }
-        .hero-trust-badge {
-          display: flex; align-items: center; gap: 7px;
-          padding: 8px 14px; border-radius: 6px;
-          background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
-          color: rgba(255,255,255,.9); font: 700 12px 'Montserrat';
-        }
-        .hero-trust-badge-check {
-          width: 18px; height: 18px; border-radius: 50%;
-          background: var(--red); color: white;
-          display: grid; place-items: center; font-size: 10px; font-weight: 900; flex-shrink: 0;
-        }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
-        .hero-trust-strip {
-          color: rgba(255,255,255,.55); font-size: 13px; font-weight: 600;
-        }
-        .hero-image-card {
-          position: absolute;
-          top: 0; right: 0; bottom: 0;
-          width: 50%;
-          z-index: 1;
-        }
-        .hero-image-wrap {
-          position: absolute; inset: 0;
-          overflow: hidden;
-          background: transparent;
-        }
-        .hero-image-wrap img {
-          width: 100%; height: 100%;
-          object-fit: cover; object-position: center;
-          display: block;
-          filter: saturate(1.05) contrast(1.02);
-          transition: transform .5s ease;
-        }
-        .hero-image-wrap:hover img { transform: scale(1.05); }
-
-        .hero-image-wrap img {
-          width: 100%; height: 100%; min-height: 420px;
-          object-fit: cover; object-position: center;
-          display: block;
-          filter: saturate(1.05) contrast(1.02);
-          transition: transform .5s ease;
-        }
-        .hero-image-wrap:hover img { transform: scale(1.05); }
-        .hero-image-wrap::after {
-          content: ""; position: absolute; inset: 0;
-          background:
-            linear-gradient(to right, #0D1B4B 0%, rgba(13,27,75,.65) 35%, transparent 70%),
-            linear-gradient(to top, rgba(8,15,42,.75) 0%, transparent 55%);
-          pointer-events: none;
-        }
-        .hero-image-caption {
-          position: absolute; bottom: 22px; left: 22px; right: 22px; z-index: 2;
-          color: white; font: 800 20px 'Montserrat'; line-height: 1.15;
-        }
-
-        /* PHASE 2: Trust bar strip below hero */
-        .trust-bar {
-          background: #f7f9fc;
-          border-bottom: 1px solid var(--border);
-          padding: 18px 0;
-        }
-        .trust-bar-inner {
-          display: flex; align-items: center; justify-content: space-between;
-          flex-wrap: wrap; gap: 14px;
-        }
-        .trust-bar-item {
-          display: flex; align-items: center; gap: 10px;
-          color: var(--navy); font: 700 13px 'Montserrat';
-        }
-        .trust-bar-item-icon {
-          width: 32px; height: 32px; border-radius: 6px;
-          background: rgba(196,39,46,.1); color: var(--red);
-          display: grid; place-items: center; font-size: 14px; font-weight: 900; flex-shrink: 0;
-        }
-        .trust-bar-divider { width: 1px; height: 32px; background: var(--border); }
-
-        section { padding: 80px 0; }
-        section[id] { scroll-margin-top: 100px; }
-        .section-head { display: grid; grid-template-columns: .82fr 1fr; gap: 40px; align-items: end; margin-bottom: 36px; }
-        .section-label { color: var(--red); text-transform: uppercase; font-size: 11px; letter-spacing: .06em; font-weight: 800; margin-bottom: 12px; }
-        h2 { color: var(--navy); font-size: clamp(30px,4vw,50px); line-height: 1.04; margin-bottom: 0; }
-        .section-intro { color: var(--muted); font-size: 17px; line-height: 1.7; margin: 0; }
-
-        .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-
-        .card {
-          background: white; border: 1px solid rgba(217,222,232,.9); border-radius: var(--radius); padding: 26px;
-          box-shadow: 0 12px 40px rgba(17,24,39,.05);
-          position: relative; overflow: hidden;
-          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .card::before {
-          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-          background: linear-gradient(90deg, var(--red), var(--navy));
-          opacity: 0; transform: scaleX(.32); transform-origin: left;
-          transition: opacity .28s ease, transform .28s ease;
-        }
-        .card:hover { transform: translateY(-4px); border-color: rgba(196,39,46,.3); box-shadow: 0 22px 55px rgba(17,24,39,.1); }
-        .card:hover::before { opacity: 1; transform: scaleX(1); }
-        .card h3 { color: var(--navy); font-size: 19px; margin-bottom: 10px; }
-        .card p { color: var(--muted); line-height: 1.65; margin: 0; font-size: 15px; }
-
-        .problem { background: var(--navy); }
-        .problem .section-label { color: rgba(255,255,255,.65); }
-        .problem h2 { color: white; }
-        .problem .section-intro { color: rgba(255,255,255,.72); }
-        .problem .card { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); box-shadow: none; }
-        .problem .card:hover { border-color: rgba(255,255,255,.26); background: rgba(255,255,255,.13); }
-        .problem .card h3 { color: white; }
-        .problem .card p { color: rgba(255,255,255,.72); }
-
-        .service-grid { align-items: stretch; }
-        .service-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
-        .service-card-media { height: 210px; background: #d9dee8; border-bottom: 1px solid var(--border); overflow: hidden; }
-        .service-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
-        .service-card:hover .service-card-media img { transform: scale(1.04); }
-        .service-card-contain .service-card-media { display: grid; place-items: center; padding: 28px; background: #fff; }
-        .service-card-contain .service-card-media img { max-width: 220px; max-height: 140px; object-fit: contain; transform: none; }
-        .service-card-contain:hover .service-card-media img { transform: translateY(-2px); }
-        .service-body { display: flex; flex: 1; flex-direction: column; justify-content: space-between; padding: 22px 24px 24px; }
-        .text-link { color: var(--red); font-weight: 800; font-size: 13px; margin-top: 16px; display: inline-block; }
-
-        .system-gallery { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 24px; }
-        .system-card {
-          background: white; border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
-          box-shadow: 0 14px 36px rgba(17,24,39,.06);
-          position: relative; transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .system-card::before {
-          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-          background: linear-gradient(90deg, var(--red), var(--navy));
-          opacity: 0; transform: scaleX(.32); transform-origin: left;
-          transition: opacity .28s ease, transform .28s ease;
-        }
-        .system-card:hover { transform: translateY(-4px); border-color: rgba(196,39,46,.3); box-shadow: 0 22px 50px rgba(17,24,39,.1); }
-        .system-card:hover::before { opacity: 1; transform: scaleX(1); }
-        .system-image { height: 220px; overflow: hidden; border-bottom: 1px solid var(--border); }
-        .system-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .45s ease; }
-        .system-card:hover .system-image img { transform: scale(1.04); }
-        .system-card.contain .system-image { display: grid; place-items: center; padding: 30px; background: #fff; }
-        .system-card.contain .system-image img { max-width: 220px; max-height: 148px; object-fit: contain; transform: none; }
-        .system-card.contain:hover .system-image img { transform: translateY(-2px); }
-        .system-copy { padding: 22px; }
-        .system-copy span { color: var(--red); display: block; font-weight: 800; font-size: 11px; margin-bottom: 7px; text-transform: uppercase; }
-        .system-copy h3 { margin: 0 0 8px; color: var(--navy); font-size: 19px; }
-        .system-copy p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
-
-        .risk-review { background: white; }
-        .risk-panel {
-          display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: center;
-          border: 1px solid var(--border); border-radius: 10px; padding: clamp(26px,4vw,46px);
-          background: linear-gradient(135deg, #ffffff, #f7f9fc);
-          box-shadow: 0 20px 55px rgba(17,24,39,.07);
-        }
-        .risk-checklist { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 10px; margin: 22px 0; }
-        .risk-checklist span {
-          background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--red);
-          border-radius: 8px; color: var(--navy); font-weight: 800; font-size: 13px; padding: 10px 12px;
-          box-shadow: 0 8px 22px rgba(17,24,39,.04);
-        }
-        .risk-visual {
-          min-height: 400px; border-radius: 8px; overflow: hidden;
-          background: linear-gradient(135deg, #101936, #223982);
-          border: 1px solid rgba(27,44,110,.2); position: relative;
-        }
-        .risk-visual::before {
-          content: ""; position: absolute; inset: 0;
-          background: linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(180deg,rgba(255,255,255,.05) 1px,transparent 1px);
-          background-size: 34px 34px; opacity: .45;
-        }
-        .risk-report {
-          position: absolute; left: 24px; top: 24px; width: min(340px,68%);
-          background: white; border-radius: 8px; padding: 20px; box-shadow: 0 22px 50px rgba(0,0,0,.22);
-        }
-        .risk-report h3 { margin: 0 0 6px; color: var(--navy); font-size: 20px; }
-        .risk-report p { color: var(--muted); margin: 0 0 14px; line-height: 1.5; font-size: 13px; }
-        .risk-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid var(--border); color: #36415a; font-weight: 700; font-size: 13px; }
-        .risk-row span:last-child { color: var(--red); font-weight: 800; }
-        .risk-mini {
-          position: absolute; right: 22px; bottom: 22px; width: min(200px,44%);
-          border-radius: 8px; overflow: hidden; background: white;
-          border: 1px solid rgba(255,255,255,.3); box-shadow: 0 18px 40px rgba(0,0,0,.22);
-        }
-        .risk-mini img { width: 100%; height: 120px; object-fit: cover; display: block; }
-        .risk-mini span { display: block; padding: 10px 12px; color: var(--navy); font-weight: 800; font-size: 11px; }
-
-        .property-support { background: #f7f9fc; }
-        .property-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
-        .property-card {
-          padding: 22px; border-radius: 8px; background: white; border: 1px solid var(--border); min-height: 148px;
-          position: relative; overflow: hidden; transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .property-card::before {
-          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-          background: linear-gradient(90deg, var(--red), var(--navy));
-          opacity: 0; transform: scaleX(.32); transform-origin: left; transition: opacity .28s, transform .28s;
-        }
-        .property-card:hover { transform: translateY(-4px); border-color: rgba(196,39,46,.28); box-shadow: 0 20px 50px rgba(17,24,39,.09); }
-        .property-card:hover::before { opacity: 1; transform: scaleX(1); }
-        .property-card h3 { font-size: 17px; margin-bottom: 8px; color: var(--navy); }
-        .property-card p { font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0; }
-
-        .process-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
-        .step {
-          background: white; border-radius: 8px; padding: 22px; border: 1px solid var(--border);
-          min-height: 170px; position: relative; overflow: hidden;
-          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .step::before {
-          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-          background: linear-gradient(90deg, var(--red), var(--navy));
-          opacity: 0; transform: scaleX(.32); transform-origin: left; transition: opacity .28s, transform .28s;
-        }
-        .step:hover { transform: translateY(-4px); border-color: rgba(196,39,46,.28); box-shadow: 0 20px 50px rgba(17,24,39,.09); }
-        .step:hover::before { opacity: 1; transform: scaleX(1); }
-        .step-number {
-          color: var(--red); font: 800 12px 'Montserrat'; margin-bottom: 18px;
-          display: inline-flex; align-items: center; justify-content: center;
-          min-width: 32px; height: 26px; border-radius: 6px;
-          background: rgba(196,39,46,.08); transition: background .28s, color .28s;
-        }
-        .step:hover .step-number { background: var(--red); color: white; }
-        .step h3 { color: var(--navy); font-size: 17px; margin-bottom: 8px; }
-        .step p { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 0; }
-
-        .package-card { position: relative; min-height: 380px; display: flex; flex-direction: column; }
-        .package-card.featured { border: 2px solid var(--red); transform: translateY(-6px); box-shadow: var(--shadow); }
-        .package-card:hover { transform: translateY(-5px); }
-        .package-card.featured:hover { transform: translateY(-10px); }
-        .badge { align-self: flex-start; display: inline-flex; background: var(--red); color: white; border-radius: 6px; padding: 6px 10px; font-size: 11px; font-weight: 800; margin-bottom: 12px; }
-        .best-for { color: var(--red); font-weight: 800; font-size: 13px; margin-bottom: 12px; }
-        .includes { background: var(--light); border-radius: 8px; padding: 14px; color: #4d5565; font-size: 13px; line-height: 1.55; margin-top: 16px; }
-        .package-card .btn { margin-top: auto; width: 100%; }
-
-        .why-choose { background: #f7f9fc; }
-        .why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
-        .why-item {
-          background: white; border: 1px solid var(--border); border-radius: 8px; padding: 22px; min-height: 120px;
-          box-shadow: 0 12px 36px rgba(17,24,39,.05); position: relative; overflow: hidden;
-          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .why-item:hover { transform: translateY(-4px); border-color: rgba(196,39,46,.26); box-shadow: 0 20px 48px rgba(17,24,39,.09); }
-        .why-item::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: linear-gradient(180deg, var(--red), var(--navy)); }
-        .why-item span { color: var(--red); font: 800 11px 'Montserrat'; display: block; margin-bottom: 10px; text-transform: uppercase; }
-        .why-item strong { color: var(--navy); font: 800 16px 'Montserrat'; line-height: 1.25; display: block; }
-
-        /* PHASE 2: Testimonials section */
-        .testimonials { background: var(--navy); }
-        .testimonials .section-label { color: rgba(255,255,255,.62); }
-        .testimonials h2 { color: white; }
-        .testimonials .section-intro { color: rgba(255,255,255,.7); }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-        .testimonial-card {
-          background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
-          border-radius: 10px; padding: 28px;
-          transition: background .28s ease, border-color .28s ease, transform .28s ease;
-        }
-        .testimonial-card:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.25); transform: translateY(-3px); }
-        .testimonial-quote {
-          color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.7;
-          margin-bottom: 22px; font-style: italic;
-        }
-        .testimonial-quote::before { content: "“"; color: var(--red); font-size: 28px; font-style: normal; display: block; line-height: 1; margin-bottom: 8px; }
-        .testimonial-footer { display: flex; align-items: center; gap: 12px; }
-        .testimonial-avatar {
-          width: 42px; height: 42px; border-radius: 50%;
-          background: var(--red); color: white;
-          display: grid; place-items: center;
-          font: 800 16px 'Montserrat'; flex-shrink: 0;
-        }
-        .testimonial-name { color: white; font: 800 14px 'Montserrat'; margin-bottom: 3px; }
-        .testimonial-role { color: rgba(255,255,255,.55); font-size: 12px; }
-
-        .split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 38px; align-items: center; }
-        .proof-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
-        .proof-item {
-          background: white; border: 1px solid var(--border); padding: 16px 18px; border-radius: 8px;
-          font-weight: 800; color: var(--navy); font-size: 14px;
-          position: relative; overflow: hidden;
-          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .proof-item::before {
-          content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-          background: linear-gradient(90deg, var(--red), var(--navy));
-          opacity: 0; transform: scaleX(.32); transform-origin: left; transition: opacity .28s, transform .28s;
-        }
-        .proof-item:hover { transform: translateY(-3px); border-color: rgba(196,39,46,.28); box-shadow: 0 18px 44px rgba(17,24,39,.08); }
-        .proof-item:hover::before { opacity: 1; transform: scaleX(1); }
-
-        .about-section { background: white; }
-        .about-image {
-          min-height: 380px; border-radius: 10px; overflow: hidden;
-          position: relative; background: #d9dee8;
-          box-shadow: 0 20px 50px rgba(17,24,39,.12);
-        }
-        .about-image img { width: 100%; height: 100%; min-height: 380px; object-fit: cover; display: block; }
-        .about-image::after {
-          content: ""; position: absolute; inset: 0;
-          background: linear-gradient(180deg, transparent 40%, rgba(16,25,54,.75) 100%);
-          pointer-events: none;
-        }
-        .about-caption {
-          position: absolute; bottom: 22px; left: 22px; right: 22px; z-index: 2;
-          color: white; font: 800 18px 'Montserrat'; line-height: 1.2;
-        }
-        .values { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 12px; margin-top: 24px; }
-        .value {
-          padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--light);
-          min-height: 120px; position: relative; overflow: hidden;
-          transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-        }
-        .value:hover { transform: translateY(-3px); border-color: rgba(196,39,46,.25); box-shadow: 0 16px 40px rgba(17,24,39,.08); }
-        .value strong { display: block; color: var(--navy); font: 800 15px 'Montserrat'; margin-bottom: 7px; }
-        .value span { color: var(--muted); display: block; font-size: 13px; line-height: 1.5; }
-
-        .contact { background: var(--navy); }
-        .contact .section-label { color: rgba(255,255,255,.62); }
-        .contact h2 { color: white; }
-        .contact .section-intro { color: rgba(255,255,255,.78); }
-        .contact-box { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; }
-        .contact-card {
-          background: #FFFFFF; border: 1px solid #D9DEE8; border-radius: 14px;
-          padding: 30px; box-shadow: 0 22px 55px rgba(0,0,0,.18);
-        }
-        .form-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 15px; }
-        label { display: block; font-weight: 800; color: var(--navy); font-size: 13px; margin-bottom: 8px; }
-        input, select, textarea {
-          width: 100%; border: 1.5px solid #D9DEE8; border-radius: 10px; padding: 13px 14px;
-          font: 500 14px 'Open Sans'; color: #1A1A1A; background: #FFFFFF;
-        }
-        input::placeholder, textarea::placeholder { color: #9ca3af; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,44,110,.1); }
-        textarea { min-height: 110px; resize: vertical; }
-        .full { grid-column: 1 / -1; }
-        .contact-method {
-          border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 18px 20px;
-          background: rgba(255,255,255,.08); margin-bottom: 12px;
-          transition: transform .28s ease, background .28s ease;
-        }
-        .contact-method:hover { transform: translateX(4px); background: rgba(255,255,255,.14); }
-        .contact-method strong { display: block; color: #FFFFFF; font: 800 16px 'Montserrat'; margin-bottom: 4px; }
-        .contact-method span { color: rgba(255,255,255,.85); font-weight: 600; font-size: 14px; }
-
-        footer { background: #0d1430; color: white; padding: 44px 0 32px; }
-        .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3,1fr); gap: 28px; }
-        footer h4 { font-family: 'Montserrat'; margin: 0 0 14px; font-size: 14px; color: white; }
-        footer p, footer li { color: rgba(255,255,255,.62); line-height: 1.75; font-size: 13px; }
-        footer ul { list-style: none; padding: 0; margin: 0; }
-        footer li { padding: 2px 0; }
-        /* PHASE 1 FIX: PSRA number in footer */
-        .footer-psra {
-          display: inline-flex; align-items: center; gap: 8px;
-          background: rgba(196,39,46,.15); border: 1px solid rgba(196,39,46,.3);
-          border-radius: 6px; padding: 8px 12px; margin-top: 14px;
-          color: rgba(255,255,255,.85); font: 700 12px 'Montserrat';
-        }
-        .footer-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-        .footer-actions .btn { padding: 11px 14px; min-height: 40px; font-size: 12px; }
-        .footer-disclaimer {
-          border-top: 1px solid rgba(255,255,255,.1); margin-top: 28px; padding-top: 18px;
-          color: rgba(255,255,255,.45); font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-        }
-
-        .mobile-cta { display: none; }
-
-        @media (max-width: 1100px) {
-          .nav-links { display: none; }
-          .nav-phone { display: none; }
-          .why-grid { grid-template-columns: repeat(2,1fr); }
-          .grid-4, .property-grid, .process-grid { grid-template-columns: repeat(2,1fr); }
-          .package-card.featured { transform: none; }
-        }
-
-        @media (max-width: 900px) {
-          .hero {
-            padding: 0;
-          }
-          .hero-inner {
-            display: block;
-            max-width: none;
-            width: min(1180px, calc(100% - 40px));
-            min-height: auto;
-            padding: 56px 0 34px;
-            margin: 0 auto;
-          }
-          .hero-image-card {
-            position: relative;
-            top: auto; right: auto; bottom: auto;
-            width: 100%;
-            height: 380px;
-            z-index: 2;
-          }
-          .hero-image-wrap {
-            position: absolute;
-            inset: 0;
-          }
-          .hero-image-wrap::after {
-            background:
-              linear-gradient(to bottom, rgba(13,27,75,.06) 0%, rgba(13,27,75,.1) 50%, rgba(8,15,42,.78) 100%);
-          }
-          .section-head, .split, .contact-box, .risk-panel { grid-template-columns: 1fr; }
-          .grid-3, .system-gallery, .testimonial-grid { grid-template-columns: repeat(2,1fr); }
-          .risk-visual { min-height: 420px; }
-          .footer-grid { grid-template-columns: repeat(2,1fr); }
-        }
-
-        @media (max-width: 640px) {
-          .container { width: calc(100% - 28px); }
-          .topbar { overflow: hidden; }
-          .nav {
-            height: 82px;
-            gap: 10px;
-            justify-content: flex-start;
-          }
-          .brand {
-            min-width: 0;
-            flex: 1 1 auto;
-            gap: 10px;
-          }
-          .brand-mark {
-            width: 52px;
-            height: 52px;
-            min-width: 52px;
-            padding: 3px;
-          }
-          .brand-mark img {
-            transform: scale(1.16);
-          }
-          .brand-name {
-            font-size: 14.5px;
-            line-height: 1.05;
-          }
-          .brand-name small {
-            font-size: 10px;
-            line-height: 1.25;
-            margin-top: 4px;
-          }
-          .actions {
-            display: none;
-          }
-          section { padding: 56px 0; }
-
-          .hero-inner {
-            width: calc(100% - 32px);
-            padding: 46px 0 28px;
-          }
-          .hero-eyebrow {
-            max-width: 100%;
-            font-size: 10.5px;
-            line-height: 1.35;
-            white-space: normal;
-          }
-          .hero h1 {
-            font-size: clamp(38px, 11vw, 48px);
-            line-height: 1.08;
-            margin-bottom: 18px;
-          }
-          .hero-copy {
-            font-size: 16.5px;
-            line-height: 1.62;
-          }
-          .hero-trust {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-          }
-          .hero-trust-badge {
-            width: 100%;
-            justify-content: flex-start;
-          }
-          .hero-actions {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-          }
-          .hero-actions .btn {
-            width: 100%;
-          }
-          .hero-trust-strip {
-            font-size: 13px;
-            line-height: 1.5;
-          }
-          .hero-image-card {
-            height: 360px;
-          }
-          .hero-image-wrap, .hero-image-wrap img {
-            min-height: 360px;
-          }
-          .hero-image-caption {
-            left: 22px;
-            right: 22px;
-            bottom: 24px;
-            font-size: 26px;
-            line-height: 1.12;
-          }
-
-          .trust-bar {
-            padding: 24px 0;
-          }
-          .trust-bar-inner {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: start;
-            justify-content: start;
-            gap: 16px;
-          }
-          .trust-bar-divider {
-            display: none;
-          }
-          .trust-bar-item {
-            align-items: flex-start;
-            gap: 12px;
-          }
-          .trust-bar-item-icon {
-            width: 42px;
-            height: 42px;
-            font-size: 17px;
-          }
-
-          .grid-4, .grid-3, .why-grid, .property-grid, .process-grid, .proof-list, .form-grid, .footer-grid, .testimonial-grid {
-            grid-template-columns: 1fr;
-          }
-          .risk-visual { min-height: 480px; }
-          .risk-report { left: 14px; right: 14px; top: 14px; width: auto; }
-          .risk-mini { display: none; }
-          .package-card.featured { transform: none; }
-
-          /* Fixed mobile CTA removed because it covered content on iPhone browser. */
-          .mobile-cta {
-            display: none !important;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          html { scroll-behavior: auto; }
-          *, *::before, *::after { animation: none !important; transition: none !important; }
-        }
-      `}</style>
-
-      {/* PHASE 2: Navbar with sticky phone number, no separate "Call" button */}
-      <header className={`topbar${scrolled ? " scrolled" : ""}`}>
-        <div className="container nav">
-          <a className="brand" href="#home" aria-label="Urban Eye Security home">
-            <div className="brand-mark" aria-hidden="true">
-              <img src={images.mark} alt="" />
-            </div>
-            {/* PHASE 1 FIX: Consistent tagline */}
-            <div className="brand-name">Urban Eye Security<small>Smart Protection. Human Response.</small></div>
-          </a>
-          <nav className="nav-links" aria-label="Main navigation">
-            <a className="nav-link" href="#services">Services</a>
-            <a className="nav-link" href="#packages">Packages</a>
-            <a className="nav-link" href="#who-we-protect">Who We Protect</a>
-            <a className="nav-link" href="#process">Process</a>
-            <a className="nav-link" href="#about">About</a>
-            <a className="nav-link" href="#contact">Contact</a>
-          </nav>
-          {/* PHASE 2: Phone number always visible */}
-          <a className="nav-phone" href={`tel:${contact.phone.replace(/\s/g,'')}`}>
-            <span className="nav-phone-icon">📞</span>
-            {contact.phone}
-          </a>
-          <div className="actions">
-            <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Book a Site Survey</a>
-          </div>
+<main>
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow"><span class="dot"></span> PSRA Registered • Nairobi, Kenya</div>
+        <h1>Nairobi's Integrated Security Company</h1>
+        <p class="hero-copy"><strong>Bottom line:</strong> Urban Eye combines trained guards, CCTV, Ajax smart alarms, access control, and site surveys into one practical protection plan for your property.</p>
+        <div class="hero-badges">
+          <span class="badge"><span>✓</span> PSRA Registered</span>
+          <span class="badge"><span>✓</span> Ajax Systems Partner</span>
+          <span class="badge"><span>✓</span> Est. 2021</span>
         </div>
-      </header>
-
-      {/* PHASE 2: Hero — dark navy, PSRA eyebrow, trust badges, single focused slide */}
-      <section id="home" className="hero">
-        <div className="container hero-inner">
-          <div className="hero-content">
-            <div className="hero-eyebrow">
-              <span className="hero-eyebrow-dot" />
-              {heroSlide.eyebrow}
-            </div>
-
-            <h1>{heroSlide.headline}</h1>
-            <p className="hero-copy">{heroSlide.text}</p>
-
-            {/* PHASE 2: Trust badges */}
-            <div className="hero-trust">
-              {trustBadges.map((b) => (
-                <div className="hero-trust-badge" key={b.label}>
-                  <div className="hero-trust-badge-check">{b.icon}</div>
-                  {b.label}
-                </div>
-              ))}
-            </div>
-
-            <div className="hero-actions">
-              <a className="btn btn-primary" href={heroSlide.primaryHref}>{heroSlide.primaryCta}</a>
-              <a className="btn btn-outline-white" href={heroSlide.secondaryHref}>{heroSlide.secondaryCta}</a>
-            </div>
-
-            <p className="hero-trust-strip">Site survey &bull; Risk assessment &bull; Clear quotation &bull; Deployment support</p>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/254714007114">Book a Site Survey</a>
+          <a class="btn btn-outline-white" href="#services">View Security Services</a>
         </div>
-
-        <div className="hero-image-card">
-          <div className="hero-image-wrap">
-            <img src={heroSlide.image} alt={heroSlide.imageLabel} />
-            <div className="hero-image-caption">{heroSlide.imageLabel}</div>
-          </div>
-        </div>
-      </section>
-
-      {/* PHASE 2: Trust bar below hero */}
-      <div className="trust-bar">
-        <div className="container trust-bar-inner">
-          <div className="trust-bar-item">
-            <div className="trust-bar-item-icon">✓</div>
-            <div>
-              <div style={{fontWeight:800,color:'var(--navy)',fontSize:13}}>PSRA Licensed</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>Reg. {contact.psra}</div>
-            </div>
-          </div>
-          <div className="trust-bar-divider" />
-          <div className="trust-bar-item">
-            <div className="trust-bar-item-icon">⚡</div>
-            <div>
-              <div style={{fontWeight:800,color:'var(--navy)',fontSize:13}}>Ajax Systems Partner</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>Wireless security technology</div>
-            </div>
-          </div>
-          <div className="trust-bar-divider" />
-          <div className="trust-bar-item">
-            <div className="trust-bar-item-icon">🏢</div>
-            <div>
-              <div style={{fontWeight:800,color:'var(--navy)',fontSize:13}}>Est. 2021, Nairobi</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>St. Ellis, Wabera Street</div>
-            </div>
-          </div>
-          <div className="trust-bar-divider" />
-          <div className="trust-bar-item">
-            <div className="trust-bar-item-icon">📞</div>
-            <div>
-              <div style={{fontWeight:800,color:'var(--navy)',fontSize:13}}>24/7 Reachable</div>
-              <div style={{fontSize:12,color:'var(--muted)'}}>WhatsApp & Phone</div>
-            </div>
-          </div>
-        </div>
+        <p class="hero-strip">Site survey • Risk assessment • Clear quotation • Deployment support</p>
       </div>
+    </div>
+    <div class="hero-photo">
+      <img src="/urban-eye-assets/guard3.png" alt="Urban Eye Security guards at a Nairobi property gate" onerror="this.src='/urban-eye-assets/guards.png'"/>
+      <div class="hero-caption">Guarding, patrol, and site support across Nairobi</div>
+    </div>
+  </section>
 
-      {/* Problem section */}
-      <section className="problem">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>The problem</SectionLabel>
-              <h2>Security should not leave you guessing.</h2>
-            </div>
-            <p className="section-intro">Many properties have guards, cameras, or alarms, but they are not connected by a clear protection plan. Urban Eye helps turn separate security pieces into one organized system.</p>
-          </div>
-          <div className="grid-3">
-            <div className="card"><h3>You do not know what triggered the alarm</h3><p>Most systems only alert you. They do not clearly show what happened or what action should follow.</p></div>
-            <div className="card"><h3>Your guard and technology are not connected</h3><p>CCTV, alarms, access control, and guarding should work together as one protection system.</p></div>
-            <div className="card"><h3>You only react after something goes wrong</h3><p>Good security should reduce risk before incidents happen, not only respond afterwards.</p></div>
-          </div>
-        </div>
-      </section>
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <div class="trust-item"><div class="trust-icon">✓</div><div><strong>PSRA Licensed</strong><span>Compliance-focused security services</span></div></div>
+      <div class="trust-item"><div class="trust-icon">⚡</div><div><strong>Ajax Systems Partner</strong><span>Smart wireless alarm technology</span></div></div>
+      <div class="trust-item"><div class="trust-icon">🏢</div><div><strong>Est. 2021, Nairobi</strong><span>St. Ellis, Wabera Street</span></div></div>
+      <div class="trust-item"><div class="trust-icon">☎</div><div><strong>Reachable Support</strong><span>WhatsApp & phone contact</span></div></div>
+    </div>
+  </div>
 
-      {/* Solution section */}
-      <section>
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>The solution</SectionLabel>
-              <h2>One security partner. Complete protection.</h2>
-            </div>
-            <p className="section-intro">We combine personnel, smart systems, documented procedures, and ongoing support so your property is easier to protect, manage, and improve.</p>
-          </div>
-          <div className="grid-4">
-            <div className="card"><h3>Trained Personnel</h3><p>Guards and site teams for access control, visitor management, patrols, and incident reporting.</p></div>
-            <div className="card"><h3>Ajax Smart Systems</h3><p>Wireless CCTV, alarms, sensors, and access control — monitored via mobile app with instant alerts.</p></div>
-            <div className="card"><h3>Clear Procedures</h3><p>Site instructions, escalation steps, emergency contacts, and reporting routines for every property.</p></div>
-            <div className="card"><h3>Ongoing Support</h3><p>Maintenance, follow-up, service records, and support to keep your protection working properly.</p></div>
-          </div>
-          <div className="system-gallery">
-            {systemGallery.map((item) => (
-              <article className={`system-card ${item.contain ? "contain" : ""}`} key={item.title}>
-                <div className="system-image"><img src={item.src} alt={item.title} loading="lazy" /></div>
-                <div className="system-copy">
-                  <span>{item.label}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+  <section class="dark-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">The Problem</p>
+          <h2>Security should not leave you guessing.</h2>
         </div>
-      </section>
-
-      {/* Risk review */}
-      <section id="who-we-protect" className="risk-review">
-        <div className="container">
-          <div className="risk-panel">
-            <div className="risk-content">
-              <SectionLabel>Security risk review</SectionLabel>
-              <h2>Understand Your Property's Security Risks</h2>
-              <p className="section-intro" style={{marginTop:14}}>Every home, estate, office, shop, warehouse, school, or construction site has a different risk profile. We help you identify vulnerabilities and choose the right people, process, and technology mix.</p>
-              <div className="risk-checklist">
-                {riskChecklist.map((item) => <span key={item}>{item}</span>)}
-              </div>
-              <div style={{display:'flex',flexWrap:'wrap',gap:12,marginTop:22}}>
-                <a className="btn btn-primary" href="#contact">Start Security Review</a>
-                <a className="btn btn-ghost" href={`https://wa.me/${contact.whatsappRaw}`}>Book Site Survey</a>
-              </div>
-            </div>
-            <div className="risk-visual">
-              <div className="risk-report">
-                <h3>Site Risk Review</h3>
-                <p>Survey notes, access points, system gaps, and recommended protection priorities.</p>
-                {riskChecklist.map((item) => (
-                  <div className="risk-row" key={item}><span>{item}</span><span>Review</span></div>
-                ))}
-              </div>
-              <div className="risk-mini">
-                <img src={images.cctv} alt="CCTV installation review" loading="lazy" />
-                <span>CCTV & site review</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>Services</SectionLabel>
-              <h2>Integrated security services for homes & businesses.</h2>
-            </div>
-            <p className="section-intro">Urban Eye is not just selling guards or equipment. We combine people, technology, and procedures around how your property actually operates.</p>
-          </div>
-          <div className="grid-3 service-grid">
-            {services.map((service) => (
-              <article className={`card service-card ${service.contain ? "service-card-contain" : ""}`} key={service.title}>
-                <div className="service-card-media">
-                  <img src={service.src} alt={service.imageLabel} loading="lazy" style={{objectPosition: service.objectPosition || "center"}} />
-                </div>
-                <div className="service-body">
-                  <div>
-                    <h3>{service.title}</h3>
-                    <p>{service.copy}</p>
-                  </div>
-                  <a className="text-link" href="#contact">{service.cta} →</a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Protect */}
-      <section className="property-support">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>Who we protect</SectionLabel>
-              <h2>Protection Built Around Your Property Type</h2>
-            </div>
-            <p className="section-intro">After the risk review, we tailor the protection mix around how your property operates, who uses it, and where the weak points are.</p>
-          </div>
-          <div className="property-grid">
-            {propertyTypes.map(([title, copy]) => (
-              <div className="property-card" key={title}>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section id="process">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>How we work</SectionLabel>
-              <h2>A clear process from inquiry to support.</h2>
-            </div>
-            <p className="section-intro">A professional security project should not feel random. We use a structured process to understand your property, recommend the right solution, and support you after deployment.</p>
-          </div>
-          <div className="process-grid">
-            {process.map(([num, title, copy]) => (
-              <div className="step" key={num}>
-                <div className="step-number">{num}</div>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Packages */}
-      <section id="packages" style={{background:'#f7f9fc'}}>
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>Packages</SectionLabel>
-              <h2>Security packages that fit your property.</h2>
-            </div>
-            <p className="section-intro">Choose a starting point, then customise after a site survey. Final pricing depends on property size, risk level, equipment needs, and response requirements.</p>
-          </div>
-          <div className="grid-4">
-            {packages.map((pkg) => (
-              <article className={`card package-card ${pkg.featured ? "featured" : ""}`} key={pkg.name}>
-                {pkg.featured && <span className="badge">Recommended</span>}
-                <h3>{pkg.name}</h3>
-                <div className="best-for">Best for: {pkg.bestFor}</div>
-                <p>{pkg.description}</p>
-                <div className="includes"><strong>Includes:</strong> {pkg.includes}</div>
-                <a className={pkg.featured ? "btn btn-primary" : "btn btn-navy"} href="#contact" style={{marginTop:16}}>{pkg.cta}</a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose */}
-      <section className="why-choose">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>Why choose us</SectionLabel>
-              <h2>Why Choose Urban Eye Security</h2>
-            </div>
-            <p className="section-intro">PSRA licensed, Ajax certified, and built specifically for the Kenyan property market. We keep recommendations practical, documented, and matched to how each property actually operates.</p>
-          </div>
-          <div className="why-grid">
-            {whyChoose.map((item, index) => (
-              <div className="why-item" key={item}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{item}</strong>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PHASE 2: Testimonials section — real clients */}
-      <section className="testimonials">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>Client feedback</SectionLabel>
-              <h2>What our clients say.</h2>
-            </div>
-            <p className="section-intro">We work with homes, businesses, and institutions across Nairobi. Here is what some of our clients have shared.</p>
-          </div>
-          <div className="testimonial-grid">
-            {testimonials.map((t) => (
-              <div className="testimonial-card" key={t.client}>
-                <p className="testimonial-quote">{t.quote}</p>
-                <div className="testimonial-footer">
-                  <div className="testimonial-avatar">{t.initial}</div>
-                  <div>
-                    <div className="testimonial-name">{t.client}</div>
-                    <div className="testimonial-role">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust & Documentation */}
-      <section>
-        <div className="container split">
-          <div>
-            <SectionLabel>Trust & documentation</SectionLabel>
-            <h2>Professional security you can understand and verify.</h2>
-            <p className="section-intro" style={{marginTop:14}}>We make the work clear through survey notes, written scope, handover records, maintenance documentation, and incident reporting. Clients always know what was recommended, what was installed, and what action should follow.</p>
-            <div style={{display:'flex',flexWrap:'wrap',gap:12,marginTop:24}}>
-              <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Request Assessment</a>
-              <a className="btn btn-ghost" href="#process">View Process</a>
-            </div>
-          </div>
-          <div className="proof-list">
-            {proofDocs.map((doc) => <div className="proof-item" key={doc}>{doc}</div>)}
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="about-section">
-        <div className="container split">
-          <div className="about-image">
-            <img src={images.patrol} alt="Urban Eye Security guards on patrol" loading="lazy" />
-            <div className="about-caption">Guarding, patrol, and site support across Nairobi.</div>
-          </div>
-          <div>
-            <SectionLabel>About Urban Eye</SectionLabel>
-            <h2>Built to make security clear, modern, and reliable.</h2>
-            <p className="section-intro" style={{marginTop:14}}>Urban Eye Security was created for property owners and businesses that want more than basic guarding or standalone alarms. We believe security should not be guesswork.</p>
-            <p className="section-intro" style={{marginTop:14}}>Technology is powerful, but people and procedures still matter. That is why Urban Eye combines Ajax smart systems with trained personnel, clear instructions, reporting, and ongoing support.</p>
-            <div className="values">
-              <div className="value"><strong>Vigilance</strong><span>We notice what others miss.</span></div>
-              <div className="value"><strong>Professionalism</strong><span>We show up prepared and presentable.</span></div>
-              <div className="value"><strong>Accountability</strong><span>We document, report, and follow through.</span></div>
-              <div className="value"><strong>Integrity</strong><span>We recommend what your property truly needs.</span></div>
-              <div className="value"><strong>Innovation</strong><span>We use smart systems to improve protection.</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="contact">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <SectionLabel>Contact</SectionLabel>
-              <h2>Let's assess your security needs.</h2>
-            </div>
-            <p className="section-intro">Tell us about your property and we will recommend the best starting point. Not sure what you need? That is normal — we help you compare your options clearly.</p>
-          </div>
-          <div className="contact-box">
-            <div>
-              <div className="contact-method"><strong>WhatsApp</strong><span>{contact.whatsapp}</span></div>
-              <div className="contact-method"><strong>Phone</strong><span>{contact.phone}</span></div>
-              {/* PHASE 1 FIX: Updated email */}
-              <div className="contact-method"><strong>Email</strong><span>{contact.email}</span></div>
-              <div className="contact-method"><strong>Office</strong><span>{contact.location}</span></div>
-              <div className="contact-method"><strong>Business hours</strong><span>{contact.hours}</span></div>
-            </div>
-            <div className="contact-card">
-              <div className="form-grid">
-                <div><label>Full name</label><input placeholder="Your name" /></div>
-                <div><label>Phone number</label><input placeholder="+254..." /></div>
-                <div><label>Email address</label><input placeholder="name@email.com" /></div>
-                <div><label>Property type</label>
-                  <select>
-                    <option>Home</option><option>Apartment / estate</option><option>Office</option>
-                    <option>Shop</option><option>Warehouse</option><option>School / institution</option>
-                    <option>Clinic / healthcare facility</option><option>Construction site</option><option>Other</option>
-                  </select>
-                </div>
-                <div><label>Location</label><input placeholder="County, town, estate, or area" /></div>
-                <div><label>Service interest</label>
-                  <select>
-                    <option>Not sure yet</option><option>Manned guarding</option><option>CCTV</option>
-                    <option>Ajax alarm system</option><option>Access control</option>
-                    <option>Electric fence support</option><option>Full security package</option><option>Site survey</option>
-                  </select>
-                </div>
-                <div><label>Urgency</label>
-                  <select><option>This week</option><option>Immediate</option><option>This month</option><option>Planning ahead</option></select>
-                </div>
-                <div><label>Preferred contact</label>
-                  <select><option>WhatsApp</option><option>Phone call</option><option>Email</option></select>
-                </div>
-                <div className="full"><label>Message</label><textarea placeholder="Briefly describe your property, concerns, or what you want protected." /></div>
-                <div className="full">
-                  <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`} style={{width:'100%',justifyContent:'center'}}>
-                    Submit Inquiry on WhatsApp →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer>
-        <div className="container footer-grid">
-          <div>
-            <h4>Urban Eye Security</h4>
-            {/* PHASE 1 FIX: Consistent tagline */}
-            <p>Smart Protection. Human Response.</p>
-            <p>Modern integrated protection for homes, estates, offices, and businesses in Kenya.</p>
-            {/* PHASE 1 FIX: PSRA number in footer */}
-            <div className="footer-psra">🛡 PSRA Licensed — {contact.psra}</div>
-            <div className="footer-actions">
-              <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>Book a Site Survey</a>
-              <a className="btn btn-outline-white" href={`https://wa.me/${contact.whatsappRaw}`}>Chat on WhatsApp</a>
-            </div>
-          </div>
-          <div>
-            <h4>Services</h4>
-            <ul>
-              <li>Manned Guarding</li>
-              <li>CCTV Installation</li>
-              <li>Ajax Alarm Systems</li>
-              <li>Access Control</li>
-              <li>Electric Fence Support</li>
-              <li>Security Site Survey</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#about">About Urban Eye</a></li>
-              <li><a href="#process">How We Work</a></li>
-              <li><a href="#packages">Packages</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li>WhatsApp: {contact.whatsapp}</li>
-              <li>Phone: {contact.phone}</li>
-              {/* PHASE 1 FIX: Updated email */}
-              <li>Email: {contact.email}</li>
-              <li>{contact.location}</li>
-              <li>{contact.hours}</li>
-            </ul>
-          </div>
-        </div>
-        <div className="container footer-disclaimer">
-          <span>Final recommendations are confirmed after a site survey and agreed scope of work.</span>
-          <span>{contact.psra} — Private Security Regulatory Authority of Kenya</span>
-        </div>
-      </footer>
-
-      <div className="mobile-cta">
-        <a className="btn btn-primary" href={`https://wa.me/${contact.whatsappRaw}`}>
-          WhatsApp / Book Site Survey
-        </a>
+        <p class="section-intro">Many properties have guards, cameras, or alarms, but they are not connected by a clear protection plan. Urban Eye helps turn separate security pieces into one organized system.</p>
       </div>
-    </main>
-  );
-}
+      <div class="grid-3">
+        <div class="card"><h3>You do not know what triggered the alarm</h3><p>Most systems only alert you. They do not clearly show what happened or what action should follow.</p></div>
+        <div class="card"><h3>Your guard and technology are not connected</h3><p>CCTV, alarms, access control, and guarding should work together as one protection system.</p></div>
+        <div class="card"><h3>You only react after something goes wrong</h3><p>Good security should reduce risk before incidents happen, not only respond afterwards.</p></div>
+      </div>
+    </div>
+  </section>
 
-ReactDOM.createRoot(document.getElementById('root')).render(<UrbanEyeWebsite />);
-</script></body></html>
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Core Services</p>
+          <h2>Dedicated security solutions for high-intent searches.</h2>
+        </div>
+        <p class="section-intro">Each service has its own landing page with the problem, solution, process, benefit, FAQs, schema markup, and a short lead form.</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card service-card">
+          <div class="service-media"><img src="/urban-eye-assets/CCTV%20camera%20installed%20at%20a%20real%20property.png" alt="CCTV Installation"/></div>
+          <div class="service-body">
+            <h3>CCTV Installation</h3>
+            <p>CCTV camera planning and installation in Nairobi for homes, offices, shops, estates, and warehouses.</p>
+            <a class="text-link" href="/cctv-installation/">Get CCTV Recommendation →</a>
+          </div>
+        </article>
+        <article class="card service-card">
+          <div class="service-media"><img src="/urban-eye-assets/alarm%20system.webp" alt="Ajax Smart Alarms"/></div>
+          <div class="service-body">
+            <h3>Ajax Smart Alarms</h3>
+            <p>Wireless Ajax smart alarm systems in Kenya for intrusion detection, mobile alerts, and connected property protection.</p>
+            <a class="text-link" href="/ajax-smart-alarms/">Ask About Ajax Packages →</a>
+          </div>
+        </article>
+        <article class="card service-card">
+          <div class="service-media"><img src="/urban-eye-assets/patrol.png" alt="Manned Guarding"/></div>
+          <div class="service-body">
+            <h3>Manned Guarding</h3>
+            <p>Professional manned guarding services in Nairobi for estates, offices, warehouses, schools, and commercial sites.</p>
+            <a class="text-link" href="/manned-guarding/">Request Guarding Assessment →</a>
+          </div>
+        </article>
+        <article class="card service-card">
+          <div class="service-media"><img src="/urban-eye-assets/keypad.webp" alt="Access Control"/></div>
+          <div class="service-body">
+            <h3>Access Control</h3>
+            <p>Access control installation and entry management for Nairobi offices, estates, stores, clinics, and restricted areas.</p>
+            <a class="text-link" href="/access-control/">Plan Access Control →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries" class="light-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Who We Protect</p>
+          <h2>Industry-specific security pages for stronger local SEO.</h2>
+        </div>
+        <p class="section-intro">Urban Eye targets specific property needs, including residential homes, Airbnb hosts, warehouses, and retail storefronts.</p>
+      </div>
+      <div class="grid-4">
+        
+        <article class="card">
+          <h3>Residential Security</h3>
+          <p>Residential security solutions in Nairobi for private homes, townhouses, gated communities, and apartments.</p>
+          <a class="text-link" href="/residential-security/">Secure My Home →</a>
+        </article>
+        <article class="card">
+          <h3>Airbnb Security</h3>
+          <p>Airbnb and short-stay property security in Nairobi for guest confidence, emergency response, and property protection.</p>
+          <a class="text-link" href="/airbnb-security/">Improve Guest Security →</a>
+        </article>
+        <article class="card">
+          <h3>Warehouse Security</h3>
+          <p>Warehouse security in Kenya using guarding, CCTV, access control, perimeter review, and incident reporting.</p>
+          <a class="text-link" href="/warehouse-security/">Protect My Warehouse →</a>
+        </article>
+        <article class="card">
+          <h3>Retail Storefront Security</h3>
+          <p>Retail shop and storefront security in Nairobi using CCTV, alarms, access control, and practical incident guidance.</p>
+          <a class="text-link" href="/retail-storefronts/">Secure My Store →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container two-col">
+      <div>
+        <p class="section-label">Process</p>
+        <h2>From inquiry to documented support.</h2>
+        <p class="section-intro">Urban Eye uses a structured process so clients understand what was reviewed, what was recommended, and what action should follow.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-step"><div class="step-number">01</div><div><strong>Client Inquiry</strong><span>Tell us about your property, location, service interest, and urgency.</span></div></div>
+        <div class="process-step"><div class="step-number">02</div><div><strong>Site Survey</strong><span>We assess access points, blind spots, lighting, perimeter condition, and existing systems.</span></div></div>
+        <div class="process-step"><div class="step-number">03</div><div><strong>Risk Assessment</strong><span>We identify likely risks and match them with practical protection options.</span></div></div>
+        <div class="process-step"><div class="step-number">04</div><div><strong>Quotation & Deployment</strong><span>You receive a clear scope before installation, deployment, handover, and support.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="case-studies" class="light-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Trust & Social Proof</p>
+          <h2>Case studies structured for B2B confidence.</h2>
+        </div>
+        <p class="section-intro">Use this structure for every client story: The Challenge, The Intervention, and The Result.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>Likoni Connectors</h3><p><strong>Challenge:</strong> Unclear vulnerabilities and response gaps.<br/><strong>Intervention:</strong> Risk review and practical deployment plan.<br/><strong>Result:</strong> Clearer protection priorities and faster implementation.</p></div>
+        <div class="card"><h3>NAS Millers</h3><p><strong>Challenge:</strong> Warehouse and milling-site visibility concerns.<br/><strong>Intervention:</strong> Guarding and CCTV planning around site layout.<br/><strong>Result:</strong> More practical coverage and reporting structure.</p></div>
+        <div class="card"><h3>Reliance City Housing</h3><p><strong>Challenge:</strong> Multiple-site documentation and handover needs.<br/><strong>Intervention:</strong> Structured documentation and support process.<br/><strong>Result:</strong> Better continuity and professional handover records.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk-review">
+    <div class="container two-col">
+      <div>
+        <p class="section-label">Interactive Lead Capture</p>
+        <h2>Start with a short security risk review.</h2>
+        <p class="section-intro">This is a simpler first version of a quote calculator. It qualifies the client without overcomplicating the website.</p>
+      </div>
+      <div>
+        
+<form class="form-card" action="https://formspree.io/f/your-form-id" method="POST">
+  <h3 style="margin-top:0;color:var(--navy)">Get a security recommendation</h3>
+  <p style="color:var(--muted);line-height:1.65">Share a few details and Urban Eye will recommend the right next step.</p>
+  <input type="hidden" name="service_interest" value="homepage-risk-review"/>
+  <div class="form-grid">
+    <div>
+      <label for="name-homepage-risk-review">Name</label>
+      <input id="name-homepage-risk-review" name="name" placeholder="Your name" required/>
+    </div>
+    <div>
+      <label for="phone-homepage-risk-review">Phone / WhatsApp</label>
+      <input id="phone-homepage-risk-review" name="phone" placeholder="+254..." required/>
+    </div>
+    <div class="full">
+      <label for="property-homepage-risk-review">Property or service need</label>
+      <select id="property-homepage-risk-review" name="property_or_service" required>
+        <option value="">Select one</option>
+        <option>Home / Residential</option>
+        <option>Apartment / Estate</option>
+        <option>Office</option>
+        <option>Retail Shop</option>
+        <option>Warehouse</option>
+        <option>Airbnb / Short Stay</option>
+        <option>Construction Site</option>
+      </select>
+    </div>
+    <div class="full">
+      <button class="btn btn-primary" type="submit" style="width:100%">Start My Security Risk Review</button>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin:12px 0 0">Replace the Formspree action with your real form endpoint, or connect this form to your backend later.</p>
+</form>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="dark-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Let’s assess your security needs.</h2>
+        </div>
+        <p class="section-intro">WhatsApp +254 714 007 114 or call +254 768 055 555. You can also use the short form above to request a recommendation.</p>
+      </div>
+      <div class="cta-band">
+        <div>
+          <h2>Book a site survey before buying equipment.</h2>
+          <p>A site survey helps identify the right solution before money is spent on guards, alarms, cameras, or access control.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/254714007114">Book a Site Survey</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Urban Eye Security</h4>
+        <p>Integrated security for Nairobi homes, estates, offices, retail shops, warehouses, Airbnb properties, and institutions.</p>
+        <p><strong>Office:</strong> St. Ellis, Wabera Street, Nairobi CBD<br/><strong>Phone:</strong> +254 768 055 555<br/><strong>Email:</strong> info@urbaneyesecurity.co.ke</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/cctv-installation/">CCTV Installation</a></li>
+          <li><a href="/ajax-smart-alarms/">Ajax Smart Alarms</a></li>
+          <li><a href="/manned-guarding/">Manned Guarding</a></li>
+          <li><a href="/access-control/">Access Control</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Property Types</h4>
+        <ul>
+          <li><a href="/residential-security/">Residential Security</a></li>
+          <li><a href="/airbnb-security/">Airbnb Security</a></li>
+          <li><a href="/warehouse-security/">Warehouse Security</a></li>
+          <li><a href="/retail-storefronts/">Retail Storefronts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Action</h4>
+        <ul>
+          <li><a href="https://wa.me/254714007114">Book Site Survey</a></li>
+          <li><a href="/#risk-review">Start Risk Review</a></li>
+          <li><a href="/#contact">Request Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Urban Eye Security. All rights reserved.</span>
+      <span>Smart. Connected. Protected.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
