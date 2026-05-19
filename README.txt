@@ -1,33 +1,15 @@
-Urban Eye Security updated site
+Urban Eye Security update
 
-Changes included:
-- Formspree endpoint connected on all lead forms:
-  https://formspree.io/f/xkoegypv
-- WhatsApp links updated to:
-  +254 768 055 555
-- Includes latest improved pages where available:
-  CCTV Installation, Ajax Smart Alarms, Manned Guarding, Warehouse Security
-
-Important:
-Keep your existing urban-eye-assets folder in the project root.
-
-Final structure:
-urban-eye-vercel/
-  index.html
-  style.css
-  urban-eye-assets/
-  cctv-installation/
-  ajax-smart-alarms/
-  manned-guarding/
-  access-control/
-  residential-security/
-  airbnb-security/
-  warehouse-security/
-  retail-storefronts/
+Changes:
+- Added /security-packages/
+- Added /professional-monitoring/
+- Updated navbar links to include Packages and Monitoring
+- Added bridge CTAs before lead forms on service/industry pages
+- Added CSS for package cards and system bridge CTAs
+- Forms use https://formspree.io/f/xkoegypv
+- WhatsApp uses +254 768 055 555
 
 Deploy:
 git add .
-git commit -m "Connect forms to Formspree and update WhatsApp number"
+git commit -m "Add packages and monitoring hub pages with internal links"
 git push
-
-After first submission, Formspree may ask you to verify/confirm the receiving email in your Formspree account.

@@ -382,3 +382,17 @@ footer a:hover{color:#fff}
   html{scroll-behavior:auto}
   *,*:before,*:after{animation:none!important;transition:none!important}
 }
+
+/* Packages and monitoring hub additions */
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.package-card,.tier-card{display:flex;flex-direction:column;gap:12px}
+.package-card.featured,.tier-card.featured{border:2px solid rgba(196,39,46,.55);box-shadow:var(--shadow-strong)}
+.package-tag{display:inline-flex;align-self:flex-start;background:rgba(196,39,46,.10);color:var(--red);border:1px solid rgba(196,39,46,.20);border-radius:999px;padding:6px 10px;font:800 11px "Manrope",Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.best-for{color:var(--deep-navy);font-weight:800;font-size:13px}
+.package-list{margin:0;padding-left:18px;color:var(--muted);line-height:1.7;font-size:14.5px}
+.system-bridge{padding:40px 0;background:#fff}
+.system-bridge-card{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.system-bridge-card h3{margin:0 0 8px}
+.system-bridge-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.disclaimer-box{background:#eef2f7;border:1px solid var(--border);border-radius:16px;padding:24px;color:var(--muted);line-height:1.7}
+@media(max-width:900px){.package-grid{grid-template-columns:1fr}.system-bridge-card{grid-template-columns:1fr}.system-bridge-actions{justify-content:flex-start}}
