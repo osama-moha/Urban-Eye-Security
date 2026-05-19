@@ -1,6 +1,15 @@
-Urban Eye Security responsive navbar multi-page site
+Urban Eye Security updated site
 
-Copy all files and folders into your existing urban-eye-vercel project root.
+Changes included:
+- Formspree endpoint connected on all lead forms:
+  https://formspree.io/f/xkoegypv
+- WhatsApp links updated to:
+  +254 768 055 555
+- Includes latest improved pages where available:
+  CCTV Installation, Ajax Smart Alarms, Manned Guarding, Warehouse Security
+
+Important:
+Keep your existing urban-eye-assets folder in the project root.
 
 Final structure:
 urban-eye-vercel/
@@ -16,13 +25,9 @@ urban-eye-vercel/
   warehouse-security/
   retail-storefronts/
 
-Keep your existing urban-eye-assets folder. The website uses /urban-eye-assets/... image paths.
-
-Preview locally:
-python -m http.server 8000
-Open http://localhost:8000
-
 Deploy:
 git add .
-git commit -m "Add responsive premium navbar across all pages"
+git commit -m "Connect forms to Formspree and update WhatsApp number"
 git push
+
+After first submission, Formspree may ask you to verify/confirm the receiving email in your Formspree account.
