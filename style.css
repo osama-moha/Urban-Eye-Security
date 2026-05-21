@@ -498,7 +498,9 @@ footer a:hover{color:#fff}
     gap:16px;
   }
 }
-/* === Navbar architecture update: wordmark, dropdowns, active states === */
+
+/* === Final surgical navbar + Fire Alarm service-card update === */
+/* Wordmark-only navbar */
 .brand-wordmark-only{
   min-width:auto;
   gap:0;
@@ -524,6 +526,7 @@ footer a:hover{color:#fff}
   color:var(--red);
 }
 
+/* Services / Who We Serve dropdown */
 .nav-dropdown{
   position:relative;
   display:inline-flex;
@@ -584,6 +587,26 @@ footer a:hover{color:#fff}
   transform:scaleX(1);
 }
 
+/* Homepage service section: allow 5 service cards only on desktop */
+@media(min-width:1101px){
+  #services .grid-4{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+  }
+
+  #services .service-body{
+    padding:22px;
+  }
+
+  #services .service-body h3{
+    font-size:19px;
+  }
+
+  #services .service-body p{
+    font-size:14.5px;
+  }
+}
+
+/* Mobile dropdown behavior inside slide-out menu */
 @media(max-width:1100px){
   .brand-wordmark{
     font-size:16px;
@@ -630,7 +653,8 @@ footer a:hover{color:#fff}
     gap:4px;
   }
 }
-/* Fire alarm service updates */
+
+/* Commercial Fire Alarm page image/package styling only */
 .fire-image-panel{
   background:#080808;
 }
@@ -652,13 +676,6 @@ footer a:hover{color:#fff}
 
 .fire-package-card .package-price{
   font-size:28px;
-}
-
-/* Optional homepage service grid improvement when adding the 5th service card */
-@media(min-width:1101px){
-  #services .grid-4{
-    grid-template-columns:repeat(5,1fr);
-  }
 }
 
 @media(max-width:640px){
