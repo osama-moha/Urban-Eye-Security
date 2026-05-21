@@ -630,3 +630,43 @@ footer a:hover{color:#fff}
     gap:4px;
   }
 }
+/* Fire alarm service updates */
+.fire-image-panel{
+  background:#080808;
+}
+
+.fire-image-panel img{
+  object-fit:cover;
+  object-position:center;
+}
+
+.single-package-grid{
+  max-width:760px;
+  margin:0 auto;
+  grid-template-columns:1fr!important;
+}
+
+.fire-package-card{
+  padding:32px;
+}
+
+.fire-package-card .package-price{
+  font-size:28px;
+}
+
+/* Optional homepage service grid improvement when adding the 5th service card */
+@media(min-width:1101px){
+  #services .grid-4{
+    grid-template-columns:repeat(5,1fr);
+  }
+}
+
+@media(max-width:640px){
+  .fire-package-card{
+    padding:24px;
+  }
+
+  .fire-package-card .package-price{
+    font-size:24px;
+  }
+}
