@@ -974,3 +974,60 @@ body.menu-open .brand-wordmark-accent{
     transform:none!important;
   }
 }
+
+/* === First change: wider descriptive Services dropdown === */
+.nav-dropdown-menu-wide{
+  width:420px;
+  padding:14px;
+}
+
+.nav-dropdown-menu-wide a{
+  display:grid;
+  gap:4px;
+  padding:13px 14px;
+}
+
+.nav-dropdown-menu-wide a strong{
+  color:var(--deep-navy);
+  font:800 14px "Manrope",Arial,sans-serif;
+  letter-spacing:-.01em;
+}
+
+.nav-dropdown-menu-wide a span{
+  display:block;
+  color:var(--muted);
+  font:600 12.5px "Inter",Arial,sans-serif;
+  line-height:1.45;
+}
+
+.nav-dropdown-menu-wide a:hover strong{
+  color:var(--red);
+}
+
+@media(max-width:1100px){
+  .nav-dropdown-menu-wide{
+    width:100%;
+    padding:0;
+  }
+
+  .nav-dropdown-menu-wide a{
+    padding:10px 0;
+    gap:3px;
+  }
+
+  .nav-dropdown-menu-wide a strong{
+    color:#fff;
+    font-size:15px;
+  }
+
+  .nav-dropdown-menu-wide a span{
+    color:rgba(255,255,255,.68);
+    font-size:13px;
+    line-height:1.4;
+    max-width:320px;
+  }
+
+  .nav-dropdown-menu-wide a:hover strong{
+    color:#fff;
+  }
+}
