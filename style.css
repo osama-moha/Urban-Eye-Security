@@ -1052,7 +1052,7 @@ body.menu-open .brand-wordmark-accent{
   display:grid;
   grid-template-columns:.8fr 1.2fr;
   gap:32px;
-  padding:28px 0;
+  padding:22px 0;
   border-bottom:1px solid var(--border);
   align-items:start;
 }
@@ -1118,7 +1118,7 @@ body.menu-open .brand-wordmark-accent{
 }
 
 .solution-card-wide{
-  margin-top:28px;
+  margin-top:20px;
 }
 
 .solution-card-wide h3{
@@ -1241,4 +1241,12 @@ body.menu-open .brand-wordmark-accent{
   .solution-card-wide{
     margin-top:20px;
   }
+}
+
+.cctv-gap-section{
+  padding-bottom:40px;
+}
+
+.cctv-gap-section + section{
+  padding-top:48px;
 }
