@@ -788,6 +788,55 @@ body.menu-open .brand-wordmark-accent{
     scroll-margin-top:90px;
   }
 }
+/* Smart Alarm Systems page: Clean B2B feature layout */
+.b2b-feature-list{
+  border-top:1px solid var(--border);
+  margin-top:28px;
+}
+
+.b2b-feature-row{
+  display:grid;
+  grid-template-columns:0.8fr 1.2fr;
+  gap:32px;
+  padding:28px 0;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+}
+
+.b2b-feature-row h3{
+  margin:0;
+  color:var(--deep-navy);
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:-0.02em;
+}
+
+.b2b-feature-row p{
+  margin:0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.75;
+  max-width:720px;
+}
+
+.outcome-pricing-grid{
+  display:grid;
+  grid-template-columns:0.85fr 1.15fr;
+  gap:18px;
+  align-items:stretch;
+}
+
+@media(max-width:800px){
+  .b2b-feature-row,
+  .outcome-pricing-grid{
+    grid-template-columns:1fr;
+  }
+
+  .b2b-feature-row{
+    gap:10px;
+    padding:24px 0;
+  }
+}
 
 /* === Refinement pass: trust bar, full-bleed service rows, animations, hero blend, progress === */
 
