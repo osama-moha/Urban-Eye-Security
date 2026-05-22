@@ -728,6 +728,7 @@ body.menu-open .brand-wordmark-accent{color:var(--red)}
   .nav-whatsapp-icon,.nav-phone{display:none}
   #process{scroll-margin-top:90px}
 }
+
 /* === Global navbar consistency + service CTA fixes === */
 .nav-whatsapp-icon{
   display:inline-flex;
@@ -785,5 +786,191 @@ body.menu-open .brand-wordmark-accent{
 
   #process{
     scroll-margin-top:90px;
+  }
+}
+
+/* === Refinement pass: trust bar, full-bleed service rows, animations, hero blend, progress === */
+
+/* Full-width service rows: image/background bleed edge to edge while text remains readable */
+.services-rows-section{
+  padding-left:0;
+  padding-right:0;
+  overflow:hidden;
+}
+
+.services-rows-section > .container{
+  max-width:none;
+  width:100%;
+  padding-left:0;
+  padding-right:0;
+}
+
+.services-rows-section .section-head{
+  max-width:1180px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:24px;
+  padding-right:24px;
+}
+
+.service-rows{
+  width:100%;
+}
+
+.service-row{
+  border-left:0;
+  border-right:0;
+  border-radius:0;
+  box-shadow:none;
+  margin:0;
+  min-height:460px;
+}
+
+.service-row + .service-row{
+  border-top:0;
+}
+
+.service-row-copy{
+  max-width:620px;
+}
+
+.service-row:not(.service-row-reverse) .service-row-copy{
+  margin-right:auto;
+}
+
+.service-row-reverse .service-row-copy{
+  margin-left:auto;
+}
+
+/* Softer hero blend and better guard crop */
+.hero-photo::before{
+  background:linear-gradient(90deg,
+    rgba(13,20,48,.99) 0%,
+    rgba(13,20,48,.94) 18%,
+    rgba(13,20,48,.78) 38%,
+    rgba(13,20,48,.48) 58%,
+    rgba(13,20,48,.18) 78%,
+    rgba(13,20,48,.04) 100%
+  )!important;
+}
+
+.hero-photo img{
+  object-position:58% center;
+  transform:scale(1.04);
+  will-change:transform;
+}
+
+/* Scroll animation specs */
+.reveal-fade,
+.reveal-slide{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity 400ms cubic-bezier(0.4,0,0.2,1),
+    transform 400ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal-slide .service-row-media{
+  transform:translateX(-28px);
+  transition:transform 400ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal-slide .service-row-copy{
+  transform:translateX(28px);
+  transition:transform 400ms cubic-bezier(0.4,0,0.2,1);
+}
+
+.service-row-reverse.reveal-slide .service-row-media{
+  transform:translateX(28px);
+}
+
+.service-row-reverse.reveal-slide .service-row-copy{
+  transform:translateX(-28px);
+}
+
+.reveal-fade.is-visible,
+.reveal-slide.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.reveal-slide.is-visible .service-row-media,
+.reveal-slide.is-visible .service-row-copy{
+  transform:translateX(0);
+}
+
+/* Scroll progress bar: only appears on pages where HTML includes .page-progress */
+.page-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  z-index:9999;
+  background:transparent;
+}
+
+.page-progress-bar{
+  display:block;
+  width:0%;
+  height:100%;
+  background:var(--red);
+  transition:width 80ms linear;
+}
+
+/* Process anchor offset */
+#process{
+  scroll-margin-top:110px;
+}
+
+/* Mobile */
+@media(max-width:767px){
+  .hero-photo img{
+    transform:none!important;
+    object-position:center center;
+  }
+
+  .service-row-media{
+    min-height:260px;
+    height:260px;
+  }
+
+  .service-row-copy{
+    max-width:none;
+  }
+
+  .reveal-fade,
+  .reveal-slide,
+  .reveal-slide .service-row-media,
+  .reveal-slide .service-row-copy,
+  .service-row-reverse.reveal-slide .service-row-media,
+  .service-row-reverse.reveal-slide .service-row-copy{
+    transform:translateY(18px);
+  }
+
+  .reveal-fade.is-visible,
+  .reveal-slide.is-visible,
+  .reveal-slide.is-visible .service-row-media,
+  .reveal-slide.is-visible .service-row-copy{
+    transform:translateY(0);
+  }
+
+  #process{
+    scroll-margin-top:90px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal-fade,
+  .reveal-slide,
+  .reveal-slide .service-row-media,
+  .reveal-slide .service-row-copy{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+
+  .hero-photo img{
+    transform:none!important;
   }
 }
