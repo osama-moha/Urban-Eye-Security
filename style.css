@@ -687,3 +687,103 @@ footer a:hover{color:#fff}
     font-size:24px;
   }
 }
+
+/* === Hero, CTA architecture, services rows, and contact page update === */
+html{scroll-behavior:smooth}
+#process{scroll-margin-top:110px}
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,rgba(13,20,48,.98) 0%,rgba(13,20,48,.86) 22%,rgba(13,20,48,.58) 46%,rgba(13,20,48,.22) 68%,rgba(13,20,48,.06) 100%);
+  pointer-events:none;
+}
+.hero-photo img{object-position:center center}
+.hero-caption{z-index:2}
+.nav-whatsapp-icon{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:12px;color:#128C7E;background:#fff;font-size:18px}
+.form-whatsapp-link,.cta-whatsapp-link,.service-monitoring-link{display:inline-flex;margin-top:12px;color:var(--red);font-weight:800;line-height:1.4}
+.form-whatsapp-link:hover,.cta-whatsapp-link:hover,.service-monitoring-link:hover{text-decoration:underline}
+.services-rows-section{background:#fff}
+.service-rows{display:grid;gap:26px}
+.service-row{display:grid;grid-template-columns:1fr 1fr;min-height:420px;overflow:hidden;border:1px solid var(--border);border-radius:24px;background:#fff;box-shadow:var(--shadow-soft)}
+.service-row-reverse .service-row-media{order:2}
+.service-row-reverse .service-row-copy{order:1}
+.service-row-media{min-height:360px;background:#eef2f7}
+.service-row-media img{width:100%;height:100%;object-fit:cover;display:block}
+.service-row-copy{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.service-row-copy h3{margin:0 0 14px;color:var(--deep-navy);font-size:clamp(28px,3.3vw,44px);line-height:1.05;letter-spacing:-.045em}
+.service-row-copy p{color:var(--muted);font-size:16.5px;line-height:1.75;margin:0 0 18px}
+.contact-direct-card{margin-top:24px}
+.contact-hero{min-height:auto}
+body.menu-open .brand-wordmark-main{color:#fff}
+body.menu-open .brand-wordmark-accent{color:var(--red)}
+@media(max-width:900px){
+  .service-row,.service-row-reverse{grid-template-columns:1fr}
+  .service-row-reverse .service-row-media,.service-row-reverse .service-row-copy{order:initial}
+  .service-row-media{min-height:260px}
+  .service-row-copy{padding:28px}
+}
+@media(max-width:760px){
+  .nav-whatsapp-icon,.nav-phone{display:none}
+  #process{scroll-margin-top:90px}
+}
+/* === Global navbar consistency + service CTA fixes === */
+.nav-whatsapp-icon{
+  display:inline-flex;
+  width:44px;
+  height:44px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:#128C7E;
+  background:#fff;
+  font-size:18px;
+}
+
+body.menu-open .brand-wordmark-main{
+  color:#fff;
+}
+
+body.menu-open .brand-wordmark-accent{
+  color:var(--red);
+}
+
+.system-bridge-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+}
+
+.form-whatsapp-link,
+.cta-whatsapp-link,
+.service-monitoring-link{
+  display:inline-flex;
+  margin-top:12px;
+  color:var(--red);
+  font-weight:800;
+  line-height:1.4;
+}
+
+.form-whatsapp-link:hover,
+.cta-whatsapp-link:hover,
+.service-monitoring-link:hover{
+  text-decoration:underline;
+}
+
+#process{
+  scroll-margin-top:110px;
+}
+
+@media(max-width:760px){
+  .nav-whatsapp-icon,
+  .nav-phone{
+    display:none;
+  }
+
+  #process{
+    scroll-margin-top:90px;
+  }
+}

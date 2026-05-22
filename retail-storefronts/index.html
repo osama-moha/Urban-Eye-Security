@@ -12,6 +12,8 @@
 <meta property="og:url" content="https://urbaneyesecurity.co.ke/retail-storefronts/"/>
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/retail.png"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
+<link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
+<link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
 <link rel="stylesheet" href="/style.css"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
@@ -26,34 +28,61 @@
 <body>
 <header class="topbar" id="header">
   <div class="container nav">
-    <a class="brand" href="/" aria-label="Urban Eye Security home">
-      <span class="brand-mark"><img src="/urban-eye-assets/Icon-only%20version.png" alt="Urban Eye Security logo"/></span>
-      <span class="brand-name">Urban Eye Security<small>Smart Protection. Human Response.</small></span>
+    <a class="brand brand-wordmark-only" href="/" aria-label="Urban Eye Security home">
+      <span class="brand-wordmark"><span class="brand-wordmark-main">URBAN EYE</span><span class="brand-wordmark-accent">SECURITY</span></span>
     </a>
+
     <div class="nav-menu" id="nav-menu">
       <nav class="nav-links" aria-label="Main navigation">
-        <a class="nav-link" href="/#services"><i class="ri-arrow-right-up-line"></i><span>Services</span></a>
-        <a class="nav-link" href="/security-packages/"><i class="ri-arrow-right-up-line"></i><span>Packages</span></a>
-        <a class="nav-link" href="/professional-monitoring/"><i class="ri-arrow-right-up-line"></i><span>Monitoring</span></a>
-        <a class="nav-link" href="/#industries"><i class="ri-arrow-right-up-line"></i><span>Who We Protect</span></a>
-        <a class="nav-link" href="/#process"><i class="ri-arrow-right-up-line"></i><span>Process</span></a>
-        <a class="nav-link" href="/#contact"><i class="ri-arrow-right-up-line"></i><span>Contact</span></a>
+        <a class="nav-link" href="/" data-nav-section="home"><i class="ri-arrow-right-up-line"></i><span>Home</span></a>
+
+        <div class="nav-dropdown">
+          <a class="nav-link nav-parent" href="/#services" data-nav-section="services"><i class="ri-arrow-right-up-line"></i><span>Services</span></a>
+          <div class="nav-dropdown-menu" aria-label="Services submenu">
+            <a href="/manned-guarding/">Manned Guarding</a>
+            <a href="/ajax-smart-alarms/">Ajax Smart Alarms</a>
+            <a href="/cctv-installation/">CCTV Installation</a>
+            <a href="/access-control/">Access Control</a>
+            <a href="/commercial-fire-alarm-systems/">Fire Alarm Systems</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="/security-packages/" data-nav-section="packages"><i class="ri-arrow-right-up-line"></i><span>Packages</span></a>
+
+        <div class="nav-dropdown">
+          <a class="nav-link nav-parent" href="/#industries" data-nav-section="serve"><i class="ri-arrow-right-up-line"></i><span>Who We Serve</span></a>
+          <div class="nav-dropdown-menu" aria-label="Who we serve submenu">
+            <a href="/residential-security/">Residential</a>
+            <a href="/retail-storefronts/">Retail</a>
+            <a href="/warehouse-security/">Warehouses</a>
+            <a href="/airbnb-security/">Airbnb & Short-Stay</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="/#about" data-nav-section="about"><i class="ri-arrow-right-up-line"></i><span>About</span></a>
+        <a class="nav-link" href="/contact/" data-nav-section="contact"><i class="ri-arrow-right-up-line"></i><span>Contact</span></a>
       </nav>
+
       <div class="nav-mobile-actions">
-        <a class="btn btn-primary" href="https://wa.me/254768055555">Book a Site Survey</a>
-        <a class="btn btn-outline-white" href="tel:+254768055555">Call +254 768 055 555</a>
+        <a class="btn btn-primary" href="/contact/">Book a Site Survey</a>
+        <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
       </div>
+
       <div class="nav-social">
         <a href="https://wa.me/254768055555" target="_blank" class="nav-social-link" aria-label="WhatsApp Urban Eye Security"><i class="ri-whatsapp-line"></i></a>
         <a href="tel:+254768055555" class="nav-social-link" aria-label="Call Urban Eye Security"><i class="ri-phone-line"></i></a>
         <a href="mailto:info@urbaneyesecurity.co.ke" class="nav-social-link" aria-label="Email Urban Eye Security"><i class="ri-mail-line"></i></a>
       </div>
+
       <button class="nav-close" id="nav-close" aria-label="Close menu"><i class="ri-close-large-line"></i></button>
     </div>
+
     <div class="nav-actions">
+      <a class="nav-whatsapp-icon" href="https://wa.me/254768055555" aria-label="Chat on WhatsApp"><i class="ri-whatsapp-line"></i></a>
       <a class="nav-phone" href="tel:+254768055555"><i class="ri-phone-line"></i>+254 768 055 555</a>
-      <a class="btn btn-primary" href="https://wa.me/254768055555">Book a Site Survey</a>
+      <a class="btn btn-primary" href="/contact/">Book a Site Survey</a>
     </div>
+
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu"><i class="ri-menu-line"></i></button>
   </div>
 </header>
@@ -212,13 +241,28 @@
   </section>
 </main>
 
+<section class="dark-section">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Ready to assess your property?</h2>
+        <p>Book a site survey or chat with Urban Eye instantly on WhatsApp.</p>
+      </div>
+      <div class="system-bridge-actions">
+        <a class="btn btn-primary" href="/contact/">Book a Site Survey</a>
+        <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div><h4>Urban Eye Security</h4><p>Integrated security for Nairobi homes, estates, offices, retail shops, warehouses, Airbnb properties, and institutions.</p><p><strong>Office:</strong> St. Ellis, Wabera Street, Nairobi CBD<br><strong>Phone:</strong> +254 768 055 555<br><strong>Email:</strong> info@urbaneyesecurity.co.ke</p></div>
       <div><h4>Services</h4><ul><li><a href="/cctv-installation/">CCTV Installation</a></li><li><a href="/ajax-smart-alarms/">Ajax Smart Alarms</a></li><li><a href="/manned-guarding/">Manned Guarding</a></li><li><a href="/access-control/">Access Control</a></li></ul></div>
       <div><h4>Property Types</h4><ul><li><a href="/residential-security/">Residential Security</a></li><li><a href="/airbnb-security/">Airbnb Security</a></li><li><a href="/warehouse-security/">Warehouse Security</a></li><li><a href="/retail-storefronts/">Retail Storefront Security</a></li></ul></div>
-      <div><h4>Quick Action</h4><ul><li><a href="https://wa.me/254768055555">Book Site Survey</a></li><li><a href="#lead-form">Secure My Store</a></li><li><a href="/#contact">Contact Urban Eye</a></li></ul></div>
+      <div><h4>Quick Action</h4><ul><li><a href="https://wa.me/254768055555">Book Site Survey</a></li><li><a href="#lead-form">Secure My Store</a></li><li><a href="/contact/">Contact Urban Eye</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 Urban Eye Security. All rights reserved.</span><span>Smart. Connected. Protected.</span></div>
   </div>
@@ -227,12 +271,41 @@
   const navMenu = document.getElementById("nav-menu");
   const navToggle = document.getElementById("nav-toggle");
   const navClose = document.getElementById("nav-close");
-  function openMenu(){if(!navMenu)return;navMenu.classList.add("show-menu");document.body.classList.add("menu-open");}
-  function closeMenu(){if(!navMenu)return;navMenu.classList.remove("show-menu");document.body.classList.remove("menu-open");}
-  if(navToggle)navToggle.addEventListener("click",openMenu);
-  if(navClose)navClose.addEventListener("click",closeMenu);
-  document.querySelectorAll(".nav-link").forEach((link)=>{link.addEventListener("click",closeMenu);});
-  document.addEventListener("keydown",(event)=>{if(event.key==="Escape")closeMenu();});
+
+  function openMenu(){ if(!navMenu) return; navMenu.classList.add("show-menu"); document.body.classList.add("menu-open"); }
+  function closeMenu(){ if(!navMenu) return; navMenu.classList.remove("show-menu"); document.body.classList.remove("menu-open"); }
+
+  if(navToggle) navToggle.addEventListener("click", openMenu);
+  if(navClose) navClose.addEventListener("click", closeMenu);
+
+  document.querySelectorAll(".nav-link, .nav-dropdown-menu a").forEach((link)=>{ link.addEventListener("click", closeMenu); });
+  document.addEventListener("keydown",(event)=>{ if(event.key==="Escape") closeMenu(); });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
+    anchor.addEventListener("click", function(event){
+      const target = document.querySelector(this.getAttribute("href"));
+      if(!target) return;
+      event.preventDefault();
+      target.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  });
+
+  (function setActiveNav(){
+    const path = window.location.pathname;
+    const servicePages = ["/manned-guarding/","/ajax-smart-alarms/","/cctv-installation/","/access-control/","/commercial-fire-alarm-systems/","/electric-fencing/"];
+    const servePages = ["/residential-security/","/retail-storefronts/","/warehouse-security/","/airbnb-security/"];
+    let activeSection = "";
+
+    if(path === "/" || path === "/index.html") activeSection = "home";
+    else if(servicePages.includes(path) || path === "/professional-monitoring/") activeSection = "services";
+    else if(servePages.includes(path)) activeSection = "serve";
+    else if(path === "/security-packages/") activeSection = "packages";
+    else if(path === "/contact/") activeSection = "contact";
+
+    if(!activeSection) return;
+    const activeLink = document.querySelector(`[data-nav-section="${activeSection}"]`);
+    if(activeLink) activeLink.classList.add("is-active");
+  })();
 </script>
 </body>
 </html>
