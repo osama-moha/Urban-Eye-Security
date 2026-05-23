@@ -1612,6 +1612,8 @@ footer a:hover{
   display:block;
   object-fit:cover;
   object-position:center;
+  filter:blur(1.1px) brightness(1.04) contrast(1.03);
+  transform:scale(1.018);
 }
 
 .cctv-gap-section{
