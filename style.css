@@ -2699,6 +2699,69 @@ footer a:hover{
   white-space:nowrap;
 }
 
+.proof-insight-section{
+  background:#F5F7FA;
+}
+
+.proof-insight-block{
+  max-width:880px;
+  margin:0 0 30px;
+  padding:0 0 26px;
+  border-bottom:1px solid var(--border);
+}
+
+.proof-insight-block p{
+  margin:0;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.75;
+}
+
+.proof-table{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 18px 45px rgba(15,23,42,.06);
+}
+
+.proof-table-row{
+  display:grid;
+  grid-template-columns:1fr 1.2fr 1.2fr 1.25fr;
+  gap:24px;
+  padding:24px 26px;
+  border-bottom:1px solid var(--border);
+  color:var(--muted);
+  font-size:15.5px;
+  line-height:1.6;
+}
+
+.proof-table-row:last-child{
+  border-bottom:0;
+}
+
+.proof-table-head{
+  background:#0D1430;
+  color:#fff;
+  font:900 12px "Manrope",Arial,sans-serif;
+  letter-spacing:0;
+  text-transform:uppercase;
+}
+
+.proof-table-row strong{
+  display:block;
+  color:var(--deep-navy);
+  font-size:18px;
+  margin-bottom:6px;
+}
+
+.proof-table-row span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
 .center-actions{
   display:flex;
   justify-content:center;
@@ -2715,14 +2778,45 @@ footer a:hover{
 .trust-micro-strip span{
   display:inline-flex;
   align-items:center;
-  min-height:38px;
-  padding:9px 14px;
+  padding:10px 14px;
   border-radius:999px;
   background:#fff;
   border:1px solid var(--border);
   color:var(--deep-navy);
   font-weight:900;
-  font-size:12px;
+  font-size:13px;
+}
+
+@media(max-width:1000px){
+  .proof-table-head{
+    display:none;
+  }
+
+  .proof-table-row{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:24px;
+  }
+
+  .proof-table-row:not(.proof-table-head) > div{
+    padding-bottom:12px;
+    border-bottom:1px solid rgba(15,23,42,.08);
+  }
+
+  .proof-table-row:not(.proof-table-head) > div::before{
+    content:attr(data-label);
+    display:block;
+    margin-bottom:6px;
+    color:var(--red);
+    font:900 11px "Manrope",Arial,sans-serif;
+    letter-spacing:0;
+    text-transform:uppercase;
+  }
+
+  .proof-table-row:not(.proof-table-head) > div:last-child{
+    padding-bottom:0;
+    border-bottom:0;
+  }
 }
 
 @media(max-width:900px){
