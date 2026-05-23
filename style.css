@@ -3390,3 +3390,316 @@ footer a:hover{
     padding:64px 0;
   }
 }
+
+/* === Electric Fence & Perimeter Security Page === */
+
+.perimeter-hero .two-col{
+  align-items:center;
+}
+
+.perimeter-hero-media{
+  border-radius:24px;
+  overflow:hidden;
+  min-height:380px;
+  background:#EEF2F7;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 24px 60px rgba(0,0,0,.24);
+}
+
+.perimeter-hero-media img{
+  width:100%;
+  height:100%;
+  min-height:380px;
+  object-fit:cover;
+  object-position:center center;
+}
+
+.perimeter-gap-section .two-col{
+  align-items:stretch;
+}
+
+.perimeter-integrations-section{
+  padding:86px 0 0;
+  background:#fff;
+  overflow:hidden;
+}
+
+.perimeter-integrations-section .section-head{
+  margin-bottom:44px;
+}
+
+.perimeter-integration-rows{
+  display:grid;
+  gap:0;
+  width:100%;
+}
+
+.perimeter-integration-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:380px;
+  border-top:1px solid var(--border);
+  background:#fff;
+  overflow:hidden;
+}
+
+.perimeter-integration-row:nth-child(even){
+  background:#F5F7FA;
+}
+
+.perimeter-integration-row:last-child{
+  border-bottom:1px solid var(--border);
+}
+
+.perimeter-integration-row-reverse .perimeter-integration-copy{
+  order:2;
+}
+
+.perimeter-integration-row-reverse .perimeter-integration-media{
+  order:1;
+}
+
+.perimeter-integration-copy{
+  max-width:620px;
+  padding:48px 64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.perimeter-integration-row:not(.perimeter-integration-row-reverse) .perimeter-integration-copy{
+  margin-left:auto;
+}
+
+.perimeter-integration-row-reverse .perimeter-integration-copy{
+  margin-right:auto;
+}
+
+.perimeter-integration-copy h3{
+  margin:0 0 16px;
+  color:var(--deep-navy);
+  font-size:clamp(28px,3vw,42px);
+  line-height:1.08;
+  letter-spacing:0;
+}
+
+.perimeter-integration-copy p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+  margin:0 0 16px;
+}
+
+.perimeter-integration-media{
+  height:380px;
+  min-height:380px;
+  background:#EEF2F7;
+  overflow:hidden;
+}
+
+.perimeter-integration-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+.perimeter-panel-dark{
+  display:grid;
+  place-items:center;
+  padding:40px;
+  background:
+    linear-gradient(135deg,rgba(196,39,46,.18),rgba(13,20,48,.94)),
+    var(--deep-navy);
+  color:#fff;
+}
+
+.perimeter-panel-light{
+  display:grid;
+  place-items:center;
+  padding:40px;
+  background:
+    linear-gradient(135deg,rgba(245,247,250,.96),rgba(230,234,242,.96));
+  color:var(--deep-navy);
+}
+
+.perimeter-panel-dark span,
+.perimeter-panel-light span{
+  display:inline-flex;
+  margin-bottom:18px;
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.perimeter-panel-dark span{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+}
+
+.perimeter-panel-light span{
+  background:rgba(196,39,46,.08);
+  border:1px solid rgba(196,39,46,.18);
+  color:var(--red);
+}
+
+.perimeter-panel-dark h3,
+.perimeter-panel-light h3{
+  margin:0 0 10px;
+  font-size:clamp(30px,3vw,46px);
+  line-height:1.05;
+}
+
+.perimeter-panel-dark h3{
+  color:#fff;
+}
+
+.perimeter-panel-light h3{
+  color:var(--deep-navy);
+}
+
+.perimeter-panel-dark p{
+  margin:0;
+  color:rgba(255,255,255,.76);
+  font-weight:700;
+}
+
+.perimeter-panel-light p{
+  margin:0;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.perimeter-pricing-section{
+  padding-top:82px;
+  padding-bottom:82px;
+}
+
+.perimeter-pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.perimeter-pricing-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
+  padding:30px;
+}
+
+.perimeter-pricing-card h3{
+  margin:0;
+  color:var(--deep-navy);
+  font-size:clamp(24px,2.4vw,34px);
+  line-height:1.08;
+  letter-spacing:0;
+}
+
+.perimeter-pricing-card .package-price{
+  color:var(--deep-navy);
+  font-weight:900;
+  font-size:20px;
+}
+
+.perimeter-pricing-card p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.perimeter-pricing-card .btn{
+  margin-top:auto;
+}
+
+.perimeter-pricing-card.featured{
+  border:2px solid rgba(196,39,46,.55);
+  box-shadow:0 18px 50px rgba(196,39,46,.12);
+}
+
+.perimeter-monitoring-section .card{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.14);
+}
+
+.perimeter-monitoring-section .card h3{
+  color:#fff;
+}
+
+.perimeter-monitoring-section .card p{
+  color:rgba(255,255,255,.74);
+}
+
+.perimeter-monitoring-section .text-link{
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .perimeter-hero-media,
+  .perimeter-hero-media img{
+    min-height:280px;
+  }
+
+  .perimeter-integration-row,
+  .perimeter-integration-row-reverse{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+
+  .perimeter-integration-row-reverse .perimeter-integration-copy,
+  .perimeter-integration-row-reverse .perimeter-integration-media{
+    order:initial;
+  }
+
+  .perimeter-integration-media{
+    height:260px;
+    min-height:260px;
+  }
+
+  .perimeter-integration-copy{
+    max-width:none;
+    padding:34px 32px;
+    margin:0!important;
+  }
+
+  .perimeter-pricing-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:640px){
+  .perimeter-integrations-section{
+    padding-top:64px;
+  }
+
+  .perimeter-hero-media,
+  .perimeter-hero-media img{
+    min-height:240px;
+  }
+
+  .perimeter-integration-media{
+    height:230px;
+    min-height:230px;
+  }
+
+  .perimeter-integration-copy{
+    padding:30px 24px;
+  }
+
+  .perimeter-integration-copy h3{
+    font-size:clamp(26px,8.5vw,36px);
+  }
+
+  .perimeter-integration-copy p{
+    font-size:15.5px;
+  }
+
+  .perimeter-pricing-section{
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+}
