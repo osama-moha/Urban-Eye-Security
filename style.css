@@ -3156,3 +3156,151 @@ footer a:hover{
     font-size:15.5px;
   }
 }
+
+/* === Construction page refinement === */
+
+.construction-hero{
+  padding:64px 0 72px;
+}
+
+.construction-hero .two-col{
+  gap:56px;
+}
+
+.construction-hero h1{
+  max-width:620px;
+}
+
+.construction-hero p{
+  max-width:650px;
+}
+
+.construction-hero-media{
+  min-height:340px;
+  border-radius:22px;
+}
+
+.construction-hero-media img{
+  min-height:340px;
+  filter:brightness(1.16) contrast(1.05);
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Reduce excess space between hero and next section */
+.construction-gap-section{
+  padding-top:72px;
+  padding-bottom:72px;
+}
+
+/* Make construction integration rows more compact */
+.construction-integrations-section{
+  padding-top:74px;
+}
+
+.construction-integration-row{
+  min-height:340px;
+}
+
+.construction-integration-media{
+  height:340px;
+  min-height:340px;
+}
+
+.construction-integration-copy{
+  padding:40px 58px;
+}
+
+.construction-integration-copy h3{
+  font-size:clamp(26px,2.8vw,38px);
+}
+
+.construction-integration-copy p{
+  font-size:15.8px;
+  line-height:1.65;
+}
+
+/* Tighten the dark monitoring section */
+.construction-monitoring-section{
+  padding-top:72px;
+  padding-bottom:72px;
+}
+
+.construction-monitoring-section .two-col{
+  align-items:center;
+}
+
+/* Tighten pricing anchor spacing */
+#active-site-framework{
+  padding-top:72px;
+  padding-bottom:72px;
+}
+
+.construction-framework-card{
+  padding:26px;
+}
+
+/* Improve final CTA spacing */
+.construction-site-security-page .cta-band,
+.construction-hero + .light-section .cta-band{
+  margin-top:0;
+}
+
+/* Mobile refinements */
+@media(max-width:900px){
+  .construction-hero{
+    padding:52px 0 58px;
+  }
+
+  .construction-hero .two-col{
+    gap:30px;
+  }
+
+  .construction-hero-media,
+  .construction-hero-media img{
+    min-height:260px;
+  }
+
+  .construction-gap-section{
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+
+  .construction-integrations-section{
+    padding-top:58px;
+  }
+
+  .construction-integration-media{
+    height:240px;
+    min-height:240px;
+  }
+
+  .construction-integration-copy{
+    padding:30px 28px;
+  }
+
+  .construction-monitoring-section{
+    padding-top:58px;
+    padding-bottom:58px;
+  }
+}
+
+@media(max-width:640px){
+  .construction-hero-media,
+  .construction-hero-media img{
+    min-height:230px;
+  }
+
+  .construction-integration-media{
+    height:220px;
+    min-height:220px;
+  }
+
+  .construction-integration-copy{
+    padding:28px 24px;
+  }
+
+  .construction-integration-copy h3{
+    font-size:clamp(25px,8vw,34px);
+  }
+}
