@@ -2404,7 +2404,7 @@ footer a:hover{
   }
 }
 
-/* === Homepage Services & Sectors full-width rows === */
+/* === Homepage Who We Serve full-width rows === */
 
 .sector-rows-section{
   padding:72px 0 0;
@@ -2535,6 +2535,67 @@ footer a:hover{
   margin:0;
   color:rgba(255,255,255,.76);
   font-weight:700;
+}
+
+.property-link-strip{
+  background:#F5F7FA;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.property-link-strip-inner{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px 16px;
+  padding:18px 0;
+}
+
+.property-link-strip span{
+  color:var(--deep-navy);
+  font-weight:900;
+  font-size:13px;
+}
+
+.property-link-strip a{
+  color:var(--muted);
+  font-weight:800;
+  font-size:13px;
+}
+
+.property-link-strip a:hover{
+  color:var(--red);
+}
+
+.featured-card{
+  border:2px solid rgba(196,39,46,.55);
+  box-shadow:0 18px 50px rgba(196,39,46,.12);
+}
+
+.center-actions{
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.trust-micro-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px;
+}
+
+.trust-micro-strip span{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--border);
+  color:var(--deep-navy);
+  font-weight:900;
+  font-size:12px;
 }
 
 @media(max-width:900px){
