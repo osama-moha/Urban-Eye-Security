@@ -84,7 +84,8 @@ function setActiveNav(){
     "/retail-storefronts/",
     "/warehouse-security/",
     "/airbnb-security/",
-    "/office-security/"
+    "/office-security/",
+    "/construction-site-security/"
   ];
 
   let activeSection = "";
