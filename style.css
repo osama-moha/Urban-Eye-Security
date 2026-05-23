@@ -3304,3 +3304,89 @@ footer a:hover{
     font-size:clamp(25px,8vw,34px);
   }
 }
+
+/* === Construction CSP update === */
+
+.construction-compliance-section{
+  padding-top:76px;
+  padding-bottom:76px;
+}
+
+.construction-log-list{
+  display:grid;
+  gap:10px;
+  margin:14px 0 18px;
+  padding:0;
+  list-style:none;
+}
+
+.construction-log-list li{
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:var(--deep-navy);
+  font-weight:800;
+  background:#F8FAFC;
+}
+
+.construction-pricing-section{
+  padding:82px 0;
+  background:#fff;
+}
+
+.construction-pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.construction-pricing-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:14px;
+  padding:30px;
+}
+
+.construction-pricing-card h3{
+  margin:0;
+  color:var(--deep-navy);
+  font-size:clamp(24px,2.4vw,34px);
+  line-height:1.08;
+  letter-spacing:0;
+}
+
+.construction-pricing-card .package-price{
+  color:var(--deep-navy);
+  font-weight:900;
+  font-size:20px;
+}
+
+.construction-pricing-card p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.construction-pricing-card .btn{
+  margin-top:auto;
+}
+
+.construction-pricing-card.featured{
+  border:2px solid rgba(196,39,46,.55);
+  box-shadow:0 18px 50px rgba(196,39,46,.12);
+}
+
+@media(max-width:900px){
+  .construction-pricing-grid{
+    grid-template-columns:1fr;
+  }
+
+  .construction-compliance-section{
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+
+  .construction-pricing-section{
+    padding:64px 0;
+  }
+}
