@@ -462,9 +462,53 @@
       text-decoration:underline;
     }
 
+    .packages-page .package-grid-wide{
+      margin-top:22px;
+    }
+
+    .packages-page .package-panel{
+      border:1px solid var(--border);
+      background:#fff;
+      padding:34px 32px;
+    }
+
+    .packages-page .package-panel-wide{
+      display:grid;
+      grid-template-columns:.9fr 1.2fr .75fr;
+      gap:34px;
+      align-items:start;
+      border-left:4px solid var(--red);
+    }
+
+    .packages-page .package-panel h3{
+      margin:0 0 14px;
+      color:var(--deep-navy);
+      font-size:clamp(28px, 2.4vw, 38px);
+      line-height:1.08;
+      letter-spacing:0;
+      font-weight:800;
+    }
+
+    .packages-page .package-panel p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16.5px;
+      line-height:1.65;
+    }
+
+    .packages-page .package-panel p strong{
+      color:var(--deep-navy);
+      font-weight:900;
+    }
+
     @media(max-width:980px){
       .packages-page .package-table{
         grid-template-columns:1fr;
+      }
+
+      .packages-page .package-panel-wide{
+        grid-template-columns:1fr;
+        gap:10px;
       }
 
       .packages-page .commercial-package-table .package-column{
@@ -489,6 +533,10 @@
 
       .packages-page .commercial-package-table .package-column p{
         font-size:16px;
+      }
+
+      .packages-page .package-panel{
+        padding:28px 22px;
       }
     }
   </style>
@@ -610,11 +658,11 @@
         <div class="section-head reveal-up">
           <div>
             <p class="section-label">Commercial frameworks</p>
-            <h2>Retail, office, and commercial protection.</h2>
+            <h2>Retail, office, and logistics protection.</h2>
           </div>
 
           <p class="section-intro">
-            Built for shops, pharmacies, offices, clinics, commercial buildings, and higher-risk business spaces that need accountability, deterrence, and response planning.
+            Built for shops, pharmacies, offices, clinics, commercial buildings, warehouses, and logistics operations that need accountability, deterrence, access control, and response planning.
           </p>
         </div>
 
@@ -668,6 +716,38 @@
             </p>
 
             <a href="/contact/" class="package-link">Request Office Shield</a>
+          </article>
+        </div>
+
+        <div class="package-grid-wide reveal-up">
+          <article class="package-panel package-panel-wide">
+            <div>
+              <div class="package-accent-strip">Warehouse & Logistics</div>
+
+              <h3>Urban Eye Resilient Logistics Framework</h3>
+
+              <p class="package-price">Custom written quotation post-survey</p>
+            </div>
+
+            <div>
+              <p>
+                <strong>Best for:</strong> Distribution centers, cold storage, manufacturing stores, storage warehouses, import/export facilities, and multi-bay logistics hubs.
+              </p>
+
+              <p>
+                Combines loading bay CCTV, perimeter alarm detection, restricted stockroom access control, high-value cage protection, fire-safety review, guard-supported procedures, and monitoring-ready escalation for warehouse operations.
+              </p>
+
+              <p>
+                <strong>Monitoring option:</strong> Urban Eye PRO Enterprise Monitoring starts at KES 10,500/month after site review.
+              </p>
+
+              <p>
+                <strong>Optional guarding:</strong> Industrial static guarding can be quoted separately depending on gate coverage, shift pattern, patrol needs, and site risk.
+              </p>
+            </div>
+
+            <a href="/warehouse-security/" class="package-link">Explore Warehouse Security</a>
           </article>
         </div>
       </div>
