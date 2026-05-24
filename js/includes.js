@@ -57,7 +57,9 @@ function initNavbar(){
   if(navToggle) navToggle.addEventListener("click", openMenu);
   if(navClose) navClose.addEventListener("click", closeMenu);
 
-  document.querySelectorAll(".nav-link, .nav-dropdown-menu a").forEach((link)=>{
+  document.querySelectorAll(
+    ".nav-link, .nav-dropdown-menu a, .mobile-nav-link, .mobile-subnav a, .mobile-menu-actions a, .mobile-contact-icons a"
+  ).forEach((link)=>{
     link.addEventListener("click", closeMenu);
   });
 
