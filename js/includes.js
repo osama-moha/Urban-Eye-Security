@@ -100,6 +100,8 @@ function setActiveNav(){
     activeSection = "packages";
   }else if(path === "/about/"){
     activeSection = "about";
+  }else if(path === "/careers/"){
+    activeSection = "careers";
   }else if(path === "/contact/"){
     activeSection = "contact";
   }
