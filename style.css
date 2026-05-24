@@ -5648,3 +5648,159 @@ footer a:hover{
     font-size:15px;
   }
 }
+
+/* =========================================================
+   Final professional process list override
+   ========================================================= */
+
+.split-grid .process-list{
+  border-left:1px solid var(--border);
+  padding-left:34px;
+}
+
+.split-grid .process-item{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:18px;
+  padding:0 0 28px;
+  position:relative;
+}
+
+.split-grid .process-item:last-child{
+  padding-bottom:0;
+}
+
+.split-grid .process-item span{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(196,39,46,.38);
+  border-radius:50%;
+  color:var(--red);
+  background:#fff;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+}
+
+.split-grid .process-item h3{
+  margin:2px 0 8px;
+  color:var(--deep-navy);
+  font-size:18px;
+  line-height:1.25;
+  font-weight:800;
+}
+
+.split-grid .process-item p{
+  margin:0;
+  color:var(--muted);
+  font-size:15.5px;
+  line-height:1.65;
+}
+
+@media(max-width:900px){
+  .split-grid .process-list{
+    border-left:0;
+    padding-left:0;
+    margin-top:28px;
+  }
+
+  .split-grid .process-item{
+    grid-template-columns:40px 1fr;
+    gap:14px;
+    padding-bottom:26px;
+  }
+
+  .split-grid .process-item h3{
+    font-size:17px;
+  }
+
+  .split-grid .process-item p{
+    font-size:15px;
+  }
+}
+
+/* =========================================================
+   Dark section feature list
+   Replaces card-heavy layouts on service pages
+   ========================================================= */
+
+.security-feature-list{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid rgba(255,255,255,.16);
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+
+.security-feature-row{
+  padding:30px 28px 32px;
+  border-right:1px solid rgba(255,255,255,.16);
+}
+
+.security-feature-row:last-child{
+  border-right:0;
+}
+
+.security-feature-row span{
+  display:block;
+  margin-bottom:24px;
+  color:var(--red);
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.security-feature-row h3{
+  margin:0 0 12px;
+  color:#fff;
+  font-size:22px;
+  line-height:1.15;
+  letter-spacing:0;
+  font-weight:750;
+}
+
+.security-feature-row p{
+  margin:0;
+  color:rgba(255,255,255,.72);
+  font-size:15.5px;
+  line-height:1.65;
+}
+
+@media(max-width:1000px){
+  .security-feature-list{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .security-feature-row:nth-child(2){
+    border-right:0;
+  }
+
+  .security-feature-row:nth-child(-n+2){
+    border-bottom:1px solid rgba(255,255,255,.16);
+  }
+}
+
+@media(max-width:640px){
+  .security-feature-list{
+    grid-template-columns:1fr;
+  }
+
+  .security-feature-row{
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.16);
+    padding:26px 0;
+  }
+
+  .security-feature-row:last-child{
+    border-bottom:0;
+  }
+
+  .security-feature-row span{
+    margin-bottom:12px;
+  }
+
+  .security-feature-row h3{
+    font-size:20px;
+  }
+}
