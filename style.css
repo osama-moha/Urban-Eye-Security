@@ -5575,3 +5575,76 @@ footer a:hover{
     display:block!important;
   }
 }
+
+/* =========================================================
+   Professional process list
+   Used for access control and similar process sections
+   ========================================================= */
+
+.process-list{
+  border-left:1px solid var(--border);
+  padding-left:34px;
+}
+
+.process-item{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:20px;
+  padding:0 0 30px;
+  position:relative;
+}
+
+.process-item:last-child{
+  padding-bottom:0;
+}
+
+.process-item span{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(196,39,46,.35);
+  border-radius:50%;
+  color:var(--red);
+  background:#fff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+}
+
+.process-item h3{
+  margin:0 0 6px;
+  color:var(--deep-navy);
+  font-size:18px;
+  line-height:1.25;
+  font-weight:800;
+}
+
+.process-item p{
+  margin:0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.65;
+}
+
+@media(max-width:900px){
+  .process-list{
+    border-left:0;
+    padding-left:0;
+    margin-top:28px;
+  }
+
+  .process-item{
+    grid-template-columns:42px 1fr;
+    gap:16px;
+    padding-bottom:26px;
+  }
+
+  .process-item h3{
+    font-size:17px;
+  }
+
+  .process-item p{
+    font-size:15px;
+  }
+}
