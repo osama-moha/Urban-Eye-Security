@@ -4857,18 +4857,32 @@ footer a:hover{
     display:none!important;
   }
 
-  /* =========================================================
-   MOBILE NAVBAR FIX ONLY
+/* =========================================================
+   MOBILE NAVBAR ONLY
    Desktop navbar remains unchanged
    ========================================================= */
 
-@media (max-width: 900px){
+@media (min-width:901px){
+  .mobile-menu{
+    display:none!important;
+  }
+}
 
+@media (max-width:900px){
   body.menu-open{
     overflow:hidden;
   }
 
-  .nav-menu.mobile-menu{
+  .desktop-nav,
+  .nav-actions{
+    display:none!important;
+  }
+
+  .nav-toggle{
+    display:grid;
+  }
+
+  .mobile-menu{
     position:fixed;
     inset:0;
     z-index:9999;
@@ -4881,8 +4895,8 @@ footer a:hover{
     color:#fff;
   }
 
-  .nav-menu.mobile-menu.show-menu,
-  .nav-menu.mobile-menu.is-open{
+  .mobile-menu.show-menu,
+  .mobile-menu.is-open{
     display:flex;
   }
 
@@ -4898,10 +4912,12 @@ footer a:hover{
     z-index:20;
   }
 
-  .mobile-menu-header .brand-wordmark,
-  .mobile-menu-header .brand-wordmark-only{
+  .mobile-menu-header .brand-wordmark{
     color:#fff;
     text-decoration:none;
+    font-size:18px;
+    font-weight:900;
+    letter-spacing:-.02em;
   }
 
   .mobile-menu-header .brand-wordmark-main{
@@ -4947,14 +4963,6 @@ footer a:hover{
     gap:0;
   }
 
-  .desktop-nav{
-    display:none!important;
-  }
-
-  .nav-actions{
-    display:none!important;
-  }
-
   .mobile-nav-link,
   .mobile-accordion summary{
     display:flex;
@@ -4974,16 +4982,14 @@ footer a:hover{
 
   .mobile-nav-link::before,
   .mobile-accordion summary::before{
-    content:"\2197";
-    display:inline-grid;
-    place-items:center;
-    width:24px;
-    height:24px;
-    flex:0 0 24px;
-    color:var(--red);
-    font-size:18px;
-    line-height:1;
-    background:transparent;
+    content:"";
+    width:14px;
+    height:14px;
+    flex:0 0 14px;
+    border-top:3px solid var(--red);
+    border-right:3px solid var(--red);
+    transform:rotate(45deg);
+    margin-right:4px;
   }
 
   .mobile-accordion summary::after{
@@ -5003,7 +5009,7 @@ footer a:hover{
   }
 
   .mobile-subnav{
-    padding:18px 0 22px 38px;
+    padding:18px 0 22px 34px;
     border-bottom:1px solid rgba(255,255,255,.14);
     background:transparent;
   }
@@ -5024,40 +5030,38 @@ footer a:hover{
   .mobile-subnav a{
     display:block;
     padding:10px 0;
-    color:#fff;
+    color:#fff!important;
     font-size:17px;
     font-weight:800;
     text-decoration:none;
+    background:transparent!important;
   }
 
   .mobile-subnav small,
-  .mobile-subnav span{
+  .mobile-subnav span,
+  .mobile-feature-link span{
     display:block;
     margin-top:3px;
-    color:rgba(255,255,255,.68);
+    color:rgba(255,255,255,.68)!important;
     font-size:14px;
     line-height:1.45;
   }
 
   .mobile-feature-link{
+    display:block;
     margin-top:18px;
     padding:18px!important;
     border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.06);
-    color:#fff;
+    background:rgba(255,255,255,.06)!important;
+    color:#fff!important;
     text-decoration:none;
   }
 
   .mobile-feature-link strong{
     display:block;
-    color:#fff;
+    color:#fff!important;
     font-size:18px;
     margin-bottom:6px;
-  }
-
-  .mobile-feature-link span{
-    display:block;
-    color:rgba(255,255,255,.72);
   }
 
   .mobile-menu-actions{
@@ -5086,47 +5090,9 @@ footer a:hover{
     border-radius:10px;
     border:1px solid rgba(255,255,255,.18);
     background:rgba(255,255,255,.06);
-    color:#fff;
-    font-size:20px;
-  }
-
-  .mobile-menu .mega-menu,
-  .mobile-menu .nav-dropdown-menu,
-  .mobile-menu .mega-panel,
-  .mobile-menu .dropdown-panel,
-  .mobile-menu .mega-card,
-  .mobile-menu .dropdown-card{
-    position:static!important;
-    width:100%!important;
-    max-width:none!important;
-    min-width:0!important;
-    height:auto!important;
-    min-height:0!important;
-    max-height:none!important;
-    margin:0!important;
-    padding:0!important;
-    background:transparent!important;
-    border:0!important;
-    border-radius:0!important;
-    box-shadow:none!important;
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-  }
-
-  .mobile-menu .mega-menu a,
-  .mobile-menu .nav-dropdown-menu a,
-  .mobile-menu .mega-panel a,
-  .mobile-menu .dropdown-panel a{
     color:#fff!important;
-    background:transparent!important;
-  }
-
-  .mobile-menu .mega-menu small,
-  .mobile-menu .nav-dropdown-menu small,
-  .mobile-menu .mega-panel small,
-  .mobile-menu .dropdown-panel small{
-    color:rgba(255,255,255,.68)!important;
+    font-size:20px;
+    text-decoration:none;
   }
 }
 /* === Security Packages Page, professional column layout === */
@@ -5484,5 +5450,125 @@ footer a:hover{
 
   .package-notice{
     padding:22px;
+  }
+}
+
+/* =========================================================
+   FINAL PHONE NAV FIX
+   Removes white accordion boxes on mobile only
+   Desktop navbar unaffected
+   ========================================================= */
+
+@media (max-width:900px){
+
+  /* Force the mobile drawer to stay dark */
+  .mobile-menu,
+  .mobile-menu-scroll,
+  .mobile-nav,
+  .mobile-accordion,
+  .mobile-accordion[open],
+  .mobile-subnav{
+    background:#101A44!important;
+    box-shadow:none!important;
+  }
+
+  /* Remove white card styling from opened accordions */
+  .mobile-accordion,
+  .mobile-accordion[open]{
+    border:0!important;
+    border-radius:0!important;
+    overflow:visible!important;
+  }
+
+  .mobile-accordion summary{
+    background:#101A44!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  .mobile-subnav{
+    margin:0!important;
+    padding:18px 0 22px 38px!important;
+    border:0!important;
+    border-bottom:1px solid rgba(255,255,255,.14)!important;
+    border-radius:0!important;
+    color:#fff!important;
+  }
+
+  /* Make submenu text visible */
+  .mobile-subnav a{
+    display:block!important;
+    padding:10px 0!important;
+    color:#fff!important;
+    font-size:17px!important;
+    font-weight:800!important;
+    line-height:1.25!important;
+    text-decoration:none!important;
+    background:transparent!important;
+  }
+
+  .mobile-subnav-label{
+    display:block!important;
+    margin:18px 0 12px!important;
+    color:var(--red)!important;
+    font-size:11px!important;
+    font-weight:900!important;
+    text-transform:uppercase!important;
+    letter-spacing:.12em!important;
+  }
+
+  .mobile-subnav-label:first-child{
+    margin-top:0!important;
+  }
+
+  .mobile-feature-link{
+    display:block!important;
+    margin-top:18px!important;
+    padding:18px!important;
+    border:1px solid rgba(255,255,255,.2)!important;
+    background:rgba(255,255,255,.06)!important;
+    color:#fff!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  .mobile-feature-link strong{
+    color:#fff!important;
+  }
+
+  .mobile-feature-link span{
+    color:rgba(255,255,255,.68)!important;
+  }
+
+  /* Remove any accidental white card styling inside the mobile menu */
+  .mobile-menu .card,
+  .mobile-menu .mega-card,
+  .mobile-menu .dropdown-card,
+  .mobile-menu .mobile-menu-group,
+  .mobile-menu .mega-menu-inner,
+  .mobile-menu .nav-dropdown-menu,
+  .mobile-menu .nav-services-menu,
+  .mobile-menu .nav-serve-menu{
+    background:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    padding:0!important;
+    margin:0!important;
+  }
+
+  /* Hide desktop dropdowns completely inside mobile if they still exist */
+  .mobile-menu .desktop-nav,
+  .mobile-menu .nav-dropdown,
+  .mobile-menu .nav-dropdown-menu,
+  .mobile-menu .mega-menu-cta{
+    display:none!important;
+  }
+
+  /* Keep real mobile accordions visible */
+  .mobile-menu .mobile-nav,
+  .mobile-menu .mobile-accordion,
+  .mobile-menu .mobile-subnav{
+    display:block!important;
   }
 }
