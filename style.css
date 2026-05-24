@@ -4857,16 +4857,51 @@ footer a:hover{
     display:none!important;
   }
 
+  /* =========================================================
+   MOBILE NAVBAR FIX ONLY
+   Desktop navbar remains unchanged
+   ========================================================= */
+
+@media (max-width: 900px){
+
+  body.menu-open{
+    overflow:hidden;
+  }
+
+  .nav-menu.mobile-menu{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    width:100%;
+    height:100dvh;
+    display:none;
+    flex-direction:column;
+    overflow:hidden;
+    background:#101A44;
+    color:#fff;
+  }
+
+  .nav-menu.mobile-menu.show-menu,
+  .nav-menu.mobile-menu.is-open{
+    display:flex;
+  }
+
   .mobile-menu-header{
     flex:0 0 auto;
-    height:76px;
+    height:86px;
     display:flex;
     align-items:center;
     justify-content:space-between;
     padding:0 28px;
     background:#101A44;
     border-bottom:1px solid rgba(255,255,255,.14);
-    z-index:3;
+    z-index:20;
+  }
+
+  .mobile-menu-header .brand-wordmark,
+  .mobile-menu-header .brand-wordmark-only{
+    color:#fff;
+    text-decoration:none;
   }
 
   .mobile-menu-header .brand-wordmark-main{
@@ -4880,16 +4915,23 @@ footer a:hover{
   .mobile-menu-close,
   .nav-close{
     position:static;
-    width:44px;
-    height:44px;
+    width:48px;
+    height:48px;
     display:grid;
     place-items:center;
     border:0;
     background:transparent;
     color:#fff;
-    font-size:30px;
+    font-size:42px;
     line-height:1;
     cursor:pointer;
+  }
+
+  .mobile-menu-close i,
+  .nav-close i{
+    color:#fff;
+    font-size:38px;
+    line-height:1;
   }
 
   .mobile-menu-scroll{
@@ -4897,7 +4939,7 @@ footer a:hover{
     display:block;
     overflow-y:auto;
     -webkit-overflow-scrolling:touch;
-    padding:28px 28px 34px;
+    padding:32px 28px 38px;
   }
 
   .mobile-nav{
@@ -4905,22 +4947,12 @@ footer a:hover{
     gap:0;
   }
 
-  .mobile-menu a,
-  .mobile-menu strong,
-  .mobile-menu h3,
-  .mobile-menu h4,
-  .mobile-nav a,
-  .mobile-nav strong{
-    color:#fff;
+  .desktop-nav{
+    display:none!important;
   }
 
-  .mobile-menu p,
-  .mobile-menu small,
-  .mobile-menu span,
-  .mobile-nav p,
-  .mobile-nav small,
-  .mobile-nav span{
-    color:rgba(255,255,255,.72);
+  .nav-actions{
+    display:none!important;
   }
 
   .mobile-nav-link,
@@ -4928,11 +4960,12 @@ footer a:hover{
     display:flex;
     align-items:center;
     justify-content:flex-start;
-    gap:12px;
-    padding:18px 0;
+    gap:14px;
+    padding:20px 0;
     border-bottom:1px solid rgba(255,255,255,.14);
     color:#fff;
-    font-size:22px;
+    font-size:24px;
+    line-height:1.15;
     font-weight:800;
     text-decoration:none;
     cursor:pointer;
@@ -4942,15 +4975,22 @@ footer a:hover{
   .mobile-nav-link::before,
   .mobile-accordion summary::before{
     content:"\2197";
+    display:inline-grid;
+    place-items:center;
+    width:24px;
+    height:24px;
+    flex:0 0 24px;
     color:var(--red);
     font-size:18px;
+    line-height:1;
+    background:transparent;
   }
 
   .mobile-accordion summary::after{
     content:"+";
     margin-left:auto;
     color:rgba(255,255,255,.58);
-    font-size:22px;
+    font-size:24px;
     font-weight:700;
   }
 
@@ -4963,8 +5003,9 @@ footer a:hover{
   }
 
   .mobile-subnav{
-    padding:18px 0 22px 34px;
+    padding:18px 0 22px 38px;
     border-bottom:1px solid rgba(255,255,255,.14);
+    background:transparent;
   }
 
   .mobile-subnav-label{
@@ -5003,6 +5044,20 @@ footer a:hover{
     padding:18px!important;
     border:1px solid rgba(255,255,255,.2);
     background:rgba(255,255,255,.06);
+    color:#fff;
+    text-decoration:none;
+  }
+
+  .mobile-feature-link strong{
+    display:block;
+    color:#fff;
+    font-size:18px;
+    margin-bottom:6px;
+  }
+
+  .mobile-feature-link span{
+    display:block;
+    color:rgba(255,255,255,.72);
   }
 
   .mobile-menu-actions{
@@ -5013,6 +5068,7 @@ footer a:hover{
 
   .mobile-menu-actions .btn{
     width:100%;
+    min-height:56px;
     justify-content:center;
   }
 
@@ -5023,8 +5079,8 @@ footer a:hover{
   }
 
   .mobile-contact-icons a{
-    width:42px;
-    height:42px;
+    width:48px;
+    height:48px;
     display:grid;
     place-items:center;
     border-radius:10px;
@@ -5033,8 +5089,46 @@ footer a:hover{
     color:#fff;
     font-size:20px;
   }
-}
 
+  .mobile-menu .mega-menu,
+  .mobile-menu .nav-dropdown-menu,
+  .mobile-menu .mega-panel,
+  .mobile-menu .dropdown-panel,
+  .mobile-menu .mega-card,
+  .mobile-menu .dropdown-card{
+    position:static!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+  }
+
+  .mobile-menu .mega-menu a,
+  .mobile-menu .nav-dropdown-menu a,
+  .mobile-menu .mega-panel a,
+  .mobile-menu .dropdown-panel a{
+    color:#fff!important;
+    background:transparent!important;
+  }
+
+  .mobile-menu .mega-menu small,
+  .mobile-menu .nav-dropdown-menu small,
+  .mobile-menu .mega-panel small,
+  .mobile-menu .dropdown-panel small{
+    color:rgba(255,255,255,.68)!important;
+  }
+}
 /* === Security Packages Page, professional column layout === */
 
 .packages-hero .container{
