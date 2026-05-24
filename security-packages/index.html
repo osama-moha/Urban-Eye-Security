@@ -20,6 +20,367 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
   <link rel="stylesheet" href="/style.css"/>
+
+  <style>
+    /* Page-specific package layout safeguard.
+       This sits after /style.css so the package page displays correctly on desktop and mobile. */
+    .packages-page .page-hero{
+      background:#0D1430;
+      color:#fff;
+      padding:96px 0;
+    }
+
+    .packages-page .packages-hero-copy{
+      max-width:860px;
+    }
+
+    .packages-page .page-hero h1{
+      color:#fff;
+      max-width:850px;
+    }
+
+    .packages-page .page-hero p{
+      color:rgba(255,255,255,.78);
+    }
+
+    .packages-page .packages-read-section{
+      padding:68px 0;
+      background:#F5F7FA;
+      border-bottom:1px solid var(--border);
+    }
+
+    .packages-page .packages-read-inner{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:72px;
+      align-items:center;
+    }
+
+    .packages-page .packages-read-inner h2{
+      margin:0;
+      color:var(--deep-navy);
+      font-size:clamp(34px,4vw,56px);
+      line-height:1.05;
+      letter-spacing:-.055em;
+      font-weight:650;
+    }
+
+    .packages-page .packages-read-inner p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .packages-page .packages-section{
+      padding:86px 0;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+    }
+
+    .packages-page .packages-section-light{
+      background:#F5F7FA;
+    }
+
+    .packages-page .package-columns{
+      display:grid !important;
+      grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+      border:1px solid var(--border);
+      background:#fff;
+      overflow:hidden;
+      margin-top:28px;
+    }
+
+    .packages-page .package-column{
+      padding:32px 28px 34px;
+      border-right:1px solid var(--border);
+      min-height:100%;
+      background:#fff;
+    }
+
+    .packages-page .package-column:last-child{
+      border-right:0;
+    }
+
+    .packages-page .package-column-accent{
+      background:linear-gradient(180deg,rgba(196,39,46,.045),rgba(255,255,255,1) 48%);
+    }
+
+    .packages-page .package-strip{
+      display:block;
+      width:100%;
+      padding:10px 12px;
+      margin-bottom:22px;
+      background:#F6F7FB;
+      color:var(--red);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      border-left:3px solid var(--red);
+    }
+
+    .packages-page .package-column h3,
+    .packages-page .package-compare-column h3,
+    .packages-page .fire-package-main h3{
+      margin:0 0 12px;
+      color:var(--deep-navy);
+      font-size:clamp(26px,2.4vw,34px);
+      line-height:1.13;
+      letter-spacing:-.04em;
+      font-weight:700;
+    }
+
+    .packages-page .package-price{
+      margin:0 0 18px;
+      color:var(--deep-navy);
+      font-size:clamp(22px,2vw,30px);
+      line-height:1.15;
+      font-weight:600;
+    }
+
+    .packages-page .package-subprice{
+      margin:-8px 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+      font-weight:700;
+    }
+
+    .packages-page .package-column p,
+    .packages-page .package-compare-column p,
+    .packages-page .fire-package-main p,
+    .packages-page .fire-package-scope p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.7;
+    }
+
+    .packages-page .package-best strong{
+      color:var(--deep-navy);
+    }
+
+    .packages-page .package-list{
+      margin:0 0 22px 18px;
+      padding:0;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.75;
+    }
+
+    .packages-page .package-list li{
+      margin-bottom:5px;
+    }
+
+    .packages-page .construction-package-section{
+      background:#0D1430;
+      color:#fff;
+    }
+
+    .packages-page .construction-package-section .section-label,
+    .packages-page .construction-package-section .section-intro{
+      color:rgba(255,255,255,.72);
+    }
+
+    .packages-page .construction-package-section h2{
+      color:#fff;
+    }
+
+    .packages-page .package-compare{
+      display:grid !important;
+      grid-template-columns:1fr 1fr !important;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+      margin-top:28px;
+    }
+
+    .packages-page .package-compare-column{
+      padding:36px 32px;
+      border-right:1px solid rgba(255,255,255,.16);
+    }
+
+    .packages-page .package-compare-column:last-child{
+      border-right:0;
+    }
+
+    .packages-page .package-compare-column h3,
+    .packages-page .package-compare-column .package-price,
+    .packages-page .package-compare-column .package-best strong{
+      color:#fff;
+    }
+
+    .packages-page .package-compare-column p,
+    .packages-page .package-compare-column .package-list,
+    .packages-page .package-compare-column .package-subprice{
+      color:rgba(255,255,255,.72);
+    }
+
+    .packages-page .package-compare-highlight{
+      background:rgba(196,39,46,.08);
+    }
+
+    .packages-page .package-footnote{
+      margin:22px 0 0;
+      color:rgba(255,255,255,.7);
+      font-size:14.5px;
+      line-height:1.6;
+    }
+
+    .packages-page .fire-package-table{
+      display:grid !important;
+      grid-template-columns:.9fr 1.1fr !important;
+      border:1px solid var(--border);
+      background:#fff;
+      overflow:hidden;
+      margin-top:28px;
+    }
+
+    .packages-page .fire-package-main{
+      padding:36px 32px;
+      background:#F5F7FA;
+      border-right:1px solid var(--border);
+    }
+
+    .packages-page .fire-package-scope{
+      padding:36px 32px;
+    }
+
+    .packages-page .fire-package-scope h4{
+      margin:0 0 16px;
+      color:var(--deep-navy);
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .packages-page .package-notice{
+      margin-top:26px;
+      padding:24px 28px;
+      background:#F5F7FA;
+      border-left:3px solid var(--red);
+    }
+
+    .packages-page .package-notice strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--deep-navy);
+      font-size:16px;
+    }
+
+    .packages-page .package-notice p{
+      margin:0;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.7;
+    }
+
+    .packages-page .packages-monitoring-section{
+      padding:86px 0;
+      background:#0D1430;
+      color:#fff;
+    }
+
+    .packages-page .packages-monitoring-inner{
+      display:grid;
+      grid-template-columns:1fr .9fr;
+      gap:72px;
+      align-items:center;
+    }
+
+    .packages-page .packages-monitoring-inner h2{
+      margin:0 0 18px;
+      color:#fff;
+      font-size:clamp(36px,4vw,58px);
+      line-height:1.05;
+      letter-spacing:-.055em;
+      font-weight:650;
+    }
+
+    .packages-page .packages-monitoring-inner p{
+      margin:0 0 24px;
+      color:rgba(255,255,255,.72);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .packages-page .packages-contact-section{
+      padding:86px 0;
+      background:#F5F7FA;
+    }
+
+    .packages-page .package-final-note{
+      margin-top:34px;
+      padding:24px 0 0;
+      border-top:1px solid var(--border);
+    }
+
+    .packages-page .package-final-note strong{
+      display:block;
+      color:var(--deep-navy);
+      font-size:16px;
+      margin-bottom:8px;
+    }
+
+    .packages-page .package-final-note p{
+      margin:0;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.7;
+    }
+
+    @media(max-width:1000px){
+      .packages-page .packages-read-inner,
+      .packages-page .packages-monitoring-inner{
+        grid-template-columns:1fr;
+        gap:24px;
+      }
+
+      .packages-page .package-columns,
+      .packages-page .package-compare,
+      .packages-page .fire-package-table{
+        grid-template-columns:1fr !important;
+      }
+
+      .packages-page .package-column,
+      .packages-page .package-compare-column,
+      .packages-page .fire-package-main{
+        border-right:0;
+        border-bottom:1px solid var(--border);
+      }
+
+      .packages-page .package-column:last-child,
+      .packages-page .package-compare-column:last-child{
+        border-bottom:0;
+      }
+
+      .packages-page .package-compare-column{
+        border-bottom:1px solid rgba(255,255,255,.16);
+      }
+    }
+
+    @media(max-width:640px){
+      .packages-page .page-hero,
+      .packages-page .packages-read-section,
+      .packages-page .packages-section,
+      .packages-page .packages-monitoring-section,
+      .packages-page .packages-contact-section{
+        padding:64px 0;
+      }
+
+      .packages-page .package-column,
+      .packages-page .package-compare-column,
+      .packages-page .fire-package-main,
+      .packages-page .fire-package-scope{
+        padding:28px 22px;
+      }
+
+      .packages-page .package-notice{
+        padding:22px;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="packages-page">
@@ -37,7 +398,7 @@
           <h1>Security frameworks built for your property.</h1>
 
           <p>
-            Choose a starting framework below. Urban Eye reviews your property type, access points, blind spots, response needs, and layout before preparing a site-specific quotation.
+            Choose a starting framework below, then Urban Eye will customize the final scope after reviewing your property type, access points, blind spots, response needs, and site layout.
           </p>
 
           <div class="hero-actions">
@@ -212,7 +573,7 @@
           </div>
 
           <p class="section-intro">
-            Construction security should match the project phase. Choose to purchase your site hardware outright, or use a managed monthly site lease.
+            Construction is temporary, so your security investment should match the project. Choose to purchase your site hardware outright or use a managed monthly site lease.
           </p>
         </div>
 
