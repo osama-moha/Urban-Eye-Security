@@ -20,6 +20,28 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
   <link rel="stylesheet" href="/style.css"/>
+
+<style>
+/* Page-specific refinements: remove card-heavy pricing from service page */
+.construction-note-panel{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}
+.construction-note-panel h3{margin:0 0 12px;color:var(--deep-navy);font-size:clamp(24px,2.4vw,34px);line-height:1.15}
+.construction-note-panel p{margin:0;color:var(--muted);line-height:1.75}
+.construction-log-rows{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.construction-log-rows div{display:flex;justify-content:space-between;gap:24px;padding:16px 0;border-bottom:1px solid var(--border);color:var(--deep-navy);font-weight:800}
+.construction-log-rows div:last-child{border-bottom:0}
+.construction-package-redirect{padding:78px 0;background:#F5F7FA;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.construction-package-redirect-inner{display:grid;grid-template-columns:1fr .9fr;gap:64px;align-items:center}
+.construction-option-rows{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.construction-option-row{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--border)}
+.construction-option-row:last-child{border-bottom:0}
+.construction-option-row strong{display:block;color:var(--deep-navy);font-size:20px;margin-bottom:6px}
+.construction-option-row span{display:block;color:var(--muted);line-height:1.65}
+.construction-option-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.monitoring-line-panel{border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:30px 0}
+.monitoring-line-panel h3{margin:0 0 12px;color:#fff;font-size:26px}
+.monitoring-line-panel p{color:rgba(255,255,255,.72);line-height:1.7}
+@media(max-width:900px){.construction-package-redirect-inner,.construction-option-row{grid-template-columns:1fr;gap:16px}.construction-option-actions{display:grid}.construction-option-actions .btn{width:100%;justify-content:center}}
+</style>
 </head>
 
 <body class="construction-site-security-page">
@@ -70,7 +92,7 @@
           </p>
         </div>
 
-        <div class="card clean-split-card reveal-slide slide-right">
+        <div class="construction-note-panel reveal-slide slide-right">
           <p class="section-label">The Urban Eye Solution</p>
 
           <h3>A complete Construction Security Plan.</h3>
@@ -213,91 +235,50 @@
           </p>
         </div>
 
-        <div class="card reveal-slide slide-right">
+        <div class="reveal-slide slide-right">
           <h3>Operational records we help enforce</h3>
 
-          <ul class="construction-log-list">
-            <li>Visitor Log</li>
-            <li>Patrol Log</li>
-            <li>Items Entry Log</li>
-            <li>Items Exit Permit</li>
-            <li>Daily Security Report</li>
-          </ul>
+          <div class="construction-log-rows">
+            <div><span>Visitor Log</span></div>
+            <div><span>Patrol Log</span></div>
+            <div><span>Items Entry Log</span></div>
+            <div><span>Items Exit Permit</span></div>
+            <div><span>Daily Security Report</span></div>
+          </div>
 
-          <p>
+          <p class="section-intro" style="margin-top:22px">
             These records help reduce disputes, improve accountability, and give site managers a clearer picture of what happened each day.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="construction-pricing" class="construction-pricing-section">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <div>
-            <p class="section-label">Protection Options</p>
-            <h2>Flexible protection. Zero unnecessary sunk costs.</h2>
-          </div>
-
+    <section id="construction-pricing" class="construction-package-redirect">
+      <div class="container construction-package-redirect-inner">
+        <div class="reveal-slide">
+          <p class="section-label">Protection Options</p>
+          <h2>Construction pricing belongs on the Packages page.</h2>
           <p class="section-intro">
-            Construction is temporary; your security investment should match your project. Choose to purchase your site hardware outright, or use a managed monthly site lease.
+            Construction projects need flexible security. The purchase option and managed site lease are now listed on the Security Packages page so this service page stays focused on access control, material control, patrol support, perimeter detection, and response planning.
           </p>
         </div>
 
-        <div class="construction-pricing-grid reveal-stagger">
-          <article class="card construction-pricing-card">
-            <span class="package-tag">Option A</span>
+        <div class="reveal-up">
+          <div class="construction-option-rows">
+            <div class="construction-option-row">
+              <strong>Equipment Purchase</strong>
+              <span>For developers who want to own the wireless site security hardware and reuse it on future projects.</span>
+            </div>
+            <div class="construction-option-row">
+              <strong>Managed Site Lease</strong>
+              <span>For contractors who want a monthly operational expense that includes supplied hardware, installation, maintenance, monitoring, and response coordination.</span>
+            </div>
+          </div>
 
-            <h3>The Equipment Purchase</h3>
-
-            <div class="package-price">Starts at KES 225,000</div>
-
-            <p>
-              <strong>Hardware ownership.</strong> You purchase the wireless equipment outright. When the project is complete, you own the hardware and can move it to your next site.
-            </p>
-
-            <ul class="package-list">
-              <li>Wireless site security hardware</li>
-              <li>Perimeter and asset-zone protection</li>
-              <li>Moveable equipment for future projects</li>
-              <li>Monitoring & response can be added from KES 8,050/month</li>
-            </ul>
-
-            <p class="best-for">
-              Best for: Developers building properties they intend to manage long-term.
-            </p>
-
-            <a class="btn btn-outline" href="/contact/?package=construction-equipment-purchase">Quote Equipment Purchase</a>
-          </article>
-
-          <article class="card construction-pricing-card featured">
-            <span class="package-tag">Developer Choice</span>
-
-            <h3>The Managed Site Lease</h3>
-
-            <div class="package-price">Setup from KES 35,000</div>
-
-            <p>
-              <strong>Monthly all-inclusive lease starts at KES 38,500/month.</strong> Urban Eye supplies, installs, and maintains the wireless perimeter system for the project duration.
-            </p>
-
-            <ul class="package-list">
-              <li>Hardware lease for the project period</li>
-              <li>Installation and maintenance support</li>
-              <li>24/7 visual monitoring</li>
-              <li>Response dispatch coordination</li>
-            </ul>
-
-            <p class="best-for">
-              Best for: Contractors who want enterprise-grade site security as a monthly operational expense.
-            </p>
-
-            <p class="tier-note">
-              PSRA guarding personnel for gate control and patrols are quoted separately after site review.
-            </p>
-
-            <a class="btn btn-primary" href="/contact/?package=managed-site-lease">Request Site Lease Proposal</a>
-          </article>
+          <div class="construction-option-actions">
+            <a class="btn btn-primary" href="/security-packages/#construction-site-protection">View Construction Package Options</a>
+            <a class="btn btn-outline" href="#construction-site-survey">Book a Site Survey</a>
+          </div>
         </div>
       </div>
     </section>
@@ -314,7 +295,7 @@
           </p>
         </div>
 
-        <div class="card reveal-slide slide-right">
+        <div class="monitoring-line-panel reveal-slide slide-right">
           <h3>Urban Eye PRO Monitoring</h3>
 
           <p>
