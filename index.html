@@ -20,6 +20,250 @@
 <link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
 <link rel="stylesheet" href="/style.css"/>
 
+<style>
+  /* Home page careers preview paths */
+
+  .career-paths{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+    margin-top:28px;
+  }
+
+  .career-path-card{
+    display:block;
+    padding:24px 26px;
+    border:1px solid #d6deea;
+    background:#fff;
+    color:#07122f;
+    text-decoration:none;
+    transition:border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .career-path-card:hover{
+    border-color:rgba(207,38,48,.45);
+    transform:translateY(-2px);
+    box-shadow:0 18px 40px rgba(7,18,47,.08);
+  }
+
+  .career-path-card span{
+    display:block;
+    margin-bottom:10px;
+    color:#cf2630;
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:0;
+  }
+
+  .career-path-card h3{
+    margin:0 0 8px;
+    color:#07122f;
+    font-size:21px;
+    line-height:1.16;
+    letter-spacing:0;
+  }
+
+  .career-path-card p{
+    margin:0;
+    color:#5d6878;
+    font-size:16px;
+    line-height:1.55;
+  }
+
+  @media(min-width:900px){
+    .career-paths{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+
+  /* Home page package framework accordion */
+
+  .framework-accordion{
+    margin-top:40px;
+    border:1px solid #d6deea;
+    border-radius:14px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 18px 45px rgba(7,18,47,.06);
+  }
+
+  .framework-item{
+    border-bottom:1px solid #d6deea;
+    background:#fff;
+  }
+
+  .framework-item:last-child{
+    border-bottom:0;
+  }
+
+  .framework-item summary{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:18px;
+    align-items:center;
+    min-height:86px;
+    padding:16px 44px;
+    cursor:pointer;
+    list-style:none;
+  }
+
+  .framework-item summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .framework-item summary::after{
+    content:"+";
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#cf2630;
+    font-size:22px;
+    font-weight:500;
+    line-height:1;
+  }
+
+  .framework-item[open] summary::after{
+    content:"x";
+    color:#07122f;
+  }
+
+  .framework-item[open] summary{
+    background:#fbfcff;
+    border-bottom:1px solid #d6deea;
+  }
+
+  .framework-badge{
+    display:inline-flex;
+    align-items:center;
+    margin-bottom:7px;
+    padding:4px 10px;
+    border:0;
+    border-left:3px solid #cf2630;
+    border-radius:0;
+    background:#f3f5f9;
+    color:#cf2630;
+    font-size:10px;
+    line-height:1;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0;
+  }
+
+  .framework-badge.recommended{
+    background:#f3f5f9;
+  }
+
+  .framework-item h3{
+    margin:0 0 3px;
+    color:#07122f;
+    font-size:22px;
+    line-height:1.08;
+    letter-spacing:0;
+  }
+
+  .framework-item summary p{
+    margin:0;
+    max-width:720px;
+    color:#5d6878;
+    font-size:14.5px;
+    line-height:1.3;
+    font-weight:650;
+  }
+
+  .framework-link{
+    color:#cf2630;
+    font-size:13.5px;
+    font-weight:800;
+    white-space:nowrap;
+  }
+
+  .framework-body{
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:28px;
+    align-items:start;
+    padding:26px 44px 34px;
+    background:#fff;
+  }
+
+  .framework-body h4{
+    margin:0 0 8px;
+    color:#07122f;
+    font-size:16px;
+    line-height:1.25;
+  }
+
+  .framework-body p{
+    margin:0;
+    color:#5d6878;
+    font-size:15.5px;
+    line-height:1.6;
+  }
+
+  .framework-cta{
+    color:#cf2630;
+    font-size:14px;
+    font-weight:900;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  .framework-cta:hover{
+    text-decoration:underline;
+  }
+
+  .framework-actions{
+    display:flex;
+    justify-content:center;
+    margin-top:32px;
+  }
+
+  @media(max-width:900px){
+    .framework-accordion{
+      margin-top:28px;
+    }
+
+    .framework-item summary{
+      grid-template-columns:1fr;
+      gap:12px;
+      min-height:104px;
+      padding:20px 54px 20px 22px;
+    }
+
+    .framework-item summary::after{
+      right:22px;
+      font-size:24px;
+    }
+
+    .framework-link{
+      width:fit-content;
+      font-size:13.5px;
+    }
+
+    .framework-item summary p{
+      display:-webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+      font-size:14.5px;
+      line-height:1.38;
+    }
+
+    .framework-body{
+      grid-template-columns:1fr;
+      gap:20px;
+      padding:22px;
+    }
+
+    .framework-cta{
+      margin-top:4px;
+    }
+  }
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,10 +325,9 @@
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span class="dot"></span>
+        <p class="section-eyebrow hero-eyebrow">
           INTEGRATED SECURITY IN KENYA
-        </div>
+        </p>
 
         <h1>One protection plan for guards, cameras, alarms, and monitoring.</h1>
 
@@ -361,73 +604,78 @@
         </p>
       </div>
 
-      <div class="package-compare reveal-up">
-        <div class="package-compare-row package-compare-head">
-          <div>Framework</div>
-          <div>Best for</div>
-          <div>What it covers</div>
-          <div>Next step</div>
-        </div>
+      <div class="framework-accordion reveal-up">
+        <details class="framework-item">
+          <summary>
+            <div>
+              <span class="framework-badge">Essential</span>
+              <h3>Essential Protection</h3>
+              <p>Smaller homes, apartments, and shops.</p>
+            </div>
+            <span class="framework-link">View Essential Options</span>
+          </summary>
 
-        <div class="package-compare-row">
-          <div>
-            <span class="package-tag">Essential</span>
-            <h3>Essential Protection</h3>
+          <div class="framework-body">
+            <div>
+              <h4>Best for</h4>
+              <p>Smaller homes, apartments, mini-marts, and low-to-medium risk properties that need a practical starting point.</p>
+            </div>
+            <div>
+              <h4>What it covers</h4>
+              <p>Basic detection, door and window protection, access-point security, indoor motion alerts, and simple visibility.</p>
+            </div>
+            <a href="/security-packages/#residential" class="framework-cta">View Essential Options &rarr;</a>
           </div>
+        </details>
 
-          <div>
-            Smaller homes, apartments, and shops.
-          </div>
+        <details class="framework-item" open>
+          <summary>
+            <div>
+              <span class="framework-badge recommended">Recommended</span>
+              <h3>Smart Protection</h3>
+              <p>Homes, offices, and stores that need app visibility and alerts.</p>
+            </div>
+            <span class="framework-link">View Smart Options</span>
+          </summary>
 
-          <div>
-            Basic detection, visibility, and access-point protection.
+          <div class="framework-body">
+            <div>
+              <h4>Best for</h4>
+              <p>Homes, offices, retail shops, Airbnb units, and properties where the owner needs better control and faster awareness.</p>
+            </div>
+            <div>
+              <h4>What it covers</h4>
+              <p>Connected alarms, CCTV verification, mobile app control, smarter alerts, access logs, and better property oversight.</p>
+            </div>
+            <a href="/security-packages/#commercial" class="framework-cta">View Smart Options &rarr;</a>
           </div>
+        </details>
 
-          <div>
-            <a class="text-link" href="/security-packages/">View Essential Options &rarr;</a>
-          </div>
-        </div>
+        <details class="framework-item">
+          <summary>
+            <div>
+              <span class="framework-badge">Complete</span>
+              <h3>Complete Protection</h3>
+              <p>Estates, commercial premises, and higher-risk properties.</p>
+            </div>
+            <span class="framework-link">View Complete Options</span>
+          </summary>
 
-        <div class="package-compare-row is-recommended">
-          <div>
-            <span class="package-tag">Recommended</span>
-            <h3>Smart Protection</h3>
+          <div class="framework-body">
+            <div>
+              <h4>Best for</h4>
+              <p>Estates, warehouses, offices, commercial buildings, construction sites, and properties that need a coordinated security plan.</p>
+            </div>
+            <div>
+              <h4>What it covers</h4>
+              <p>Personnel, alarm systems, CCTV, access control, reporting, monitoring, response escalation, and site procedures.</p>
+            </div>
+            <a href="/security-packages/#commercial" class="framework-cta">View Complete Options &rarr;</a>
           </div>
-
-          <div>
-            Homes, offices, and stores that need app visibility and alerts.
-          </div>
-
-          <div>
-            Connected alarms, CCTV verification, app control, and better property oversight.
-          </div>
-
-          <div>
-            <a class="text-link" href="/security-packages/">View Smart Options &rarr;</a>
-          </div>
-        </div>
-
-        <div class="package-compare-row">
-          <div>
-            <span class="package-tag">Complete</span>
-            <h3>Complete Protection</h3>
-          </div>
-
-          <div>
-            Estates, commercial premises, and higher-risk properties.
-          </div>
-
-          <div>
-            Personnel, systems, reporting, monitoring, and response procedures.
-          </div>
-
-          <div>
-            <a class="text-link" href="/security-packages/">View Complete Options &rarr;</a>
-          </div>
-        </div>
+        </details>
       </div>
 
-      <div class="center-actions reveal-up">
+      <div class="framework-actions reveal-up">
         <a class="btn btn-primary" href="/security-packages/">View All Package Pricing</a>
       </div>
     </div>
@@ -445,23 +693,22 @@
         </p>
       </div>
 
-      <div class="careers-preview-list reveal-up">
-        <div class="careers-preview-row">
-          <strong>Security Officers</strong>
-          <span>Recruited based on client location and deployment needs.</span>
-        </div>
+      <div class="career-paths reveal-up">
+        <a class="career-path-card" href="/careers/#open-roles">
+          <span>Security Officer Path</span>
+          <h3>Seeking a security officer role?</h3>
+          <p>
+            Explore current recruitment requirements and prepare your documents before the next deployment opportunity.
+          </p>
+        </a>
 
-        <div class="careers-preview-row">
-          <strong>Installation Technicians</strong>
-          <span>Project-based opportunities for neat, reliable CCTV, alarm, and access control work.</span>
-        </div>
-
-        <div class="careers-preview-row">
-          <strong>Security Solutions Consultants</strong>
-          <span>Performance-driven roles for people who can identify risks, advise clients, and support growth.</span>
-        </div>
-
-        <a class="btn btn-primary" href="/careers/">View Careers</a>
+        <a class="career-path-card" href="/careers/#open-roles">
+          <span>Technical, Sales & Admin Path</span>
+          <h3>Seeking a technical, sales, or administrative role?</h3>
+          <p>
+            Apply for project-based or performance-driven opportunities in installation, client advisory, and operations support.
+          </p>
+        </a>
       </div>
     </div>
   </section>
