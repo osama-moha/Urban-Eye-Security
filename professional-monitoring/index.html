@@ -349,7 +349,8 @@
     }
 
     .monitor-form input,
-    .monitor-form select{
+    .monitor-form select,
+    .monitor-form textarea{
       width:100%;
       min-height:50px;
       padding:13px 15px;
@@ -360,8 +361,14 @@
       font:inherit;
     }
 
+    .monitor-form textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
     .monitor-form input:focus,
-    .monitor-form select:focus{
+    .monitor-form select:focus,
+    .monitor-form textarea:focus{
       outline:none;
       border-color:rgba(201,40,48,.5);
       box-shadow:0 0 0 4px rgba(201,40,48,.08);
@@ -469,7 +476,7 @@
         </p>
 
         <div class="monitor-actions">
-          <a class="btn btn-primary" href="#lead-form">Find My Response Plan</a>
+          <a class="btn btn-primary" href="#lead-form">Request a Monitoring Review</a>
           <a class="btn btn-outline-white" href="#workflow">See How It Works</a>
         </div>
       </div>
@@ -482,7 +489,7 @@
         <p class="monitor-label">The Monitoring Gap</p>
         <h2>An alert is not the same as a response.</h2>
         <p>
-          Many properties already have cameras, alarms, guards, or access control. The problem is that these pieces often operate separately. When an alarm triggers at night, the owner is left guessing. When a camera records movement, nobody may be watching. When a guard needs backup, escalation may be unclear.
+          Many properties already have cameras, alarms, guards, or access control. The problem is that these pieces often operate separately. When an alarm triggers at night, the owner may not have enough context to assess the event. When a camera records movement, nobody may be watching. When a guard needs backup, escalation may be unclear.
         </p>
       </div>
 
@@ -490,7 +497,7 @@
         <p class="monitor-label">The Urban Eye Solution</p>
         <h3>Verify the threat before reacting.</h3>
         <p>
-          Urban Eye PRO Monitoring turns disconnected alerts into structured decisions. We use visual verification, event review, escalation procedures, and response coordination so your property is not relying on noise, guesswork, or disconnected systems.
+          Urban Eye PRO Monitoring turns disconnected alerts into structured decisions. We use visual verification, event review, escalation procedures, and response coordination so your property is not relying on noise, assumptions, or disconnected systems.
         </p>
       </div>
     </div>
@@ -681,10 +688,13 @@
   <section id="lead-form" class="monitor-section">
     <div class="container monitor-form-grid">
       <div class="reveal-up">
-        <p class="monitor-label">Find Your Response Plan</p>
+        <p class="monitor-label">Monitoring Security Review</p>
         <h2>An alarm is stronger when someone responds.</h2>
         <p>
           Tell us what you want monitored and we will recommend the right monitoring and response tier for your property, system, and risk profile.
+        </p>
+        <p>
+          Assessment requests are reviewed first so Urban Eye can confirm fit, urgency, and the correct technical scope before scheduling a site visit.
         </p>
       </div>
 
@@ -693,8 +703,8 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="service_interest" value="Urban Eye PRO Monitoring">
 
-        <h3>Find my response plan</h3>
-        <p>Share a few details and we will advise on the right monitoring setup.</p>
+        <h3>Request a monitoring review</h3>
+        <p>Share a few details and we will advise on the right monitoring setup. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.</p>
 
         <div class="monitor-form-fields">
           <div>
@@ -727,7 +737,33 @@
           </div>
 
           <div class="full">
-            <button class="btn btn-primary" type="submit">Find My Response Plan</button>
+            <label for="monitor-location">Property Location</label>
+            <input id="monitor-location" name="property_location" placeholder="Example: Kilimani, Westlands, Ruiru">
+          </div>
+
+          <div>
+            <label for="monitor-timeline">Preferred Timeline</label>
+            <select id="monitor-timeline" name="preferred_timeline">
+              <option value="">Select timeline</option>
+              <option>Urgent: within 7 days</option>
+              <option>Soon: within 2&ndash;4 weeks</option>
+              <option>Planning: next 1&ndash;3 months</option>
+              <option>Researching options</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="monitor-existing-system">Existing Security System</label>
+            <input id="monitor-existing-system" name="existing_security_system" placeholder="Example: CCTV, alarms, guards, access control, none">
+          </div>
+
+          <div class="full">
+            <label for="monitor-concern">Main Concern</label>
+            <textarea id="monitor-concern" name="main_concern" placeholder="Example: after-hours alarms, guard escalation, false alarms, fire alerts, multi-site monitoring"></textarea>
+          </div>
+
+          <div class="full">
+            <button class="btn btn-primary" type="submit">Request Monitoring Review</button>
           </div>
 
           <div class="full">
@@ -749,7 +785,7 @@
         </div>
 
         <div class="monitor-actions">
-          <a class="btn btn-primary" href="#lead-form">Find My Response Plan</a>
+          <a class="btn btn-primary" href="#lead-form">Request Monitoring Review</a>
           <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
         </div>
       </div>

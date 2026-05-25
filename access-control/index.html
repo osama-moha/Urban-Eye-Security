@@ -696,7 +696,7 @@
         <input type="hidden" name="service_interest" value="Access Control">
 
         <h3>Plan access control</h3>
-        <p>Share a few details and we will advise on the right structure for your access setup.</p>
+        <p>Share a few details and we will advise on the right structure for your access setup. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.</p>
 
         <div class="ac-form-grid">
           <div>
@@ -724,8 +724,29 @@
           </div>
 
           <div class="full">
-            <label for="ac-message">Main Need</label>
-            <textarea id="ac-message" name="message" placeholder="Example: biometric staff access, main gate automation, restricted room access, stockroom control"></textarea>
+            <label for="ac-location">Property Location</label>
+            <input id="ac-location" name="property_location" placeholder="Example: Westlands, Upper Hill, Kilimani">
+          </div>
+
+          <div class="full">
+            <label for="ac-timeline">Preferred Timeline</label>
+            <select id="ac-timeline" name="preferred_timeline">
+              <option value="">Select timeline</option>
+              <option>Urgent: within 7 days</option>
+              <option>Soon: within 2&ndash;4 weeks</option>
+              <option>Planning: next 1&ndash;3 months</option>
+              <option>Researching options</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="ac-existing-system">Existing Security System</label>
+            <input id="ac-existing-system" name="existing_security_system" placeholder="Example: keys, keypad, biometric reader, guards, none">
+          </div>
+
+          <div class="full">
+            <label for="ac-message">Main Concern</label>
+            <textarea id="ac-message" name="main_concern" placeholder="Example: biometric staff access, main gate automation, restricted room access, stockroom control"></textarea>
           </div>
 
           <div class="full">

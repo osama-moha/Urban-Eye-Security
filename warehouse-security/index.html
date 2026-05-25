@@ -314,9 +314,10 @@
     font-weight:800;
   }
 
-  .warehouse-form input,
-  .warehouse-form textarea{
-    width:100%;
+.warehouse-form input,
+.warehouse-form select,
+.warehouse-form textarea{
+  width:100%;
     min-height:50px;
     padding:13px 15px;
     border:1px solid #cfd6e4;
@@ -331,9 +332,10 @@
     resize:vertical;
   }
 
-  .warehouse-form input:focus,
-  .warehouse-form textarea:focus{
-    outline:none;
+.warehouse-form input:focus,
+.warehouse-form select:focus,
+.warehouse-form textarea:focus{
+  outline:none;
     border-color:rgba(201,40,48,.5);
     box-shadow:0 0 0 4px rgba(201,40,48,.08);
   }
@@ -458,7 +460,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#warehouse-survey" class="btn btn-primary">Book a Warehouse Site Survey</a>
+          <a href="#warehouse-survey" class="btn btn-primary">Request a Warehouse Security Assessment</a>
           <a href="/security-packages/#commercial" class="btn btn-outline-white">View Commercial Packages</a>
         </div>
       </div>
@@ -625,7 +627,7 @@
 
         <div class="warehouse-actions">
           <a href="/security-packages/#commercial" class="btn btn-primary">View Commercial Packages</a>
-          <a href="#warehouse-survey" class="btn btn-outline">Book Warehouse Survey</a>
+          <a href="#warehouse-survey" class="btn btn-outline">Request Security Assessment</a>
         </div>
       </div>
     </div>
@@ -651,11 +653,14 @@
   <section id="warehouse-survey" class="warehouse-section warehouse-soft">
     <div class="container warehouse-form-grid">
       <div class="reveal-up">
-        <p class="section-label">Warehouse Site Survey</p>
+        <p class="section-label">Warehouse Security Assessment</p>
         <h2>Ready to secure your logistics operations?</h2>
 
         <p>
           Tell us about your facility so Urban Eye can recommend the right mix of perimeter defense, CCTV, access control, alarm detection, fire safety, guarding routines, and monitoring escalation.
+        </p>
+        <p>
+          Assessment requests are reviewed first so Urban Eye can confirm fit, urgency, and the correct technical scope before scheduling a site visit.
         </p>
 
         <div class="warehouse-note">
@@ -669,8 +674,8 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="service_interest" value="Warehouse & Logistics Security">
 
-        <h3>Book a warehouse site survey</h3>
-        <p>Share your facility details and we will recommend the right starting framework.</p>
+        <h3>Request a warehouse security assessment</h3>
+        <p>Share your facility details and we will recommend the right starting framework. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.</p>
 
         <div class="form-grid">
           <div>
@@ -689,12 +694,33 @@
           </div>
 
           <div class="full">
+            <label for="warehouse-location">Property Location</label>
+            <input id="warehouse-location" name="property_location" placeholder="Example: Industrial Area, Athi River, Ruiru">
+          </div>
+
+          <div>
+            <label for="warehouse-timeline">Preferred Timeline</label>
+            <select id="warehouse-timeline" name="preferred_timeline">
+              <option value="">Select timeline</option>
+              <option>Urgent: within 7 days</option>
+              <option>Soon: within 2&ndash;4 weeks</option>
+              <option>Planning: next 1&ndash;3 months</option>
+              <option>Researching options</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="warehouse-existing-system">Existing Security System</label>
+            <input id="warehouse-existing-system" name="existing_security_system" placeholder="Example: guards, CCTV, alarms, access control, none">
+          </div>
+
+          <div class="full">
             <label for="warehouse-concern">Main Concern</label>
             <textarea id="warehouse-concern" name="main_concern" placeholder="Example: night-time perimeter, internal shrinkage, loading bay visibility, fire safety, restricted stockroom access"></textarea>
           </div>
 
           <div class="full">
-            <button class="btn btn-primary" type="submit">Book My Warehouse Site Survey</button>
+            <button class="btn btn-primary" type="submit">Request My Warehouse Assessment</button>
           </div>
 
           <div class="full">
@@ -753,7 +779,7 @@
           </p>
         </div>
         <div class="system-bridge-actions">
-          <a class="btn btn-primary" href="#warehouse-survey">Book Warehouse Survey</a>
+          <a class="btn btn-primary" href="#warehouse-survey">Request Security Assessment</a>
           <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
         </div>
       </div>

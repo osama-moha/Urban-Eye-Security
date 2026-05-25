@@ -263,6 +263,7 @@
     }
 
     .office-form input,
+    .office-form select,
     .office-form textarea{
       width:100%;
       min-height:50px;
@@ -280,6 +281,7 @@
     }
 
     .office-form input:focus,
+    .office-form select:focus,
     .office-form textarea:focus{
       outline:none;
       border-color:rgba(201,40,48,.5);
@@ -361,7 +363,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#office-survey" class="btn btn-primary">Book an Office Site Survey</a>
+            <a href="#office-survey" class="btn btn-primary">Request an Office Security Review</a>
             <a href="/security-packages/#commercial" class="btn btn-outline-white">View Office Package</a>
           </div>
         </div>
@@ -461,7 +463,7 @@
 
           <div class="office-actions">
             <a href="/security-packages/#commercial" class="btn btn-primary">See the Office Shield Package</a>
-            <a href="#office-survey" class="btn btn-outline">Book Office Survey</a>
+            <a href="#office-survey" class="btn btn-outline">Request Security Review</a>
           </div>
         </div>
       </div>
@@ -487,10 +489,13 @@
     <section id="office-survey" class="office-section office-soft">
       <div class="container office-form-grid">
         <div class="reveal-up">
-          <p class="section-label">Office Site Survey</p>
+          <p class="section-label">Office Security Review</p>
           <h2>Let's map your office security requirements.</h2>
           <p>
             Tell us about your office space so Urban Eye can recommend the right mix of access control, CCTV, zoned intrusion detection, panic support, fire safety, and monitoring escalation.
+          </p>
+          <p>
+            Assessment requests are reviewed first so Urban Eye can confirm fit, urgency, and the correct technical scope before scheduling a site visit.
           </p>
 
           <div class="office-note">
@@ -504,8 +509,8 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="service_interest" value="Office Security Systems">
 
-          <h3>Book my office site survey</h3>
-          <p>Share your details and we will recommend the right starting framework.</p>
+          <h3>Request an office security review</h3>
+          <p>Share your details and we will recommend the right starting framework. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.</p>
 
           <div class="form-grid">
             <div>
@@ -524,12 +529,33 @@
             </div>
 
             <div class="full">
+              <label for="office-location">Property Location</label>
+              <input id="office-location" name="property_location" placeholder="Example: Westlands, Upper Hill, Kilimani">
+            </div>
+
+            <div>
+              <label for="office-timeline">Preferred Timeline</label>
+              <select id="office-timeline" name="preferred_timeline">
+                <option value="">Select timeline</option>
+                <option>Urgent: within 7 days</option>
+                <option>Soon: within 2&ndash;4 weeks</option>
+                <option>Planning: next 1&ndash;3 months</option>
+                <option>Researching options</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="office-existing-system">Existing Security System</label>
+              <input id="office-existing-system" name="existing_security_system" placeholder="Example: CCTV, guards, access control, none">
+            </div>
+
+            <div class="full">
               <label for="office-concern">Main Concern</label>
               <textarea id="office-concern" name="main_concern" placeholder="Example: staff access control, server room security, reception CCTV, after-hours intrusion, fire safety"></textarea>
             </div>
 
             <div class="full">
-              <button class="btn btn-primary" type="submit">Book My Office Site Survey</button>
+              <button class="btn btn-primary" type="submit">Request My Office Security Review</button>
             </div>
 
             <div class="full">
@@ -552,7 +578,7 @@
           </div>
 
           <div class="system-bridge-actions">
-            <a class="btn btn-primary" href="#office-survey">Book Office Survey</a>
+            <a class="btn btn-primary" href="#office-survey">Request Security Review</a>
             <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
           </div>
         </div>

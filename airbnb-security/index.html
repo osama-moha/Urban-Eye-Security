@@ -776,7 +776,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#host-audit" class="btn btn-primary">Book a Host Security Audit</a>
+          <a href="#host-audit" class="btn btn-primary">Request a Host Security Review</a>
           <a href="https://wa.me/254768055555" class="btn btn-outline-light">Chat on WhatsApp</a>
         </div>
       </div>
@@ -944,7 +944,7 @@
       <div class="dark-panel reveal-up">
         <h3>Hardware is only half the solution.</h3>
         <p>
-          Monitoring connects alerts, cameras, emergency workflows, and response coordination so your property is not left depending on guesswork.
+          Monitoring connects alerts, cameras, emergency workflows, and response coordination so your property is not left depending on assumptions.
         </p>
         <a href="/professional-monitoring/" class="text-link-light">Explore Monitoring & Response</a>
       </div>
@@ -1039,7 +1039,7 @@
 
         <h3>Request a host security audit</h3>
         <p>
-          Share a few details and Urban Eye will advise on the right short-stay security setup.
+          Share a few details and Urban Eye will advise on the right short-stay security setup. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.
         </p>
 
         <div class="form-grid">
@@ -1066,11 +1066,32 @@
         </label>
 
         <label>
-          Main concern
-          <textarea name="concern" rows="5" placeholder="Example: copied keys, unauthorized guests, vacant unit risk, fire alerts, exterior visibility"></textarea>
+          Property Location
+          <input type="text" name="property_location" placeholder="Example: Kilimani, Westlands, Diani">
         </label>
 
-        <button type="submit" class="btn btn-primary form-submit">Book a Host Security Audit</button>
+        <label>
+          Preferred Timeline
+          <select name="preferred_timeline">
+            <option value="">Select timeline</option>
+            <option>Urgent: within 7 days</option>
+            <option>Soon: within 2&ndash;4 weeks</option>
+            <option>Planning: next 1&ndash;3 months</option>
+            <option>Researching options</option>
+          </select>
+        </label>
+
+        <label>
+          Existing Security System
+          <input type="text" name="existing_security_system" placeholder="Example: smart lock, CCTV, guards, none">
+        </label>
+
+        <label>
+          Main Concern
+          <textarea name="main_concern" rows="5" placeholder="Example: copied keys, unauthorized guests, vacant unit risk, fire alerts, exterior visibility"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary form-submit">Request Host Security Review</button>
 
         <a href="https://wa.me/254768055555" class="form-whatsapp">Or chat with us instantly on WhatsApp</a>
       </form>
@@ -1082,10 +1103,10 @@
       <div>
         <h2>Ready to secure your short-stay property?</h2>
         <p>
-          Book a host security audit and Urban Eye will recommend the right mix of keyless access, exterior visibility, emergency alerts, and response support.
+          Request a host security review and Urban Eye will recommend the right mix of keyless access, exterior visibility, emergency alerts, and response support.
         </p>
       </div>
-      <a href="#host-audit" class="btn btn-primary">Book a Host Security Audit</a>
+      <a href="#host-audit" class="btn btn-primary">Request Host Security Review</a>
     </div>
   </section>
 </main>

@@ -60,7 +60,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#construction-site-survey">Book a Site Survey & Plan Review</a>
+            <a class="btn btn-primary" href="#construction-site-survey">Request a Site Security Assessment</a>
             <a class="btn btn-outline-white" href="#construction-pricing">View Protection Options</a>
           </div>
 
@@ -277,7 +277,7 @@
 
           <div class="construction-option-actions">
             <a class="btn btn-primary" href="/security-packages/#construction-site-protection">View Construction Package Options</a>
-            <a class="btn btn-outline" href="#construction-site-survey">Book a Site Survey</a>
+            <a class="btn btn-outline" href="#construction-site-survey">Request Site Assessment</a>
           </div>
         </div>
       </div>
@@ -310,12 +310,16 @@
     <section id="construction-site-survey" class="light-section">
       <div class="container two-col">
         <div class="reveal-slide">
-          <p class="section-label">Construction Site Survey</p>
+          <p class="section-label">Construction Site Assessment</p>
 
           <h2>Let’s secure your project site and materials.</h2>
 
           <p class="section-intro">
             Share your details to schedule a professional assessment of your construction site and a review of your material exit protocols.
+          </p>
+
+          <p class="section-intro">
+            Assessment requests are reviewed first so Urban Eye can confirm fit, urgency, and the correct technical scope before scheduling a site visit.
           </p>
 
           <p class="package-disclaimer">
@@ -329,10 +333,10 @@
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="service_interest" value="Construction Site Security">
 
-          <h3 style="margin-top:0;color:var(--deep-navy)">Book my construction site survey</h3>
+          <h3 style="margin-top:0;color:var(--deep-navy)">Request a construction site assessment</h3>
 
           <p style="color:var(--muted);line-height:1.65">
-            Tell us about your project and Urban Eye will recommend the right starting framework.
+            Tell us about your project and Urban Eye will recommend the right starting framework. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.
           </p>
 
           <div class="form-grid">
@@ -346,13 +350,39 @@
               <input name="phone" placeholder="+254..." required>
             </div>
 
-            <div class="full">
-              <label>Project Location / Stage</label>
-              <input name="project_location_stage" placeholder="e.g. Kiambu Road, foundation stage / fit-out stage" required>
+            <div>
+              <label>Property Location</label>
+              <input name="property_location" placeholder="e.g. Kiambu Road, Athi River, Runda" required>
+            </div>
+
+            <div>
+              <label>Project Stage</label>
+              <input name="project_stage" placeholder="e.g. foundation stage, fit-out stage">
             </div>
 
             <div class="full">
-              <button class="btn btn-primary" type="submit" style="width:100%">Book My Site Survey</button>
+              <label>Preferred Timeline</label>
+              <select name="preferred_timeline">
+                <option value="">Select timeline</option>
+                <option>Urgent: within 7 days</option>
+                <option>Soon: within 2&ndash;4 weeks</option>
+                <option>Planning: next 1&ndash;3 months</option>
+                <option>Researching options</option>
+              </select>
+            </div>
+
+            <div class="full">
+              <label>Existing Security System</label>
+              <input name="existing_security_system" placeholder="Example: guards, gate control, CCTV, none">
+            </div>
+
+            <div class="full">
+              <label>Main Concern</label>
+              <textarea name="main_concern" placeholder="Example: material exit control, night perimeter breaches, guard coverage, subcontractor access"></textarea>
+            </div>
+
+            <div class="full">
+              <button class="btn btn-primary" type="submit" style="width:100%">Request My Site Assessment</button>
               <a class="form-whatsapp-link" href="https://wa.me/254768055555">Or chat with us instantly on WhatsApp →</a>
             </div>
           </div>
@@ -372,7 +402,7 @@
           </div>
 
           <div class="system-bridge-actions">
-            <a class="btn btn-primary" href="/contact/?service=construction-site-security">Book Site Survey</a>
+            <a class="btn btn-primary" href="/contact/?service=construction-site-security">Request Site Assessment</a>
             <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
           </div>
         </div>

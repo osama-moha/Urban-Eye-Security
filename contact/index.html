@@ -4,12 +4,12 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Contact Urban Eye Security | Book a Site Survey</title>
-  <meta name="description" content="Contact Urban Eye Security to book a site survey for guarding, CCTV, smart alarms, access control, fire alarms, monitoring, and integrated security packages in Nairobi."/>
+  <title>Contact Urban Eye Security | Request a Site Assessment</title>
+  <meta name="description" content="Contact Urban Eye Security to request a site assessment for guarding, CCTV, smart alarms, access control, fire alarms, monitoring, and integrated security packages in Nairobi."/>
 
   <link rel="canonical" href="https://urbaneyesecurity.co.ke/contact/"/>
 
-  <meta property="og:title" content="Contact Urban Eye Security | Book a Site Survey"/>
+  <meta property="og:title" content="Contact Urban Eye Security | Request a Site Assessment"/>
   <meta property="og:description" content="Tell us about your property and Urban Eye will recommend the right security starting point."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://urbaneyesecurity.co.ke/contact/"/>
@@ -37,7 +37,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact-form">Book a Site Survey</a>
+          <a class="btn btn-primary" href="#contact-form">Request a Site Assessment</a>
           <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
         </div>
 
@@ -47,12 +47,15 @@
     <section id="contact-form" class="light-section">
       <div class="container two-col">
         <div>
-          <p class="section-label">Book a Site Survey</p>
+          <p class="section-label">Security Intake Request</p>
 
           <h2>Tell us what you want to protect.</h2>
 
           <p class="section-intro">
             Use this form for security packages, CCTV, smart alarms, manned guarding, access control, fire alarm systems, monitoring, or general security assessment requests.
+          </p>
+          <p class="section-intro">
+            Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.
           </p>
 
           <div class="card contact-direct-card">
@@ -120,8 +123,8 @@
             </div>
 
             <div>
-              <label for="location">Location</label>
-              <input id="location" name="location" placeholder="e.g. Westlands, Karen, Kilimani">
+              <label for="location">Property Location</label>
+              <input id="location" name="property_location" placeholder="e.g. Westlands, Karen, Kilimani">
             </div>
 
             <div class="full">
@@ -149,19 +152,24 @@
             </div>
 
             <div class="full">
-              <label for="urgency">Urgency</label>
-              <select id="urgency" name="urgency">
-                <option value="">Select urgency</option>
-                <option value="Immediate">Immediate</option>
-                <option value="This week">This week</option>
-                <option value="This month">This month</option>
-                <option value="Planning stage">Planning stage</option>
+              <label for="urgency">Preferred Timeline</label>
+              <select id="urgency" name="preferred_timeline">
+                <option value="">Select timeline</option>
+                <option>Urgent: within 7 days</option>
+                <option>Soon: within 2&ndash;4 weeks</option>
+                <option>Planning: next 1&ndash;3 months</option>
+                <option>Researching options</option>
               </select>
             </div>
 
             <div class="full">
-              <label for="message">What do you need help with?</label>
-              <textarea id="message" name="message" placeholder="Briefly describe your property, current security setup, and the problem you want solved."></textarea>
+              <label for="existing-security-system">Existing Security System</label>
+              <input id="existing-security-system" name="existing_security_system" placeholder="Example: CCTV, guards, alarms, access control, none">
+            </div>
+
+            <div class="full">
+              <label for="message">Main Concern</label>
+              <textarea id="message" name="main_concern" placeholder="Briefly describe your property, current security setup, and the problem you want solved."></textarea>
             </div>
 
             <div class="full">
@@ -182,7 +190,7 @@
           </div>
 
           <p class="section-intro">
-            Urban Eye does not recommend hardware blindly. We start with your risk profile, property layout, and response expectations.
+            Urban Eye reviews your risk profile, property layout, and response expectations before recommending hardware.
           </p>
         </div>
 
