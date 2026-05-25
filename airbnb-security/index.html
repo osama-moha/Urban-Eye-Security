@@ -568,6 +568,196 @@
       width:100%;
     }
   }
+
+  /* =========================================================
+     Airbnb page refinement overrides
+     Make page more corporate and less oversized
+     ========================================================= */
+
+  .airbnb-hero{
+    padding:76px 0 86px;
+  }
+
+  .airbnb-hero-inner{
+    align-items:center;
+    gap:64px;
+  }
+
+  .airbnb-hero h1{
+    max-width:760px;
+    font-size:clamp(44px, 5.1vw, 72px);
+    line-height:1.02;
+    letter-spacing:0;
+    font-weight:700;
+  }
+
+  .airbnb-hero .hero-lead{
+    max-width:700px;
+    margin-top:22px;
+    font-size:18px;
+    line-height:1.62;
+    font-weight:500;
+  }
+
+  .airbnb-hero-note{
+    max-width:520px;
+  }
+
+  .airbnb-hero-note p{
+    font-size:17px;
+    line-height:1.65;
+  }
+
+  .airbnb-page h2{
+    font-size:clamp(34px, 4vw, 54px);
+    line-height:1.06;
+    letter-spacing:0;
+    font-weight:700;
+  }
+
+  .airbnb-page h3{
+    font-size:22px;
+    line-height:1.25;
+    font-weight:700;
+  }
+
+  .airbnb-page p{
+    font-size:17px;
+    line-height:1.65;
+  }
+
+  .airbnb-gap,
+  .airbnb-process,
+  .airbnb-form-section{
+    padding:76px 0;
+  }
+
+  .airbnb-framework,
+  .airbnb-packages{
+    padding:82px 0;
+  }
+
+  .airbnb-audit,
+  .airbnb-monitoring{
+    padding:78px 0;
+  }
+
+  .airbnb-final-cta{
+    padding:66px 0;
+  }
+
+  .airbnb-page .section-intro.split{
+    margin-bottom:42px;
+    gap:60px;
+  }
+
+  .airbnb-page .feature-row{
+    padding:28px 0;
+  }
+
+  .airbnb-page .feature-copy p,
+  .airbnb-page .feature-detail p{
+    font-size:16.5px;
+    line-height:1.6;
+  }
+
+  .airbnb-page .section-dark{
+    background:
+      linear-gradient(135deg, rgba(30,18,48,.32), rgba(16,26,68,.96) 38%, rgba(16,26,68,1)),
+      linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+    background-size:auto, 88px 88px, 88px 88px;
+  }
+
+  .airbnb-page .airbnb-monitoring{
+    background:
+      linear-gradient(135deg, rgba(16,26,68,.98), rgba(22,38,92,.96)),
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:auto, 88px 88px, 88px 88px;
+  }
+
+  .airbnb-monitoring h2{
+    max-width:620px;
+  }
+
+  .airbnb-monitoring .section-copy p{
+    max-width:650px;
+  }
+
+  .airbnb-page .cta-row{
+    padding:32px 38px;
+  }
+
+  .airbnb-page .cta-row h2{
+    font-size:clamp(30px, 3vw, 42px);
+  }
+
+  .airbnb-page .faq-block h2{
+    font-size:clamp(36px, 4vw, 56px);
+  }
+
+  .airbnb-page .faq-item summary{
+    padding:18px 20px;
+    font-size:16px;
+  }
+
+  .airbnb-page .lead-form{
+    padding:32px;
+  }
+
+  .airbnb-page .lead-form h3{
+    font-size:24px;
+  }
+
+  .airbnb-page .lead-form > p{
+    font-size:16.5px;
+  }
+
+  @media(max-width:900px){
+    .airbnb-hero{
+      padding:62px 0 70px;
+    }
+
+    .airbnb-hero-inner{
+      gap:34px;
+    }
+
+    .airbnb-hero h1{
+      font-size:clamp(40px, 11vw, 54px);
+      line-height:1.03;
+    }
+
+    .airbnb-hero .hero-lead{
+      font-size:17px;
+    }
+
+    .airbnb-page h2{
+      font-size:clamp(32px, 9vw, 44px);
+    }
+
+    .airbnb-gap,
+    .airbnb-process,
+    .airbnb-form-section,
+    .airbnb-framework,
+    .airbnb-packages,
+    .airbnb-audit,
+    .airbnb-monitoring{
+      padding:58px 0;
+    }
+
+    .airbnb-page .feature-row{
+      padding:24px 0;
+    }
+
+    .airbnb-page .cta-row,
+    .airbnb-page .final-cta-inner,
+    .airbnb-page .lead-form,
+    .airbnb-page .editorial-panel,
+    .airbnb-page .dark-panel{
+      padding:24px;
+    }
+  }
 </style>
 </head>
 <body>

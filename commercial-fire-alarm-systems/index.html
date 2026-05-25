@@ -4,10 +4,10 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Commercial Fire Alarm Systems in Kenya | Urban Eye Security</title>
-<meta name="description" content="Urban Eye Security installs wireless commercial fire alarm systems in Kenya using Ajax fire detection, synchronized sirens, automation modules, CCTV verification, and site audits for offices, restaurants, schools, warehouses, and retail facilities."/>
+<meta name="description" content="Urban Eye designs commercial fire detection systems for offices, retail spaces, schools, warehouses, restaurants, and mixed-use properties in Kenya. Book a fire safety audit before buying equipment."/>
 <link rel="canonical" href="https://urbaneyesecurity.co.ke/commercial-fire-alarm-systems/"/>
 <meta property="og:title" content="Commercial Fire Alarm Systems in Kenya | Urban Eye Security"/>
-<meta property="og:description" content="Wireless commercial fire detection integrated with intrusion alarms, CCTV verification, automation modules, and emergency response workflows."/>
+<meta property="og:description" content="Commercial fire detection systems for offices, retail spaces, schools, warehouses, restaurants, and mixed-use properties in Kenya."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://urbaneyesecurity.co.ke/commercial-fire-alarm-systems/"/>
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/fire%20alarm.png"/>
@@ -17,22 +17,532 @@
 <link rel="stylesheet" href="/style.css"/>
 
 <style>
-/* Page-specific refinements: keep service page explanatory, move pricing to Packages page */
-.service-row-list{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.service-row-list .service-line{display:grid;grid-template-columns:.7fr 1.3fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--border)}
-.service-row-list .service-line:last-child{border-bottom:0}
-.service-line strong{color:var(--deep-navy);font-size:18px}
-.service-line span{color:var(--muted);line-height:1.65}
-.dark-section .service-line{border-color:rgba(255,255,255,.16)}
-.dark-section .service-line strong{color:#fff}
-.dark-section .service-line span{color:rgba(255,255,255,.72)}
-.package-redirect{padding:72px 0;background:#F5F7FA;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.package-redirect-inner{display:grid;grid-template-columns:1fr .85fr;gap:64px;align-items:center}
-.package-redirect-note{border-top:1px solid var(--border);padding-top:22px;color:var(--muted);line-height:1.7}
-.package-redirect-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.inline-bridge{padding:72px 0;background:#fff;border-bottom:1px solid var(--border)}
-.inline-bridge-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:34px 0}
-@media(max-width:900px){.service-row-list .service-line,.package-redirect-inner,.inline-bridge-inner{grid-template-columns:1fr;gap:18px}.package-redirect-actions{display:grid}.package-redirect-actions .btn{width:100%;justify-content:center}}
+/* =========================================================
+   COMMERCIAL FIRE ALARM PAGE ONLY
+   Scoped page styles. Does not affect global navbar/footer.
+   ========================================================= */
+
+.fire-page{
+  background:#fff;
+  color:#07122F;
+}
+
+.fire-page .container{
+  width:min(1180px, calc(100% - 48px));
+  margin:0 auto;
+}
+
+.section-dark-grid{
+  background:
+    linear-gradient(135deg, rgba(20,13,45,.92), rgba(27,44,110,.96)),
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:auto, 88px 88px, 88px 88px;
+  color:#fff;
+}
+
+.section-light{
+  background:#F2F4F7;
+}
+
+.section-white{
+  background:#fff;
+}
+
+.section-navy{
+  background:#0B1535;
+  color:#fff;
+}
+
+.fire-page section{
+  padding:88px 0;
+}
+
+.fire-page .fire-hero{
+  min-height:auto;
+  padding:72px 0 78px;
+}
+
+.fire-hero-inner{
+  display:grid;
+  grid-template-columns:minmax(0, 1.15fr) minmax(280px, .85fr);
+  gap:64px;
+  align-items:center;
+}
+
+.fire-hero-visual{
+  max-width:360px;
+  justify-self:end;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  box-shadow:0 24px 60px rgba(0,0,0,.24);
+}
+
+.fire-hero-visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+.eyebrow{
+  margin:0 0 16px;
+  color:#C4272E;
+  font-size:12px;
+  line-height:1.2;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+
+.eyebrow.light{
+  color:rgba(255,255,255,.72);
+}
+
+.fire-page h1,
+.fire-page h2,
+.fire-page h3{
+  margin:0;
+  letter-spacing:0;
+  color:inherit;
+}
+
+.fire-page h1{
+  max-width:860px;
+  font-size:clamp(40px, 4.4vw, 62px);
+  line-height:1.02;
+  font-weight:800;
+}
+
+.fire-page .fire-hero h1{
+  max-width:760px;
+  font-size:clamp(40px, 4.4vw, 62px);
+  line-height:1.05;
+}
+
+.fire-page h2{
+  font-size:clamp(34px, 4vw, 56px);
+  line-height:1.06;
+  font-weight:800;
+}
+
+.fire-page h3{
+  font-size:22px;
+  line-height:1.2;
+  font-weight:800;
+}
+
+.fire-page p{
+  margin:0;
+  color:#5D687A;
+  font-size:18px;
+  line-height:1.72;
+}
+
+.section-navy p,
+.section-dark-grid p{
+  color:rgba(255,255,255,.74);
+}
+
+.hero-lead{
+  max-width:720px;
+  margin-top:26px!important;
+  color:rgba(255,255,255,.82)!important;
+  font-size:18px!important;
+  line-height:1.65!important;
+  font-weight:500;
+}
+
+.hero-actions,
+.bridge-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+
+.btn{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 22px;
+  border-radius:9px;
+  font-size:14px;
+  font-weight:800;
+  text-decoration:none;
+  border:1px solid transparent;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:#C4272E;
+  color:#fff;
+  box-shadow:0 18px 34px rgba(196,39,46,.22);
+}
+
+.btn-outline-white{
+  color:#fff;
+  border-color:rgba(255,255,255,.45);
+  background:transparent;
+}
+
+.btn-outline{
+  color:#07122F;
+  border-color:#C9D2E1;
+  background:#fff;
+}
+
+.full-width{
+  width:100%;
+}
+
+.split-grid,
+.process-grid,
+.faq-grid,
+.lead-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:start;
+}
+
+.split-grid > div > p:not(.eyebrow),
+.process-grid > div > p:not(.eyebrow){
+  margin-top:18px;
+}
+
+.soft-panel{
+  padding:34px;
+  border:1px solid #D5DDEA;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(7,18,47,.07);
+}
+
+.soft-panel p{
+  margin-top:16px;
+}
+
+.section-heading-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:72px;
+  align-items:end;
+  margin-bottom:46px;
+}
+
+.framework-rows{
+  border-top:1px solid rgba(255,255,255,.28);
+  border-bottom:1px solid rgba(255,255,255,.28);
+}
+
+.framework-row{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:64px;
+  padding:28px 0;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+.framework-row:last-child{
+  border-bottom:0;
+}
+
+.framework-row strong{
+  color:#fff;
+  font-size:20px;
+  line-height:1.35;
+}
+
+.framework-row p{
+  max-width:760px;
+}
+
+.process-list{
+  display:grid;
+  gap:0;
+  border-top:1px solid #D5DDEA;
+}
+
+.process-item{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:28px;
+  padding:28px 0;
+  border-bottom:1px solid #D5DDEA;
+}
+
+.process-item span{
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(196,39,46,.35);
+  border-radius:999px;
+  color:#C4272E;
+  font-size:14px;
+  font-weight:800;
+}
+
+.process-item h3{
+  margin-bottom:8px;
+  font-size:22px;
+}
+
+.integration-list{
+  border-top:1px solid #D5DDEA;
+}
+
+.integration-list div{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:28px;
+  padding:24px 0;
+  border-bottom:1px solid #D5DDEA;
+}
+
+.integration-list strong{
+  color:#07122F;
+  font-size:18px;
+}
+
+.integration-list span{
+  color:#5D687A;
+  font-size:17px;
+  line-height:1.65;
+}
+
+.bridge-panel{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:54px;
+  align-items:center;
+  padding:42px;
+  border:1px solid #D5DDEA;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(7,18,47,.06);
+}
+
+.bridge-panel p{
+  margin-top:14px;
+}
+
+.dark-panel{
+  padding:34px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+}
+
+.dark-panel p{
+  margin-top:12px;
+}
+
+.dark-panel a{
+  display:inline-block;
+  margin-top:20px;
+  color:#fff;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.faq-list{
+  display:grid;
+  gap:14px;
+}
+
+.faq-list details{
+  border:1px solid #D5DDEA;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 18px 42px rgba(7,18,47,.04);
+}
+
+.faq-list summary{
+  padding:20px 22px;
+  color:#07122F;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.faq-list details p{
+  padding:0 22px 22px;
+  font-size:16px;
+}
+
+.note-box{
+  margin-top:32px;
+  padding:22px;
+  border-left:3px solid #C4272E;
+  background:#fff;
+  border-radius:0 12px 12px 0;
+  box-shadow:0 18px 42px rgba(7,18,47,.05);
+}
+
+.note-box strong,
+.note-box span{
+  display:block;
+}
+
+.note-box strong{
+  margin-bottom:8px;
+  color:#07122F;
+  font-size:16px;
+}
+
+.note-box span{
+  color:#5D687A;
+  font-size:16px;
+  line-height:1.65;
+}
+
+.lead-form{
+  padding:32px;
+  border:1px solid #D5DDEA;
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 24px 60px rgba(7,18,47,.08);
+}
+
+.lead-form h3{
+  margin-bottom:20px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.lead-form label{
+  display:block;
+  margin-bottom:16px;
+  color:#07122F;
+  font-size:14px;
+  font-weight:800;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea{
+  width:100%;
+  margin-top:8px;
+  padding:14px 15px;
+  border:1px solid #C9D2E1;
+  border-radius:9px;
+  background:#fff;
+  color:#07122F;
+  font:inherit;
+  font-size:15px;
+}
+
+.lead-form textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.form-whatsapp{
+  display:inline-block;
+  margin-top:16px;
+  color:#C4272E;
+  font-weight:800;
+  text-decoration:none;
+}
+
+@media(max-width:900px){
+
+  .fire-page .container{
+    width:min(100% - 32px, 1180px);
+  }
+
+  .fire-page section{
+    padding:64px 0;
+  }
+
+  .fire-page .fire-hero{
+    padding:56px 0 64px;
+  }
+
+  .fire-hero-inner,
+  .split-grid,
+  .process-grid,
+  .faq-grid,
+  .lead-grid,
+  .section-heading-grid,
+  .bridge-panel{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .fire-hero-inner{
+    gap:32px;
+  }
+
+  .fire-page .fire-hero h1{
+    font-size:clamp(36px, 11vw, 48px);
+    line-height:1.05;
+  }
+
+  .fire-page h2{
+    font-size:clamp(34px, 10vw, 46px);
+  }
+
+  .hero-lead{
+    font-size:16px!important;
+    line-height:1.6!important;
+  }
+
+  .fire-hero-visual{
+    max-width:100%;
+    justify-self:start;
+  }
+
+  .fire-hero-visual img{
+    aspect-ratio:16 / 10;
+  }
+
+  .framework-row{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:24px 0;
+  }
+
+  .integration-list div{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .process-item{
+    grid-template-columns:46px 1fr;
+    gap:18px;
+  }
+
+  .bridge-panel{
+    padding:28px;
+  }
+
+  .bridge-actions,
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .bridge-actions .btn,
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+}
 </style>
 </head>
 
@@ -41,146 +551,334 @@
 
 <div class="page-progress" aria-hidden="true"><span class="page-progress-bar"></span></div>
 
+<main class="fire-page">
 
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <p class="section-label">Commercial Fire Alarm Systems</p>
-      <h1>Commercial Fire Safety: The Wireless Revolution.</h1>
-      <p>Urban Eye designs intelligent, wireless commercial fire detection that integrates with security cameras, intrusion alarms, access control, and emergency workflows while reducing cabling disruption and downtime.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#lead-form">Book a Free Fire Safety Audit</a>
-        <a class="btn btn-outline-white" href="/professional-monitoring/">Explore Monitoring & Response</a>
+  <section class="fire-hero section-dark-grid">
+    <div class="container fire-hero-inner">
+      <div class="fire-hero-copy">
+        <p class="eyebrow light">Commercial Fire Alarm Systems</p>
+
+        <h1>Commercial fire detection without unnecessary disruption.</h1>
+
+        <p class="hero-lead">
+          Urban Eye designs commercial fire detection systems that support safer evacuation,
+          early warning, reduced cabling disruption, and integration with your wider security setup.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#fire-audit-form">Book a Fire Safety Audit</a>
+          <a class="btn btn-outline-white" href="/security-packages/#commercial-fire">View Fire Package Options</a>
+        </div>
+      </div>
+
+      <div class="fire-hero-visual">
+        <img src="/urban-eye-assets/fire%20alarm.png" alt="Commercial fire alarm control panel and detection devices">
       </div>
     </div>
   </section>
 
-  <section class="light-section">
-    <div class="container two-col">
+  <section class="fire-split section-light">
+    <div class="container split-grid">
       <div>
-        <p class="section-label">The Problem</p>
-        <h2>Commercial fire safety is stuck in the past.</h2>
-        <p class="section-intro">For decades, protecting a commercial building meant accepting major disruption: walls opened, long cable runs, outdated control panels, and systems that operate separately from your cameras and alarms. When a crisis happens, isolated systems waste critical seconds, while false alarms from dust, steam, or poor placement interrupt operations.</p>
+        <p class="eyebrow">The Problem</p>
+        <h2>Fire safety fails when systems are outdated, isolated, or poorly planned.</h2>
+
+        <p>
+          Many commercial buildings rely on old panels, unclear detector placement, disconnected alarms,
+          and systems that do not support the wider security workflow. When a fire event occurs, every
+          second matters. The goal is not only to detect smoke or heat. The goal is to alert people quickly,
+          reduce confusion, support evacuation, and create a clear response path.
+        </p>
       </div>
-      <div class="image-panel fire-image-panel">
-        <img src="/urban-eye-assets/fire%20alarm.png" alt="Ajax commercial fire alarm devices and touchscreen control panel">
+
+      <div class="soft-panel">
+        <p class="eyebrow">The Urban Eye Approach</p>
+        <h3>A practical fire detection architecture designed around your building.</h3>
+
+        <p>
+          We begin with a facility review, then recommend the right mix of detectors, sirens, alerting,
+          automation, monitoring, and integration with CCTV or access control where useful.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="dark-section">
+  <section class="fire-framework section-navy">
     <div class="container">
-      <div class="section-head">
-        <div><p class="section-label">The Solution</p><h2>The All-Hazard Unified Architecture.</h2></div>
-        <p class="section-intro">Urban Eye connects fire detection, intrusion alarms, CCTV, access control, and emergency automation into one practical safety architecture for commercial buildings.</p>
+      <div class="section-heading-grid">
+        <div>
+          <p class="eyebrow light">The Fire Safety Framework</p>
+          <h2>Designed for early detection, clear alerts, and coordinated response.</h2>
+        </div>
+
+        <p>
+          A good commercial fire system should fit the building layout, operating hours, evacuation routes,
+          emergency workflows, and the people responsible for response.
+        </p>
       </div>
-      <div class="service-row-list">
-        <div class="service-line"><strong>Wireless Deployment</strong><span>Reduce wall damage, cabling disruption, and installation downtime with a modern wireless fire detection architecture.</span></div>
-        <div class="service-line"><strong>Smart Detection</strong><span>Use precision smoke and heat detection designed to reduce unnecessary disruption from common false-alarm triggers.</span></div>
-        <div class="service-line"><strong>Synchronized Alerting</strong><span>Trigger loud audio and visual alerts across the facility so alarms are heard and seen in busy or noisy environments.</span></div>
-        <div class="service-line"><strong>Emergency Automation</strong><span>Connect fire alerts to emergency routines such as unlocking exits, managing ventilation, or activating escalation workflows.</span></div>
+
+      <div class="framework-rows">
+        <div class="framework-row">
+          <strong>Precision detection</strong>
+          <p>
+            Smoke and heat detectors are positioned after reviewing the facility layout, risk areas,
+            ceiling conditions, room usage, and likely false-alarm triggers.
+          </p>
+        </div>
+
+        <div class="framework-row">
+          <strong>Clear audio and visual alerting</strong>
+          <p>
+            Sirens, strobes, and manual alarm points help occupants recognize an emergency quickly,
+            especially in busy, noisy, or multi-room commercial environments.
+          </p>
+        </div>
+
+        <div class="framework-row">
+          <strong>Emergency workflow support</strong>
+          <p>
+            Fire alerts can be connected to practical emergency routines such as access-door release,
+            manager notification, CCTV verification, or escalation to the agreed response pathway.
+          </p>
+        </div>
+
+        <div class="framework-row">
+          <strong>Testing and handover records</strong>
+          <p>
+            Your team receives clear installation records, basic user guidance, and a practical support path
+            for testing, maintenance, and future system changes.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="light-section">
-    <div class="container two-col">
+  <section class="fire-process section-light">
+    <div class="container process-grid">
       <div>
-        <p class="section-label">How It Works</p>
-        <h2>How our wireless fire architecture protects you.</h2>
-        <p class="section-intro">The goal is not only to detect a fire. The goal is to alert people fast, reduce confusion, verify the situation, and support emergency response.</p>
+        <p class="eyebrow">How It Works</p>
+        <h2>A structured fire safety process before equipment is installed.</h2>
+
+        <p>
+          Fire detection should not be guessed from a product list. Urban Eye reviews your building first,
+          then recommends a practical system based on risk, layout, and response needs.
+        </p>
       </div>
+
       <div class="process-list">
-        <div class="process-step"><div class="step-number">01</div><div><strong>Smart Command Center</strong><span>A touchscreen fire hub gives facility managers a clear place to manage alerts, system status, and communication paths.</span></div></div>
-        <div class="process-step"><div class="step-number">02</div><div><strong>Precision Smoke & Heat Detection</strong><span>Smart detectors are positioned after a site survey to improve coverage and reduce false alarms from normal activity.</span></div></div>
-        <div class="process-step"><div class="step-number">03</div><div><strong>Synchronized Sirens & Strobes</strong><span>Audio and visual alerting helps ensure employees, visitors, and occupants recognize the emergency quickly.</span></div></div>
-        <div class="process-step"><div class="step-number">04</div><div><strong>Automated Crisis Management</strong><span>Automation modules can support emergency door release, ventilation routines, or other site-specific safety actions.</span></div></div>
+        <div class="process-item">
+          <span>01</span>
+          <div>
+            <h3>Facility review</h3>
+            <p>We review the building layout, rooms, escape routes, existing systems, and operational risks.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>02</span>
+          <div>
+            <h3>Detector and alert planning</h3>
+            <p>We identify where detection, sirens, strobes, manual triggers, and control points are required.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>03</span>
+          <div>
+            <h3>Installation and configuration</h3>
+            <p>We install and configure the system with minimal disruption to your business operations.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>04</span>
+          <div>
+            <h3>Testing, handover, and support</h3>
+            <p>Your team receives practical guidance on system use, testing routines, and support contacts.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container two-col">
+  <section class="fire-integration section-white">
+    <div class="container split-grid">
       <div>
-        <p class="section-label">Ultimate Integration</p>
-        <h2>One architecture for fires, intruders, and cameras.</h2>
-        <p class="section-intro">The strongest advantage of the Urban Eye approach is unification. Your fire safety, intrusion detection, CCTV, access control, and monitoring workflows can be designed to support one another instead of operating as disconnected systems.</p>
-      </div>
-      <div class="service-row-list">
-        <div class="service-line"><strong>Best fit for</strong><span>Offices, restaurants, schools, warehouses, retail facilities, clinics, mixed-use buildings, and commercial properties that need fire safety without major cabling disruption.</span></div>
-        <div class="service-line"><strong>Next step</strong><span><a class="text-link" href="#lead-form">Book commercial fire audit →</a></span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="package-redirect">
-    <div class="container package-redirect-inner">
-      <div>
-        <p class="section-label">Package Options</p>
-        <h2>Fire safety pricing belongs after a site review.</h2>
-        <p class="section-intro">Commercial fire systems are scoped after reviewing your building layout, detector requirements, emergency workflows, and compliance needs.</p>
-        <p class="package-redirect-note">Starting budgets and the Essential Commercial Fire Package are now listed on the Security Packages page so this service page stays focused on the solution, not a pricing card.</p>
-      </div>
-      <div class="package-redirect-actions">
-        <a class="btn btn-primary" href="/security-packages/#commercial-fire-safety">View Fire Package Options</a>
-        <a class="btn btn-outline" href="#lead-form">Book a Fire Safety Audit</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="inline-bridge">
-    <div class="container inline-bridge-inner">
-      <div>
-        <p class="section-label">Integrated Security Plan</p>
+        <p class="eyebrow">Integrated Security Plan</p>
         <h2>Fire safety should not sit outside your security system.</h2>
-        <p class="section-intro">Urban Eye connects alarms, CCTV, fire detection, access control, monitoring, and response into one practical security architecture.</p>
+
+        <p>
+          Fire detection becomes more useful when it connects with the wider protection plan.
+          Depending on the site, Urban Eye can help align fire alerts with CCTV visibility,
+          access control, monitoring, and documented emergency procedures.
+        </p>
       </div>
-      <div class="package-redirect-actions">
-        <a class="btn btn-primary" href="/professional-monitoring/">Explore Monitoring and Response</a>
-        <a class="btn btn-outline" href="/security-packages/">Compare Security Packages</a>
-        <a class="cta-whatsapp-link" href="https://wa.me/254768055555">Or chat on WhatsApp →</a>
+
+      <div class="integration-list">
+        <div>
+          <strong>CCTV visibility</strong>
+          <span>Useful for checking what is happening before people are sent into risk.</span>
+        </div>
+
+        <div>
+          <strong>Access control</strong>
+          <span>Can support emergency door release or restricted-area response procedures.</span>
+        </div>
+
+        <div>
+          <strong>Monitoring and escalation</strong>
+          <span>Helps alerts reach the right person or response pathway after hours.</span>
+        </div>
       </div>
     </div>
   </section>
 
-<section id="lead-form" class="light-section">
-    <div class="container two-col">
+  <section class="package-bridge section-light">
+    <div class="container bridge-panel">
       <div>
-        <p class="section-label">Free Fire Safety Audit</p>
-        <h2>Map your facility before buying equipment.</h2>
-        <p class="section-intro">Let Urban Eye review your facility layout and design a wireless fire architecture that connects with your wider security system.</p>
+        <p class="eyebrow">Package Options</p>
+        <h2>Fire safety pricing belongs after a site review.</h2>
+
+        <p>
+          Commercial fire systems are scoped after reviewing your building layout, detector requirements,
+          emergency workflows, and compliance needs. Starting package estimates are listed on the Security
+          Packages page so this service page stays focused on the solution.
+        </p>
       </div>
-      <form class="form-card" action="https://formspree.io/f/xkoegypv" method="POST">
+
+      <div class="bridge-actions">
+        <a class="btn btn-primary" href="/security-packages/#commercial-fire">View Fire Package Options</a>
+        <a class="btn btn-outline" href="#fire-audit-form">Book a Fire Safety Audit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="monitoring-bridge section-navy">
+    <div class="container split-grid">
+      <div>
+        <p class="eyebrow light">Monitoring and Response</p>
+        <h2>An alarm is stronger when someone responds.</h2>
+
+        <p>
+          A fire alarm ringing in an empty building does not protect the business by itself.
+          For higher-risk commercial sites, fire alerts can be connected to monitoring, verification,
+          escalation, and response coordination.
+        </p>
+      </div>
+
+      <div class="dark-panel">
+        <h3>Urban Eye PRO Monitoring</h3>
+        <p>
+          Connect fire alerts, intrusion alerts, CCTV visibility, and emergency workflows into a clearer
+          response path for your property.
+        </p>
+        <a href="/professional-monitoring/">Explore Monitoring and Response -></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="fire-faq section-white">
+    <div class="container faq-grid">
+      <div>
+        <p class="eyebrow">FAQs</p>
+        <h2>Common commercial fire safety questions.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>Do I need a site survey before quotation?</summary>
+          <p>
+            Yes. Detector quantity, placement, alerting needs, and installation requirements depend on your
+            building layout and use. A site review helps avoid underquoting or installing the wrong system.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can fire alarms integrate with CCTV or access control?</summary>
+          <p>
+            Yes, depending on the site. Fire alerts can support CCTV verification, access-door release,
+            emergency notifications, and clearer response procedures.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can wireless fire detection reduce disruption?</summary>
+          <p>
+            In many buildings, wireless or hybrid fire detection can reduce cabling disruption compared with
+            traditional wired-only installations. The right approach depends on the building structure and risk profile.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="fire-audit-form" class="lead-section section-light">
+    <div class="container lead-grid">
+      <div>
+        <p class="eyebrow">Free Fire Safety Audit</p>
+        <h2>Review your facility before buying equipment.</h2>
+
+        <p>
+          Tell us about your commercial property and Urban Eye will recommend the right next step
+          based on your layout, risk areas, and response needs.
+        </p>
+
+        <div class="note-box">
+          <strong>Important note:</strong>
+          <span>
+            Final hardware requirements, detector counts, and monitoring subscriptions are quoted after
+            reviewing your facility layout. Package prices are starting estimates, not fixed final quotations.
+          </span>
+        </div>
+      </div>
+
+      <form class="lead-form" action="https://formspree.io/f/xkoegypv" method="POST">
         <input type="hidden" name="_subject" value="New Urban Eye Commercial Fire Alarm Lead">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="service_interest" value="Commercial Fire Alarm Systems">
-        <h3 style="margin-top:0;color:var(--deep-navy)">Book a fire safety audit</h3>
-        <p style="color:var(--muted);line-height:1.65">Tell us about your commercial property and we will recommend the right next step.</p>
-        <div class="form-grid">
-          <div><label>Name</label><input name="name" placeholder="Your name" required></div>
-          <div><label>Phone / WhatsApp</label><input name="phone" placeholder="+254..." required></div>
-          <div class="full">
-            <label>Facility Type</label>
-            <select name="facility_type" required>
-              <option value="">Select one</option><option>Office</option><option>Restaurant</option><option>Retail Store</option><option>School</option><option>Warehouse</option><option>Clinic / Hospital</option><option>Mixed-use Building</option><option>Other Commercial Facility</option>
-            </select>
-          </div>
-          <div class="full"><label>Main Concern</label><textarea name="message" placeholder="Example: need wireless fire detection, want to integrate fire alarms with CCTV, need audit before quotation"></textarea></div>
-          <div class="full"><button class="btn btn-primary" type="submit" style="width:100%">Book a Free Fire Safety Audit</button></div>
+
+        <h3>Book a fire safety audit</h3>
+
+        <div class="form-row">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+
+          <label>
+            Phone / WhatsApp
+            <input type="tel" name="phone" placeholder="+254..." required>
+          </label>
         </div>
+
+        <label>
+          Facility Type
+          <select name="facility_type" required>
+            <option value="">Select one</option>
+            <option>Office</option>
+            <option>Retail / Shop</option>
+            <option>Restaurant</option>
+            <option>School</option>
+            <option>Warehouse</option>
+            <option>Clinic / Healthcare</option>
+            <option>Mixed-use commercial building</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>
+          Main Concern
+          <textarea name="main_concern" placeholder="Example: need wireless fire detection, want to reduce cabling disruption, need audit before quotation"></textarea>
+        </label>
+
+        <button class="btn btn-primary full-width" type="submit">Book a Fire Safety Audit</button>
+
+        <a class="form-whatsapp" href="https://wa.me/254768055555">Or chat with us instantly on WhatsApp -></a>
       </form>
     </div>
   </section>
-
-  <section class="dark-section">
-    <div class="container">
-      <div class="cta-band">
-        <div><h2>Need fire safety without cable disruption?</h2><p>Start with a commercial fire and security audit so Urban Eye can design a wireless, integrated architecture around your building.</p></div>
-        <a class="btn btn-primary" href="https://wa.me/254768055555">Book Fire Safety Audit</a>
-      </div>
-    </div>
-  </section>
 </main>
+
 <div id="site-footer"></div>
 <script src="/js/includes.js"></script>
 </body>

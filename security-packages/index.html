@@ -61,7 +61,7 @@
       color:var(--deep-navy);
       font-size:clamp(34px,4vw,56px);
       line-height:1.05;
-      letter-spacing:-.055em;
+      letter-spacing:0;
       font-weight:650;
     }
 
@@ -127,7 +127,7 @@
       color:var(--deep-navy);
       font-size:clamp(26px,2.4vw,34px);
       line-height:1.13;
-      letter-spacing:-.04em;
+      letter-spacing:0;
       font-weight:700;
     }
 
@@ -293,7 +293,7 @@
       color:#fff;
       font-size:clamp(36px,4vw,58px);
       line-height:1.05;
-      letter-spacing:-.055em;
+      letter-spacing:0;
       font-weight:650;
     }
 
@@ -462,6 +462,96 @@
       text-decoration:underline;
     }
 
+    .packages-page .package-card--fire{
+      background:#ffffff;
+      border:1px solid rgba(15,23,42,.12);
+      border-radius:0;
+      padding:44px;
+    }
+
+    .packages-page .package-card__label{
+      display:inline-block;
+      margin-bottom:24px;
+      padding-left:14px;
+      border-left:3px solid var(--red);
+      color:var(--red);
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .packages-page .package-card--fire h3{
+      max-width:620px;
+      margin:0 0 12px;
+      color:var(--deep-navy);
+      font-size:clamp(30px,3vw,44px);
+      line-height:1.05;
+      letter-spacing:0;
+      font-weight:800;
+    }
+
+    .packages-page .package-card__price{
+      margin:0 0 24px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.5;
+      font-weight:700;
+    }
+
+    .packages-page .package-card__best{
+      max-width:900px;
+      margin:0 0 34px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.65;
+    }
+
+    .packages-page .package-card__best strong{
+      color:var(--deep-navy);
+      font-weight:900;
+    }
+
+    .packages-page .package-card__columns{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:42px;
+      margin-bottom:34px;
+      padding-top:30px;
+      border-top:1px solid rgba(15,23,42,.12);
+    }
+
+    .packages-page .package-card__columns h4{
+      margin:0 0 14px;
+      color:var(--deep-navy);
+      font-size:19px;
+      line-height:1.25;
+    }
+
+    .packages-page .package-card__columns ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.7;
+    }
+
+    .packages-page .pricing-note{
+      margin-top:28px;
+      padding:24px 28px;
+      border-left:3px solid var(--red);
+      background:#f3f6fa;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .packages-page .pricing-note strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--deep-navy);
+    }
+
     .packages-page .package-grid-wide{
       margin-top:22px;
     }
@@ -536,6 +626,548 @@
       }
 
       .packages-page .package-panel{
+        padding:28px 22px;
+      }
+
+      .packages-page .package-card--fire{
+        padding:28px 22px;
+      }
+
+      .packages-page .package-card__columns{
+        grid-template-columns:1fr;
+        gap:26px;
+      }
+
+      .packages-page .package-card--fire h3{
+        font-size:30px;
+      }
+    }
+
+    /* ================================
+       Packages page refinements only
+       ================================ */
+
+    .packages-page .package-section{
+      padding:96px 0;
+    }
+
+    .packages-page .package-section-light{
+      background:#f3f6fa;
+      color:#07122f;
+    }
+
+    .packages-page .package-section-dark{
+      background:#0d1738;
+      color:#fff;
+    }
+
+    .packages-page .package-container{
+      width:min(1180px, calc(100% - 48px));
+      margin:0 auto;
+    }
+
+    .packages-page .section-split{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(320px,.95fr);
+      gap:64px;
+      align-items:start;
+      margin-bottom:42px;
+    }
+
+    .packages-page .section-split h2{
+      margin:0;
+      color:inherit;
+      font-size:clamp(40px,5vw,64px);
+      line-height:1;
+      letter-spacing:0;
+      font-weight:700;
+    }
+
+    .packages-page .section-split p{
+      margin:0;
+      color:#5d6878;
+      font-size:19px;
+      line-height:1.65;
+    }
+
+    .packages-page .section-split-dark p{
+      color:rgba(255,255,255,.74);
+    }
+
+    .packages-page .eyebrow{
+      margin:0 0 18px;
+      color:#cf2630;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+    }
+
+    .packages-page .package-card-grid{
+      display:grid;
+      border:1px solid #d6deea;
+      background:#fff;
+    }
+
+    .packages-page .package-card-grid-3{
+      grid-template-columns:repeat(3,1fr);
+    }
+
+    .packages-page .package-card{
+      padding:32px 28px;
+      border-right:1px solid #d6deea;
+      background:#fff;
+    }
+
+    .packages-page .package-card:last-child{
+      border-right:0;
+    }
+
+    .packages-page .package-card-soft{
+      background:#fff7f7;
+    }
+
+    .packages-page .package-label{
+      display:block;
+      margin:0 0 24px;
+      padding:10px 14px;
+      border-left:3px solid #cf2630;
+      background:#f3f5f9;
+      color:#cf2630;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .packages-page .package-card h3,
+    .packages-page .package-wide-card h3,
+    .packages-page .package-engineering-card h3,
+    .packages-page .construction-card h3,
+    .packages-page .dark-callout-card h3{
+      margin:0 0 16px;
+      color:inherit;
+      font-size:clamp(28px,3vw,38px);
+      line-height:1.05;
+      letter-spacing:0;
+      font-weight:800;
+    }
+
+    .packages-page .package-price{
+      margin:0 0 24px;
+      color:#5d6878;
+      font-weight:800;
+    }
+
+    .packages-page .package-section-dark .package-price,
+    .packages-page .package-section-dark .package-note{
+      color:rgba(255,255,255,.78);
+    }
+
+    .packages-page .package-card p,
+    .packages-page .package-wide-card p,
+    .packages-page .package-engineering-card p,
+    .packages-page .construction-card p,
+    .packages-page .pricing-notice p{
+      color:#5d6878;
+      font-size:17px;
+      line-height:1.65;
+    }
+
+    .packages-page .package-section-dark .construction-card p,
+    .packages-page .package-section-dark .section-note-dark{
+      color:rgba(255,255,255,.72);
+    }
+
+    .packages-page .package-link,
+    .packages-page .package-link-light,
+    .packages-page .whatsapp-link{
+      display:inline-block;
+      margin-top:18px;
+      color:#cf2630;
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    .packages-page .package-link-light{
+      color:#fff;
+    }
+
+    .packages-page .package-wide-card,
+    .packages-page .package-engineering-card,
+    .packages-page .pricing-notice,
+    .packages-page .dark-callout-card{
+      border:1px solid #d6deea;
+      border-radius:0;
+      background:#fff;
+    }
+
+    .packages-page .package-wide-card{
+      display:grid;
+      grid-template-columns:.9fr 1.6fr;
+      gap:48px;
+      margin-top:24px;
+      padding:34px;
+      border-left:4px solid #cf2630;
+    }
+
+    .packages-page .package-engineering-card{
+      display:grid;
+      grid-template-columns:.9fr 1.4fr;
+      gap:54px;
+      padding:36px;
+    }
+
+    .packages-page .package-engineering-card h4{
+      margin:0 0 12px;
+      color:#07122f;
+      font-size:20px;
+    }
+
+    .packages-page .package-engineering-card ul,
+    .packages-page .construction-card ul{
+      margin:0 0 24px;
+      padding-left:20px;
+    }
+
+    .packages-page .package-engineering-card li,
+    .packages-page .construction-card li{
+      margin-bottom:10px;
+      line-height:1.55;
+    }
+
+    .packages-page .pricing-notice{
+      margin-top:26px;
+      padding:24px;
+      border-left:3px solid #cf2630;
+      background:#f8fafc;
+    }
+
+    .packages-page .pricing-notice strong{
+      color:#07122f;
+    }
+
+    .packages-page .construction-options{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .packages-page .construction-card{
+      padding:32px;
+      background:rgba(255,255,255,.04);
+      border-right:1px solid rgba(255,255,255,.18);
+    }
+
+    .packages-page .construction-card:last-child{
+      border-right:0;
+    }
+
+    .packages-page .construction-card-featured{
+      background:rgba(207,38,48,.09);
+    }
+
+    .packages-page .section-note-dark{
+      margin:24px 0 0;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .packages-page .dark-callout-card{
+      padding:30px;
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.18);
+    }
+
+    .packages-page .dark-callout-card p{
+      color:rgba(255,255,255,.74);
+    }
+
+    .packages-page .lead-form-grid{
+      display:grid;
+      grid-template-columns:.9fr 1fr;
+      gap:64px;
+      align-items:start;
+    }
+
+    .packages-page .lead-form-grid h2{
+      margin:0 0 18px;
+      font-size:clamp(40px,5vw,62px);
+      line-height:1;
+      letter-spacing:0;
+    }
+
+    .packages-page .lead-form-grid > div > p{
+      color:#5d6878;
+      font-size:19px;
+      line-height:1.65;
+    }
+
+    .packages-page .package-form{
+      padding:32px;
+      border:1px solid #d6deea;
+      background:#fff;
+      box-shadow:0 24px 60px rgba(7,18,47,.08);
+    }
+
+    .packages-page .package-form h3{
+      margin:0 0 22px;
+      color:#07122f;
+      font-size:26px;
+    }
+
+    .packages-page .form-row{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .packages-page .package-form label{
+      display:block;
+      margin-bottom:16px;
+      color:#07122f;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .packages-page .package-form input,
+    .packages-page .package-form select,
+    .packages-page .package-form textarea{
+      width:100%;
+      margin-top:8px;
+      padding:15px 16px;
+      border:1px solid #cfd8e6;
+      border-radius:10px;
+      background:#fff;
+      color:#07122f;
+      font:inherit;
+    }
+
+    .packages-page .btn-red{
+      border:1px solid #cf2630;
+      background:#cf2630;
+      color:#fff;
+      box-shadow:0 18px 38px rgba(207,38,48,.2);
+    }
+
+    .packages-page .btn-light{
+      border:1px solid #fff;
+      background:#fff;
+      color:#07122f;
+    }
+
+    .packages-page .package-form .btn{
+      width:100%;
+      border:0;
+      cursor:pointer;
+    }
+
+    @media(max-width:900px){
+      .packages-page .package-section{
+        padding:64px 0;
+      }
+
+      .packages-page .package-container{
+        width:min(100% - 32px, 1180px);
+      }
+
+      .packages-page .section-split,
+      .packages-page .lead-form-grid,
+      .packages-page .package-wide-card,
+      .packages-page .package-engineering-card{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+
+      .packages-page .package-card-grid-3,
+      .packages-page .construction-options{
+        grid-template-columns:1fr;
+      }
+
+      .packages-page .package-card,
+      .packages-page .construction-card{
+        border-right:0;
+        border-bottom:1px solid #d6deea;
+      }
+
+      .packages-page .construction-card{
+        border-bottom-color:rgba(255,255,255,.18);
+      }
+
+      .packages-page .package-card:last-child,
+      .packages-page .construction-card:last-child{
+        border-bottom:0;
+      }
+
+      .packages-page .section-split h2,
+      .packages-page .lead-form-grid h2{
+        font-size:clamp(34px,11vw,48px);
+      }
+
+      .packages-page .form-row{
+        grid-template-columns:1fr;
+      }
+    }
+
+    /* Package page typography refinement */
+
+    .packages-page .packages-section,
+    .packages-page .package-section{
+      padding-top:88px;
+      padding-bottom:88px;
+    }
+
+    .packages-page .section-head,
+    .packages-page .section-split{
+      margin-bottom:36px;
+    }
+
+    .packages-page .section-head h2,
+    .packages-page .section-split h2{
+      font-size:clamp(38px,4vw,54px);
+      line-height:1.04;
+      letter-spacing:0;
+      max-width:650px;
+    }
+
+    .packages-page .section-head .section-intro,
+    .packages-page .section-split > p{
+      font-size:17px;
+      line-height:1.65;
+      max-width:650px;
+    }
+
+    .packages-page .eyebrow,
+    .packages-page .section-split p.eyebrow,
+    .packages-page .section-label{
+      font-size:11px;
+      line-height:1.2;
+      letter-spacing:0;
+    }
+
+    .packages-page .package-column,
+    .packages-page .package-card,
+    .packages-page .package-compare-column,
+    .packages-page .construction-card{
+      padding:30px 26px;
+    }
+
+    .packages-page .package-column h3,
+    .packages-page .package-card h3,
+    .packages-page .package-compare-column h3,
+    .packages-page .construction-card h3{
+      font-size:clamp(25px,2.1vw,31px);
+      line-height:1.08;
+      letter-spacing:0;
+      margin-bottom:16px;
+    }
+
+    .packages-page .package-column p,
+    .packages-page .package-card p,
+    .packages-page .package-compare-column p,
+    .packages-page .construction-card p,
+    .packages-page .package-column li,
+    .packages-page .package-card li,
+    .packages-page .package-compare-column li,
+    .packages-page .construction-card li{
+      font-size:15.5px;
+      line-height:1.62;
+    }
+
+    .packages-page .package-price,
+    .packages-page .package-card__price{
+      font-size:16px;
+      line-height:1.45;
+      font-weight:800;
+      color:#5d6878;
+      margin-bottom:22px;
+    }
+
+    .packages-page .package-strip,
+    .packages-page .package-accent-strip,
+    .packages-page .package-label,
+    .packages-page .package-card p.package-label,
+    .packages-page .package-wide-card p.package-label,
+    .packages-page .package-engineering-card p.package-label,
+    .packages-page .construction-card p.package-label,
+    .packages-page .package-card__label{
+      font-size:11px;
+      line-height:1;
+      letter-spacing:0;
+      font-weight:900;
+      padding:9px 12px;
+      margin-bottom:20px;
+    }
+
+    .packages-page .package-link,
+    .packages-page .text-link,
+    .packages-page .package-link-light{
+      font-size:14px;
+      font-weight:900;
+    }
+
+    .packages-page .package-wide-card,
+    .packages-page .package-engineering-card,
+    .packages-page .package-panel-wide,
+    .packages-page .package-card--fire{
+      padding:34px;
+    }
+
+    .packages-page .package-wide-card h3,
+    .packages-page .package-engineering-card h3,
+    .packages-page .package-panel-wide h3,
+    .packages-page .package-card--fire h3{
+      font-size:clamp(28px,2.6vw,38px);
+      line-height:1.06;
+      letter-spacing:0;
+    }
+
+    .packages-page .package-card__best,
+    .packages-page .package-card__columns ul,
+    .packages-page .package-engineering-card ul,
+    .packages-page .pricing-note,
+    .packages-page .pricing-notice{
+      font-size:15.5px;
+      line-height:1.65;
+    }
+
+    .packages-page .lead-form-grid h2{
+      font-size:clamp(38px,4vw,54px);
+      line-height:1.04;
+      letter-spacing:0;
+    }
+
+    @media(max-width:768px){
+      .packages-page .packages-section,
+      .packages-page .package-section{
+        padding-top:64px;
+        padding-bottom:64px;
+      }
+
+      .packages-page .section-head h2,
+      .packages-page .section-split h2,
+      .packages-page .lead-form-grid h2{
+        font-size:clamp(32px,9vw,42px);
+      }
+
+      .packages-page .package-column,
+      .packages-page .package-card,
+      .packages-page .package-compare-column,
+      .packages-page .construction-card{
+        padding:28px 22px;
+      }
+
+      .packages-page .package-column h3,
+      .packages-page .package-card h3,
+      .packages-page .package-compare-column h3,
+      .packages-page .construction-card h3{
+        font-size:clamp(25px,7vw,31px);
+      }
+
+      .packages-page .package-wide-card,
+      .packages-page .package-engineering-card,
+      .packages-page .package-panel-wide,
+      .packages-page .package-card--fire{
         padding:28px 22px;
       }
     }
@@ -653,278 +1285,317 @@
       </div>
     </section>
 
-    <section class="packages-section packages-section-light" id="commercial">
-      <div class="container">
-        <div class="section-head reveal-up">
+    <section class="package-section package-section-light" id="commercial">
+      <div class="package-container">
+        <div class="section-split reveal-up">
           <div>
-            <p class="section-label">Commercial frameworks</p>
+            <p class="eyebrow">Commercial Frameworks</p>
             <h2>Retail, office, and logistics protection.</h2>
           </div>
 
-          <p class="section-intro">
-            Built for shops, pharmacies, offices, clinics, commercial buildings, warehouses, and logistics operations that need accountability, deterrence, access control, and response planning.
+          <p>
+            Built for shops, pharmacies, offices, clinics, commercial buildings,
+            warehouses, and logistics operations that need accountability,
+            deterrence, access control, and response planning.
           </p>
         </div>
 
-        <div class="package-table commercial-package-table">
-          <article class="package-column">
-            <div class="package-accent-strip">Small Retail</div>
-
+        <div class="package-card-grid package-card-grid-3 reveal-up">
+          <article class="package-card">
+            <p class="package-label">Small Retail</p>
             <h3>Urban Eye Essential Retail</h3>
             <p class="package-price">Custom quote post-survey</p>
 
-            <p>
-              <strong>Best for:</strong> Small shops and mini-marts.
-            </p>
+            <p><strong>Best for:</strong> Small shops and mini-marts.</p>
 
             <p>
-              Includes primary entry door or roller-shutter protection using shock or tilt sensors, secure stockroom sensors, indoor motion detection, and discreet under-counter panic buttons for basic theft prevention and staff safety.
+              Includes primary entry door or roller-shutter protection using shock
+              or tilt sensors, secure stockroom sensors, indoor motion detection,
+              and discreet under-counter panic buttons for basic theft prevention
+              and staff safety.
             </p>
 
-            <a href="/contact/" class="package-link">Request Retail Plan</a>
+            <a href="#lead-form" class="package-link">Request Retail Plan</a>
           </article>
 
-          <article class="package-column package-column-featured">
-            <div class="package-accent-strip">Storefront Protection</div>
-
+          <article class="package-card package-card-soft">
+            <p class="package-label">Storefront Protection</p>
             <h3>Urban Eye Storefront Guardian</h3>
             <p class="package-price">Starts at KES 175,000</p>
 
             <p>
-              <strong>Best for:</strong> Pharmacies, electronics shops, and high-value glass frontages.
+              <strong>Best for:</strong> Pharmacies, electronics shops, and
+              high-value glass frontages.
             </p>
 
             <p>
-              Adds precision glass-break detection, photo-verified after-hours motion sensors, secure digital keypads to log staff access, and CCTV integration to monitor Point of Sale terminals, entrances, stockrooms, and high-value displays.
+              Adds precision glass-break detection, photo-verified after-hours
+              motion sensors, secure digital keypads to log staff access, and CCTV
+              integration to monitor Point of Sale terminals, entrances, stockrooms,
+              and high-value displays.
             </p>
 
-            <a href="/contact/" class="package-link">Request Storefront Guardian</a>
+            <a href="#lead-form" class="package-link">Request Storefront Guardian</a>
           </article>
 
-          <article class="package-column">
-            <div class="package-accent-strip">Office & Workspace</div>
-
+          <article class="package-card">
+            <p class="package-label">Office & Workspace</p>
             <h3>Urban Eye Office Shield</h3>
             <p class="package-price">Starts at KES 299,500</p>
 
             <p>
-              <strong>Best for:</strong> Corporate offices, clinics, professional firms, and multi-room workspaces.
+              <strong>Best for:</strong> Corporate offices, clinics, professional
+              firms, and multi-room workspaces.
             </p>
 
             <p>
-              Adds role-based access control for staff, visitors, server rooms, records offices, stockrooms, and executive suites, supported by zoned intrusion alarms, CCTV visibility, and clear access logs.
+              Adds role-based access control for staff, visitors, server rooms,
+              records offices, stockrooms, and executive suites, supported by zoned
+              intrusion alarms, CCTV visibility, and clear access logs.
             </p>
 
-            <a href="/contact/" class="package-link">Request Office Shield</a>
+            <a href="#lead-form" class="package-link">Request Office Shield</a>
           </article>
         </div>
 
-        <div class="package-grid-wide reveal-up">
-          <article class="package-panel package-panel-wide">
-            <div>
-              <div class="package-accent-strip">Warehouse & Logistics</div>
+        <article class="package-wide-card warehouse-package reveal-up">
+          <div>
+            <p class="package-label">Warehouse & Logistics</p>
+            <h3>Urban Eye Resilient Logistics Framework</h3>
+            <p class="package-price">Custom written quotation post-survey</p>
+          </div>
 
-              <h3>Urban Eye Resilient Logistics Framework</h3>
+          <div>
+            <p>
+              <strong>Best for:</strong> Distribution centers, cold storage,
+              manufacturing stores, storage warehouses, import/export facilities,
+              and multi-bay logistics hubs.
+            </p>
 
-              <p class="package-price">Custom written quotation post-survey</p>
-            </div>
+            <p>
+              Combines loading bay CCTV, perimeter alarm detection, restricted
+              stockroom access control, high-value cage protection, fire-safety
+              review, guard-supported procedures, and monitoring-ready escalation
+              for warehouse operations.
+            </p>
 
-            <div>
-              <p>
-                <strong>Best for:</strong> Distribution centers, cold storage, manufacturing stores, storage warehouses, import/export facilities, and multi-bay logistics hubs.
-              </p>
+            <p>
+              <strong>Monitoring option:</strong> Urban Eye PRO Enterprise
+              Monitoring starts at KES 10,500/month after site review.
+            </p>
 
-              <p>
-                Combines loading bay CCTV, perimeter alarm detection, restricted stockroom access control, high-value cage protection, fire-safety review, guard-supported procedures, and monitoring-ready escalation for warehouse operations.
-              </p>
-
-              <p>
-                <strong>Monitoring option:</strong> Urban Eye PRO Enterprise Monitoring starts at KES 10,500/month after site review.
-              </p>
-
-              <p>
-                <strong>Optional guarding:</strong> Industrial static guarding can be quoted separately depending on gate coverage, shift pattern, patrol needs, and site risk.
-              </p>
-            </div>
+            <p>
+              <strong>Optional guarding:</strong> Industrial static guarding is
+              quoted separately depending on gate coverage, shift pattern, patrol
+              needs, and site risk.
+            </p>
 
             <a href="/warehouse-security/" class="package-link">Explore Warehouse Security</a>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="packages-section construction-package-section" id="construction-frameworks">
-      <div class="container">
-        <div class="section-head reveal-up">
+    <section class="package-section package-section-dark" id="construction">
+      <span id="construction-site-protection"></span>
+      <div class="package-container">
+        <div class="section-split section-split-dark reveal-up">
           <div>
-            <p class="section-label">Construction site protection</p>
+            <p class="eyebrow">Construction Site Protection</p>
             <h2>Flexible protection for active sites.</h2>
           </div>
-
-          <p class="section-intro">
-            Construction is temporary, so your security investment should match the project. Choose to purchase your site hardware outright or use a managed monthly site lease.
+          <p>
+            Construction is temporary, so your security investment should match the
+            project. Choose to purchase your site hardware outright or use a managed
+            monthly site lease.
           </p>
         </div>
 
-        <div class="package-compare reveal-up">
-          <article class="package-compare-column">
-            <div class="package-strip">Option A</div>
-
+        <div class="construction-options reveal-up">
+          <article class="construction-card">
+            <p class="package-label">Option A</p>
             <h3>The Equipment Purchase</h3>
-
-            <p class="package-price">Starts at KES 225,000</p>
+            <p class="package-price">Equipment purchase from KES 225,000</p>
+            <p class="package-note">Final scope confirmed after site review.</p>
 
             <p>
-              You purchase the wireless equipment outright. When the project is complete, you own the hardware and can move it to your next site.
+              You purchase the wireless equipment outright. When the project is
+              complete, you own the hardware and can move it to your next site.
             </p>
 
-            <ul class="package-list">
+            <ul>
               <li>Wireless site security hardware</li>
               <li>Perimeter and asset-zone protection</li>
               <li>Moveable equipment for future projects</li>
-              <li>Monitoring and response can be added from KES 8,050/month</li>
+              <li>Monitoring and response can be added after site-risk review</li>
             </ul>
 
-            <p class="package-best">
-              <strong>Best for:</strong> Developers building properties they intend to manage long-term.
+            <p>
+              <strong>Best for:</strong> Developers building properties they intend
+              to manage long-term.
             </p>
 
-            <a class="btn btn-outline" href="/contact/">Quote Equipment Purchase</a>
+            <a href="#lead-form" class="btn btn-light">Quote Equipment Purchase</a>
           </article>
 
-          <article class="package-compare-column package-compare-highlight">
-            <div class="package-strip">Developer choice</div>
-
+          <article class="construction-card construction-card-featured">
+            <p class="package-label">Developer Choice</p>
             <h3>The Managed Site Lease</h3>
-
             <p class="package-price">Setup from KES 35,000</p>
-
-            <p class="package-subprice">
-              Monthly all-inclusive lease starts at KES 38,500/month.
+            <p class="package-note">
+              Monthly managed lease from KES 38,500/month, subject to site size and risk level.
             </p>
 
             <p>
-              Urban Eye supplies, installs, and maintains the wireless perimeter system for the project duration.
+              Urban Eye supplies, installs, and maintains the wireless perimeter
+              system for the project duration.
             </p>
 
-            <ul class="package-list">
+            <ul>
               <li>Hardware lease for the project period</li>
               <li>Installation and maintenance support</li>
-              <li>24/7 visual monitoring</li>
+              <li>24/7 visual monitoring option</li>
               <li>Response dispatch coordination</li>
             </ul>
 
-            <p class="package-best">
-              <strong>Best for:</strong> Contractors who want enterprise-grade site security as a monthly operational expense.
+            <p>
+              <strong>Best for:</strong> Contractors who want enterprise-grade site
+              security as a monthly operational expense.
             </p>
 
-            <a class="btn btn-primary" href="/contact/">Request Site Lease Proposal</a>
+            <a href="#lead-form" class="btn btn-red">Request Site Lease Proposal</a>
           </article>
         </div>
 
-        <p class="package-footnote reveal-up">
-          PSRA guarding personnel for gate control and patrols are quoted separately after site review.
+        <p class="section-note-dark reveal-up">
+          PSRA guarding personnel for gate control, patrols, access checks, and site
+          supervision are quoted separately after site review.
         </p>
       </div>
     </section>
 
-    <section class="packages-section fire-package-section" id="fire-safety-frameworks">
-      <div class="container">
-        <div class="section-head reveal-up">
+    <section class="package-section package-section-light" id="commercial-fire">
+      <div class="package-container">
+        <div class="section-split reveal-up">
           <div>
-            <p class="section-label">Commercial fire safety</p>
-            <h2>Baseline architecture for wireless commercial fire detection.</h2>
+            <p class="eyebrow">Commercial Fire Safety</p>
+            <h2>Engineered commercial fire safety, scoped after a site review.</h2>
           </div>
-
-          <p class="section-intro">
-            Designed for businesses that need modern fire detection, alerting, emergency automation, and reduced cabling disruption.
+          <p>
+            Commercial fire safety should be designed around your building layout,
+            evacuation routes, operating hours, risk zones, and response procedures,
+            not guessed from a product list.
           </p>
         </div>
 
-        <div class="fire-package-table reveal-up">
-          <div class="fire-package-main">
-            <div class="package-strip">Baseline architecture</div>
-
-            <h3>The Essential Commercial Fire Package</h3>
-
-            <p class="package-price">From KES 285,000</p>
+        <article class="package-engineering-card reveal-up">
+          <div>
+            <p class="package-label">Compliant Fire Architecture</p>
+            <h3>The Compliant Commercial Fire Architecture</h3>
+            <p class="package-price">Custom engineering quote post-survey</p>
 
             <p>
-              Best for small-to-medium offices, boutique retail, restaurants, schools, and warehouses requiring life-safety compliance with reduced operational disruption.
+              <strong>Best for:</strong> Multi-story offices, warehouses, retail
+              centers, schools, clinics, institutions, and commercial properties
+              requiring statutory fire safety planning.
             </p>
+
+            <a href="#lead-form" class="btn btn-red">Request a Fire Engineering Survey</a>
           </div>
 
-          <div class="fire-package-scope">
-            <h4>The framework includes</h4>
-
-            <ul class="package-list">
-              <li>1x smart touchscreen fire hub with dual-path communication</li>
-              <li>24-hour battery backup for power interruptions</li>
-              <li>3x precision smoke and heat detectors</li>
-              <li>1x central siren and flashing strobe</li>
-              <li>1x wall-mounted manual alarm trigger</li>
-              <li>1x smart automation module for emergency routines</li>
-              <li>Professional installation, testing, and handover</li>
+          <div>
+            <h4>The hardware framework may include</h4>
+            <ul>
+              <li>Ajax FireHub Jeweller or suitable commercial fire control architecture</li>
+              <li>Precision smoke and heat detectors positioned after facility review</li>
+              <li>Wall-mounted manual call points</li>
+              <li>Synchronized audio-visual sirens and strobes</li>
+              <li>Emergency automation modules for selected routines</li>
+              <li>Professional installation, testing, and handover documentation</li>
             </ul>
 
-            <a class="btn btn-primary" href="/contact/">Book a Fire Safety Audit</a>
+            <h4>Engineering and compliance support may include</h4>
+            <ul>
+              <li>System design and spatial zoning mapped to your building layout</li>
+              <li>Detector placement based on room usage, ceiling conditions, and risk areas</li>
+              <li>Emergency workflow planning for evacuation, alerts, and escalation</li>
+              <li>Preparation support for fire safety audits and maintenance records</li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="pricing-notice reveal-up">
+          <strong>Important pricing note:</strong>
+          <p>
+            Final hardware requirements, detector counts, installation scope,
+            monitoring needs, and documentation requirements are quoted after
+            reviewing your facility. This protects clients from under-scoped fire
+            systems and avoids giving a misleading fixed price before a site survey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="package-section package-section-dark" id="monitoring-response">
+      <div class="package-container">
+        <div class="section-split section-split-dark reveal-up">
+          <div>
+            <p class="eyebrow">Monitoring and Response</p>
+            <h2>Hardware is only half the solution.</h2>
+            <p>
+              A smart alarm is only as strong as the response it triggers. During
+              your site survey, Urban Eye can pair your hardware framework with a
+              monitoring and response plan.
+            </p>
+          </div>
+
+          <div class="dark-callout-card">
+            <h3>Urban Eye PRO Monitoring</h3>
+            <p>
+              Connect fire alerts, intrusion alerts, CCTV visibility, access events,
+              and emergency workflows into a clearer response path for your property.
+            </p>
+            <a href="/professional-monitoring/" class="package-link-light">
+              Explore Monitoring and Response
+            </a>
           </div>
         </div>
-
-        <div class="package-notice reveal-up">
-          <strong>Important pricing notice:</strong>
-          <p>
-            We do not guess final pricing before understanding your property. After a mandatory fire-safety site survey, you receive a written quotation showing the exact number of detectors required. Prices shown are starting estimates for a baseline layout and may change based on exchange rate variation, compliance requirements, building size, detector placement, and automation needs.
-          </p>
-        </div>
       </div>
     </section>
 
-    <section class="packages-monitoring-section">
-      <div class="container packages-monitoring-inner reveal-up">
-        <div>
-          <p class="section-label">Monitoring and response</p>
-
-          <h2>Hardware is only half the solution.</h2>
-
-          <p>
-            A smart alarm is only as strong as the response it triggers. During your site survey, Urban Eye can pair your hardware framework with an Urban Eye PRO monitoring subscription.
-          </p>
-        </div>
-
-        <div class="packages-monitoring-action">
-          <p>
-            When a verified threat occurs, Urban Eye coordinates escalation through licensed rapid response partners.
-          </p>
-
-          <a class="btn btn-primary" href="/professional-monitoring/">Explore Monitoring and Response</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="packages-contact-section">
-      <div class="container two-col">
+    <section class="package-section package-section-light" id="lead-form">
+      <div class="package-container">
+        <div class="lead-form-grid">
         <div class="reveal-slide">
-          <p class="section-label">Custom protection plan</p>
+          <p class="eyebrow">Custom Protection Plan</p>
 
-          <h2>Let’s design your security framework.</h2>
+          <h2>Let's design your security framework.</h2>
 
-          <p class="section-intro">
-            Share your details and Urban Eye will recommend the right starting framework after understanding your property type, risk level, and response requirements.
+          <p>
+            Share your details and Urban Eye will recommend the right starting
+            framework after understanding your property type, risk level, and
+            response requirements.
           </p>
 
-          <div class="package-final-note">
+          <div class="pricing-notice">
             <strong>Important note:</strong>
             <p>
-              Final hardware requirements, transmitter counts, and monitoring subscriptions are quoted based on site risks and property layout following your physical site survey. Prices are starting estimates for standard configurations.
+              Final hardware requirements, transmitter counts, monitoring
+              subscriptions, and guarding requirements are quoted based on site
+              risks and property layout following a physical site survey. Prices
+              shown are starting estimates for standard configurations.
             </p>
           </div>
         </div>
 
-        <form class="contact-form reveal-up" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="package-form reveal-up" action="https://formspree.io/f/xkoegypv" method="POST">
+          <input type="hidden" name="_subject" value="New Urban Eye Packages Lead">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="service_interest" value="Security Packages">
+
           <h3>Book my free site survey</h3>
 
-          <div class="form-grid">
+          <div class="form-row">
             <label>
               Name
               <input type="text" name="name" placeholder="Your name" required>
@@ -940,15 +1611,13 @@
             Property Type
             <select name="property_type" required>
               <option value="">Select property type</option>
-              <option>Residential home</option>
-              <option>Apartment</option>
-              <option>Gated estate</option>
-              <option>Retail shop</option>
-              <option>Office</option>
-              <option>Warehouse</option>
+              <option>Residential home or apartment</option>
+              <option>Retail shop or pharmacy</option>
+              <option>Office or clinic</option>
+              <option>Warehouse or logistics site</option>
               <option>Construction site</option>
-              <option>School or institution</option>
-              <option>Other commercial property</option>
+              <option>Commercial fire safety</option>
+              <option>Other</option>
             </select>
           </label>
 
@@ -956,21 +1625,22 @@
             Main Interest
             <select name="main_interest" required>
               <option value="">Select one</option>
-              <option>Residential security package</option>
-              <option>Retail or office security package</option>
-              <option>Construction site protection</option>
-              <option>Commercial fire safety</option>
+              <option>Smart alarm system</option>
+              <option>CCTV installation</option>
+              <option>Access control</option>
+              <option>Fire safety system</option>
               <option>Monitoring and response</option>
-              <option>Not sure yet</option>
+              <option>Full security framework</option>
             </select>
           </label>
 
-          <button class="btn btn-primary" type="submit">Book My Free Site Survey</button>
+          <button type="submit" class="btn btn-red">Book My Free Site Survey</button>
 
-          <a class="form-whatsapp-link" href="https://wa.me/254768055555">
+          <a href="https://wa.me/254768055555" class="whatsapp-link">
             Or chat with us instantly on WhatsApp
           </a>
         </form>
+        </div>
       </div>
     </section>
   </main>
