@@ -20,236 +20,369 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"/>
   <link rel="stylesheet" href="/style.css"/>
+
+  <style>
+    .contact-intake-grid{
+      align-items:start;
+    }
+
+    .contact-form-card{
+      max-width:100%;
+    }
+
+    .contact-form-card h2{
+      margin:0 0 12px;
+      color:var(--deep-navy);
+      font-size:26px;
+      line-height:1.15;
+    }
+
+    .contact-form-card > p{
+      color:var(--muted);
+      line-height:1.65;
+      margin-bottom:22px;
+    }
+
+    .contact-info-card{
+      margin-top:24px;
+    }
+
+    .full-width{
+      width:100%;
+      justify-content:center;
+    }
+
+    .contact-page .process-list{
+      display:grid;
+      gap:0;
+      border-top:1px solid var(--border, #d8dee8);
+      border-left:0;
+      padding-left:0;
+    }
+
+    .contact-page .process-item{
+      display:grid;
+      grid-template-columns:48px 1fr;
+      gap:20px;
+      padding:24px 0;
+      border-bottom:1px solid var(--border, #d8dee8);
+    }
+
+    .contact-page .process-item span{
+      width:36px;
+      height:36px;
+      border:1px solid rgba(196,39,46,.35);
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#c4272e;
+      background:#fff;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .contact-page .process-item h3{
+      margin:0 0 6px;
+      color:var(--deep-navy);
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .contact-page .process-item p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    @media(max-width:768px){
+      .contact-page .process-item{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 <div id="site-navbar"></div>
 
-<main>
-    <section class="page-hero contact-hero">
-      <div class="container">
-        <p class="section-label">Contact Urban Eye Security</p>
-
+<main class="contact-page">
+  <section class="hero page-hero contact-hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Contact Urban Eye Security</p>
         <h1>Let's assess your security needs.</h1>
-
         <p>
-          Tell us about your property and Urban Eye will recommend the best starting point, from guarding and CCTV to smart alarms, access control, monitoring, and complete security packages.
+          Tell us about your property and Urban Eye will recommend the right starting point,
+          from guarding and CCTV to smart alarms, access control, monitoring, fire safety,
+          and complete security frameworks.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact-form" class="btn btn-primary">Request a Site Assessment</a>
+          <a href="https://wa.me/254714007114" class="btn btn-outline-white">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-section" id="contact-form">
+    <div class="container two-col contact-intake-grid">
+      <div class="section-copy">
+        <p class="eyebrow">Security Intake Request</p>
+        <h2>Tell us what you want to protect.</h2>
+        <p class="section-intro">
+          Use this form for security packages, CCTV, smart alarms, manned guarding,
+          access control, fire alarm systems, monitoring, or general security assessment requests.
+        </p>
+        <p class="section-intro">
+          Site reviews are scheduled based on property type, urgency, location, risk level,
+          and available deployment capacity.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact-form">Request a Site Assessment</a>
-          <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
+        <div class="card contact-info-card">
+          <h3>Prefer WhatsApp?</h3>
+          <p>
+            For faster communication, message Urban Eye directly on WhatsApp and share your
+            location, property type, and the security problem you want solved.
+          </p>
+          <a href="https://wa.me/254714007114" class="text-link">Chat on WhatsApp &rarr;</a>
         </div>
 
+        <div class="card contact-info-card">
+          <h3>Direct Contact</h3>
+          <p><strong>Phone:</strong> +254 768 055 555</p>
+          <p><strong>Email:</strong> info@urbaneyesecurity.co.ke</p>
+          <p><strong>Service Area:</strong> Nairobi-based operations with Kenya-focused smart security support.</p>
+        </div>
       </div>
-    </section>
 
-    <section id="contact-form" class="light-section">
-      <div class="container two-col">
+      <form
+        class="form-card contact-form-card"
+        action="https://formspree.io/f/xkoegypv"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New Urban Eye Security Assessment Request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="page_source" value="contact">
+        <input type="hidden" name="service_interest" id="serviceInterestHidden" value="General Security Assessment">
+
+        <h2>Request a security assessment</h2>
+        <p>
+          Fill in the details below and Urban Eye will respond with the right next step.
+        </p>
+
+        <div class="form-grid">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+
+          <label>
+            Phone / WhatsApp
+            <input type="tel" name="phone" placeholder="+254..." required>
+          </label>
+
+          <label class="full">
+            Email
+            <input type="email" name="email" placeholder="you@example.com">
+          </label>
+
+          <label>
+            Property Type
+            <select name="property_type" required>
+              <option value="">Select property type</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Standalone Home">Standalone Home</option>
+              <option value="Estate / Gated Community">Estate / Gated Community</option>
+              <option value="Retail Shop">Retail Shop</option>
+              <option value="Office">Office</option>
+              <option value="Warehouse">Warehouse</option>
+              <option value="Airbnb / Short-Stay">Airbnb / Short-Stay</option>
+              <option value="Construction Site">Construction Site</option>
+              <option value="Institution">Institution</option>
+              <option value="Commercial Building">Commercial Building</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            Property Location
+            <input type="text" name="property_location" placeholder="e.g. Westlands, Karen, Kilimani">
+          </label>
+
+          <label class="full">
+            Service / Package Interest
+            <select name="service_package_interest" id="serviceInterestSelect" required>
+              <option value="">Select one</option>
+              <option value="General Security Assessment">General Security Assessment</option>
+              <option value="CCTV Installation">CCTV Installation</option>
+              <option value="Smart Alarm Systems">Smart Alarm Systems</option>
+              <option value="Manned Guarding">Manned Guarding</option>
+              <option value="Access Control">Access Control</option>
+              <option value="Electric Fencing">Electric Fencing</option>
+              <option value="Commercial Fire Alarms">Commercial Fire Alarms</option>
+              <option value="Urban Eye PRO Monitoring & Response">Urban Eye PRO Monitoring & Response</option>
+              <option value="Residential Security">Residential Security</option>
+              <option value="Retail Security">Retail Security</option>
+              <option value="Office Security">Office Security</option>
+              <option value="Warehouse Security">Warehouse Security</option>
+              <option value="Construction Site Security">Construction Site Security</option>
+              <option value="Airbnb / Short-Stay Security">Airbnb / Short-Stay Security</option>
+              <option value="Security Packages">Security Packages</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Preferred Timeline
+            <select name="preferred_timeline">
+              <option value="">Select timeline</option>
+              <option value="Urgent: within 7 days">Urgent: within 7 days</option>
+              <option value="Soon: within 2&ndash;4 weeks">Soon: within 2&ndash;4 weeks</option>
+              <option value="Planning: next 1&ndash;3 months">Planning: next 1&ndash;3 months</option>
+              <option value="Researching options">Researching options</option>
+            </select>
+          </label>
+
+          <label class="full">
+            Existing Security System
+            <input
+              type="text"
+              name="existing_security_system"
+              placeholder="Example: CCTV, guards, alarms, access control, none"
+            >
+          </label>
+
+          <label class="full">
+            Main Concern
+            <textarea
+              name="main_concern"
+              rows="5"
+              placeholder="Briefly describe your property, current security setup, and the problem you want solved."
+            ></textarea>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-width">
+          Submit Security Request
+        </button>
+
+        <a href="https://wa.me/254714007114" class="form-whatsapp-link">
+          Or chat with us instantly on WhatsApp &rarr;
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="container two-col contact-intake-grid">
+      <div class="section-copy">
+        <p class="eyebrow">What Happens Next</p>
+        <h2>From inquiry to clear recommendation.</h2>
+      </div>
+
+      <div class="process-list">
+        <div class="process-item">
+          <span>01</span>
+          <div>
+            <h3>Initial review</h3>
+            <p>We review your inquiry, property type, location, and service interest.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>02</span>
+          <div>
+            <h3>Site survey scheduling</h3>
+            <p>We contact you to confirm the site visit or request more information.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>03</span>
+          <div>
+            <h3>Risk assessment</h3>
+            <p>We identify entry points, blind spots, response gaps, and practical security priorities.</p>
+          </div>
+        </div>
+
+        <div class="process-item">
+          <span>04</span>
+          <div>
+            <h3>Written recommendation</h3>
+            <p>You receive a clear starting framework, scope, and quotation based on the actual site.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="container">
+      <div class="cta-band">
         <div>
-          <p class="section-label">Security Intake Request</p>
-
-          <h2>Tell us what you want to protect.</h2>
-
-          <p class="section-intro">
-            Use this form for security packages, CCTV, smart alarms, manned guarding, access control, fire alarm systems, monitoring, or general security assessment requests.
-          </p>
-          <p class="section-intro">
-            Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.
-          </p>
-
-          <div class="card contact-direct-card">
-            <h3>Prefer WhatsApp?</h3>
-
-            <p>
-              For faster communication, message Urban Eye directly on WhatsApp and share your location, property type, and the security problem you want solved.
-            </p>
-
-            <a class="text-link" href="https://wa.me/254768055555">Chat on WhatsApp →</a>
-          </div>
-
-          <div class="card contact-direct-card">
-            <h3>Direct Contact</h3>
-
-            <p>
-              <strong>Phone:</strong> +254 768 055 555<br>
-              <strong>Email:</strong> info@urbaneyesecurity.co.ke<br>
-              <strong>Service Area:</strong> Nairobi-based operations with Kenya-focused smart security support.
-            </p>
-          </div>
-        </div>
-
-        <form class="form-card" action="https://formspree.io/f/xkoegypv" method="POST">
-          <input type="hidden" name="_subject" value="New Urban Eye Website Lead">
-          <input type="hidden" name="_template" value="table">
-
-          <h3 style="margin-top:0;color:var(--deep-navy)">Request a security assessment</h3>
-
-          <p style="color:var(--muted);line-height:1.65">
-            Fill in the details below and Urban Eye will respond with the right next step.
-          </p>
-
-          <div class="form-grid">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required>
-            </div>
-
-            <div>
-              <label for="phone">Phone / WhatsApp</label>
-              <input id="phone" name="phone" placeholder="+254..." required>
-            </div>
-
-            <div class="full">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com">
-            </div>
-
-            <div>
-              <label for="property-type">Property Type</label>
-              <select id="property-type" name="property_type" required>
-                <option value="">Select property type</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Standalone Home">Standalone Home</option>
-                <option value="Estate / Gated Community">Estate / Gated Community</option>
-                <option value="Retail Shop">Retail Shop</option>
-                <option value="Office">Office</option>
-                <option value="Warehouse">Warehouse</option>
-                <option value="Airbnb / Short-Stay">Airbnb / Short-Stay</option>
-                <option value="Construction Site">Construction Site</option>
-                <option value="Institution">Institution</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="location">Property Location</label>
-              <input id="location" name="property_location" placeholder="e.g. Westlands, Karen, Kilimani">
-            </div>
-
-            <div class="full">
-              <label for="service-interest">Service / Package Interest</label>
-              <select id="service-interest" name="service_interest" required>
-                <option value="">Select one</option>
-
-                <option value="cctv">CCTV Installation</option>
-                <option value="ajax">Smart Alarm Systems</option>
-                <option value="guarding">Manned Guarding</option>
-                <option value="access-control">Access Control</option>
-                <option value="fire-alarms">Commercial Fire Alarms</option>
-                <option value="monitoring">Urban Eye PRO Monitoring & Response</option>
-
-                <option value="essential">Urban Eye Essential Home</option>
-                <option value="complete">Urban Eye Complete Home</option>
-                <option value="premium">Urban Eye Premium Home</option>
-
-                <option value="retail">Urban Eye Essential Retail</option>
-                <option value="storefront">Urban Eye Storefront Guardian</option>
-                <option value="office">Urban Eye Office Shield</option>
-
-                <option value="not-sure">Not sure yet</option>
-              </select>
-            </div>
-
-            <div class="full">
-              <label for="urgency">Preferred Timeline</label>
-              <select id="urgency" name="preferred_timeline">
-                <option value="">Select timeline</option>
-                <option>Urgent: within 7 days</option>
-                <option>Soon: within 2&ndash;4 weeks</option>
-                <option>Planning: next 1&ndash;3 months</option>
-                <option>Researching options</option>
-              </select>
-            </div>
-
-            <div class="full">
-              <label for="existing-security-system">Existing Security System</label>
-              <input id="existing-security-system" name="existing_security_system" placeholder="Example: CCTV, guards, alarms, access control, none">
-            </div>
-
-            <div class="full">
-              <label for="message">Main Concern</label>
-              <textarea id="message" name="main_concern" placeholder="Briefly describe your property, current security setup, and the problem you want solved."></textarea>
-            </div>
-
-            <div class="full">
-              <button class="btn btn-primary" type="submit" style="width:100%">Submit Security Request</button>
-              <a class="form-whatsapp-link" href="https://wa.me/254768055555">Or chat with us instantly on WhatsApp →</a>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="section-label">What Happens Next</p>
-            <h2>From inquiry to clear recommendation.</h2>
-          </div>
-
-          <p class="section-intro">
-            Urban Eye reviews your risk profile, property layout, and response expectations before recommending hardware.
+          <h2>Need urgent help deciding where to start?</h2>
+          <p>
+            Send us a WhatsApp message with your property type and location.
+            Urban Eye will guide you toward the right next step.
           </p>
         </div>
 
-        <div class="process-list">
-          <div class="process-step">
-            <div class="step-number">01</div>
-            <div>
-              <strong>Initial Review</strong>
-              <span>We review your inquiry, property type, location, and service interest.</span>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">02</div>
-            <div>
-              <strong>Site Survey Scheduling</strong>
-              <span>We contact you to confirm the site visit or request more information.</span>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">03</div>
-            <div>
-              <strong>Risk Assessment</strong>
-              <span>We identify entry points, blind spots, response gaps, and practical security priorities.</span>
-            </div>
-          </div>
-
-          <div class="process-step">
-            <div class="step-number">04</div>
-            <div>
-              <strong>Written Recommendation</strong>
-              <span>You receive a clear starting framework, scope, and quotation based on the actual site.</span>
-            </div>
-          </div>
+        <div class="system-bridge-actions">
+          <a href="https://wa.me/254714007114" class="btn btn-primary">Chat on WhatsApp</a>
+          <a href="tel:+254768055555" class="btn btn-outline-white">Call Urban Eye</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</main>
 
-    <section class="dark-section">
-      <div class="container">
-        <div class="cta-band">
-          <div>
-            <h2>Need urgent help deciding where to start?</h2>
-
-            <p>
-              Send us a WhatsApp message with your property type and location. Urban Eye will guide you toward the right next step.
-            </p>
-          </div>
-
-          <div class="system-bridge-actions">
-            <a class="btn btn-primary" href="https://wa.me/254768055555">Chat on WhatsApp</a>
-            <a class="btn btn-outline-white" href="tel:+254768055555">Call Urban Eye</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 <div id="site-footer"></div>
+
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+
+    const serviceMap = {
+      cctv: "CCTV Installation",
+      "smart-alarms": "Smart Alarm Systems",
+      alarms: "Smart Alarm Systems",
+      "access-control": "Access Control",
+      access: "Access Control",
+      fire: "Commercial Fire Alarms",
+      "fire-safety": "Commercial Fire Alarms",
+      guarding: "Manned Guarding",
+      guards: "Manned Guarding",
+      "electric-fencing": "Electric Fencing",
+      fencing: "Electric Fencing",
+      monitoring: "Urban Eye PRO Monitoring & Response",
+      residential: "Residential Security",
+      retail: "Retail Security",
+      office: "Office Security",
+      warehouse: "Warehouse Security",
+      construction: "Construction Site Security",
+      airbnb: "Airbnb / Short-Stay Security",
+      packages: "Security Packages",
+      "risk-review": "General Security Assessment"
+    };
+
+    const select = document.getElementById("serviceInterestSelect");
+    const hidden = document.getElementById("serviceInterestHidden");
+
+    if (!select || !hidden) return;
+
+    if (service && serviceMap[service]) {
+      select.value = serviceMap[service];
+      hidden.value = serviceMap[service];
+    }
+
+    select.addEventListener("change", function () {
+      hidden.value = select.value || "General Security Assessment";
+    });
+  })();
+</script>
 <script src="/js/includes.js"></script>
 </body>
 </html>
