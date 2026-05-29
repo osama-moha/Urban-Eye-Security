@@ -2632,36 +2632,6 @@ footer a:hover{
   line-height:1.6;
 }
 
-.property-link-strip{
-  background:#F5F7FA;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-
-.property-link-strip-inner{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:10px 16px;
-  padding:18px 0;
-}
-
-.property-link-strip span{
-  color:var(--deep-navy);
-  font-weight:900;
-  font-size:13px;
-}
-
-.property-link-strip a{
-  color:var(--muted);
-  font-weight:800;
-  font-size:13px;
-}
-
-.property-link-strip a:hover{
-  color:var(--red);
-}
-
 .packages-preview-section{
   background:#F5F7FA;
 }

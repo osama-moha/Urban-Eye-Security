@@ -21,245 +21,206 @@
 <link rel="stylesheet" href="/style.css"/>
 
 <style>
-  /* Home page careers preview paths */
+  /* Home page property framework navigation */
 
-  .career-paths{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:16px;
-    margin-top:28px;
-  }
-
-  .career-path-card{
-    display:block;
-    padding:24px 26px;
-    border:1px solid #d6deea;
-    background:#fff;
-    color:#07122f;
-    text-decoration:none;
-    transition:border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
-  }
-
-  .career-path-card:hover{
-    border-color:rgba(207,38,48,.45);
-    transform:translateY(-2px);
-    box-shadow:0 18px 40px rgba(7,18,47,.08);
-  }
-
-  .career-path-card span{
-    display:block;
-    margin-bottom:10px;
-    color:#cf2630;
-    font-size:11px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:0;
-  }
-
-  .career-path-card h3{
-    margin:0 0 8px;
-    color:#07122f;
-    font-size:21px;
-    line-height:1.16;
-    letter-spacing:0;
-  }
-
-  .career-path-card p{
-    margin:0;
-    color:#5d6878;
-    font-size:16px;
-    line-height:1.55;
-  }
-
-  @media(min-width:900px){
-    .career-paths{
-      grid-template-columns:1fr 1fr;
-    }
-  }
-
-  /* Home page package framework accordion */
-
-  .framework-accordion{
+  .framework-list{
     margin-top:40px;
     border:1px solid #d6deea;
     border-radius:14px;
     overflow:hidden;
     background:#fff;
-    box-shadow:0 18px 45px rgba(7,18,47,.06);
+    box-shadow:0 18px 45px rgba(7,18,47,.05);
   }
 
-  .framework-item{
+  .framework-row{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:24px;
+    align-items:center;
+    min-height:92px;
+    padding:18px 28px;
     border-bottom:1px solid #d6deea;
+    color:#07122f;
+    text-decoration:none;
     background:#fff;
+    transition:background 160ms ease;
   }
 
-  .framework-item:last-child{
+  .framework-row:last-child{
     border-bottom:0;
   }
 
-  .framework-item summary{
-    position:relative;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:18px;
-    align-items:center;
-    min-height:86px;
-    padding:16px 44px;
-    cursor:pointer;
-    list-style:none;
-  }
-
-  .framework-item summary::-webkit-details-marker{
-    display:none;
-  }
-
-  .framework-item summary::after{
-    content:"+";
-    position:absolute;
-    right:20px;
-    top:50%;
-    transform:translateY(-50%);
-    color:#cf2630;
-    font-size:22px;
-    font-weight:500;
-    line-height:1;
-  }
-
-  .framework-item[open] summary::after{
-    content:"x";
-    color:#07122f;
-  }
-
-  .framework-item[open] summary{
+  .framework-row:hover{
     background:#fbfcff;
-    border-bottom:1px solid #d6deea;
   }
 
-  .framework-badge{
-    display:inline-flex;
-    align-items:center;
-    margin-bottom:7px;
-    padding:0 0 0 9px;
-    border:0;
-    border-left:2px solid #cf2630;
-    border-radius:0;
-    background:transparent;
+  .framework-label{
+    display:block;
+    margin:0 0 7px;
     color:#cf2630;
-    font-size:9.5px;
+    font-size:10.5px;
     line-height:1;
     font-weight:800;
+    letter-spacing:.1em;
     text-transform:uppercase;
-    letter-spacing:.08em;
   }
 
-  .framework-badge.recommended{
-    background:transparent;
-  }
-
-  .framework-item h3{
-    margin:0 0 3px;
+  .framework-row h3{
+    margin:0 0 4px;
     color:#07122f;
     font-size:22px;
     line-height:1.08;
     letter-spacing:0;
   }
 
-  .framework-item summary p{
+  .framework-row p{
     margin:0;
-    max-width:720px;
     color:#5d6878;
     font-size:14.5px;
-    line-height:1.3;
+    line-height:1.35;
     font-weight:650;
   }
 
   .framework-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
     color:#cf2630;
     font-size:13.5px;
     font-weight:800;
     white-space:nowrap;
   }
 
-  .framework-body{
+  .framework-link span{
+    font-size:20px;
+    line-height:1;
+    font-weight:500;
+  }
+
+  @media(max-width:900px){
+    .framework-list{
+      margin-top:28px;
+    }
+
+    .framework-row{
+      grid-template-columns:1fr;
+      gap:12px;
+      min-height:0;
+      padding:20px 22px;
+    }
+
+    .framework-row h3{
+      font-size:21px;
+    }
+
+    .framework-row p{
+      font-size:14.5px;
+    }
+
+    .framework-link{
+      font-size:13.5px;
+    }
+  }
+
+  /* Home page additional sector links */
+
+  .additional-sectors-nav{
+    background:#F5F7FA;
+    border-top:1px solid #d6deea;
+    border-bottom:1px solid #d6deea;
+    padding:34px 0 38px;
+  }
+
+  .additional-sectors-head{
     display:grid;
-    grid-template-columns:1fr 1fr auto;
-    gap:28px;
-    align-items:start;
-    padding:26px 44px 34px;
-    background:#fff;
+    grid-template-columns:minmax(0,.85fr) minmax(280px,1fr);
+    gap:38px;
+    align-items:end;
+    margin-bottom:22px;
   }
 
-  .framework-body h4{
-    margin:0 0 8px;
+  .additional-sectors-head h2{
+    margin:0;
     color:#07122f;
-    font-size:16px;
-    line-height:1.25;
+    font-size:clamp(24px,2.6vw,34px);
+    line-height:1.08;
+    letter-spacing:0;
   }
 
-  .framework-body p{
+  .additional-sectors-head p{
     margin:0;
     color:#5d6878;
     font-size:15.5px;
     line-height:1.6;
   }
 
-  .framework-cta{
-    color:#cf2630;
-    font-size:14px;
-    font-weight:900;
-    text-decoration:none;
-    white-space:nowrap;
+  .additional-sector-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border:1px solid #d6deea;
+    background:#fff;
   }
 
-  .framework-cta:hover{
+  .additional-sector-card{
+    display:block;
+    padding:20px 22px;
+    border-right:1px solid #d6deea;
+    color:#07122f;
+    text-decoration:none;
+  }
+
+  .additional-sector-card:last-child{
+    border-right:0;
+  }
+
+  .additional-sector-card h3{
+    margin:0 0 8px;
+    color:#07122f;
+    font-size:19px;
+    line-height:1.15;
+    letter-spacing:0;
+  }
+
+  .additional-sector-card p{
+    margin:0 0 12px;
+    color:#5d6878;
+    font-size:14.5px;
+    line-height:1.5;
+  }
+
+  .additional-sector-card span{
+    color:#cf2630;
+    font-size:13.5px;
+    font-weight:800;
+  }
+
+  .additional-sector-card:hover span{
     text-decoration:underline;
   }
 
-  .framework-actions{
-    display:flex;
-    justify-content:center;
-    margin-top:32px;
-  }
-
   @media(max-width:900px){
-    .framework-accordion{
-      margin-top:28px;
+    .additional-sectors-nav{
+      padding:28px 0 32px;
     }
 
-    .framework-item summary{
+    .additional-sectors-head,
+    .additional-sector-grid{
       grid-template-columns:1fr;
-      gap:12px;
-      min-height:104px;
-      padding:20px 54px 20px 22px;
+      gap:18px;
     }
 
-    .framework-item summary::after{
-      right:22px;
-      font-size:24px;
+    .additional-sectors-head{
+      margin-bottom:18px;
     }
 
-    .framework-link{
-      width:fit-content;
-      font-size:13.5px;
+    .additional-sector-card{
+      border-right:0;
+      border-bottom:1px solid #d6deea;
+      padding:18px 20px;
     }
 
-    .framework-item summary p{
-      display:-webkit-box;
-      -webkit-line-clamp:2;
-      -webkit-box-orient:vertical;
-      overflow:hidden;
-      font-size:14.5px;
-      line-height:1.38;
-    }
-
-    .framework-body{
-      grid-template-columns:1fr;
-      gap:20px;
-      padding:22px;
-    }
-
-    .framework-cta{
-      margin-top:4px;
+    .additional-sector-card:last-child{
+      border-bottom:0;
     }
   }
 
@@ -578,15 +539,40 @@
     </div>
   </section>
 
-  <div class="property-link-strip">
-    <div class="container property-link-strip-inner">
-      <span>Also protecting:</span>
-      <a href="/warehouse-security/">Warehouses & Logistics</a>
-      <a href="/construction-site-security/">Construction Sites</a>
-      <a href="/airbnb-security/">Airbnb & Short-Stay Properties</a>
-      <a href="/electric-fencing/">Electric Fencing & Perimeter Security</a>
+  <section class="additional-sectors-nav">
+    <div class="container">
+      <div class="additional-sectors-head reveal-up">
+        <div>
+          <p class="section-label">Additional Sectors</p>
+          <h2>Specialised environments we protect.</h2>
+        </div>
+
+        <p>
+          Urban Eye adapts security planning to the operating risks of each property type.
+        </p>
+      </div>
+
+      <div class="additional-sector-grid reveal-up">
+        <a class="additional-sector-card" href="/warehouse-security/">
+          <h3>Warehouses &amp; Logistics</h3>
+          <p>Inventory protection, loading-zone visibility, controlled access, and escalation planning.</p>
+          <span>Explore Warehouse Security &rarr;</span>
+        </a>
+
+        <a class="additional-sector-card" href="/construction-site-security/">
+          <h3>Construction Sites</h3>
+          <p>Temporary perimeter security, asset protection, monitoring, and flexible site deployment.</p>
+          <span>Explore Construction Site Security &rarr;</span>
+        </a>
+
+        <a class="additional-sector-card" href="/airbnb-security/">
+          <h3>Airbnb &amp; Short-Stay Properties</h3>
+          <p>Guest-safety systems, smart access, remote alerts, and property oversight.</p>
+          <span>Explore Short-Stay Security &rarr;</span>
+        </a>
+      </div>
     </div>
-  </div>
+  </section>
 
   <section class="commitment-section">
     <div class="container commitment-inner">
@@ -710,119 +696,50 @@
     <div class="container">
       <div class="section-head reveal-up">
         <div>
-          <p class="section-label">Security Packages</p>
-          <h2>Starting frameworks for different property risks.</h2>
+          <p class="section-label">Security Frameworks</p>
+          <h2>Protection frameworks organised around your property type.</h2>
         </div>
 
         <p class="section-intro">
-          Choose a starting framework below, and Urban Eye will customize it to your exact needs after a physical site survey.
+          Choose the type of property you need to secure. Urban Eye will recommend the appropriate starting framework after a site assessment.
         </p>
       </div>
 
-      <div class="framework-accordion reveal-up">
-        <details class="framework-item">
-          <summary>
-            <div>
-              <span class="framework-badge">Essential</span>
-              <h3>Essential Protection</h3>
-              <p>Smaller homes, apartments, and shops.</p>
-            </div>
-            <span class="framework-link">View Essential Options</span>
-          </summary>
-
-          <div class="framework-body">
-            <div>
-              <h4>Best for</h4>
-              <p>Smaller homes, apartments, mini-marts, and low-to-medium risk properties that need a practical starting point.</p>
-            </div>
-            <div>
-              <h4>What it covers</h4>
-              <p>Basic detection, door and window protection, access-point security, indoor motion alerts, and simple visibility.</p>
-            </div>
-            <a href="/security-packages/#residential" class="framework-cta">View Essential Options &rarr;</a>
+      <div class="framework-list reveal-up">
+        <a class="framework-row" href="/security-packages/#residential-frameworks">
+          <div class="framework-content">
+            <span class="framework-label">Residential</span>
+            <h3>Home &amp; Estate Protection</h3>
+            <p>Apartments, standalone homes, family residences, and residential estates.</p>
           </div>
-        </details>
-
-        <details class="framework-item" open>
-          <summary>
-            <div>
-              <span class="framework-badge recommended">Recommended</span>
-              <h3>Smart Protection</h3>
-              <p>Homes, offices, and stores that need app visibility and alerts.</p>
-            </div>
-            <span class="framework-link">View Smart Options</span>
-          </summary>
-
-          <div class="framework-body">
-            <div>
-              <h4>Best for</h4>
-              <p>Homes, offices, retail shops, Airbnb units, and properties where the owner needs better control and faster awareness.</p>
-            </div>
-            <div>
-              <h4>What it covers</h4>
-              <p>Connected alarms, CCTV verification, mobile app control, smarter alerts, access logs, and better property oversight.</p>
-            </div>
-            <a href="/security-packages/#commercial" class="framework-cta">View Smart Options &rarr;</a>
-          </div>
-        </details>
-
-        <details class="framework-item">
-          <summary>
-            <div>
-              <span class="framework-badge">Complete</span>
-              <h3>Complete Protection</h3>
-              <p>Estates, commercial premises, and higher-risk properties.</p>
-            </div>
-            <span class="framework-link">View Complete Options</span>
-          </summary>
-
-          <div class="framework-body">
-            <div>
-              <h4>Best for</h4>
-              <p>Estates, warehouses, offices, commercial buildings, construction sites, and properties that need a coordinated security plan.</p>
-            </div>
-            <div>
-              <h4>What it covers</h4>
-              <p>Personnel, alarm systems, CCTV, access control, reporting, monitoring, response escalation, and site procedures.</p>
-            </div>
-            <a href="/security-packages/#commercial" class="framework-cta">View Complete Options &rarr;</a>
-          </div>
-        </details>
-      </div>
-
-      <div class="framework-actions reveal-up">
-        <a class="btn btn-primary" href="/security-packages/">View All Package Pricing</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="careers-preview" class="careers-preview-section">
-    <div class="container careers-preview-inner">
-      <div class="careers-preview-copy reveal-up">
-        <p class="section-label">Join Urban Eye</p>
-
-        <h2>We are building a disciplined security team.</h2>
-
-        <p>
-          Urban Eye works with security officers, installation technicians, and security solutions consultants who understand professionalism, vigilance, client service, and practical security work in Kenya.
-        </p>
-      </div>
-
-      <div class="career-paths reveal-up">
-        <a class="career-path-card" href="/careers/#open-roles">
-          <span>Security Officer Path</span>
-          <h3>Seeking a security officer role?</h3>
-          <p>
-            Explore current recruitment requirements and prepare your documents before the next deployment opportunity.
-          </p>
+          <div class="framework-link">View Residential Options <span aria-hidden="true">+</span></div>
         </a>
 
-        <a class="career-path-card" href="/careers/#open-roles">
-          <span>Technical, Sales & Admin Path</span>
-          <h3>Seeking a technical, sales, or administrative role?</h3>
-          <p>
-            Apply for project-based or performance-driven opportunities in installation, client advisory, and operations support.
-          </p>
+        <a class="framework-row" href="/security-packages/#commercial">
+          <div class="framework-content">
+            <span class="framework-label">Commercial</span>
+            <h3>Retail, Office &amp; Logistics Protection</h3>
+            <p>Shops, pharmacies, offices, clinics, warehouses, and logistics operations.</p>
+          </div>
+          <div class="framework-link">View Commercial Options <span aria-hidden="true">+</span></div>
+        </a>
+
+        <a class="framework-row" href="/security-packages/#construction">
+          <div class="framework-content">
+            <span class="framework-label">Project Sites</span>
+            <h3>Construction Site Protection</h3>
+            <p>Temporary sites requiring flexible perimeter protection and monitoring support.</p>
+          </div>
+          <div class="framework-link">View Construction Options <span aria-hidden="true">+</span></div>
+        </a>
+
+        <a class="framework-row" href="/security-packages/#commercial-fire">
+          <div class="framework-content">
+            <span class="framework-label">Life Safety</span>
+            <h3>Commercial Fire Safety</h3>
+            <p>Commercial facilities requiring fire detection, alerting, and response planning.</p>
+          </div>
+          <div class="framework-link">View Fire Safety Options <span aria-hidden="true">+</span></div>
         </a>
       </div>
     </div>
