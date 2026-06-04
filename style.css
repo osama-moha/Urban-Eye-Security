@@ -200,7 +200,17 @@ body.menu-open .brand-wordmark-accent{
   position:relative;
 }
 
-.nav-link i{
+.ui-icon,
+.ui-icon-fill{
+  width:1em;
+  height:1em;
+  display:inline-block;
+  flex:0 0 auto;
+  color:currentColor;
+}
+
+.nav-link i,
+.nav-link .ui-icon{
   display:none;
 }
 
@@ -1887,11 +1897,12 @@ footer a:hover{
     justify-content:flex-start;
   }
 
-  .nav-link i{
-    display:inline-flex;
-    color:var(--red);
-    font-size:18px;
-  }
+.nav-link i,
+.nav-link .ui-icon{
+  display:inline-flex;
+  color:var(--red);
+  font-size:18px;
+}
 
   .nav-link:after{
     display:none;
@@ -4912,7 +4923,9 @@ footer a:hover{
   }
 
   .mobile-menu-close i,
-  .nav-close i{
+  .nav-close i,
+  .mobile-menu-close .ui-icon,
+  .nav-close .ui-icon{
     color:#fff;
     font-size:38px;
     line-height:1;
@@ -5061,6 +5074,11 @@ footer a:hover{
     color:#fff!important;
     font-size:20px;
     text-decoration:none;
+  }
+
+  .mobile-contact-icons .ui-icon,
+  .mobile-contact-icons .ui-icon-fill{
+    font-size:20px;
   }
 }
 /* === Security Packages Page, professional column layout === */
