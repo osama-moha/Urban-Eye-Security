@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap");
 
 :root{
   --deep-navy:#0D1430;
@@ -28,7 +28,7 @@ body{
   margin:0;
   background:#fff;
   color:var(--charcoal);
-  font-family:"Inter",Arial,sans-serif;
+  font-family:"Source Sans 3",Arial,sans-serif;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
@@ -46,7 +46,7 @@ h4,
 .nav-link,
 .btn,
 .section-label{
-  font-family:"Manrope",Arial,sans-serif;
+  font-family:"Source Sans 3",Arial,sans-serif;
 }
 
 h1,
@@ -134,7 +134,7 @@ img{
   display:block;
   margin-top:5px;
   color:var(--muted);
-  font:600 10.5px "Inter",Arial,sans-serif;
+  font:600 10.5px "Source Sans 3",Arial,sans-serif;
   text-transform:none;
   letter-spacing:0;
 }
@@ -150,7 +150,7 @@ img{
   display:inline-flex;
   align-items:baseline;
   gap:5px;
-  font-family:"Manrope",Arial,sans-serif;
+  font-family:"Source Sans 3",Arial,sans-serif;
   font-weight:800;
   font-size:17px;
   line-height:1;
@@ -237,7 +237,7 @@ body.menu-open .brand-wordmark-accent{
   align-items:center;
   gap:8px;
   color:var(--deep-navy);
-  font:800 13px "Manrope",Arial,sans-serif;
+  font:800 13px "Source Sans 3",Arial,sans-serif;
   padding:11px 14px;
   border:1px solid var(--border);
   border-radius:10px;
@@ -338,7 +338,7 @@ body.menu-open .brand-wordmark-accent{
   padding:11px 12px;
   border-radius:10px;
   color:#2f3850;
-  font:800 13px "Manrope",Arial,sans-serif;
+  font:800 13px "Source Sans 3",Arial,sans-serif;
 }
 
 .nav-dropdown-menu a:hover{
@@ -361,14 +361,14 @@ body.menu-open .brand-wordmark-accent{
 
 .nav-dropdown-menu-wide a strong{
   color:var(--deep-navy);
-  font:800 14px "Manrope",Arial,sans-serif;
+  font:800 14px "Source Sans 3",Arial,sans-serif;
   letter-spacing:0;
 }
 
 .nav-dropdown-menu-wide a span{
   display:block;
   color:var(--muted);
-  font:600 12.5px "Inter",Arial,sans-serif;
+  font:600 12.5px "Source Sans 3",Arial,sans-serif;
   line-height:1.45;
 }
 
@@ -391,7 +391,7 @@ body.menu-open .brand-wordmark-accent{
   display:block;
   padding:0 14px 4px;
   color:var(--red);
-  font:800 10.5px "Manrope",Arial,sans-serif;
+  font:800 10.5px "Source Sans 3",Arial,sans-serif;
   text-transform:uppercase;
   letter-spacing:0;
 }
@@ -399,7 +399,7 @@ body.menu-open .brand-wordmark-accent{
 .nav-dropdown-menu-wide a small{
   display:block;
   color:var(--muted);
-  font:600 12.5px "Inter",Arial,sans-serif;
+  font:600 12.5px "Source Sans 3",Arial,sans-serif;
   line-height:1.45;
 }
 
@@ -506,7 +506,7 @@ body.menu-open .brand-wordmark-accent{
 
 .hero-eyebrow,
 .section-label{
-  font:800 11px "Manrope",Arial,sans-serif;
+  font:800 11px "Source Sans 3",Arial,sans-serif;
   letter-spacing:0;
   text-transform:uppercase;
 }
@@ -563,7 +563,7 @@ body.menu-open .brand-wordmark-accent{
   border:1px solid rgba(255,255,255,.16);
   border-radius:8px;
   padding:9px 14px;
-  font:800 12px "Manrope",Arial,sans-serif;
+  font:800 12px "Source Sans 3",Arial,sans-serif;
 }
 
 .badge span{
@@ -639,7 +639,7 @@ body.menu-open .brand-wordmark-accent{
   right:34px;
   bottom:34px;
   color:#fff;
-  font:800 22px "Manrope",Arial,sans-serif;
+  font:800 22px "Source Sans 3",Arial,sans-serif;
   line-height:1.15;
 }
 
@@ -814,7 +814,7 @@ h2{
   display:inline-flex;
   margin-bottom:22px;
   color:var(--red);
-  font:900 12px "Manrope",Arial,sans-serif;
+  font:900 12px "Source Sans 3",Arial,sans-serif;
   letter-spacing:.08em;
 }
 
@@ -1201,7 +1201,7 @@ h2{
   background:#fff;
   border:1px solid rgba(196,39,46,.35);
   color:var(--red);
-  font:900 12px "Manrope",Arial,sans-serif;
+  font:900 12px "Source Sans 3",Arial,sans-serif;
   box-shadow:0 8px 22px rgba(15,23,42,.08);
 }
 
@@ -1246,7 +1246,7 @@ h2{
 label{
   display:block;
   color:var(--deep-navy);
-  font:800 13px "Manrope",Arial,sans-serif;
+  font:800 13px "Source Sans 3",Arial,sans-serif;
   margin-bottom:8px;
 }
 
@@ -1257,7 +1257,7 @@ textarea{
   border:1.5px solid #D9DEE8;
   border-radius:10px;
   padding:13px 14px;
-  font:600 14px "Inter",Arial,sans-serif;
+  font:600 14px "Source Sans 3",Arial,sans-serif;
   color:#1A1A1A;
   background:#fff;
 }
@@ -1322,7 +1322,7 @@ details{
 summary{
   cursor:pointer;
   color:var(--deep-navy);
-  font:800 16px "Manrope",Arial,sans-serif;
+  font:800 16px "Source Sans 3",Arial,sans-serif;
 }
 
 details p{
@@ -1444,7 +1444,7 @@ footer a:hover{
   border-left:3px solid var(--red);
   border-radius:0;
   padding:6px 10px;
-  font:800 11px "Manrope",Arial,sans-serif;
+  font:800 11px "Source Sans 3",Arial,sans-serif;
   letter-spacing:0;
   text-transform:uppercase;
 }
@@ -2660,7 +2660,7 @@ footer a:hover{
 .package-compare-head{
   background:#0D1430;
   color:#fff;
-  font:900 12px "Manrope",Arial,sans-serif;
+  font:900 12px "Source Sans 3",Arial,sans-serif;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
@@ -2804,7 +2804,7 @@ footer a:hover{
 .nav-serve-menu .mobile-menu-group > span{
   display:block;
   color:var(--red);
-  font:900 11px "Manrope",Arial,sans-serif;
+  font:900 11px "Source Sans 3",Arial,sans-serif;
   letter-spacing:.08em;
   text-transform:uppercase;
   margin:8px 12px 6px;
@@ -2818,13 +2818,13 @@ footer a:hover{
 
 .nav-serve-menu a strong{
   color:var(--deep-navy);
-  font:800 14px "Manrope",Arial,sans-serif;
+  font:800 14px "Source Sans 3",Arial,sans-serif;
 }
 
 .nav-serve-menu a small{
   display:block;
   color:var(--muted);
-  font:600 12.5px "Inter",Arial,sans-serif;
+  font:600 12.5px "Source Sans 3",Arial,sans-serif;
   line-height:1.45;
 }
 
@@ -4048,7 +4048,7 @@ footer a:hover{
   border:1px solid rgba(196,39,46,.3);
   color:var(--red);
   background:#fff;
-  font:900 13px "Manrope",Arial,sans-serif;
+  font:900 13px "Source Sans 3",Arial,sans-serif;
 }
 
 .about-value-row h3{
@@ -4130,7 +4130,7 @@ footer a:hover{
 .about-audience-head{
   background:#0D1430;
   color:#fff;
-  font:900 12px "Manrope",Arial,sans-serif;
+  font:900 12px "Source Sans 3",Arial,sans-serif;
   letter-spacing:0;
   text-transform:uppercase;
 }
@@ -4170,7 +4170,7 @@ footer a:hover{
     display:block;
     margin-bottom:6px;
     color:var(--red);
-    font:900 11px "Manrope",Arial,sans-serif;
+    font:900 11px "Source Sans 3",Arial,sans-serif;
     letter-spacing:0;
     text-transform:uppercase;
   }
@@ -4394,7 +4394,7 @@ footer a:hover{
 .career-roles-head{
   background:#0D1430;
   color:#fff;
-  font:900 12px "Manrope",Arial,sans-serif;
+  font:900 12px "Source Sans 3",Arial,sans-serif;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
@@ -4476,7 +4476,7 @@ footer a:hover{
   background:#fff;
   border:1px solid rgba(196,39,46,.35);
   color:var(--red);
-  font:900 12px "Manrope",Arial,sans-serif;
+  font:900 12px "Source Sans 3",Arial,sans-serif;
 }
 
 .career-document-row p{
@@ -4694,7 +4694,7 @@ footer a:hover{
     display:inline-flex;
     padding:0;
     color:var(--red);
-    font:900 13px "Manrope",Arial,sans-serif;
+    font:900 13px "Source Sans 3",Arial,sans-serif;
   }
 
   .mega-menu-cta a:hover{
@@ -4721,7 +4721,7 @@ footer a:hover{
     margin:0 0 12px;
     padding:0;
     color:var(--red);
-    font:900 11px "Manrope",Arial,sans-serif;
+    font:900 11px "Source Sans 3",Arial,sans-serif;
     letter-spacing:.12em;
     text-transform:uppercase;
   }
@@ -4747,14 +4747,14 @@ footer a:hover{
   .nav-serve-menu a strong,
   .nav-serve-monitoring strong{
     color:var(--deep-navy)!important;
-    font:800 14px "Manrope",Arial,sans-serif;
+    font:800 14px "Source Sans 3",Arial,sans-serif;
   }
 
   .nav-dropdown-menu-wide a small,
   .nav-serve-menu a small,
   .nav-serve-monitoring small{
     color:var(--muted)!important;
-    font:600 12.5px "Inter",Arial,sans-serif;
+    font:600 12.5px "Source Sans 3",Arial,sans-serif;
     line-height:1.42;
   }
 
@@ -5848,3 +5848,162 @@ footer a:hover{
   letter-spacing:0;
   text-transform:uppercase;
 }
+
+/* =========================================================
+   Corporate typography and action refinement
+   Applied site-wide without changing page layout or routing.
+   ========================================================= */
+
+:root{
+  --font-primary:"Source Sans 3",Arial,sans-serif;
+  --radius:6px;
+}
+
+body{
+  font-family:var(--font-primary);
+  font-weight:400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.brand-name,
+.brand-wordmark,
+.nav-link,
+.btn,
+.section-label,
+.section-eyebrow,
+.hero-eyebrow,
+.eyebrow,
+.kicker,
+.section-kicker{
+  font-family:var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight:600;
+  letter-spacing:-.025em;
+}
+
+.hero h1,
+.page-hero h1{
+  font-weight:600;
+  letter-spacing:-.035em;
+}
+
+.hero-copy,
+.page-hero p,
+.section-intro{
+  font-weight:400;
+}
+
+.brand-wordmark{
+  font-weight:700;
+  letter-spacing:-.015em;
+}
+
+.nav-link{
+  font-weight:600;
+  letter-spacing:0;
+}
+
+.section-label,
+.section-eyebrow,
+.hero-eyebrow,
+.eyebrow,
+.kicker,
+.section-kicker{
+  font-weight:700;
+  letter-spacing:.10em;
+}
+
+.btn{
+  min-height:50px;
+  padding:0 24px;
+  gap:12px;
+  border-radius:3px;
+  font-size:15px;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:0;
+  box-shadow:none;
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease;
+}
+
+.btn:hover{
+  transform:none;
+  box-shadow:none;
+}
+
+.btn-primary{
+  background:var(--red);
+  border-color:var(--red);
+  box-shadow:none;
+}
+
+.btn-primary:hover{
+  background:var(--red-dark);
+  border-color:var(--red-dark);
+  box-shadow:none;
+}
+
+.btn-navy{
+  border-color:var(--muted-navy);
+  box-shadow:none;
+}
+
+.btn-navy:hover{
+  border-color:var(--deep-navy);
+  box-shadow:none;
+}
+
+.btn-outline{
+  border-color:#CBD4E1;
+  border-radius:3px;
+  box-shadow:none;
+}
+
+.btn-outline:hover{
+  border-color:var(--deep-navy);
+  background:transparent;
+  box-shadow:none;
+}
+
+.btn-outline-white{
+  border-color:rgba(255,255,255,.48);
+  border-radius:3px;
+  background:transparent;
+  box-shadow:none;
+}
+
+.btn-outline-white:hover{
+  border-color:#fff;
+  background:rgba(255,255,255,.06);
+  box-shadow:none;
+}
+
+.nav-actions .btn{
+  min-height:48px;
+  padding:0 22px;
+}
+
+.form-card .btn{
+  min-height:50px;
+}
+
+@media(max-width:900px){
+  .btn{
+    min-height:48px;
+    padding:0 20px;
+    font-size:15px;
+  }
+}
+
