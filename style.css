@@ -5953,6 +5953,7 @@ h6{
   line-height:1;
   letter-spacing:0;
   box-shadow:none;
+  cursor:pointer;
   transition:background-color .2s ease,border-color .2s ease,color .2s ease;
 }
 
@@ -6006,6 +6007,11 @@ h6{
   border-color:#fff;
   background:rgba(255,255,255,.06);
   box-shadow:none;
+}
+
+.btn-block{
+  width:100%;
+  justify-content:center;
 }
 
 .nav-actions .btn{

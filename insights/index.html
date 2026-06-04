@@ -205,25 +205,6 @@
     line-height: 1.65;
   }
 
-  .insights-page .insights-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    padding: 0 25px;
-    background: var(--color-brand-red, #C4272E);
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .insights-page .insights-button:hover,
-  .insights-page .insights-button:focus-visible {
-    background: #AF2229;
-  }
-
   @media (max-width: 900px) {
     .insights-page .insights-container {
       width: min(100% - 36px, 1180px);
@@ -294,7 +275,7 @@
       padding: 29px 22px;
     }
 
-    .insights-page .insights-button {
+    .insights-page .insights-final-cta-box .btn {
       width: 100%;
     }
   }
@@ -498,7 +479,7 @@
           </p>
         </div>
 
-        <a class="insights-button" href="/contact/?service=risk-review">
+        <a class="btn btn-primary" href="/contact/?service=risk-review">
           Request a Site Assessment
         </a>
       </div>
