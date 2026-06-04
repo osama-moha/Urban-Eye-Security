@@ -16,6 +16,8 @@
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.webp"/>
 <link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
 <link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/style.css"/>
 
 <style>
@@ -454,13 +456,12 @@
     <div class="hero-photo">
       <img
         src="/urban-eye-assets/guard3.webp"
-        sizes="(max-width: 768px) 100vw, 55vw"
         width="885"
         height="590"
         fetchpriority="high"
         decoding="async"
         alt="Urban Eye Security guards at a Nairobi property gate"
-        onerror="this.src='/urban-eye-assets/guards.webp'">
+        onerror="this.onerror=null;this.src='/urban-eye-assets/guard3.png'">
    </div>
   </section>
 
@@ -529,7 +530,13 @@
         </div>
 
         <div class="sector-row-media">
-          <img src="/urban-eye-assets/guard%20op.webp" alt="Urban Eye guard checking access at a residential property">
+          <img
+            src="/urban-eye-assets/guard%20op.webp"
+            width="1024"
+            height="572"
+            loading="lazy"
+            decoding="async"
+            alt="Urban Eye guard checking access at a residential property">
         </div>
       </article>
 
@@ -550,7 +557,13 @@
         </div>
 
         <div class="sector-row-media">
-          <img src="/urban-eye-assets/nfence2.webp" alt="Urban Eye technician installing CCTV and perimeter security at a commercial property">
+          <img
+            src="/urban-eye-assets/nfence2.webp"
+            width="1024"
+            height="573"
+            loading="lazy"
+            decoding="async"
+            alt="Urban Eye technician installing CCTV and perimeter security at a commercial property">
         </div>
       </article>
 
@@ -571,7 +584,13 @@
         </div>
 
         <div class="sector-row-media">
-          <img src="/urban-eye-assets/access.webp" alt="Technician installing biometric access control for a commercial facility">
+          <img
+            src="/urban-eye-assets/access.webp"
+            width="1024"
+            height="572"
+            loading="lazy"
+            decoding="async"
+            alt="Technician installing biometric access control for a commercial facility">
         </div>
       </article>
 
@@ -809,18 +828,18 @@
 
           <div class="form-grid">
             <div>
-              <label>Name</label>
-              <input name="name" placeholder="Your name" required>
+              <label for="lead-name">Name</label>
+              <input id="lead-name" name="name" autocomplete="name" placeholder="Your name" required>
             </div>
 
             <div>
-              <label>Phone / WhatsApp</label>
-              <input name="phone" placeholder="+254..." required>
+              <label for="lead-phone">Phone / WhatsApp</label>
+              <input id="lead-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+254..." required>
             </div>
 
             <div class="full">
-              <label>Property or service need</label>
-              <select name="property_or_service" required>
+              <label for="property-or-service">Property or service need</label>
+              <select id="property-or-service" name="property_or_service" required>
                 <option value="">Select one</option>
                 <option>Home / Residential</option>
                 <option>Apartment / Estate</option>
@@ -833,13 +852,13 @@
             </div>
 
             <div class="full">
-              <label>Property Location</label>
-              <input name="property_location" placeholder="Example: Westlands, Karen, Kilimani">
+              <label for="property-location">Property Location</label>
+              <input id="property-location" name="property_location" autocomplete="address-level2" placeholder="Example: Westlands, Karen, Kilimani">
             </div>
 
             <div class="full">
-              <label>Preferred Timeline</label>
-              <select name="preferred_timeline">
+              <label for="preferred-timeline">Preferred Timeline</label>
+              <select id="preferred-timeline" name="preferred_timeline">
                 <option value="">Select timeline</option>
                 <option>Urgent: within 7 days</option>
                 <option>Soon: within 2&ndash;4 weeks</option>
@@ -849,13 +868,13 @@
             </div>
 
             <div class="full">
-              <label>Existing Security System</label>
-              <input name="existing_security_system" placeholder="Example: CCTV, guards, alarms, access control, none">
+              <label for="existing-security-system">Existing Security System</label>
+              <input id="existing-security-system" name="existing_security_system" placeholder="Example: CCTV, guards, alarms, access control, none">
             </div>
 
             <div class="full">
-              <label>Main Concern</label>
-              <textarea name="main_concern" placeholder="Tell us what you want to protect or improve"></textarea>
+              <label for="main-concern">Main Concern</label>
+              <textarea id="main-concern" name="main_concern" placeholder="Tell us what you want to protect or improve"></textarea>
             </div>
 
             <div class="full">
