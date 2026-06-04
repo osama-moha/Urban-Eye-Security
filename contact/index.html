@@ -341,47 +341,115 @@
 <div id="site-footer"></div>
 
 <script>
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    const service = params.get("service");
+ (function () {
+  const params = new URLSearchParams(window.location.search);
 
-    const serviceMap = {
-      cctv: "CCTV Installation",
-      "smart-alarms": "Smart Alarm Systems",
-      alarms: "Smart Alarm Systems",
-      "access-control": "Access Control",
-      access: "Access Control",
-      fire: "Commercial Fire Alarms",
-      "fire-safety": "Commercial Fire Alarms",
-      guarding: "Manned Guarding",
-      guards: "Manned Guarding",
-      "electric-fencing": "Electric Fencing",
-      fencing: "Electric Fencing",
-      monitoring: "Urban Eye PRO Monitoring & Response",
-      residential: "Residential Security",
-      retail: "Retail Security",
-      office: "Office Security",
-      warehouse: "Warehouse Security",
-      construction: "Construction Site Security",
-      airbnb: "Airbnb / Short-Stay Security",
-      packages: "Security Packages",
-      "risk-review": "General Security Assessment"
-    };
+  // ── Existing service param handler ──────────────────────────
+  const service = params.get("service");
+  const serviceMap = {
+    cctv:              "CCTV Installation",
+    "smart-alarms":    "Smart Alarm Systems",
+    alarms:            "Smart Alarm Systems",
+    "access-control":  "Access Control",
+    access:            "Access Control",
+    fire:              "Commercial Fire Alarms",
+    "fire-safety":     "Commercial Fire Alarms",
+    guarding:          "Manned Guarding",
+    guards:            "Manned Guarding",
+    "electric-fencing":"Electric Fencing",
+    fencing:           "Electric Fencing",
+    monitoring:        "Urban Eye PRO Monitoring & Response",
+    residential:       "Residential Security",
+    retail:            "Retail Security",
+    office:            "Office Security",
+    warehouse:         "Warehouse Security",
+    construction:      "Construction Site Security",
+    airbnb:            "Airbnb / Short-Stay Security",
+    packages:          "Security Packages",
+    "risk-review":     "General Security Assessment"
+  };
 
-    const select = document.getElementById("serviceInterestSelect");
-    const hidden = document.getElementById("serviceInterestHidden");
+  const select = document.getElementById("serviceInterestSelect");
+  const hidden = document.getElementById("serviceInterestHidden");
+  if (!select || !hidden) return;
 
-    if (!select || !hidden) return;
+  if (service && serviceMap[service]) {
+    select.value = serviceMap[service];
+    hidden.value = serviceMap[service];
+  }
 
-    if (service && serviceMap[service]) {
-      select.value = serviceMap[service];
-      hidden.value = serviceMap[service];
+  select.addEventListener("change", function () {
+    hidden.value = select.value || "General Security Assessment";
+  });
+
+  // ── NEW: Assessment pre-fill ────────────────────────────────
+  const source = params.get("source");
+  if (source !== "assessment") return;
+
+  // Property type
+  const propertyType = params.get("property_type");
+  if (propertyType) {
+    const ptSelect = document.querySelector('select[name="property_type"]');
+    if (ptSelect) {
+      // Find closest matching option
+      const options = Array.from(ptSelect.options);
+      const match = options.find(o => o.value === propertyType);
+      if (match) ptSelect.value = match.value;
     }
+  }
 
-    select.addEventListener("change", function () {
-      hidden.value = select.value || "General Security Assessment";
-    });
-  })();
+  // Service / package interest
+  const serviceInterest = params.get("service_package_interest");
+  if (serviceInterest && select) {
+    const options = Array.from(select.options);
+    const match = options.find(o => o.value === serviceInterest);
+    if (match) {
+      select.value = match.value;
+      hidden.value = match.value;
+    }
+  }
+
+  // Preferred timeline
+  const timeline = params.get("preferred_timeline");
+  if (timeline) {
+    const tlSelect = document.querySelector('select[name="preferred_timeline"]');
+    if (tlSelect) {
+      const options = Array.from(tlSelect.options);
+      const match = options.find(o => o.value === timeline);
+      if (match) tlSelect.value = match.value;
+    }
+  }
+
+  // Main concern (pre-fills the textarea)
+  const concern = params.get("main_concern");
+  if (concern) {
+    const textarea = document.querySelector('textarea[name="main_concern"]');
+    if (textarea) textarea.value = concern;
+  }
+
+  // Add hidden field to tag this submission as from the assessment
+  const form = document.querySelector('form');
+  if (form) {
+    const tag = document.createElement("input");
+    tag.type  = "hidden";
+    tag.name  = "assessment_referral";
+    tag.value = "yes";
+    form.appendChild(tag);
+
+    // Also update subject line so Formspree inbox is clearly labelled
+    const subjectField = form.querySelector('input[name="_subject"]');
+    if (subjectField) {
+      subjectField.value = "Assessment Referral — Urban Eye Security Request";
+    }
+  }
+
+  // Scroll to form smoothly after a short delay
+  setTimeout(() => {
+    const formSection = document.getElementById("contact-form");
+    if (formSection) formSection.scrollIntoView({ behavior: "smooth" });
+  }, 400);
+
+})();
 </script>
 <script src="/js/includes.js"></script>
 </body>
