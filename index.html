@@ -133,109 +133,319 @@
     }
   }
 
-  /* Home page additional sector links */
+  /* Home page Who We Serve accordion */
 
-  .additional-sectors-nav{
-    background:#F5F7FA;
+  .who-serve-section{
+    padding-bottom:76px;
+  }
+
+  .who-serve-section .section-head{
+    margin-bottom:34px;
+  }
+
+  .who-serve-accordion{
+    display:flex;
+    min-height:470px;
     border-top:1px solid #d6deea;
     border-bottom:1px solid #d6deea;
-    padding:34px 0 38px;
+    background:#fff;
+    overflow:hidden;
   }
 
-  .additional-sectors-head{
+  .who-serve-panel{
     display:grid;
-    grid-template-columns:minmax(0,.85fr) minmax(280px,1fr);
-    gap:38px;
-    align-items:end;
-    margin-bottom:22px;
+    grid-template-columns:76px minmax(0,0fr);
+    flex:0 0 76px;
+    min-width:0;
+    border-right:1px solid #d6deea;
+    background:#fff;
+    transition:flex-basis 320ms ease, flex-grow 320ms ease, background 220ms ease;
   }
 
-  .additional-sectors-head h2{
-    margin:0;
+  .who-serve-panel:last-child{
+    border-right:0;
+  }
+
+  .who-serve-panel.is-active{
+    grid-template-columns:76px minmax(0,1fr);
+    flex:1 1 760px;
+  }
+
+  .who-serve-trigger{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:20px 11px;
+    border:0;
+    border-radius:0;
+    background:#F5F7FA;
     color:#07122f;
-    font-size:clamp(24px,2.6vw,34px);
+    font:inherit;
+    text-align:left;
+    cursor:pointer;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+  }
+
+  .who-serve-trigger:focus-visible{
+    outline:3px solid rgba(196,39,46,.35);
+    outline-offset:-3px;
+  }
+
+  .who-serve-panel.is-active .who-serve-trigger{
+    background:#0D1430;
+    color:#fff;
+  }
+
+  .who-serve-index{
+    color:#cf2630;
+    font-size:12px;
+    line-height:1;
+    font-weight:900;
+  }
+
+  .who-serve-panel.is-active .who-serve-index{
+    color:rgba(255,255,255,.72);
+  }
+
+  .who-serve-label{
+    color:inherit;
+    font-size:13.5px;
+    line-height:1.15;
+    font-weight:900;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+
+  .who-serve-panel-body{
+    min-width:0;
+    display:grid;
+    grid-template-columns:minmax(220px,.82fr) minmax(300px,1.18fr);
+    background:#fff;
+    overflow:hidden;
+  }
+
+  .who-serve-panel-body[hidden]{
+    display:none;
+  }
+
+  .who-serve-media{
+    min-height:470px;
+    background:#EEF2F7;
+    overflow:hidden;
+  }
+
+  .who-serve-media img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  .who-serve-copy{
+    min-width:0;
+    padding:38px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+  }
+
+  .who-serve-copy h3{
+    margin:0 0 16px;
+    color:#07122f;
+    font-size:clamp(27px,2.35vw,35px);
     line-height:1.08;
     letter-spacing:0;
   }
 
-  .additional-sectors-head p{
+  .who-serve-copy p{
     margin:0;
     color:#5d6878;
-    font-size:15.5px;
-    line-height:1.6;
+    font-size:16px;
+    line-height:1.65;
   }
 
-  .additional-sector-grid{
+  .who-serve-features{
+    width:100%;
     display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    border:1px solid #d6deea;
-    background:#fff;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:0 24px;
+    margin:22px 0 26px;
+    padding:0;
+    border-top:1px solid #d6deea;
+    list-style:none;
   }
 
-  .additional-sector-card{
-    display:block;
-    padding:20px 22px;
-    border-right:1px solid #d6deea;
+  .who-serve-features li{
+    padding:10px 0;
+    border-bottom:1px solid #d6deea;
     color:#07122f;
-    text-decoration:none;
-  }
-
-  .additional-sector-card:last-child{
-    border-right:0;
-  }
-
-  .additional-sector-card h3{
-    margin:0 0 8px;
-    color:#07122f;
-    font-size:19px;
-    line-height:1.15;
-    letter-spacing:0;
-  }
-
-  .additional-sector-card p{
-    margin:0 0 12px;
-    color:#5d6878;
-    font-size:14.5px;
-    line-height:1.5;
-  }
-
-  .additional-sector-card span{
-    color:#cf2630;
-    font-size:14.5px;
-    font-weight:700;
+    font-size:14px;
     line-height:1.35;
+    font-weight:800;
   }
 
-  .additional-sector-card:hover span{
-    text-decoration:underline;
+  .who-serve-cta{
+    margin-top:0;
+  }
+
+  .who-serve-panel--home .who-serve-media img{
+    object-position:center 56%;
+  }
+
+  .who-serve-panel--retail .who-serve-media img{
+    object-position:center center;
+  }
+
+  .who-serve-panel--office .who-serve-media img{
+    object-position:center center;
+  }
+
+  .who-serve-panel--warehouse .who-serve-media img{
+    object-position:center center;
+  }
+
+  .who-serve-panel--construction .who-serve-media img{
+    object-position:center center;
+  }
+
+  .who-serve-panel--airbnb .who-serve-media img{
+    object-position:center center;
   }
 
   @media(max-width:900px){
-    .additional-sectors-nav{
-      padding:28px 0 32px;
+    .who-serve-section{
+      padding-bottom:64px;
     }
 
-    .additional-sectors-head,
-    .additional-sector-grid{
-      grid-template-columns:1fr;
-      gap:18px;
+    .who-serve-accordion{
+      display:block;
+      height:auto;
+      min-height:0;
+      border:1px solid #d6deea;
+      overflow:visible;
     }
 
-    .additional-sectors-head{
-      margin-bottom:18px;
-    }
-
-    .additional-sector-card{
+    .who-serve-panel,
+    .who-serve-panel.is-active{
+      display:block;
+      width:100%;
+      height:auto;
+      min-width:0;
+      flex:none;
+      grid-template-columns:none;
       border-right:0;
       border-bottom:1px solid #d6deea;
-      padding:18px 20px;
+      background:#fff;
     }
 
-    .additional-sector-card:last-child{
+    .who-serve-panel:last-child{
       border-bottom:0;
+    }
+
+    .who-serve-trigger{
+      width:100%;
+      height:auto;
+      min-height:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:center;
+      padding:18px 20px;
+      background:#fff;
+      writing-mode:horizontal-tb;
+      transform:none;
+    }
+
+    .who-serve-panel.is-active .who-serve-trigger{
+      min-height:auto;
+      background:#0D1430;
+      color:#fff;
+    }
+
+    .who-serve-trigger::after{
+      content:"+";
+      color:#cf2630;
+      font-size:22px;
+      line-height:1;
+      font-weight:600;
+    }
+
+    .who-serve-panel.is-active .who-serve-trigger::after{
+      content:"\2212";
+      color:#fff;
+    }
+
+    .who-serve-panel-body{
+      display:none;
+      position:static;
+      width:100%;
+      height:auto;
+      min-width:0;
+      opacity:1;
+      visibility:visible;
+      transform:none;
+      overflow:visible;
+      background:#fff;
+    }
+
+    .who-serve-panel.is-active .who-serve-panel-body{
+      display:block;
+    }
+
+    .who-serve-media{
+      width:100%;
+      min-height:0;
+      height:clamp(180px,45vw,240px);
+      display:block;
+      background:#EEF2F7;
+    }
+
+    .who-serve-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .who-serve-copy{
+      display:block;
+      width:100%;
+      padding:20px 20px 22px;
+    }
+
+    .who-serve-copy h3{
+      font-size:clamp(24px,7vw,32px);
+    }
+
+    .who-serve-copy p{
+      font-size:15.5px;
+    }
+
+    .who-serve-features{
+      margin:16px 0 20px;
+    }
+
+    .who-serve-features li{
+      padding:8px 0;
     }
   }
 
+  @media(max-width:520px){
+    .who-serve-features{
+      grid-template-columns:1fr;
+      gap:0;
+    }
+
+    .who-serve-media{
+      height:190px;
+    }
+  }
   /* Homepage hero refinement */
 
   #home.hero{
@@ -516,7 +726,7 @@
     </div>
   </section>
 
-  <section id="services" class="sector-rows-section">
+  <section id="services" class="sector-rows-section who-serve-section">
     <div class="container">
       <div class="section-head reveal-up">
         <div>
@@ -525,131 +735,151 @@
         </div>
 
         <p class="section-intro">
-          We do not sell boxed equipment. Urban Eye designs integrated security architectures that combine smart sensors, CCTV, access control, fire safety, monitoring, and human response, tailored to how your site actually operates.
-        </p>
-      </div>
-    </div>
-
-    <div class="sector-rows">
-      <article class="sector-row reveal-up">
-        <div class="sector-row-copy">
-          <p class="section-label">Residential & Estate Security</p>
-          <h3>Layered protection for homes, apartments, and gated estates.</h3>
-
-          <p>
-            A perimeter wall and a gate guard are not enough. We protect your family by layering outdoor deterrence, smart perimeter alarms, CCTV visibility, and visual threat verification into one practical protection plan.
-          </p>
-
-          <p class="sector-integrations">
-            Pet-immune alarms • Visual verification • App control • Outdoor deterrence
-          </p>
-
-          <a class="btn btn-primary" href="/residential-security/">Explore home protection</a>
-        </div>
-
-        <div class="sector-row-media">
-          <img
-            src="/urban-eye-assets/guard%20op.webp"
-            width="1024"
-            height="572"
-            loading="lazy"
-            decoding="async"
-            alt="Urban Eye guard checking access at a residential property">
-        </div>
-      </article>
-
-      <article class="sector-row sector-row-reverse reveal-up">
-        <div class="sector-row-copy">
-          <p class="section-label">Retail & Storefront Protection</p>
-          <h3>Protect your stock, staff, and after-hours frontage.</h3>
-
-          <p>
-            Basic CCTV only records inventory loss after it happens. We help prevent shrinkage and protect your staff using glass-break detection, restricted stockroom access, panic workflows, and monitoring-ready CCTV.
-          </p>
-
-          <p class="sector-integrations">
-            Glass-break sensors • Under-counter panic buttons • Staff access logging • CCTV verification
-          </p>
-
-          <a class="btn btn-primary" href="/retail-storefronts/">Explore retail security</a>
-        </div>
-
-        <div class="sector-row-media">
-          <img
-            src="/urban-eye-assets/nfence2.webp"
-            width="1024"
-            height="573"
-            loading="lazy"
-            decoding="async"
-            alt="Urban Eye technician installing CCTV and perimeter security at a commercial property">
-        </div>
-      </article>
-
-      <article class="sector-row reveal-up">
-        <div class="sector-row-copy">
-          <p class="section-label">Corporate & Commercial Spaces</p>
-          <h3>Control access, protect assets, and reduce operational risk.</h3>
-
-          <p>
-            Eliminate the liability of physical keys. We secure sensitive data rooms, manage staff flow, and protect corporate assets through role-based access control, zoned intrusion alarms, CCTV, and fire-safety planning.
-          </p>
-
-          <p class="sector-integrations">
-            Keyless access control • Zoned alarms • CCTV coverage • Commercial fire detection
-          </p>
-
-          <a class="btn btn-primary" href="/office-security/">Explore office security</a>
-        </div>
-
-        <div class="sector-row-media">
-          <img
-            src="/urban-eye-assets/access.webp"
-            width="1024"
-            height="572"
-            loading="lazy"
-            decoding="async"
-            alt="Technician installing biometric access control for a commercial facility">
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="additional-sectors-nav">
-    <div class="container">
-      <div class="additional-sectors-head reveal-up">
-        <div>
-          <p class="section-label">Additional Sectors</p>
-          <h2>Specialised environments we protect.</h2>
-        </div>
-
-        <p>
-          Urban Eye adapts security planning to the operating risks of each property type.
+          Urban Eye designs integrated security plans for different property types, combining smart sensors, CCTV, access control, fire safety, monitoring, and human response around how each site actually operates.
         </p>
       </div>
 
-      <div class="additional-sector-grid reveal-up">
-        <a class="additional-sector-card" href="/warehouse-security/">
-          <h3>Warehouses &amp; Logistics</h3>
-          <p>Inventory protection, loading-zone visibility, controlled access, and escalation planning.</p>
-          <span>Explore warehouse security &rarr;</span>
-        </a>
+      <div class="who-serve-accordion reveal-up" data-who-serve-accordion>
+        <article class="who-serve-panel who-serve-panel--home is-active">
+          <button class="who-serve-trigger" type="button" aria-expanded="true" aria-controls="who-serve-home">
+            <span class="who-serve-index">01</span>
+            <span class="who-serve-label">Homes &amp; Estates</span>
+          </button>
+          <div class="who-serve-panel-body" id="who-serve-home">
+            <div class="who-serve-media">
+              <img src="urban-eye-assets/House.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Secure residential property protected by Urban Eye security planning">
+            </div>
+            <div class="who-serve-copy">
+              <h3>Layered protection for homes, apartments, and gated estates.</h3>
+              <p>A perimeter wall and a gate guard are not enough. Urban Eye helps protect families and residential properties with outdoor deterrence, smart perimeter alarms, CCTV visibility, and app-based control.</p>
+              <ul class="who-serve-features">
+                <li>Pet-immune alarms</li>
+                <li>Visual verification</li>
+                <li>App control</li>
+                <li>Outdoor deterrence</li>
+              </ul>
+              <a class="btn btn-primary who-serve-cta" href="/residential-security/">Explore home protection</a>
+            </div>
+          </div>
+        </article>
 
-        <a class="additional-sector-card" href="/construction-site-security/">
-          <h3>Construction Sites</h3>
-          <p>Temporary perimeter security, asset protection, monitoring, and flexible site deployment.</p>
-          <span>Explore construction site security &rarr;</span>
-        </a>
+        <article class="who-serve-panel who-serve-panel--retail">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-retail">
+            <span class="who-serve-index">02</span>
+            <span class="who-serve-label">Retail &amp; Shops</span>
+          </button>
+          <div class="who-serve-panel-body" id="who-serve-retail" hidden>
+            <div class="who-serve-media">
+              <img src="urban-eye-assets/mall%20shop.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Retail storefront security planning for shops and mall units">
+            </div>
+            <div class="who-serve-copy">
+              <h3>Protect your stock, staff, and after-hours frontage.</h3>
+              <p>Urban Eye helps retail operators reduce break-in exposure, stock loss, and staff-risk events using glass-break detection, restricted stockroom access, panic workflows, and monitoring-ready CCTV.</p>
+              <ul class="who-serve-features">
+                <li>Glass-break sensors</li>
+                <li>Panic support</li>
+                <li>Staff access logging</li>
+                <li>CCTV verification</li>
+              </ul>
+              <a class="btn btn-primary who-serve-cta" href="/retail-storefronts/">Explore retail security</a>
+            </div>
+          </div>
+        </article>
 
-        <a class="additional-sector-card" href="/airbnb-security/">
-          <h3>Airbnb &amp; Short-Stay Properties</h3>
-          <p>Guest-safety systems, smart access, remote alerts, and property oversight.</p>
-          <span>Explore short-stay security &rarr;</span>
-        </a>
+        <article class="who-serve-panel who-serve-panel--office">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-office">
+            <span class="who-serve-index">03</span>
+            <span class="who-serve-label">Offices &amp; Commercial</span>
+          </button>
+          <div class="who-serve-panel-body" id="who-serve-office" hidden>
+            <div class="who-serve-media">
+              <img src="urban-eye-assets/Lobby%20turnstile.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Office lobby turnstiles for controlled commercial access">
+            </div>
+            <div class="who-serve-copy">
+              <h3>Control access, protect assets, and reduce operational risk.</h3>
+              <p>Urban Eye secures offices, clinics, schools, and commercial spaces with role-based access control, zoned intrusion alarms, CCTV coverage, visitor accountability, and fire-safety planning.</p>
+              <ul class="who-serve-features">
+                <li>Keyless access</li>
+                <li>Zoned alarms</li>
+                <li>CCTV coverage</li>
+                <li>Fire detection</li>
+              </ul>
+              <a class="btn btn-primary who-serve-cta" href="/office-security/">Explore office security</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="who-serve-panel who-serve-panel--warehouse">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-warehouse">
+            <span class="who-serve-index">04</span>
+            <span class="who-serve-label">Warehouses</span>
+          </button>
+          <div class="who-serve-panel-body" id="who-serve-warehouse" hidden>
+            <div class="who-serve-media">
+              <img src="urban-eye-assets/Warehouse%20aisle.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Warehouse aisle and inventory area for logistics security planning">
+            </div>
+            <div class="who-serve-copy">
+              <h3>Secure inventory, loading zones, and restricted areas.</h3>
+              <p>Urban Eye supports warehouse and logistics sites with camera visibility, controlled entry, loading-zone monitoring, alarm zoning, and escalation planning.</p>
+              <ul class="who-serve-features">
+                <li>Loading-zone CCTV</li>
+                <li>Access control</li>
+                <li>Inventory protection</li>
+                <li>Response planning</li>
+              </ul>
+              <a class="btn btn-primary who-serve-cta" href="/warehouse-security/">Explore warehouse security</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="who-serve-panel who-serve-panel--construction">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-construction">
+            <span class="who-serve-index">05</span>
+            <span class="who-serve-label">Construction Sites</span>
+          </button>
+          <div class="who-serve-panel-body" id="who-serve-construction" hidden>
+            <div class="who-serve-media">
+              <img src="urban-eye-assets/Construction%20Site%20Security%20at%20Night.png" width="1024" height="572" loading="lazy" decoding="async" alt="Construction site security monitoring at night">
+            </div>
+            <div class="who-serve-copy">
+              <h3>Temporary protection for active and changing sites.</h3>
+              <p>Urban Eye supports construction sites with temporary CCTV, perimeter alerts, asset protection, access control, and flexible deployment as the site changes.</p>
+              <ul class="who-serve-features">
+                <li>Temporary CCTV</li>
+                <li>Asset protection</li>
+                <li>Perimeter alerts</li>
+                <li>Flexible setup</li>
+              </ul>
+              <a class="btn btn-primary who-serve-cta" href="/construction-site-security/">Explore site security</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="who-serve-panel who-serve-panel--airbnb">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-airbnb">
+            <span class="who-serve-index">06</span>
+            <span class="who-serve-label">Airbnb &amp; Short-Stay</span>
+          </button>
+          <div class="who-serve-panel-body" id="who-serve-airbnb" hidden>
+            <div class="who-serve-media">
+              <img src="urban-eye-assets/Smart%20door%20lock%20apartment.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Smart apartment door lock for guest-friendly short-stay security">
+            </div>
+            <div class="who-serve-copy">
+              <h3>Guest-friendly security for short-stay rentals.</h3>
+              <p>Urban Eye helps hosts protect guests and property with smart access, smoke and fire alerts, panic support, remote notifications, and discreet protection workflows.</p>
+              <ul class="who-serve-features">
+                <li>Smart access</li>
+                <li>Fire alerts</li>
+                <li>Panic support</li>
+                <li>Remote oversight</li>
+              </ul>
+              <a class="btn btn-primary who-serve-cta" href="/airbnb-security/">Explore short-stay security</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
-
   <section class="commitment-section">
     <div class="container commitment-inner">
       <div class="commitment-copy reveal-up">
@@ -954,6 +1184,47 @@
   </section>
 </main>
 <div id="site-footer"></div>
-<script src="/js/includes.js"></script>
+<script>
+  (function () {
+    var accordion = document.querySelector('[data-who-serve-accordion]');
+    if (!accordion) return;
+
+    var panels = Array.prototype.slice.call(accordion.querySelectorAll('.who-serve-panel'));
+    var desktopQuery = window.matchMedia('(min-width: 901px)');
+
+    function setActive(panel) {
+      panels.forEach(function (item) {
+        var isActive = item === panel;
+        var button = item.querySelector('.who-serve-trigger');
+        var body = item.querySelector('.who-serve-panel-body');
+
+        item.classList.toggle('is-active', isActive);
+
+        if (button) {
+          button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        }
+
+        if (body) {
+          body.hidden = !isActive;
+        }
+      });
+    }
+
+    panels.forEach(function (panel) {
+      var button = panel.querySelector('.who-serve-trigger');
+      if (!button) return;
+
+      button.addEventListener('click', function () {
+        setActive(panel);
+      });
+
+      panel.addEventListener('mouseenter', function () {
+        if (desktopQuery.matches) {
+          setActive(panel);
+        }
+      });
+    });
+  }());
+</script><script src="/js/includes.js"></script>
 </body>
 </html>
