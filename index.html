@@ -446,6 +446,139 @@
       height:190px;
     }
   }
+
+  .client-proof-section{
+    padding:70px 0;
+    background:#F5F7FA;
+    border-top:1px solid #d6deea;
+    border-bottom:1px solid #d6deea;
+  }
+
+  .client-proof-section .section-head{
+    margin-bottom:28px;
+  }
+
+  .client-logo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border:1px solid #d6deea;
+    background:#fff;
+  }
+
+  .client-logo-card{
+    min-height:112px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 20px;
+    border-right:1px solid #d6deea;
+    border-bottom:1px solid #d6deea;
+    background:#fff;
+  }
+
+  .client-logo-card:nth-child(3n){
+    border-right:0;
+  }
+
+  .client-logo-card:nth-last-child(-n + 3){
+    border-bottom:0;
+  }
+
+  .client-logo-card img{
+    display:block;
+    max-width:92%;
+    max-height:94px;
+    object-fit:contain;
+  }
+
+  .client-logo-card.logo-torobo img,
+  .client-logo-card.logo-reliance img,
+  .client-logo-card.logo-bureau img{
+    max-height:102px;
+  }
+
+  .client-logo-card.logo-transworld img,
+  .client-logo-card.logo-hawai img{
+    max-width:92%;
+  }
+
+  .client-proof-note{
+    margin:16px 0 0;
+    color:#667085;
+    font-size:13.5px;
+    line-height:1.5;
+  }
+
+  @media(max-width:900px){
+    .client-proof-section{
+      padding:56px 0;
+    }
+
+    .client-logo-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .client-logo-card{
+      min-height:100px;
+      padding:14px 16px;
+    }
+
+    .client-logo-card:nth-child(3n){
+      border-right:1px solid #d6deea;
+    }
+
+    .client-logo-card:nth-child(2n){
+      border-right:0;
+    }
+
+    .client-logo-card:nth-last-child(-n + 3){
+      border-bottom:1px solid #d6deea;
+    }
+
+    .client-logo-card:nth-last-child(-n + 2){
+      border-bottom:0;
+    }
+
+    .client-logo-card img{
+      max-height:82px;
+    }
+
+    .client-logo-card.logo-torobo img,
+    .client-logo-card.logo-reliance img,
+    .client-logo-card.logo-bureau img{
+      max-height:90px;
+    }
+  }
+
+  @media(max-width:520px){
+    .client-logo-grid{
+      grid-template-columns:1fr;
+    }
+
+    .client-logo-card,
+    .client-logo-card:nth-child(2n),
+    .client-logo-card:nth-child(3n){
+      border-right:0;
+    }
+
+    .client-logo-card:nth-last-child(-n + 2){
+      border-bottom:1px solid #d6deea;
+    }
+
+    .client-logo-card:last-child{
+      border-bottom:0;
+    }
+
+    .client-logo-card img{
+      max-height:86px;
+    }
+
+    .client-logo-card.logo-torobo img,
+    .client-logo-card.logo-reliance img,
+    .client-logo-card.logo-bureau img{
+      max-height:96px;
+    }
+  }
   /* Homepage hero refinement */
 
   #home.hero{
@@ -880,6 +1013,42 @@
       </div>
     </div>
   </section>
+
+  <section class="client-proof-section" aria-labelledby="client-proof-title">
+    <div class="container">
+      <div class="section-head reveal-up">
+        <div>
+          <p class="section-label">Client Proof</p>
+          <h2 id="client-proof-title">Companies we&rsquo;ve supported.</h2>
+        </div>
+        <p class="section-intro">
+          Urban Eye has supported security, access-control, and site-protection work for organizations across housing, construction, wholesale distribution, commercial premises, and property operations.
+        </p>
+      </div>
+
+      <div class="client-logo-grid reveal-up" aria-label="Companies Urban Eye has supported">
+        <div class="client-logo-card logo-cleargate">
+          <img src="urban-eye-assets/client-logos/cleargate-logo.png" alt="Cleargate Seemless Solutions logo" loading="lazy" decoding="async">
+        </div>
+        <div class="client-logo-card logo-torobo">
+          <img src="urban-eye-assets/client-logos/torobo-logo.jpg" alt="Torobo Limited logo" loading="lazy" decoding="async">
+        </div>
+        <div class="client-logo-card logo-reliance">
+          <img src="urban-eye-assets/client-logos/reliance-city-logo.jpg" alt="Reliance City Housing Company Ltd logo" loading="lazy" decoding="async">
+        </div>
+        <div class="client-logo-card logo-transworld">
+          <img src="urban-eye-assets/client-logos/transworld-logo.jpg" alt="Transworld Wholesalers Limited logo" loading="lazy" decoding="async">
+        </div>
+        <div class="client-logo-card logo-bureau">
+          <img src="urban-eye-assets/client-logos/bureau-de-change-logo.jpg" alt="Bureau De Change Trade logo" loading="lazy" decoding="async">
+        </div>
+        <div class="client-logo-card logo-hawai">
+          <img src="urban-eye-assets/client-logos/hawai-ventures-logo.png" alt="Hawai Ventures logo" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="commitment-section">
     <div class="container commitment-inner">
       <div class="commitment-copy reveal-up">
