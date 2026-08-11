@@ -21,13 +21,13 @@
       <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span>Services</span>
+      <span>What We Do</span>
     </a>
 
-    <div class="nav-dropdown-menu nav-dropdown-menu-wide nav-services-menu" aria-label="Services submenu">
+    <div class="nav-dropdown-menu nav-dropdown-menu-wide nav-services-menu" aria-label="What We Do submenu">
       <div class="mega-menu-inner">
         <div class="mobile-menu-group">
-          <span>Human Security</span>
+          <a class="group-header-link" href="/manned-guarding/">Human Security</a>
           <a href="/manned-guarding/">
             <strong>Manned Guarding</strong>
             <small>Guards, patrols, and site supervision.</small>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="mobile-menu-group">
-          <span>Smart Security Systems</span>
+          <a class="group-header-link" href="/cctv-installation/">Smart Security Systems</a>
 
           <a href="/cctv-installation/">
             <strong>CCTV Installation</strong>
@@ -54,7 +54,7 @@
         </div>
 
         <div class="mobile-menu-group">
-          <span>Risk &amp; Safety</span>
+          <a class="group-header-link" href="/risk-review/">Risk &amp; Safety</a>
 
           <a href="/electric-fencing/">
             <strong>Electric Fencing</strong>
@@ -66,26 +66,31 @@
             <small>Commercial fire detection and alerting.</small>
           </a>
 
-          <a href="/contact/?service=risk-review">
+          <a href="/risk-review/">
             <strong>Risk Review</strong>
             <small>Site survey and written recommendations.</small>
+          </a>
+
+          <a href="/corporate-risk-audit/">
+            <strong>Corporate Risk Audit</strong>
+            <small>Paid written report, credited against implementation.</small>
           </a>
         </div>
 
         <div class="mobile-menu-group">
-          <span>Monitoring</span>
+          <a class="group-header-link" href="/professional-monitoring/">Monitoring</a>
 
           <a href="/professional-monitoring/">
             <strong>PRO Monitoring</strong>
             <small>Verification and response coordination.</small>
           </a>
 
-          <a href="/professional-monitoring/">
+          <a href="/professional-monitoring/#verification">
             <strong>Alarm Verification</strong>
             <small>Filter false alarms and confirm threats.</small>
           </a>
 
-          <a href="/professional-monitoring/">
+          <a href="/professional-monitoring/#escalation">
             <strong>Incident Escalation</strong>
             <small>Clear action when alerts become urgent.</small>
           </a>
@@ -94,7 +99,7 @@
 
       <div class="mega-menu-cta">
         <span>Need help choosing the right setup?</span>
-        <a href="/contact/?service=risk-review">Request a site assessment</a>
+        <a onclick="return openServiceDrawer('navbar','General Security Assessment','Request a Site Assessment','Share a few details and Urban Eye will advise on the right next step for your property.')" href="/contact/?service=risk-review">Request a site assessment</a>
       </div>
     </div>
   </div>
@@ -110,7 +115,7 @@
     <div class="nav-dropdown-menu nav-dropdown-menu-wide nav-serve-menu" aria-label="Who we serve submenu">
       <div class="mega-menu-inner">
         <div class="mobile-menu-group">
-          <span>Residential</span>
+          <span>Private Clients</span>
 
           <a href="/residential-security/">
             <strong>Homes &amp; Estates</strong>
@@ -124,7 +129,7 @@
         </div>
 
         <div class="mobile-menu-group">
-          <span>Commercial</span>
+          <span>Enterprise &amp; Industrial</span>
 
           <a href="/retail-storefronts/">
             <strong>Retail &amp; Storefronts</strong>
@@ -135,10 +140,6 @@
             <strong>Offices &amp; Commercial Spaces</strong>
             <small>Staff access, CCTV, and alarms.</small>
           </a>
-        </div>
-
-        <div class="mobile-menu-group">
-          <span>Industrial</span>
 
           <a href="/warehouse-security/">
             <strong>Warehouses &amp; Logistics</strong>
@@ -154,7 +155,7 @@
         <div class="mobile-menu-group">
           <span>Monitoring &amp; Response</span>
 
-          <a class="nav-serve-monitoring" href="/professional-monitoring/">
+          <a class="nav-serve-monitoring" href="/professional-monitoring/#response-plans">
             <strong>24/7 Verified Response</strong>
             <small>Verification, escalation, and coordination.</small>
           </a>
@@ -163,16 +164,16 @@
 
       <div class="mega-menu-cta">
         <span>Not sure where your property fits?</span>
-        <a href="/contact/?service=risk-review">Request a recommendation</a>
+        <a onclick="return openServiceDrawer('navbar','General Security Assessment','Request a Site Assessment','Share a few details and Urban Eye will advise on the right next step for your property.')" href="/contact/?service=risk-review">Request a recommendation</a>
       </div>
     </div>
   </div>
 
-  <a class="nav-link" href="/security-packages/" data-nav-section="packages">
+  <a class="nav-link" href="/programs/" data-nav-section="programs">
     <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span>Packages</span>
+    <span>Programs</span>
   </a>
 
   <a class="nav-link" href="/insights/" data-nav-section="insights">
@@ -189,13 +190,6 @@
     <span>About</span>
   </a>
 
-  <a class="nav-link" href="/careers/" data-nav-section="careers">
-    <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span>Careers</span>
-  </a>
-
   <a class="nav-link" href="/contact/" data-nav-section="contact">
     <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -205,7 +199,7 @@
 </nav>
 
 <div class="nav-actions">
-  <a class="btn btn-primary" href="/contact/?service=risk-review">Request a site assessment</a>
+  <a onclick="return openServiceDrawer('navbar','General Security Assessment','Request a Site Assessment','Share a few details and Urban Eye will advise on the right next step for your property.')" class="btn btn-primary" href="/contact/?service=risk-review">Request a site assessment</a>
 </div>
 
 <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" type="button">
@@ -238,20 +232,24 @@
     <a href="/" class="mobile-nav-link">Home</a>
 
     <details class="mobile-accordion">
-      <summary>Services</summary>
+      <summary>What We Do</summary>
 
       <div class="mobile-subnav">
         <p class="mobile-subnav-label">Human Security</p>
         <a href="/manned-guarding/">Manned Guarding</a>
 
-        <p class="mobile-subnav-label">Smart Technology</p>
-        <a href="/ajax-smart-alarms/">Smart Alarm Systems</a>
+        <p class="mobile-subnav-label">Smart Security Systems</p>
         <a href="/cctv-installation/">CCTV Installation</a>
+        <a href="/ajax-smart-alarms/">Smart Alarm Systems</a>
         <a href="/access-control/">Access Control</a>
+
+        <p class="mobile-subnav-label">Risk &amp; Safety</p>
         <a href="/electric-fencing/">Electric Fencing &amp; Perimeter Security</a>
         <a href="/commercial-fire-alarm-systems/">Fire Alarm Systems</a>
+        <a href="/risk-review/">Risk Review</a>
+        <a href="/corporate-risk-audit/">Corporate Risk Audit</a>
 
-        <p class="mobile-subnav-label">Response</p>
+        <p class="mobile-subnav-label">Monitoring</p>
         <a href="/professional-monitoring/">PRO Monitoring</a>
       </div>
     </details>
@@ -260,15 +258,13 @@
       <summary>Who We Serve</summary>
 
       <div class="mobile-subnav">
-        <p class="mobile-subnav-label">Residential</p>
+        <p class="mobile-subnav-label">Private Clients</p>
         <a href="/residential-security/">Homes &amp; Estates</a>
         <a href="/airbnb-security/">Airbnb &amp; Short-Stay</a>
 
-        <p class="mobile-subnav-label">Commercial</p>
+        <p class="mobile-subnav-label">Enterprise &amp; Industrial</p>
         <a href="/retail-storefronts/">Retail &amp; Storefronts</a>
         <a href="/office-security/">Offices &amp; Commercial Spaces</a>
-
-        <p class="mobile-subnav-label">Industrial</p>
         <a href="/warehouse-security/">Warehouses &amp; Logistics</a>
         <a href="/construction-site-security/">Construction Sites</a>
 
@@ -279,15 +275,14 @@
       </div>
     </details>
 
-    <a href="/security-packages/" class="mobile-nav-link">Packages</a>
+    <a href="/programs/" class="mobile-nav-link">Programs</a>
     <a href="/insights/" class="mobile-nav-link">Insights</a>
     <a href="/about/" class="mobile-nav-link">About</a>
-    <a href="/careers/" class="mobile-nav-link">Careers</a>
     <a href="/contact/" class="mobile-nav-link">Contact</a>
   </nav>
 
   <div class="mobile-menu-actions">
-    <a class="btn btn-primary" href="/contact/?service=risk-review">Request a site assessment</a>
+    <a onclick="return openServiceDrawer('navbar','General Security Assessment','Request a Site Assessment','Share a few details and Urban Eye will advise on the right next step for your property.')" class="btn btn-primary" href="/contact/?service=risk-review">Request a site assessment</a>
     <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
   </div>
 

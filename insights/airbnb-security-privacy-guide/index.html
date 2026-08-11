@@ -9,17 +9,20 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var uecConsent=null;try{uecConsent=localStorage.getItem('uec_cookie_consent');}catch(e){}
+    var uecGranted=uecConsent==='granted'?'granted':'denied';
+    gtag('consent','default',{'ad_storage':uecGranted,'ad_user_data':uecGranted,'ad_personalization':uecGranted,'analytics_storage':uecGranted});
     gtag('js', new Date());
 
     gtag('config', 'AW-17823714787');
     gtag('config', 'G-ZER6GV8ZCS');
   </script>
 
-  <title>Airbnb Security and Guest Privacy in Kenya | Urban Eye Security</title>
+  <title>Airbnb Security & Guest Privacy Kenya | Urban Eye</title>
 
   <meta
     name="description"
-    content="A practical Urban Eye Security guide to protecting Airbnb and short-stay rentals with smart access, privacy-conscious CCTV, life-safety sensors and between-booking security."
+    content="A practical Urban Eye guide to protecting Airbnb rentals with smart access, privacy-conscious CCTV, and between-booking security."
   >
 
   <link
@@ -42,14 +45,18 @@
   />
   <link
     rel="icon"
-    href="/urban-eye-assets/Icon-only%20version.png"
+    href="/urban-eye-assets/favicon-48.png"
     type="image/png"
   />
   <link
     rel="apple-touch-icon"
-    href="/urban-eye-assets/Icon-only%20version.png"
+    href="/urban-eye-assets/apple-touch-icon-180.png"
   />
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="/style.css?v=20260808i"/>
 
   <script type="application/ld+json">
   {
@@ -467,6 +474,18 @@
 
 <body>
   <div id="site-navbar"></div>
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
+    <div class="container">
+            <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        <li aria-current="page">Airbnb Security & Privacy</li>
+      </ol>
+    </div>
+  </nav>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://urbaneyesecurity.co.ke/insights/"},{"@type":"ListItem","position":3,"name":"Airbnb Security & Privacy","item":"https://urbaneyesecurity.co.ke/insights/airbnb-security-privacy-guide/"}]}
+</script>
 
   <div class="page-progress" aria-hidden="true">
     <span class="page-progress-bar"></span>
@@ -743,7 +762,7 @@
           </div>
 
           <div class="article-cta-actions">
-            <a class="btn btn-primary" href="/contact/?service=airbnb">
+            <a onclick="return openServiceDrawer('insights-airbnb-guide','Airbnb / Short Stay Security','Request Airbnb Security Assessment','Share a few details and Urban Eye will help secure your listing for guests, neighbors, and turnovers.')" class="btn btn-primary" href="/contact/?service=airbnb">
               Request a Short-Stay Security Review
             </a>
 
@@ -758,6 +777,6 @@
   </main>
 
   <div id="site-footer"></div>
-  <script src="/js/includes.js"></script>
+  <script src="/js/includes.js" defer></script>
 </body>
 </html>

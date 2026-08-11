@@ -9,56 +9,44 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var uecConsent=null;try{uecConsent=localStorage.getItem('uec_cookie_consent');}catch(e){}
+    var uecGranted=uecConsent==='granted'?'granted':'denied';
+    gtag('consent','default',{'ad_storage':uecGranted,'ad_user_data':uecGranted,'ad_personalization':uecGranted,'analytics_storage':uecGranted});
     gtag('js', new Date());
 
     gtag('config', 'AW-17823714787');
     gtag('config', 'G-ZER6GV8ZCS');
   </script>
 
-  <title>Contact Urban Eye Security | Request a Site Assessment</title>
-  <meta name="description" content="Contact Urban Eye Security to request a site assessment for guarding, CCTV, smart alarms, access control, fire alarms, monitoring, and integrated security packages in Nairobi."/>
+  <title>Contact Urban Eye Security | Request a Security Recommendation</title>
+  <meta name="description" content="Contact Urban Eye Security to request a custom security recommendation for guarding, CCTV, alarms, access control, and integrated security packages."/>
 
   <link rel="canonical" href="https://urbaneyesecurity.co.ke/contact/"/>
 
-  <meta property="og:title" content="Contact Urban Eye Security | Request a Site Assessment"/>
+  <meta property="og:title" content="Contact Urban Eye Security | Request a Security Recommendation"/>
   <meta property="og:description" content="Tell us about your property and Urban Eye will recommend the right security starting point."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://urbaneyesecurity.co.ke/contact/"/>
   <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.png"/>
 
-  <link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
-  <link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="icon" href="/urban-eye-assets/favicon-48.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="/urban-eye-assets/apple-touch-icon-180.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="/style.css?v=20260808i"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
+</script>
 
   <style>
     .contact-intake-grid{
       align-items:start;
     }
 
-    .contact-form-card{
-      max-width:100%;
-    }
-
-    .contact-form-card h2{
-      margin:0 0 12px;
-      color:var(--deep-navy);
-      font-size:26px;
-      line-height:1.15;
-    }
-
-    .contact-form-card > p{
-      color:var(--muted);
-      line-height:1.65;
-      margin-bottom:22px;
-    }
-
     .contact-info-card{
       margin-top:24px;
-    }
-
-    .full-width{
-      width:100%;
-      justify-content:center;
     }
 
     .contact-page .process-list{
@@ -104,6 +92,51 @@
       line-height:1.65;
     }
 
+    /* Embedded Contact Conversational Wizard Overrides */
+    #contact-step-form .form-step {
+      display: none !important;
+    }
+    #contact-step-form .form-step.active {
+      display: block !important;
+    }
+    #contact-step-form .back-step-btn {
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      border: none;
+      color: #5B6472;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 12px;
+      padding: 0;
+    }
+    #contact-step-form .back-step-btn:hover {
+      color: #C4272E;
+    }
+    #contact-step-form .option-button {
+      display: block;
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      background: #fff;
+      border: 1px solid #D9DEE8;
+      border-radius: 6px;
+      color: #0D1430;
+      font-family: "Source Sans 3", Arial, sans-serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    #contact-step-form .option-button:hover,
+    #contact-step-form .option-button.selected {
+      border-color: #C4272E;
+      background: #FFF7F8;
+      color: #C4272E;
+    }
+
     @media(max-width:768px){
       .contact-page .process-item{
         grid-template-columns:1fr;
@@ -115,172 +148,226 @@
 
 <body>
 <div id="site-navbar"></div>
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
+    <div class="container">
+            <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Contact</li>
+      </ol>
+    </div>
+  </nav>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://urbaneyesecurity.co.ke/contact/"}]}
+</script>
 
 <main class="contact-page">
   <section class="hero page-hero contact-hero">
     <div class="container hero-inner">
       <div class="hero-copy">
         <p class="eyebrow">Contact Urban Eye Security</p>
-        <h1>Let's assess your security needs.</h1>
+        <h1>Tell us what you need protected.</h1>
         <p>
-          Tell us about your property and Urban Eye will recommend the right starting point,
-          from guarding and CCTV to smart alarms, access control, monitoring, fire safety,
-          and complete security frameworks.
+          Share your property type and main concern. Urban Eye will review your requirements and respond with a clear recommendation covering guarding, CCTV, alarms, access control, and monitoring.
         </p>
         <div class="hero-actions">
-          <a href="#contact-form" class="btn btn-primary">Request a Site Assessment</a>
-          <a href="https://wa.me/254714007114" class="btn btn-outline-white">Chat on WhatsApp</a>
+          <a href="#contact-form-container" class="btn btn-primary">Start My Security Review</a>
+          <a href="https://wa.me/254768055555" class="btn btn-outline-white">Chat on WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="light-section" id="contact-form">
+  <section class="light-section" id="contact-form-container">
     <div class="container two-col contact-intake-grid">
       <div class="section-copy">
-        <p class="eyebrow">Security Intake Request</p>
+        <p class="eyebrow">Security Review Request</p>
         <h2>Tell us what you want to protect.</h2>
         <p class="section-intro">
-          Use this form for security packages, CCTV, smart alarms, manned guarding,
-          access control, fire alarm systems, monitoring, or general security assessment requests.
-        </p>
-        <p class="section-intro">
-          Site reviews are scheduled based on property type, urgency, location, risk level,
-          and available deployment capacity.
+          Answer two short questions and share your contact details. Urban Eye will review your submission and respond on WhatsApp with the recommended next step.
         </p>
 
         <div class="card contact-info-card">
           <h3>Prefer WhatsApp?</h3>
           <p>
-            For faster communication, message Urban Eye directly on WhatsApp and share your
-            location, property type, and the security problem you want solved.
+            Message us directly with your property type, location, and main concern. A consultant will respond during business hours.
           </p>
-          <a href="https://wa.me/254714007114" class="text-link">Chat on WhatsApp &rarr;</a>
+          <a href="https://wa.me/254768055555" class="text-link">Chat on WhatsApp &rarr;</a>
         </div>
 
         <div class="card contact-info-card">
           <h3>Direct Contact</h3>
           <p><strong>Phone:</strong> +254 768 055 555</p>
           <p><strong>Email:</strong> info@urbaneyesecurity.co.ke</p>
-          <p><strong>Service Area:</strong> Nairobi-based operations with Kenya-focused smart security support.</p>
+          <p><strong>Service Area:</strong> Monitoring across Kenya. Site deployments and response coordination centered on Nairobi.</p>
         </div>
       </div>
 
-      <form
-        class="form-card contact-form-card"
-        action="https://formspree.io/f/xkoegypv"
-        method="POST"
-      >
-        <input type="hidden" name="_subject" value="New Urban Eye Security Assessment Request">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="page_source" value="contact">
-        <input type="hidden" name="service_interest" id="serviceInterestHidden" value="General Security Assessment">
-
-        <h2>Request a security assessment</h2>
-        <p>
-          Fill in the details below and Urban Eye will respond with the right next step.
-        </p>
-
-        <div class="form-grid">
-          <label>
-            Name
-            <input type="text" name="name" placeholder="Your name" required>
-          </label>
-
-          <label>
-            Phone / WhatsApp
-            <input type="tel" name="phone" placeholder="+254..." required>
-          </label>
-
-          <label class="full">
-            Email
-            <input type="email" name="email" placeholder="you@example.com">
-          </label>
-
-          <label>
-            Property Type
-            <select name="property_type" required>
-              <option value="">Select property type</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Standalone Home">Standalone Home</option>
-              <option value="Estate / Gated Community">Estate / Gated Community</option>
-              <option value="Retail Shop">Retail Shop</option>
-              <option value="Office">Office</option>
-              <option value="Warehouse">Warehouse</option>
-              <option value="Airbnb / Short-Stay">Airbnb / Short-Stay</option>
-              <option value="Construction Site">Construction Site</option>
-              <option value="Institution">Institution</option>
-              <option value="Commercial Building">Commercial Building</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
-
-          <label>
-            Property Location
-            <input type="text" name="property_location" placeholder="e.g. Westlands, Karen, Kilimani">
-          </label>
-
-          <label class="full">
-            Service / Package Interest
-            <select name="service_package_interest" id="serviceInterestSelect" required>
-              <option value="">Select one</option>
-              <option value="General Security Assessment">General Security Assessment</option>
-              <option value="CCTV Installation">CCTV Installation</option>
-              <option value="Smart Alarm Systems">Smart Alarm Systems</option>
-              <option value="Manned Guarding">Manned Guarding</option>
-              <option value="Access Control">Access Control</option>
-              <option value="Electric Fencing">Electric Fencing</option>
-              <option value="Commercial Fire Alarms">Commercial Fire Alarms</option>
-              <option value="Urban Eye PRO Monitoring & Response">Urban Eye PRO Monitoring & Response</option>
-              <option value="Residential Security">Residential Security</option>
-              <option value="Retail Security">Retail Security</option>
-              <option value="Office Security">Office Security</option>
-              <option value="Warehouse Security">Warehouse Security</option>
-              <option value="Construction Site Security">Construction Site Security</option>
-              <option value="Airbnb / Short-Stay Security">Airbnb / Short-Stay Security</option>
-              <option value="Security Packages">Security Packages</option>
-              <option value="Not sure yet">Not sure yet</option>
-            </select>
-          </label>
-
-          <label class="full">
-            Preferred Timeline
-            <select name="preferred_timeline">
-              <option value="">Select timeline</option>
-              <option value="Urgent: within 7 days">Urgent: within 7 days</option>
-              <option value="Soon: within 2&ndash;4 weeks">Soon: within 2&ndash;4 weeks</option>
-              <option value="Planning: next 1&ndash;3 months">Planning: next 1&ndash;3 months</option>
-              <option value="Researching options">Researching options</option>
-            </select>
-          </label>
-
-          <label class="full">
-            Existing Security System
-            <input
-              type="text"
-              name="existing_security_system"
-              placeholder="Example: CCTV, guards, alarms, access control, none"
-            >
-          </label>
-
-          <label class="full">
-            Main Concern
-            <textarea
-              name="main_concern"
-              rows="5"
-              placeholder="Briefly describe your property, current security setup, and the problem you want solved."
-            ></textarea>
-          </label>
+      <!-- Conversational Form Framework Block -->
+      <div class="form-card" style="padding: 32px;">
+        <!-- Step Indicator Bar -->
+        <div class="step-indicator-wrapper" style="margin-bottom: 24px;">
+          <div class="step-indicator-header">
+            <span class="step-indicator-count" id="contactStepCount">STEP 1 / 3</span>
+            <span class="step-indicator-title" id="contactStepTitle">01 Site Details</span>
+          </div>
+          <div class="step-segmented-bar">
+            <div class="step-segment active" id="contactSeg1"></div>
+            <div class="step-segment" id="contactSeg2"></div>
+            <div class="step-segment" id="contactSeg3"></div>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary full-width">
-          Submit Security Request
-        </button>
+        <form id="contact-step-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleContactPageSubmit(event)">
+          <input type="hidden" name="_subject" value="Contact Page Conversational Protection Request">
+          <input type="hidden" name="page_source" value="contact_page">
 
-        <a href="https://wa.me/254714007114" class="form-whatsapp-link">
-          Or chat with us instantly on WhatsApp &rarr;
-        </a>
-      </form>
+          <!-- Step 1: Site Details -->
+          <div class="form-step active" data-step="1">
+            <h4 class="form-group-kicker">SITE DETAILS</h4>
+            <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What type of property are we securing?</p>
+
+            <div class="selection-tile-grid">
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_property_type_radio" value="Private Residence" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 1)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Private Residence</span>
+                  <span class="tile-desc">Homes, townhouses &amp; apartments</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_property_type_radio" value="Retail Shop" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Retail Shop</span>
+                  <span class="tile-desc">Storefronts, boutiques &amp; cash points</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_property_type_radio" value="Office / Corporate" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Office / Corporate</span>
+                  <span class="tile-desc">Commercial suites, clinics &amp; agencies</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_property_type_radio" value="Warehouse &amp; Logistics" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Warehouse &amp; Logistics</span>
+                  <span class="tile-desc">Stockrooms, loading bays &amp; yards</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_property_type_radio" value="Airbnb / Short-Stay" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 1)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Airbnb / Short-Stay</span>
+                  <span class="tile-desc">Vacation rentals &amp; guest suites</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_property_type_radio" value="Construction Site" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Construction Site</span>
+                  <span class="tile-desc">Active builds, materials &amp; perimeter</span>
+                </div>
+              </label>
+            </div>
+            <input type="hidden" name="property_type" id="contact-input-property_type" required>
+
+            <div class="form-field-group" style="margin-top:20px;">
+              <label for="contact-location" class="form-field-label">Location / Neighbourhood <span class="required-star">*</span></label>
+              <input id="contact-location" name="location" class="form-field-input" placeholder="Area or neighbourhood, e.g. Industrial Area" required oninput="validateContactStep1()">
+              <span class="field-error-message" id="contact-location-error" style="display:none;">Please enter your area or neighbourhood.</span>
+            </div>
+
+            <div style="margin-top:24px;">
+              <button type="button" class="btn btn-primary btn-block" id="contactStep1Next" disabled onclick="nextContactStep(1)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Security Concerns -->
+          <div class="form-step" data-step="2">
+            <button type="button" class="back-step-btn" onclick="handleContactPrevStep(2)">&larr; Back to previous step</button>
+            <h4 class="form-group-kicker">SECURITY CONCERNS</h4>
+            <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What is your primary security objective?</p>
+
+            <div style="display:grid; gap:10px;">
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_security_concern_radio" value="Stopping night break-ins" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 2)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Stopping Night Break-Ins</span>
+                  <span class="tile-desc">Perimeter detection &amp; instant alert routing</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_security_concern_radio" value="Keeping the property secure while we're away" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 2)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Vacant Property Protection</span>
+                  <span class="tile-desc">Remote app status &amp; 24/7 PRO monitoring</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_security_concern_radio" value="Monitoring staff, visitors, or stock" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 2)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Staff, Visitor &amp; Stock Monitoring</span>
+                  <span class="tile-desc">Access control logs &amp; visual verification</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_security_concern_radio" value="Stopping break-ins or theft" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 2)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Commercial Loss Prevention</span>
+                  <span class="tile-desc">Storefront, stockroom &amp; bay security</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_security_concern_radio" value="Upgrading an old, blind alarm system" class="selection-tile-input" data-track="both" onchange="handleTileRadioChange(this, 'contact', 2)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Upgrading Legacy System</span>
+                  <span class="tile-desc">Replace unmonitored sirens with smart verified alerts</span>
+                </div>
+              </label>
+              <label class="selection-tile-label">
+                <input type="radio" name="contact_security_concern_radio" value="I just want a professional baseline review" class="selection-tile-input" data-track="both" onchange="handleTileRadioChange(this, 'contact', 2)">
+                <div class="selection-tile-content">
+                  <span class="tile-title">Baseline Risk Audit</span>
+                  <span class="tile-desc">Documented site vulnerabilities &amp; priority actions</span>
+                </div>
+              </label>
+            </div>
+            <input type="hidden" name="security_concern" id="contact-input-security_concern" required>
+
+            <div style="margin-top:24px;">
+              <button type="button" class="btn btn-primary btn-block" id="contactStep2Next" disabled onclick="nextContactStep(2)">Continue &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Contact Details -->
+          <div class="form-step" data-step="3">
+            <button type="button" class="back-step-btn" onclick="handleContactPrevStep(3)">&larr; Back to previous step</button>
+            <h4 class="form-group-kicker">CONTACT DETAILS</h4>
+            <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your selections and respond on WhatsApp with the recommended next step.</p>
+            
+            <div class="form-field-group">
+              <label for="contact-page-name" class="form-field-label">Full Name <span class="required-star">*</span></label>
+              <input id="contact-page-name" name="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateContactStep3()">
+              <span class="field-error-message" id="contact-name-error" style="display:none;">Please enter your full name.</span>
+            </div>
+
+            <div class="form-field-group">
+              <label for="contact-page-phone" class="form-field-label">WhatsApp Number <span class="required-star">*</span></label>
+              <input id="contact-page-phone" name="phone" inputmode="tel" class="form-field-input" placeholder="e.g. 0768055555" required oninput="validateContactStep3()">
+              <span class="field-error-message" id="contact-phone-error" style="display:none;">Please enter a valid phone number.</span>
+            </div>
+
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button class="btn btn-primary btn-block" type="submit" id="contactSubmitBtn" disabled style="min-height:52px; width:100%; justify-content:center;">Request My Security Review on WhatsApp</button>
+
+            <p class="quiet-help-line">Prefer to talk first? <a href="https://wa.me/254768055555">Chat on WhatsApp</a></p>
+            <p class="required-note">(* Required fields)</p>
+            <p style="font-size:12px; color:#5B6472; margin:12px 0 0; line-height:1.5;">Your details are used only to respond to this request. See our <a href="/privacy-policy/" style="color:#0D1430; text-decoration:underline;">Privacy Policy</a>.</p>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -288,7 +375,7 @@
     <div class="container two-col contact-intake-grid">
       <div class="section-copy">
         <p class="eyebrow">What Happens Next</p>
-        <h2>From inquiry to clear recommendation.</h2>
+        <h2>Next steps after submitting your inquiry.</h2>
       </div>
 
       <div class="process-list">
@@ -339,7 +426,7 @@
         </div>
 
         <div class="system-bridge-actions">
-          <a href="https://wa.me/254714007114" class="btn btn-primary">Chat on WhatsApp</a>
+          <a href="https://wa.me/254768055555" class="btn btn-primary">Chat on WhatsApp</a>
           <a href="tel:+254768055555" class="btn btn-outline-white">Call Urban Eye</a>
         </div>
       </div>
@@ -350,116 +437,10 @@
 <div id="site-footer"></div>
 
 <script>
- (function () {
-  const params = new URLSearchParams(window.location.search);
-
-  // ── Existing service param handler ──────────────────────────
-  const service = params.get("service");
-  const serviceMap = {
-    cctv:              "CCTV Installation",
-    "smart-alarms":    "Smart Alarm Systems",
-    alarms:            "Smart Alarm Systems",
-    "access-control":  "Access Control",
-    access:            "Access Control",
-    fire:              "Commercial Fire Alarms",
-    "fire-safety":     "Commercial Fire Alarms",
-    guarding:          "Manned Guarding",
-    guards:            "Manned Guarding",
-    "electric-fencing":"Electric Fencing",
-    fencing:           "Electric Fencing",
-    monitoring:        "Urban Eye PRO Monitoring & Response",
-    residential:       "Residential Security",
-    retail:            "Retail Security",
-    office:            "Office Security",
-    warehouse:         "Warehouse Security",
-    construction:      "Construction Site Security",
-    airbnb:            "Airbnb / Short-Stay Security",
-    packages:          "Security Packages",
-    "risk-review":     "General Security Assessment"
-  };
-
-  const select = document.getElementById("serviceInterestSelect");
-  const hidden = document.getElementById("serviceInterestHidden");
-  if (!select || !hidden) return;
-
-  if (service && serviceMap[service]) {
-    select.value = serviceMap[service];
-    hidden.value = serviceMap[service];
-  }
-
-  select.addEventListener("change", function () {
-    hidden.value = select.value || "General Security Assessment";
-  });
-
-  // ── NEW: Assessment pre-fill ────────────────────────────────
-  const source = params.get("source");
-  if (source !== "assessment") return;
-
-  // Property type
-  const propertyType = params.get("property_type");
-  if (propertyType) {
-    const ptSelect = document.querySelector('select[name="property_type"]');
-    if (ptSelect) {
-      // Find closest matching option
-      const options = Array.from(ptSelect.options);
-      const match = options.find(o => o.value === propertyType);
-      if (match) ptSelect.value = match.value;
-    }
-  }
-
-  // Service / package interest
-  const serviceInterest = params.get("service_package_interest");
-  if (serviceInterest && select) {
-    const options = Array.from(select.options);
-    const match = options.find(o => o.value === serviceInterest);
-    if (match) {
-      select.value = match.value;
-      hidden.value = match.value;
-    }
-  }
-
-  // Preferred timeline
-  const timeline = params.get("preferred_timeline");
-  if (timeline) {
-    const tlSelect = document.querySelector('select[name="preferred_timeline"]');
-    if (tlSelect) {
-      const options = Array.from(tlSelect.options);
-      const match = options.find(o => o.value === timeline);
-      if (match) tlSelect.value = match.value;
-    }
-  }
-
-  // Main concern (pre-fills the textarea)
-  const concern = params.get("main_concern");
-  if (concern) {
-    const textarea = document.querySelector('textarea[name="main_concern"]');
-    if (textarea) textarea.value = concern;
-  }
-
-  // Add hidden field to tag this submission as from the assessment
-  const form = document.querySelector('form');
-  if (form) {
-    const tag = document.createElement("input");
-    tag.type  = "hidden";
-    tag.name  = "assessment_referral";
-    tag.value = "yes";
-    form.appendChild(tag);
-
-    // Also update subject line so Formspree inbox is clearly labelled
-    const subjectField = form.querySelector('input[name="_subject"]');
-    if (subjectField) {
-      subjectField.value = "Assessment Referral — Urban Eye Security Request";
-    }
-  }
-
-  // Scroll to form smoothly after a short delay
-  setTimeout(() => {
-    const formSection = document.getElementById("contact-form");
-    if (formSection) formSection.scrollIntoView({ behavior: "smooth" });
-  }, 400);
-
-})();
+document.addEventListener("DOMContentLoaded", () => {
+  goToFormStep(1, CONTACT_FORM_CONFIG);
+});
 </script>
-<script src="/js/includes.js"></script>
+<script src="/js/includes.js" defer></script>
 </body>
 </html>

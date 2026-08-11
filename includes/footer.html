@@ -23,6 +23,8 @@
           <li><a href="/electric-fencing/">Electric Fencing & Perimeter Security</a></li>
           <li><a href="/commercial-fire-alarm-systems/">Fire Alarm Systems</a></li>
           <li><a href="/professional-monitoring/">PRO Monitoring</a></li>
+          <li><a href="/risk-review/">Site Security Review</a></li>
+          <li><a href="/corporate-risk-audit/">Corporate Risk Audit</a></li>
         </ul>
       </div>
 
@@ -41,10 +43,11 @@
       <div>
         <h4>Quick Action</h4>
         <ul>
-          <li><a href="/contact/?service=risk-review">Request a site assessment</a></li>
+          <li><a onclick="return openServiceDrawer('footer','General Security Assessment','Request a Site Assessment','Share a few details and Urban Eye will advise on the right next step for your property.')" href="/contact/?service=risk-review">Request a site assessment</a></li>
+          <li><a href="/partners/">Partner Programs</a></li>
           <li><a href="/careers/">Careers</a></li>
           <li><a href="/insights/">Security Insights</a></li>
-          <li><a href="/security-packages/">Compare packages</a></li>
+          <li><a href="/programs/">Programs</a></li>
           <li><a href="/professional-monitoring/">Monitoring & Response</a></li>
           <li><a href="https://wa.me/254768055555">Chat on WhatsApp</a></li>
         </ul>
@@ -53,7 +56,476 @@
 
     <div class="footer-bottom">
       <span>&copy; 2026 Urban Eye Security. All rights reserved.</span>
-      <span>Smart. Connected. Protected.</span>
+      <span><a href="/privacy-policy/">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/terms/">Terms of Service</a></span>
     </div>
   </div>
 </footer>
+
+<!-- Conversational Engine Styles Overrides -->
+<style>
+  .drawer-backdrop {
+    z-index: 2000 !important;
+  }
+  .drawer {
+    z-index: 2001 !important;
+  }
+  #drawer .form-step {
+    display: none !important;
+  }
+  #drawer .form-step.active {
+    display: block !important;
+  }
+  #drawer .back-step-btn {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #5B6472;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    padding: 0;
+  }
+  #drawer .back-step-btn:hover {
+    color: #C4272E;
+  }
+  #drawer .option-button {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #D9DEE8;
+    border-radius: 6px;
+    color: #0D1430;
+    font-family: "Source Sans 3", Arial, sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  #drawer .option-button:hover,
+  #drawer .option-button.selected {
+    border-color: #C4272E;
+    background: #FFF7F8;
+    color: #C4272E;
+  }
+</style>
+
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="closeFormDrawer()" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-describedby="drawerIntro">
+  
+  <!-- Step Indicator Bar -->
+  <div class="step-indicator-wrapper" style="padding: 20px 24px 0;">
+    <div class="step-indicator-header">
+      <span class="step-indicator-count" id="drawerStepCount">STEP 1 / 3</span>
+      <span class="step-indicator-title" id="drawerStepTitle">01 Site Details</span>
+    </div>
+    <div class="step-segmented-bar">
+      <div class="step-segment active" id="drawerSeg1"></div>
+      <div class="step-segment" id="drawerSeg2"></div>
+      <div class="step-segment" id="drawerSeg3"></div>
+    </div>
+  </div>
+
+  <div class="drawer-header" style="padding: 14px 24px 10px;">
+    <h3 id="drawerTitle" class="drawer-title-heading">Request a Security Recommendation</h3>
+    <button class="drawer-close" onclick="closeFormDrawer()" aria-label="Close" type="button" style="top:14px;">&times;</button>
+  </div>
+
+  <div class="drawer-body" style="padding: 0 24px 24px;">
+    <p class="drawer-intro" id="drawerIntro" style="font-size:14px; margin:0 0 24px; color:#5B6472; line-height:1.5;">Share a few details and Urban Eye will advise on the right next step.</p>
+
+    <form id="conversational-drawer-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleDrawerSubmit(event)">
+      <input type="hidden" name="_subject" value="New Conversational Protection Assessment Request">
+      <input type="hidden" name="page_source" id="drawerPageSource" value="">
+      <input type="hidden" name="service_interest" id="drawerServiceInterest" value="">
+
+      <!-- Step 1: Site Details -->
+      <div class="form-step active" data-step="1">
+        <h4 class="form-group-kicker">SITE DETAILS</h4>
+        <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What type of property are we securing?</p>
+        
+        <div class="selection-tile-grid">
+          <label class="selection-tile-label" data-tile-category="private">
+            <input type="radio" name="drawer_property_type_radio" value="Private Residence" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Private Residence</span>
+              <span class="tile-desc">Homes, townhouses &amp; apartments</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Retail Shop" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Retail Shop</span>
+              <span class="tile-desc">Storefronts, boutiques &amp; cash points</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Office / Corporate" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Office / Corporate</span>
+              <span class="tile-desc">Commercial suites, clinics &amp; agencies</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Warehouse &amp; Logistics" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Warehouse &amp; Logistics</span>
+              <span class="tile-desc">Stockrooms, loading bays &amp; yards</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="private">
+            <input type="radio" name="drawer_property_type_radio" value="Airbnb / Short-Stay" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Airbnb / Short-Stay</span>
+              <span class="tile-desc">Vacation rentals &amp; guest suites</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Construction Site" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Construction Site</span>
+              <span class="tile-desc">Active builds, materials &amp; perimeter</span>
+            </div>
+          </label>
+        </div>
+        <input type="hidden" name="property_type" id="drawer-input-property_type" required>
+
+        <div class="form-field-group" style="margin-top:20px;">
+          <label for="drawer-location" class="form-field-label">Location / Neighbourhood <span class="required-star">*</span></label>
+          <input id="drawer-location" name="location" class="form-field-input" placeholder="Area or neighbourhood, e.g. Industrial Area" required oninput="validateDrawerStep1()">
+          <span class="field-error-message" id="drawer-location-error" style="display:none;">Please enter your area or neighbourhood.</span>
+        </div>
+        
+        <div style="margin-top:24px;">
+          <button type="button" class="btn btn-primary btn-block drawer-next-btn" id="drawerStep1Next" disabled onclick="nextDrawerStep(1)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Requirements / Concerns -->
+      <div class="form-step" data-step="2">
+        <button type="button" class="back-step-btn" onclick="prevDrawerStep(2)">&larr; Back to previous step</button>
+        <h4 class="form-group-kicker">SECURITY CONCERNS</h4>
+        <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What is your primary security objective?</p>
+
+        <div style="display:grid; gap:10px;">
+          <label class="selection-tile-label" data-concern-scope="residential">
+            <input type="radio" name="drawer_security_concern_radio" value="Stopping night break-ins" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 2)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Stopping Night Break-Ins</span>
+              <span class="tile-desc">Perimeter detection &amp; instant alert routing</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-concern-scope="residential">
+            <input type="radio" name="drawer_security_concern_radio" value="Keeping the property secure while we're away" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 2)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Vacant Property Protection</span>
+              <span class="tile-desc">Remote app status &amp; 24/7 PRO monitoring</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-concern-scope="commercial">
+            <input type="radio" name="drawer_security_concern_radio" value="Monitoring staff, visitors, or stock" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 2)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Staff, Visitor &amp; Stock Monitoring</span>
+              <span class="tile-desc">Access control logs &amp; visual verification</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-concern-scope="commercial">
+            <input type="radio" name="drawer_security_concern_radio" value="Stopping break-ins or theft" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 2)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Commercial Loss Prevention</span>
+              <span class="tile-desc">Storefront, stockroom &amp; bay security</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-concern-scope="both">
+            <input type="radio" name="drawer_security_concern_radio" value="Upgrading an old, blind alarm system" class="selection-tile-input" data-track="both" onchange="handleTileRadioChange(this, 'drawer', 2)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Upgrading Legacy System</span>
+              <span class="tile-desc">Replace unmonitored sirens with smart verified alerts</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-concern-scope="both">
+            <input type="radio" name="drawer_security_concern_radio" value="I just want a professional baseline review" class="selection-tile-input" data-track="both" onchange="handleTileRadioChange(this, 'drawer', 2)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Baseline Risk Audit</span>
+              <span class="tile-desc">Documented site vulnerabilities &amp; priority actions</span>
+            </div>
+          </label>
+        </div>
+        <input type="hidden" name="security_concern" id="drawer-input-security_concern" required>
+
+        <!-- Variant Extra: Equipment Variant -->
+        <div id="drawer-equipment-extras" style="display:none; margin-top:20px;">
+          <div class="form-field-group">
+            <label for="drawer-installation-status" class="form-field-label">System Status <span class="required-star">*</span></label>
+            <select id="drawer-installation-status" name="installation_status" class="form-field-input" onchange="validateDrawerStep2()">
+              <option value="">Select system status...</option>
+              <option value="New installation">New installation required</option>
+              <option value="Upgrading existing system">Upgrading / expanding existing system</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Variant Extra: Operations & Guarding Variant -->
+        <div id="drawer-operations-extras" style="display:none; margin-top:20px;">
+          <div class="form-field-group">
+            <label for="drawer-operations-timeframe" class="form-field-label">Decision Timeframe <span class="required-star">*</span></label>
+            <select id="drawer-operations-timeframe" name="decision_timeframe" class="form-field-input" onchange="validateDrawerStep2()">
+              <option value="">Select timeframe...</option>
+              <option value="This month">This month</option>
+              <option value="This quarter">This quarter</option>
+              <option value="Exploring">Exploring / Budgeting</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Variant Extra: Corporate Risk Audit Variant -->
+        <div id="drawer-corporate-extras" style="display:none; margin-top:20px;">
+          <div class="form-field-group">
+            <label for="drawer-site-scale" class="form-field-label">Approximate Site Scale <span class="required-star">*</span></label>
+            <select id="drawer-site-scale" name="site_scale" class="form-field-input" onchange="validateDrawerStep2()">
+              <option value="">Select site scale...</option>
+              <option value="Under 500 sqm">Under 500 sqm (Single floor / suite)</option>
+              <option value="500 - 2,000 sqm">500 - 2,000 sqm (Full building / medium site)</option>
+              <option value="Over 2,000 sqm">Over 2,000 sqm (Large facility / compound)</option>
+              <option value="Multi-building / Yard">Multi-building estate / construction yard</option>
+            </select>
+          </div>
+          <div class="form-field-group">
+            <label for="drawer-corporate-timeframe" class="form-field-label">Decision Timeframe <span class="required-star">*</span></label>
+            <select id="drawer-corporate-timeframe" name="decision_timeframe" class="form-field-input" onchange="validateDrawerStep2()">
+              <option value="">Select timeframe...</option>
+              <option value="This month">This month</option>
+              <option value="This quarter">This quarter</option>
+              <option value="Exploring">Exploring / Budgeting</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <button type="button" class="btn btn-primary btn-block drawer-next-btn" id="drawerStep2Next" disabled onclick="nextDrawerStep(2)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Contact Details -->
+      <div class="form-step" data-step="3">
+        <button type="button" class="back-step-btn" onclick="prevDrawerStep(3)">&larr; Back to previous step</button>
+        <h4 class="form-group-kicker">CONTACT DETAILS</h4>
+        <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your selections and respond on WhatsApp with your tailored proposal.</p>
+        
+        <!-- Corporate Audit Extra: Company Name -->
+        <div id="drawer-company-group" class="form-field-group" style="display:none;">
+          <label for="drawer-company" class="form-field-label">Company / Organization Name <span class="required-star">*</span></label>
+          <input id="drawer-company" name="company_name" class="form-field-input" placeholder="e.g. Acme Logistics Kenya" oninput="validateDrawerStep3()">
+          <span class="field-error-message" id="drawer-company-error" style="display:none;">Please enter your company or organization name.</span>
+        </div>
+
+        <div class="form-field-group">
+          <label for="drawer-name" class="form-field-label">Full Name <span class="required-star">*</span></label>
+          <input id="drawer-name" name="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateDrawerStep3()">
+          <span class="field-error-message" id="drawer-name-error" style="display:none;">Please enter your full name.</span>
+        </div>
+
+        <div class="form-field-group">
+          <label for="drawer-phone" class="form-field-label">WhatsApp Number <span class="required-star">*</span></label>
+          <input id="drawer-phone" name="phone" inputmode="tel" class="form-field-input" placeholder="e.g. 0768055555" required oninput="validateDrawerStep3()">
+          <span class="field-error-message" id="drawer-phone-error" style="display:none;">Please enter a valid phone number.</span>
+        </div>
+
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button class="btn btn-primary btn-block" type="submit" id="drawerSubmitBtn" disabled style="min-height:52px; width:100%; justify-content:center;">Book My On-Site Review via WhatsApp</button>
+
+        <p class="quiet-help-line">Prefer to talk first? <a href="https://wa.me/254768055555">Chat on WhatsApp</a></p>
+        <p class="required-note">(* Required fields)</p>
+        <p style="font-size:12px; color:#5B6472; margin:12px 0 0; line-height:1.5;">Your details are used only to respond to this request. See our <a href="/privacy-policy/" style="color:#0D1430; text-decoration:underline;">Privacy Policy</a>.</p>
+      </div>
+    </form>
+  </div>
+</aside>
+
+<!-- ================================
+     Site Security Review Drawer
+================================ -->
+<div class="drawer-backdrop" id="reviewDrawerBackdrop" onclick="closeReviewDrawer()" aria-hidden="true"></div>
+<aside class="drawer" id="reviewDrawer" role="dialog" aria-modal="true" aria-labelledby="reviewDrawerTitle">
+
+  <div class="drawer-header" style="padding: 24px 28px 0;">
+    <div>
+      <h3 class="svc-drawer-title" id="reviewDrawerTitle">
+        Site Security Review
+        <span class="service-drawer-badge">Complimentary</span>
+      </h3>
+      <p class="svc-drawer-context">Share a few details and we'll schedule a site walkthrough for your property.</p>
+    </div>
+    <button class="drawer-close" onclick="closeReviewDrawer()" aria-label="Close" type="button" style="align-self:flex-start;">&times;</button>
+  </div>
+
+  <div class="drawer-body" style="padding: 24px 28px 28px;">
+    <form id="review-drawer-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleReviewSubmit(event)">
+      <input type="hidden" name="_subject" value="Site Security Review Request">
+      <input type="hidden" name="page_source" id="reviewPageSource" value="risk-review">
+      <input type="hidden" name="service_interest" id="reviewServiceInterest" value="Site Security Review">
+
+      <div class="svc-drawer-fields">
+        <div class="form-field-group">
+          <label for="review-property-type" class="form-field-label">Property type <span class="required-star">*</span></label>
+          <select id="review-property-type" name="property_type" class="form-field-input" required onchange="validateReviewForm()">
+            <option value="">Select property type…</option>
+            <option value="Private Residence">Private Residence</option>
+            <option value="Apartment / Estate">Apartment / Estate</option>
+            <option value="Retail Shop">Retail Shop</option>
+            <option value="Office / Commercial">Office / Commercial</option>
+            <option value="Warehouse / Logistics">Warehouse / Logistics</option>
+            <option value="Construction Site">Construction Site</option>
+            <option value="Airbnb / Short-Stay">Airbnb / Short-Stay</option>
+          </select>
+        </div>
+
+        <div class="form-field-group">
+          <label for="review-location" class="form-field-label">Location / Neighbourhood <span class="required-star">*</span></label>
+          <input id="review-location" name="location" class="form-field-input" placeholder="e.g. Kilimani, Westlands" required oninput="validateReviewForm()">
+        </div>
+
+        <div class="form-field-group">
+          <label for="review-main-concern" class="form-field-label">What is your main concern?</label>
+          <input id="review-main-concern" name="main_concern" class="form-field-input" placeholder="e.g. night break-ins, unverified visitors, staff theft" oninput="validateReviewForm()">
+        </div>
+
+        <hr class="svc-drawer-divider">
+
+        <div class="svc-drawer-contact-row">
+          <div class="form-field-group">
+            <label for="review-name" class="form-field-label">Full name <span class="required-star">*</span></label>
+            <input id="review-name" name="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateReviewForm()">
+          </div>
+
+          <div class="form-field-group">
+            <label for="review-phone" class="form-field-label">WhatsApp number <span class="required-star">*</span></label>
+            <input id="review-phone" name="phone" inputmode="tel" class="form-field-input" placeholder="e.g. 0768 055 555" required oninput="validateReviewForm()">
+          </div>
+        </div>
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="svc-drawer-submit">
+        <button class="btn btn-primary" type="submit" id="reviewSubmitBtn" disabled>Book My Site Review via WhatsApp</button>
+      </div>
+
+      <p class="quiet-help-line">Prefer to talk first? <a href="https://wa.me/254768055555">Chat on WhatsApp</a></p>
+      <p style="font-size:12px; color:#5B6472; margin:14px 0 0; line-height:1.5;">Your details are used only to respond to this request. See our <a href="/privacy-policy/" style="color:#0D1430; text-decoration:underline;">Privacy Policy</a>.</p>
+    </form>
+  </div>
+</aside>
+
+<!-- ================================
+     Corporate Risk Audit Drawer
+================================ -->
+<div class="drawer-backdrop" id="auditDrawerBackdrop" onclick="closeAuditDrawer()" aria-hidden="true"></div>
+<aside class="drawer" id="auditDrawer" role="dialog" aria-modal="true" aria-labelledby="auditDrawerTitle">
+
+  <div class="audit-drawer-band">
+    <h3 class="svc-drawer-title" id="auditDrawerTitle">
+      Corporate Risk Audit
+      <span class="service-drawer-badge">Paid Assessment</span>
+    </h3>
+    <p class="svc-drawer-context">Fee quoted by site scope. Credited in full against implementation.</p>
+    <button class="drawer-close" onclick="closeAuditDrawer()" aria-label="Close" type="button">&times;</button>
+  </div>
+
+  <div class="drawer-header"></div>
+
+  <div class="drawer-body" style="padding: 24px 28px 28px;">
+
+    <div class="svc-drawer-fee-note">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 1C4.13 1 1 4.13 1 8s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7zm.5 11h-1V7h1v5zm0-6.5h-1v-1h1v1z" fill="currentColor"/>
+      </svg>
+      <span>The audit fee is confirmed in writing before scheduling, and credited in full if you proceed to an Urban Eye implementation engagement.</span>
+    </div>
+
+    <form id="audit-drawer-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleAuditSubmit(event)">
+      <input type="hidden" name="_subject" value="Corporate Risk Audit Booking">
+      <input type="hidden" name="page_source" id="auditPageSource" value="corporate-risk-audit">
+      <input type="hidden" name="service_interest" id="auditServiceInterest" value="Corporate Risk Audit">
+
+      <div class="svc-drawer-fields">
+        <p class="svc-field-kicker" style="font-family:var(--font-display); font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#111827; border-left:3px solid var(--red); padding-left:8px; margin:0 0 14px;">SITE DETAILS</p>
+
+        <div class="form-field-group">
+          <label for="audit-company" class="form-field-label">Company / Organization <span class="required-star">*</span></label>
+          <input id="audit-company" name="company_name" class="form-field-input" placeholder="e.g. Acme Logistics Kenya" required oninput="validateAuditForm()">
+        </div>
+
+        <div class="form-field-group">
+          <label for="audit-site-type" class="form-field-label">Site type <span class="required-star">*</span></label>
+          <select id="audit-site-type" name="property_type" class="form-field-input" required onchange="validateAuditForm()">
+            <option value="">Select site type…</option>
+            <option value="Office / Corporate">Office / Corporate</option>
+            <option value="Warehouse / Logistics">Warehouse / Logistics</option>
+            <option value="Retail / Shopping Unit">Retail / Shopping Unit</option>
+            <option value="Construction Site">Construction Site</option>
+            <option value="Estate / Apartment Block">Estate / Apartment Block</option>
+            <option value="Institution / Mixed-Use">Institution / Mixed-Use</option>
+          </select>
+        </div>
+
+        <div class="form-field-group">
+          <label for="audit-location" class="form-field-label">Location <span class="required-star">*</span></label>
+          <input id="audit-location" name="location" class="form-field-input" placeholder="e.g. Industrial Area, Mombasa Road" required oninput="validateAuditForm()">
+        </div>
+
+        <div class="svc-drawer-contact-row">
+          <div class="form-field-group">
+            <label for="audit-site-scale" class="form-field-label">Approximate site scale <span class="required-star">*</span></label>
+            <select id="audit-site-scale" name="site_scale" class="form-field-input" required onchange="validateAuditForm()">
+              <option value="">Select scale…</option>
+              <option value="Under 500 sqm">Under 500 sqm</option>
+              <option value="500 – 2,000 sqm">500 – 2,000 sqm</option>
+              <option value="Over 2,000 sqm">Over 2,000 sqm</option>
+              <option value="Multi-building / Yard">Multi-building / yard</option>
+            </select>
+          </div>
+
+          <div class="form-field-group">
+            <label for="audit-timeframe" class="form-field-label">Decision timeframe <span class="required-star">*</span></label>
+            <select id="audit-timeframe" name="decision_timeframe" class="form-field-input" required onchange="validateAuditForm()">
+              <option value="">Select timeframe…</option>
+              <option value="This month">This month</option>
+              <option value="This quarter">This quarter</option>
+              <option value="Exploring / Budgeting">Exploring / Budgeting</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="svc-drawer-divider">
+        <p class="svc-field-kicker" style="font-family:var(--font-display); font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#111827; border-left:3px solid var(--red); padding-left:8px; margin:0 0 14px;">CONTACT DETAILS</p> Contact</p>
+
+        <div class="svc-drawer-contact-row">
+          <div class="form-field-group">
+            <label for="audit-name" class="form-field-label">Full name <span class="required-star">*</span></label>
+            <input id="audit-name" name="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateAuditForm()">
+          </div>
+
+          <div class="form-field-group">
+            <label for="audit-phone" class="form-field-label">WhatsApp number <span class="required-star">*</span></label>
+            <input id="audit-phone" name="phone" inputmode="tel" class="form-field-input" placeholder="e.g. 0768 055 555" required oninput="validateAuditForm()">
+          </div>
+        </div>
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="svc-drawer-submit">
+        <button class="btn btn-primary" type="submit" id="auditSubmitBtn" disabled>Book Corporate Risk Audit via WhatsApp</button>
+      </div>
+
+      <p class="quiet-help-line">Prefer to talk first? <a href="https://wa.me/254768055555">Chat on WhatsApp</a></p>
+      <p style="font-size:12px; color:#5B6472; margin:14px 0 0; line-height:1.5;">Your details are used only to respond to this request. See our <a href="/privacy-policy/" style="color:#0D1430; text-decoration:underline;">Privacy Policy</a>.</p>
+    </form>
+  </div>
+</aside>

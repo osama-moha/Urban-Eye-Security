@@ -8,6 +8,9 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var uecConsent=null;try{uecConsent=localStorage.getItem('uec_cookie_consent');}catch(e){}
+  var uecGranted=uecConsent==='granted'?'granted':'denied';
+  gtag('consent','default',{'ad_storage':uecGranted,'ad_user_data':uecGranted,'ad_personalization':uecGranted,'analytics_storage':uecGranted});
   gtag('js', new Date());
 
   gtag('config', 'AW-17823714787');
@@ -21,9 +24,13 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://urbaneyesecurity.co.ke/airbnb-security/"/>
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.png"/>
-<link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
-<link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
-<link rel="stylesheet" href="/style.css"/>
+<link rel="icon" href="/urban-eye-assets/favicon-48.png" type="image/png"/>
+<link rel="apple-touch-icon" href="/urban-eye-assets/apple-touch-icon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="/style.css?v=20260808i"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Airbnb & Short-Stay Security in Kenya","description":"Privacy-conscious security for short-stay properties, serviced apartments, furnished rentals, guest houses, and Airbnb hosts.","provider":{"@type":"Organization","name":"Urban Eye Security"},"areaServed":{"@type":"Country","name":"Kenya"},"serviceType":"Short-Stay Property Security","url":"https://urbaneyesecurity.co.ke/airbnb-security/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I install cameras inside an Airbnb?","acceptedAnswer":{"@type":"Answer","text":"Urban Eye does not recommend indoor cameras for Airbnb-style guest spaces. The focus is exterior visibility, access control, emergency alerts, and guest-friendly protection."}},{"@type":"Question","name":"Can each guest get a unique access code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Keyless access can allow temporary guest codes that are easier to change, revoke, or manage than physical keys."}},{"@type":"Question","name":"Can this help when the unit is vacant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Door alerts, intrusion detection, fire alerts, and monitoring options can help protect the property between bookings."}},{"@type":"Question","name":"Do I need a site survey?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every apartment, estate, access route, and host routine is different. A site review helps Urban Eye recommend the right setup."}}]}</script>
@@ -736,6 +743,17 @@
 </head>
 <body>
 <div id="site-navbar"></div>
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
+    <div class="container">
+            <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Airbnb & Short-Stay Security</li>
+      </ol>
+    </div>
+  </nav>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Airbnb & Short-Stay Security","item":"https://urbaneyesecurity.co.ke/airbnb-security/"}]}
+</script>
 
 <main class="airbnb-page">
   <section class="airbnb-hero section-dark">
@@ -750,7 +768,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="/contact/?service=airbnb" class="btn btn-primary">Request a Host Security Review</a>
+          <a onclick="return openServiceDrawer('airbnb-security','Airbnb / Short Stay Security','Design Your Protection Plan','Share a few details and Urban Eye will help secure your listing for guests, neighbors, and turnovers.')" href="/contact/?service=airbnb" class="btn btn-primary">Design Your Protection Plan</a>
           <a href="https://wa.me/254768055555" class="btn btn-outline-white">Chat on WhatsApp</a>
         </div>
       </div>
@@ -778,7 +796,7 @@
 
       <div class="editorial-panel reveal-up">
         <p class="eyebrow muted">The Urban Eye Solution</p>
-        <h3>A Smart Host Framework for guest-friendly protection.</h3>
+        <h3>A Smart Host Framework for short-stay property protection.</h3>
         <p>
           We combine keyless access, exterior-only visibility, smoke and fire alerts, panic support, and monitoring-ready response workflows into one practical protection plan for short-stay properties.
         </p>
@@ -899,7 +917,7 @@
         </p>
       </div>
       <div class="cta-actions">
-        <a href="/security-packages/#residential-frameworks" class="text-link">View Residential Packages</a>
+        <a href="/programs/" class="text-link">View Residential Programs</a>
         <a href="/access-control/" class="text-link">Explore Access Control</a>
       </div>
     </div>
@@ -979,12 +997,12 @@
           Request a host security review and Urban Eye will recommend the right mix of keyless access, exterior visibility, emergency alerts, and response support.
         </p>
       </div>
-      <a href="/contact/?service=airbnb" class="btn btn-primary">Request Host Security Review</a>
+      <a onclick="return openServiceDrawer('airbnb-security','Airbnb / Short Stay Security','Design Your Protection Plan','Share a few details and Urban Eye will help secure your listing for guests, neighbors, and turnovers.')" href="/contact/?service=airbnb" class="btn btn-primary">Design Your Protection Plan</a>
     </div>
   </section>
 </main>
 
 <div id="site-footer"></div>
-<script src="/js/includes.js"></script>
+<script src="/js/includes.js" defer></script>
 </body>
 </html>

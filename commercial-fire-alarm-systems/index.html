@@ -8,22 +8,38 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var uecConsent=null;try{uecConsent=localStorage.getItem('uec_cookie_consent');}catch(e){}
+  var uecGranted=uecConsent==='granted'?'granted':'denied';
+  gtag('consent','default',{'ad_storage':uecGranted,'ad_user_data':uecGranted,'ad_personalization':uecGranted,'analytics_storage':uecGranted});
   gtag('js', new Date());
 
   gtag('config', 'AW-17823714787');
   gtag('config', 'G-ZER6GV8ZCS');
 </script>
 <title>Commercial Fire Alarm Systems in Kenya | Urban Eye Security</title>
-<meta name="description" content="Urban Eye designs commercial fire detection systems for offices, retail spaces, schools, warehouses, restaurants, and mixed-use properties in Kenya. Request a fire safety assessment before buying equipment."/>
+<meta name="description" content="Urban Eye designs commercial fire detection systems for offices, retail spaces, schools, warehouses, and mixed-use properties in Kenya."/>
 <link rel="canonical" href="https://urbaneyesecurity.co.ke/commercial-fire-alarm-systems/"/>
 <meta property="og:title" content="Commercial Fire Alarm Systems in Kenya | Urban Eye Security"/>
 <meta property="og:description" content="Commercial fire detection systems for offices, retail spaces, schools, warehouses, restaurants, and mixed-use properties in Kenya."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://urbaneyesecurity.co.ke/commercial-fire-alarm-systems/"/>
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/fire%20alarm.png"/>
-<link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
-<link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
-<link rel="stylesheet" href="/style.css"/>
+<link rel="icon" href="/urban-eye-assets/favicon-48.png" type="image/png"/>
+<link rel="apple-touch-icon" href="/urban-eye-assets/apple-touch-icon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="/style.css?v=20260808i"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Commercial Fire Alarm Systems in Kenya","description":"Urban Eye designs commercial fire detection systems for offices, retail spaces, schools, warehouses, restaurants, and mixed-use properties in Kenya.","provider":{"@type":"Organization","name":"Urban Eye Security"},"areaServed":{"@type":"City","name":"Nairobi"},"serviceType":"Commercial Fire Alarm Systems","url":"https://urbaneyesecurity.co.ke/commercial-fire-alarm-systems/"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a site survey before quotation?","acceptedAnswer":{"@type":"Answer","text":"Yes. Detector quantity, placement, alerting needs, and installation requirements depend on your building layout and use. A site review helps avoid underquoting or installing the wrong system."}},{"@type":"Question","name":"Can fire alarms integrate with CCTV or access control?","acceptedAnswer":{"@type":"Answer","text":"Yes, depending on the site. Fire alerts can support CCTV verification, access-door release, emergency notifications, and clearer response procedures."}},{"@type":"Question","name":"Can wireless fire detection reduce disruption?","acceptedAnswer":{"@type":"Answer","text":"In many buildings, wireless or hybrid fire detection can reduce cabling disruption compared with traditional wired-only installations. The right approach depends on the building structure and risk profile."}}]}
+</script>
 
 <style>
 /* =========================================================
@@ -722,6 +738,17 @@
 
 <body>
 <div id="site-navbar"></div>
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
+    <div class="container">
+            <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Commercial Fire Alarm Systems</li>
+      </ol>
+    </div>
+  </nav>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Commercial Fire Alarm Systems","item":"https://urbaneyesecurity.co.ke/commercial-fire-alarm-systems/"}]}
+</script>
 
 <div class="page-progress" aria-hidden="true"><span class="page-progress-bar"></span></div>
 
@@ -730,18 +757,17 @@
   <section class="fire-hero section-dark-grid">
     <div class="container fire-hero-inner">
       <div class="fire-hero-copy">
-        <p class="eyebrow light">Commercial Fire Alarm Systems</p>
+        <p class="eyebrow light">Fire & Life-Safety Systems</p>
 
-        <h1>Commercial fire detection without unnecessary disruption.</h1>
+        <h1>Fire Doesn't Wait for Business Hours. Neither Should Detection.</h1>
 
         <p class="hero-lead">
-          Urban Eye designs commercial fire detection systems that support safer evacuation,
-          early warning, reduced cabling disruption, and integration with your wider security setup.
+          The gap between a small fire and a total loss is measured in minutes. Urban Eye installs the Ajax FireProtect line, EN54-certified wireless fire detection covering smoke, sudden heat spikes, and carbon monoxide. Every device connects to the same hub as your intrusion and access systems, so a fire event can trigger more than a siren, including automated actions like unlocking exits or cutting power to specific circuits.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/contact/?service=fire">Request Fire Safety Assessment</a>
-          <a class="btn btn-outline-white" href="/security-packages/#commercial-fire">View Fire Package Options</a>
+          <a onclick="return openServiceDrawer('fire-alarm','Commercial Fire Alarm Systems','Request a Fire Safety Assessment','Share a few details and Urban Eye will assess your fire detection and alarm coverage needs.')" class="btn btn-primary" href="/contact/?service=fire">Request a Fire Safety Assessment</a>
+          <a class="cta-whatsapp-link" href="https://wa.me/254768055555" style="align-self:center;margin-left:12px;">Or chat on WhatsApp &rarr;</a>
         </div>
       </div>
 
@@ -994,7 +1020,7 @@
         </div>
 
         <div class="system-bridge-actions">
-          <a class="btn btn-primary" href="/contact/?service=fire">Request Fire Safety Assessment</a>
+          <a onclick="return openServiceDrawer('fire-alarm','Commercial Fire Alarm Systems','Request a Fire Safety Assessment','Share a few details and Urban Eye will assess your fire detection and alarm coverage needs.')" class="btn btn-primary" href="/contact/?service=fire">Request a Fire Safety Assessment</a>
           <a class="btn btn-outline" href="https://wa.me/254768055555">Chat on WhatsApp</a>
         </div>
       </div>
@@ -1003,6 +1029,6 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="/js/includes.js"></script>
+<script src="/js/includes.js" defer></script>
 </body>
 </html>

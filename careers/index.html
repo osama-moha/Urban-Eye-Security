@@ -9,14 +9,17 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    var uecConsent=null;try{uecConsent=localStorage.getItem('uec_cookie_consent');}catch(e){}
+    var uecGranted=uecConsent==='granted'?'granted':'denied';
+    gtag('consent','default',{'ad_storage':uecGranted,'ad_user_data':uecGranted,'ad_personalization':uecGranted,'analytics_storage':uecGranted});
     gtag('js', new Date());
 
     gtag('config', 'AW-17823714787');
     gtag('config', 'G-ZER6GV8ZCS');
   </script>
 
-  <title>Careers at Urban Eye Security | Join Our Security Team in Kenya</title>
-  <meta name="description" content="Join Urban Eye Security in Kenya. Apply for security officer, installation technician, or security solutions consultant roles with a professional integrated security company."/>
+  <title>Careers at Urban Eye Security | Kenya</title>
+  <meta name="description" content="Join Urban Eye Security in Kenya. Apply for security officer, installation technician, or security consultant roles."/>
 
   <link rel="canonical" href="https://urbaneyesecurity.co.ke/careers/"/>
 
@@ -26,9 +29,16 @@
   <meta property="og:url" content="https://urbaneyesecurity.co.ke/careers/"/>
   <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.webp"/>
 
-  <link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
-  <link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
-  <link rel="stylesheet" href="/style.css"/>
+  <link rel="icon" href="/urban-eye-assets/favicon-48.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="/urban-eye-assets/apple-touch-icon-180.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="/style.css?v=20260808i"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
+</script>
 
   <style>
     /* Careers page professional updates */
@@ -64,7 +74,7 @@
       font-size:clamp(34px,3.8vw,50px);
       line-height:1.04;
       letter-spacing:0;
-      font-weight:750;
+      font-weight:700;
     }
 
     .careers-page .careers-section-head > p,
@@ -404,6 +414,17 @@
 
 <body class="careers-page">
   <div id="site-navbar"></div>
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
+    <div class="container">
+            <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Careers</li>
+      </ol>
+    </div>
+  </nav>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Careers","item":"https://urbaneyesecurity.co.ke/careers/"}]}
+</script>
 
   <main>
     <section class="page-hero careers-hero">
@@ -414,7 +435,7 @@
           <h1>Join the next generation of security professionals.</h1>
 
           <p>
-            Urban Eye Security combines disciplined human personnel with smart technology. We work with people who value professionalism, vigilance, integrity, and practical service to clients across Kenya.
+            Urban Eye combines disciplined personnel with smart technology, and looks for people who value professionalism, vigilance, and integrity.
           </p>
 
           <div class="hero-actions">
@@ -426,6 +447,10 @@
         <div class="careers-hero-media reveal-up">
           <img
             src="/urban-eye-assets/guard3.webp"
+            width="1536"
+            height="1024"
+            fetchpriority="high"
+            decoding="async"
             alt="Urban Eye Security personnel representing careers in guarding and integrated security"
           >
         </div>
@@ -447,17 +472,17 @@
         <div class="career-model-list reveal-slide slide-right">
           <div class="career-model-row">
             <strong>Security Officers</strong>
-            <span>Recruitment is conducted on a needs-only basis and is tied to specific client locations. We do not hold mass general recruitments.</span>
+            <span>Recruitment is needs-only, tied to specific client locations. We don't hold mass general recruitments.</span>
           </div>
 
           <div class="career-model-row">
             <strong>Installation Technicians</strong>
-            <span>Technical deployment work may be project-based depending on site requirements, installation scope, and client demand.</span>
+            <span>Technical deployment may be project-based depending on site requirements and client demand.</span>
           </div>
 
           <div class="career-model-row">
             <strong>Security Solutions Consultants</strong>
-            <span>Sales and consulting roles operate on a performance-driven structure for people who can generate leads, assess sites, and close security opportunities.</span>
+            <span>Sales and consulting roles run on a performance-driven structure for people who can generate leads and close opportunities.</span>
           </div>
         </div>
       </div>
@@ -471,11 +496,7 @@
           <h2>We expect professionalism, and we give it back.</h2>
 
           <p>
-            Urban Eye looks for people who can represent the company with discipline, neatness, confidence, and respect for the client. In return, we provide clear deployment expectations, practical supervision, internal guidance, and a performance culture where reliability matters.
-          </p>
-
-          <p>
-            Whether you are posted at a residential estate, commercial property, warehouse, construction site, or technical installation project, your work must support one goal: helping the client feel protected, informed, and properly served.
+            We look for people who represent the company with discipline and respect for the client. In return, we provide clear expectations, supervision, and a performance culture where reliability matters. Wherever you're posted, the goal is the same: the client feels protected, informed, and properly served.
           </p>
         </div>
       </div>
@@ -512,7 +533,7 @@
                 <div>
                   <h4>Role purpose</h4>
                   <p>
-                    Security Officers represent Urban Eye at client sites by protecting people, property, access points, and daily site operations with discipline, alertness, and professional conduct.
+                    Security Officers represent Urban Eye at client sites, protecting people, property, and daily operations with discipline and alertness.
                   </p>
 
                   <h4>Minimum qualifications</h4>
@@ -613,7 +634,7 @@
                 <div>
                   <h4>Role purpose</h4>
                   <p>
-                    Security Solutions Consultants help clients understand their risks, identify practical security gaps, and choose the right combination of guarding, CCTV, alarms, access control, monitoring, and response.
+                    Security Solutions Consultants help clients understand their risks and choose the right mix of guarding, CCTV, alarms, and monitoring.
                   </p>
 
                   <h4>Minimum qualifications</h4>
@@ -741,6 +762,6 @@
 
   <div id="site-footer"></div>
 
-  <script src="/js/includes.js"></script>
+  <script src="/js/includes.js" defer></script>
 </body>
 </html>

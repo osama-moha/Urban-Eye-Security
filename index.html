@@ -9,6 +9,9 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var uecConsent=null;try{uecConsent=localStorage.getItem('uec_cookie_consent');}catch(e){}
+  var uecGranted=uecConsent==='granted'?'granted':'denied';
+  gtag('consent','default',{'ad_storage':uecGranted,'ad_user_data':uecGranted,'ad_personalization':uecGranted,'analytics_storage':uecGranted});
   gtag('js', new Date());
 
   gtag('config', 'AW-17823714787');
@@ -16,7 +19,7 @@
 </script>
 
 <title>Urban Eye Security | Integrated Security Company in Kenya</title>
-<meta name="description" content="Urban Eye Security provides integrated security for homes, estates, offices, shops, warehouses, institutions, and commercial properties in Kenya, combining trained guards, CCTV, alarms, access control, monitoring, and clear response procedures."/>
+<meta name="description" content="Integrated security for homes, offices, shops, and warehouses in Kenya: guards, CCTV, alarms, access control, and monitoring in one plan."/>
 
 <link rel="canonical" href="https://urbaneyesecurity.co.ke/"/>
 
@@ -25,708 +28,16 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://urbaneyesecurity.co.ke/"/>
 <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.webp"/>
-<link rel="icon" href="/urban-eye-assets/Icon-only%20version.png" type="image/png"/>
-<link rel="apple-touch-icon" href="/urban-eye-assets/Icon-only%20version.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/style.css"/>
-
-<style>
-  /* Home page property framework navigation */
-
-  .framework-list{
-    margin-top:40px;
-    border:1px solid #d6deea;
-    border-radius:14px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow:0 18px 45px rgba(7,18,47,.05);
-  }
-
-  .framework-row{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:24px;
-    align-items:center;
-    min-height:92px;
-    padding:18px 28px;
-    border-bottom:1px solid #d6deea;
-    color:#07122f;
-    text-decoration:none;
-    background:#fff;
-    transition:background 160ms ease;
-  }
-
-  .framework-row:last-child{
-    border-bottom:0;
-  }
-
-  .framework-row:hover{
-    background:#fbfcff;
-  }
-
-  .framework-label{
-    display:block;
-    margin:0 0 7px;
-    color:#cf2630;
-    font-size:10.5px;
-    line-height:1;
-    font-weight:700;
-    letter-spacing:.1em;
-    text-transform:uppercase;
-  }
-
-  .framework-row h3{
-    margin:0 0 4px;
-    color:#07122f;
-    font-size:22px;
-    line-height:1.08;
-    letter-spacing:0;
-  }
-
-  .framework-row p{
-    margin:0;
-    color:#5d6878;
-    font-size:14.5px;
-    line-height:1.35;
-    font-weight:650;
-  }
-
-  .framework-link{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:#cf2630;
-    font-size:13.5px;
-    font-weight:700;
-    white-space:nowrap;
-  }
-
-  .framework-link span{
-    font-size:20px;
-    line-height:1;
-    font-weight:500;
-  }
-
-  @media(max-width:900px){
-    .framework-list{
-      margin-top:28px;
-    }
-
-    .framework-row{
-      grid-template-columns:1fr;
-      gap:12px;
-      min-height:0;
-      padding:20px 22px;
-    }
-
-    .framework-row h3{
-      font-size:21px;
-    }
-
-    .framework-row p{
-      font-size:14.5px;
-    }
-
-    .framework-link{
-      font-size:13.5px;
-    }
-  }
-
-  /* Home page Who We Serve accordion */
-
-  .who-serve-section{
-    padding-bottom:76px;
-  }
-
-  .who-serve-section .section-head{
-    margin-bottom:34px;
-  }
-
-  .who-serve-accordion{
-    display:flex;
-    min-height:470px;
-    border-top:1px solid #d6deea;
-    border-bottom:1px solid #d6deea;
-    background:#fff;
-    overflow:hidden;
-  }
-
-  .who-serve-panel{
-    display:grid;
-    grid-template-columns:76px minmax(0,0fr);
-    flex:0 0 76px;
-    min-width:0;
-    border-right:1px solid #d6deea;
-    background:#fff;
-    transition:flex-basis 320ms ease, flex-grow 320ms ease, background 220ms ease;
-  }
-
-  .who-serve-panel:last-child{
-    border-right:0;
-  }
-
-  .who-serve-panel.is-active{
-    grid-template-columns:76px minmax(0,1fr);
-    flex:1 1 760px;
-  }
-
-  .who-serve-trigger{
-    width:100%;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    padding:20px 11px;
-    border:0;
-    border-radius:0;
-    background:#F5F7FA;
-    color:#07122f;
-    font:inherit;
-    text-align:left;
-    cursor:pointer;
-    writing-mode:vertical-rl;
-    transform:rotate(180deg);
-  }
-
-  .who-serve-trigger:focus-visible{
-    outline:3px solid rgba(196,39,46,.35);
-    outline-offset:-3px;
-  }
-
-  .who-serve-panel.is-active .who-serve-trigger{
-    background:#0D1430;
-    color:#fff;
-  }
-
-  .who-serve-index{
-    color:#cf2630;
-    font-size:12px;
-    line-height:1;
-    font-weight:900;
-  }
-
-  .who-serve-panel.is-active .who-serve-index{
-    color:rgba(255,255,255,.72);
-  }
-
-  .who-serve-label{
-    color:inherit;
-    font-size:13.5px;
-    line-height:1.15;
-    font-weight:900;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-  }
-
-  .who-serve-panel-body{
-    min-width:0;
-    display:grid;
-    grid-template-columns:minmax(220px,.82fr) minmax(300px,1.18fr);
-    background:#fff;
-    overflow:hidden;
-  }
-
-  .who-serve-panel-body[hidden]{
-    display:none;
-  }
-
-  .who-serve-media{
-    min-height:470px;
-    background:#EEF2F7;
-    overflow:hidden;
-  }
-
-  .who-serve-media img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-    object-position:center;
-  }
-
-  .who-serve-copy{
-    min-width:0;
-    padding:38px 40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:flex-start;
-  }
-
-  .who-serve-copy h3{
-    margin:0 0 16px;
-    color:#07122f;
-    font-size:clamp(27px,2.35vw,35px);
-    line-height:1.08;
-    letter-spacing:0;
-  }
-
-  .who-serve-copy p{
-    margin:0;
-    color:#5d6878;
-    font-size:16px;
-    line-height:1.65;
-  }
-
-  .who-serve-features{
-    width:100%;
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:0 24px;
-    margin:22px 0 26px;
-    padding:0;
-    border-top:1px solid #d6deea;
-    list-style:none;
-  }
-
-  .who-serve-features li{
-    padding:10px 0;
-    border-bottom:1px solid #d6deea;
-    color:#07122f;
-    font-size:14px;
-    line-height:1.35;
-    font-weight:800;
-  }
-
-  .who-serve-cta{
-    margin-top:0;
-  }
-
-  .who-serve-panel--home .who-serve-media img{
-    object-position:center 56%;
-  }
-
-  .who-serve-panel--retail .who-serve-media img{
-    object-position:center center;
-  }
-
-  .who-serve-panel--office .who-serve-media img{
-    object-position:center center;
-  }
-
-  .who-serve-panel--warehouse .who-serve-media img{
-    object-position:center center;
-  }
-
-  .who-serve-panel--construction .who-serve-media img{
-    object-position:center center;
-  }
-
-  .who-serve-panel--airbnb .who-serve-media img{
-    object-position:center center;
-  }
-
-  @media(max-width:900px){
-    .who-serve-section{
-      padding-bottom:64px;
-    }
-
-    .who-serve-accordion{
-      display:block;
-      height:auto;
-      min-height:0;
-      border:1px solid #d6deea;
-      overflow:visible;
-    }
-
-    .who-serve-panel,
-    .who-serve-panel.is-active{
-      display:block;
-      width:100%;
-      height:auto;
-      min-width:0;
-      flex:none;
-      grid-template-columns:none;
-      border-right:0;
-      border-bottom:1px solid #d6deea;
-      background:#fff;
-    }
-
-    .who-serve-panel:last-child{
-      border-bottom:0;
-    }
-
-    .who-serve-trigger{
-      width:100%;
-      height:auto;
-      min-height:auto;
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      align-items:center;
-      padding:18px 20px;
-      background:#fff;
-      writing-mode:horizontal-tb;
-      transform:none;
-    }
-
-    .who-serve-panel.is-active .who-serve-trigger{
-      min-height:auto;
-      background:#0D1430;
-      color:#fff;
-    }
-
-    .who-serve-trigger::after{
-      content:"+";
-      color:#cf2630;
-      font-size:22px;
-      line-height:1;
-      font-weight:600;
-    }
-
-    .who-serve-panel.is-active .who-serve-trigger::after{
-      content:"\2212";
-      color:#fff;
-    }
-
-    .who-serve-panel-body{
-      display:none;
-      position:static;
-      width:100%;
-      height:auto;
-      min-width:0;
-      opacity:1;
-      visibility:visible;
-      transform:none;
-      overflow:visible;
-      background:#fff;
-    }
-
-    .who-serve-panel.is-active .who-serve-panel-body{
-      display:block;
-    }
-
-    .who-serve-media{
-      width:100%;
-      min-height:0;
-      height:clamp(180px,45vw,240px);
-      display:block;
-      background:#EEF2F7;
-    }
-
-    .who-serve-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .who-serve-copy{
-      display:block;
-      width:100%;
-      padding:20px 20px 22px;
-    }
-
-    .who-serve-copy h3{
-      font-size:clamp(24px,7vw,32px);
-    }
-
-    .who-serve-copy p{
-      font-size:15.5px;
-    }
-
-    .who-serve-features{
-      margin:16px 0 20px;
-    }
-
-    .who-serve-features li{
-      padding:8px 0;
-    }
-  }
-
-  @media(max-width:520px){
-    .who-serve-features{
-      grid-template-columns:1fr;
-      gap:0;
-    }
-
-    .who-serve-media{
-      height:190px;
-    }
-  }
-
-  .client-proof-section{
-    padding:70px 0;
-    background:#F5F7FA;
-    border-top:1px solid #d6deea;
-    border-bottom:1px solid #d6deea;
-  }
-
-  .client-proof-section .section-head{
-    margin-bottom:28px;
-  }
-
-  .client-logo-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    border:1px solid #d6deea;
-    background:#fff;
-  }
-
-  .client-logo-card{
-    min-height:112px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 20px;
-    border-right:1px solid #d6deea;
-    border-bottom:1px solid #d6deea;
-    background:#fff;
-  }
-
-  .client-logo-card:nth-child(3n){
-    border-right:0;
-  }
-
-  .client-logo-card:nth-last-child(-n + 3){
-    border-bottom:0;
-  }
-
-  .client-logo-card img{
-    display:block;
-    max-width:92%;
-    max-height:94px;
-    object-fit:contain;
-  }
-
-  .client-logo-card.logo-torobo img,
-  .client-logo-card.logo-reliance img,
-  .client-logo-card.logo-bureau img{
-    max-height:102px;
-  }
-
-  .client-logo-card.logo-transworld img,
-  .client-logo-card.logo-hawai img{
-    max-width:92%;
-  }
-
-  .client-proof-note{
-    margin:16px 0 0;
-    color:#667085;
-    font-size:13.5px;
-    line-height:1.5;
-  }
-
-  @media(max-width:900px){
-    .client-proof-section{
-      padding:56px 0;
-    }
-
-    .client-logo-grid{
-      grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
-    .client-logo-card{
-      min-height:100px;
-      padding:14px 16px;
-    }
-
-    .client-logo-card:nth-child(3n){
-      border-right:1px solid #d6deea;
-    }
-
-    .client-logo-card:nth-child(2n){
-      border-right:0;
-    }
-
-    .client-logo-card:nth-last-child(-n + 3){
-      border-bottom:1px solid #d6deea;
-    }
-
-    .client-logo-card:nth-last-child(-n + 2){
-      border-bottom:0;
-    }
-
-    .client-logo-card img{
-      max-height:82px;
-    }
-
-    .client-logo-card.logo-torobo img,
-    .client-logo-card.logo-reliance img,
-    .client-logo-card.logo-bureau img{
-      max-height:90px;
-    }
-  }
-
-  @media(max-width:520px){
-    .client-logo-grid{
-      grid-template-columns:1fr;
-    }
-
-    .client-logo-card,
-    .client-logo-card:nth-child(2n),
-    .client-logo-card:nth-child(3n){
-      border-right:0;
-    }
-
-    .client-logo-card:nth-last-child(-n + 2){
-      border-bottom:1px solid #d6deea;
-    }
-
-    .client-logo-card:last-child{
-      border-bottom:0;
-    }
-
-    .client-logo-card img{
-      max-height:86px;
-    }
-
-    .client-logo-card.logo-torobo img,
-    .client-logo-card.logo-reliance img,
-    .client-logo-card.logo-bureau img{
-      max-height:96px;
-    }
-  }
-  /* Homepage hero refinement */
-
-  #home.hero{
-    padding:0;
-    background:linear-gradient(118deg,#0b132f 0%,#111d45 52%,#071026 100%);
-  }
-
-  #home.hero:before{
-    background:
-      linear-gradient(105deg,rgba(196,39,46,.075),transparent 38%),
-      linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);
-    background-size:auto,88px 88px,88px 88px;
-  }
-
-  #home .hero-content{
-    max-width:680px;
-  }
-
-  #home .hero-eyebrow{
-    color:rgba(255,255,255,.72);
-    font-size:.75rem;
-    line-height:1.2;
-    font-weight:700;
-    letter-spacing:.1em;
-    margin-bottom:1.25rem;
-  }
-
-  #home.hero h1{
-    max-width:780px;
-    font-size:clamp(2.75rem,4.7vw,3.75rem);
-    line-height:1.03;
-    letter-spacing:-.035em;
-    font-weight:600;
-  }
-
-  #home .hero-copy{
-    max-width:680px;
-    color:rgba(255,255,255,.80);
-    font-size:clamp(1rem,1.35vw,1.18rem);
-    line-height:1.6;
-    font-weight:400;
-  }
-
-  #home .hero-actions{
-    gap:.875rem;
-    margin-top:2rem;
-    margin-bottom:0;
-  }
-
-  #home .hero-actions .btn{
-    min-height:50px;
-    padding:0 24px;
-    border-radius:3px;
-    font-size:.9375rem;
-    font-weight:600;
-  }
-
-  #home .hero-actions .btn-primary{
-    box-shadow:none;
-  }
-
-  #home .hero-actions .btn-outline-white{
-    background:transparent;
-    border-color:rgba(255,255,255,.42);
-  }
-
-  #home .hero-photo img{
-    object-position:54% center;
-    filter:brightness(1.05) contrast(1.02) saturate(.96);
-  }
-
-  #home .hero-photo:before{
-    background:
-      linear-gradient(90deg,
-        rgba(8,15,42,.74) 0%,
-        rgba(8,15,42,.48) 32%,
-        rgba(8,15,42,.20) 62%,
-        rgba(8,15,42,.04) 100%
-      ),
-      linear-gradient(180deg,rgba(8,15,42,.08),rgba(8,15,42,.18));
-  }
-
-  #home .hero-photo:after{
-    background:linear-gradient(to top,rgba(8,15,42,.30),transparent 42%);
-  }
-
-  @media(max-width:900px){
-    #home .hero-content{
-      padding:42px 0 22px;
-    }
-
-  #home.hero h1{
-      font-size:clamp(2.25rem,10vw,2.875rem);
-      line-height:1.04;
-      letter-spacing:-.03em;
-    }
-
-    #home .hero-copy{
-      font-size:1rem;
-      line-height:1.55;
-    }
-
-    #home .hero-actions{
-      margin-top:1.35rem;
-    }
-
-    #home .hero-photo{
-      height:300px;
-    }
-
-    #home .hero-photo:before{
-      background:linear-gradient(to bottom,rgba(8,15,42,.08),rgba(8,15,42,.22));
-    }
-  }
-
-    /* =========================================================
-     Homepage corporate CTA consistency
-     Keeps all homepage red actions flat and controlled.
-     ========================================================= */
-
-  body .btn-primary{
-    border-radius:3px;
-    box-shadow:none !important;
-    transform:none;
-  }
-
-  body .btn-primary:hover,
-  body .btn-primary:focus-visible{
-    box-shadow:none !important;
-    transform:none;
-  }
-
-  body .btn-outline,
-  body .btn-outline-white{
-    border-radius:3px;
-    box-shadow:none !important;
-    transform:none;
-  }
-
-  body .btn-outline:hover,
-  body .btn-outline:focus-visible,
-  body .btn-outline-white:hover,
-  body .btn-outline-white:focus-visible{
-    box-shadow:none !important;
-    transform:none;
-  }
-</style>
+<link rel="icon" href="/urban-eye-assets/favicon-48.png" type="image/png"/>
+<link rel="apple-touch-icon" href="/urban-eye-assets/apple-touch-icon-180.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&amp;family=Barlow:wght@400;500;600;700&amp;display=swap"/>
+<link rel="preload" as="image" href="/urban-eye-assets/guard3-800.webp" imagesrcset="/urban-eye-assets/guard3-480.webp 480w, /urban-eye-assets/guard3-800.webp 800w, /urban-eye-assets/guard3-1100.webp 1100w" imagesizes="(max-width: 768px) 100vw, 55vw"/>
+<link rel="stylesheet" href="/style.css?v=20260808i"/>
+
+<link rel="stylesheet" href="/assets/home.css?v=20260717b"/>
 
 <script type="application/ld+json">
 {
@@ -746,6 +57,45 @@
   "areaServed": ["Nairobi", "Kenya"],
   "slogan": "Smart Protection. Human Response."
 }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://urbaneyesecurity.co.ke/#localbusiness",
+  "name": "Urban Eye Security",
+  "image": "https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.webp",
+  "url": "https://urbaneyesecurity.co.ke/",
+  "telephone": "+254 768 055 555",
+  "email": "info@urbaneyesecurity.co.ke",
+  "priceRange": "KSh",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "St. Ellis, Wabera Street, Nairobi CBD",
+    "addressLocality": "Nairobi",
+    "addressCountry": "KE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.2841,
+    "longitude": 36.8266
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Nairobi" },
+    { "@type": "Country", "name": "Kenya" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  }],
+  "sameAs": [
+    "https://wa.me/254768055555"
+  ]
+}
+
 </script>
 
 <script type="application/ld+json">
@@ -793,15 +143,17 @@
           Integrated Security in Kenya
         </p>
 
-        <h1>One protection plan for guards, cameras, alarms, and monitoring.</h1>
+        <h1>Security you can hold accountable.</h1>
 
         <p class="hero-copy">
-          Urban Eye helps Kenyan property owners connect trained personnel, CCTV, alarm systems, access control, monitoring, and response procedures into one practical security plan.
+          Urban Eye combines verified detection, licensed personnel and structured response for commercial and residential properties across Kenya. Every deployment is documented in writing, so you know what happened on your site and what was done about it.
         </p>
 
+        <p class="hero-subline">Smart Protection. Human Response.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/contact/?service=risk-review">Request a site assessment</a>
-          <a class="btn btn-outline-white" href="#process">See how it works &darr;</a>
+          <a onclick="return openServiceDrawer('homepage-private','General Security Assessment','Design Your Protection Plan','Share a few details and Urban Eye will advise on the right next step for your home or estate.')" class="btn btn-primary" href="/contact/?service=risk-review">Design Your Protection Plan</a>
+          <a class="btn btn-outline-white" href="/corporate-risk-audit/">Book a Corporate Risk Audit</a>
         </div>
 
       </div>
@@ -820,43 +172,9 @@
         height="590"
         fetchpriority="high"
         decoding="async"
-        alt="Urban Eye Security guards at a Nairobi property gate"
-        onerror="this.onerror=null;this.src='/urban-eye-assets/guard3.webp'">
+        alt="Urban Eye Security guards at a Nairobi property gate">
     </div>
 
-  </section>
-
-  <section class="dark-section">
-    <div class="container">
-      <div class="section-head reveal-up">
-        <div>
-          <p class="section-label">The Problem</p>
-          <h2>Stop managing security piece by piece.</h2>
-        </div>
-
-        <p class="section-intro">We assess the risk first, then recommend the right security framework.</p>
-      </div>
-
-      <div class="problem-matrix reveal-stagger">
-        <div class="problem-item">
-          <span>01</span>
-          <h3>You do not know what triggered the alarm</h3>
-          <p>Most systems only alert you. They do not clearly show what happened or what action should follow.</p>
-        </div>
-
-        <div class="problem-item">
-          <span>02</span>
-          <h3>Your guard and technology are not connected</h3>
-          <p>CCTV, alarms, access control, and guarding should work together as one protection system.</p>
-        </div>
-
-        <div class="problem-item">
-          <span>03</span>
-          <h3>You only react after something goes wrong</h3>
-          <p>Good security should reduce risk before incidents happen, not only respond afterwards.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <section id="services" class="sector-rows-section who-serve-section">
@@ -880,7 +198,7 @@
           </button>
           <div class="who-serve-panel-body" id="who-serve-home">
             <div class="who-serve-media">
-              <img src="urban-eye-assets/House.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Secure residential property protected by Urban Eye security planning">
+              <img src="/urban-eye-assets/House.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Secure residential property protected by Urban Eye security planning">
             </div>
             <div class="who-serve-copy">
               <h3>Layered protection for homes, apartments, and gated estates.</h3>
@@ -903,11 +221,11 @@
           </button>
           <div class="who-serve-panel-body" id="who-serve-retail" hidden>
             <div class="who-serve-media">
-              <img src="urban-eye-assets/mall%20shop.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Retail storefront security planning for shops and mall units">
+              <img src="/urban-eye-assets/mall%20shop.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Retail storefront security planning for shops and mall units">
             </div>
             <div class="who-serve-copy">
-              <h3>Protect your stock, staff, and after-hours frontage.</h3>
-              <p>Urban Eye helps retail operators reduce break-in exposure, stock loss, and staff-risk events using glass-break detection, restricted stockroom access, panic workflows, and monitoring-ready CCTV.</p>
+              <h3>Protection built around your stock and your staff.</h3>
+              <p>Photo-verified intrusion detection, logged stockroom access, discreet duress procedures, and monitored response coordination, supported by a documented record of all after-hours events.</p>
               <ul class="who-serve-features">
                 <li>Glass-break sensors</li>
                 <li>Panic support</li>
@@ -926,7 +244,7 @@
           </button>
           <div class="who-serve-panel-body" id="who-serve-office" hidden>
             <div class="who-serve-media">
-              <img src="urban-eye-assets/Lobby%20turnstile.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Office lobby turnstiles for controlled commercial access">
+              <img src="/urban-eye-assets/Lobby%20turnstile.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Office lobby turnstiles for controlled commercial access">
             </div>
             <div class="who-serve-copy">
               <h3>Control access, protect assets, and reduce operational risk.</h3>
@@ -949,7 +267,7 @@
           </button>
           <div class="who-serve-panel-body" id="who-serve-warehouse" hidden>
             <div class="who-serve-media">
-              <img src="urban-eye-assets/Warehouse%20aisle.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Warehouse aisle and inventory area for logistics security planning">
+              <img src="/urban-eye-assets/Warehouse%20aisle.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Warehouse aisle and inventory area for logistics security planning">
             </div>
             <div class="who-serve-copy">
               <h3>Secure inventory, loading zones, and restricted areas.</h3>
@@ -972,7 +290,7 @@
           </button>
           <div class="who-serve-panel-body" id="who-serve-construction" hidden>
             <div class="who-serve-media">
-              <img src="urban-eye-assets/Construction%20Site%20Security%20at%20Night.png" width="1024" height="572" loading="lazy" decoding="async" alt="Construction site security monitoring at night">
+              <img src="/urban-eye-assets/Construction%20Site%20Security%20at%20Night.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Construction site security monitoring at night">
             </div>
             <div class="who-serve-copy">
               <h3>Temporary protection for active and changing sites.</h3>
@@ -995,7 +313,7 @@
           </button>
           <div class="who-serve-panel-body" id="who-serve-airbnb" hidden>
             <div class="who-serve-media">
-              <img src="urban-eye-assets/Smart%20door%20lock%20apartment.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Smart apartment door lock for guest-friendly short-stay security">
+              <img src="/urban-eye-assets/Smart%20door%20lock%20apartment.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Smart apartment door lock for guest-friendly short-stay security">
             </div>
             <div class="who-serve-copy">
               <h3>Guest-friendly security for short-stay rentals.</h3>
@@ -1014,6 +332,7 @@
     </div>
   </section>
 
+
   <section class="client-proof-section" aria-labelledby="client-proof-title">
     <div class="container">
       <div class="section-head reveal-up">
@@ -1028,22 +347,22 @@
 
       <div class="client-logo-grid reveal-up" aria-label="Companies Urban Eye has supported">
         <div class="client-logo-card logo-cleargate">
-          <img src="urban-eye-assets/client-logos/cleargate-logo.png" alt="Cleargate Seemless Solutions logo" loading="lazy" decoding="async">
+          <img src="/urban-eye-assets/client-logos/cleargate-logo.png" alt="Cleargate Seemless Solutions logo" loading="lazy" decoding="async">
         </div>
         <div class="client-logo-card logo-torobo">
-          <img src="urban-eye-assets/client-logos/torobo-logo.jpg" alt="Torobo Limited logo" loading="lazy" decoding="async">
+          <img src="/urban-eye-assets/client-logos/torobo-logo.jpg" alt="Torobo Limited logo" loading="lazy" decoding="async">
         </div>
         <div class="client-logo-card logo-reliance">
-          <img src="urban-eye-assets/client-logos/reliance-city-logo.jpg" alt="Reliance City Housing Company Ltd logo" loading="lazy" decoding="async">
+          <img src="/urban-eye-assets/client-logos/reliance-city-logo.jpg" alt="Reliance City Housing Company Ltd logo" loading="lazy" decoding="async">
         </div>
         <div class="client-logo-card logo-transworld">
-          <img src="urban-eye-assets/client-logos/transworld-logo.jpg" alt="Transworld Wholesalers Limited logo" loading="lazy" decoding="async">
+          <img src="/urban-eye-assets/client-logos/transworld-logo.jpg" alt="Transworld Wholesalers Limited logo" loading="lazy" decoding="async">
         </div>
         <div class="client-logo-card logo-bureau">
-          <img src="urban-eye-assets/client-logos/bureau-de-change-logo.jpg" alt="Bureau De Change Trade logo" loading="lazy" decoding="async">
+          <img src="/urban-eye-assets/client-logos/bureau-de-change-logo.jpg" alt="Bureau De Change Trade logo" loading="lazy" decoding="async">
         </div>
         <div class="client-logo-card logo-hawai">
-          <img src="urban-eye-assets/client-logos/hawai-ventures-logo.png" alt="Hawai Ventures logo" loading="lazy" decoding="async">
+          <img src="/urban-eye-assets/client-logos/hawai-ventures-logo.webp" alt="Hawai Ventures logo" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1052,7 +371,7 @@
   <section class="commitment-section">
     <div class="container commitment-inner">
       <div class="commitment-copy reveal-up">
-        <p class="section-label">Our Commitment to Service</p>
+        <p class="section-label">Our Service Standard</p>
 
         <blockquote>
           We built Urban Eye to give property owners in Kenya a security partner they can rely on. One team that connects smart technology, trained personnel, and disciplined response.
@@ -1092,10 +411,6 @@
 
           <p>
             Monitoring connects alarms, CCTV, access events, and escalation procedures into one response workflow. Urban Eye helps verify threats, filter false alarms, and coordinate the right action when an incident occurs.
-          </p>
-
-          <p class="sector-integrations">
-            False-alarm filtering &bull; Visual verification &bull; Escalation workflows &bull; Response coordination
           </p>
 
           <a class="btn btn-primary" href="/professional-monitoring/">Explore PRO monitoring</a>
@@ -1160,70 +475,18 @@
           <span>05</span>
           <div>
             <h3>Ongoing Support & Monitoring</h3>
-            <p>We do not just install and leave. We maintain system health and can support professional monitoring for faster response.</p>
+            <p>We maintain system health and provide ongoing monitoring support after deployment.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="packages-preview" class="light-section packages-preview-section">
-    <div class="container">
-      <div class="section-head reveal-up">
-        <div>
-          <p class="section-label">Security Frameworks</p>
-          <h2>Protection frameworks organised around your property type.</h2>
-        </div>
-
-        <p class="section-intro">
-          Choose the type of property you need to secure. Urban Eye will recommend the appropriate starting framework after a site assessment.
-        </p>
-      </div>
-
-      <div class="framework-list reveal-up">
-        <a class="framework-row" href="/security-packages/#residential-frameworks">
-          <div class="framework-content">
-            <span class="framework-label">Residential</span>
-            <h3>Home &amp; Estate Protection</h3>
-            <p>Apartments, standalone homes, family residences, and residential estates.</p>
-          </div>
-          <div class="framework-link">View Residential Options <span aria-hidden="true">+</span></div>
-        </a>
-
-        <a class="framework-row" href="/security-packages/#commercial">
-          <div class="framework-content">
-            <span class="framework-label">Commercial</span>
-            <h3>Retail, Office &amp; Logistics Protection</h3>
-            <p>Shops, pharmacies, offices, clinics, warehouses, and logistics operations.</p>
-          </div>
-          <div class="framework-link">View Commercial Options <span aria-hidden="true">+</span></div>
-        </a>
-
-        <a class="framework-row" href="/security-packages/#construction">
-          <div class="framework-content">
-            <span class="framework-label">Project Sites</span>
-            <h3>Construction Site Protection</h3>
-            <p>Temporary sites requiring flexible perimeter protection and monitoring support.</p>
-          </div>
-          <div class="framework-link">View Construction Options <span aria-hidden="true">+</span></div>
-        </a>
-
-        <a class="framework-row" href="/security-packages/#commercial-fire">
-          <div class="framework-content">
-            <span class="framework-label">Life Safety</span>
-            <h3>Commercial Fire Safety</h3>
-            <p>Commercial facilities requiring fire detection, alerting, and response planning.</p>
-          </div>
-          <div class="framework-link">View Fire Safety Options <span aria-hidden="true">+</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
 
   <section id="risk-review">
     <div class="container two-col">
       <div class="reveal-slide">
-        <p class="section-label">Contact CTA</p>
+        <p class="section-label">Security Risk Review</p>
         <h2>Not sure what your property needs?</h2>
 
         <p class="section-intro">
@@ -1232,74 +495,16 @@
       </div>
 
       <div class="reveal-up">
-        <form class="form-card" action="https://formspree.io/f/xkoegypv" method="POST">
-          <input type="hidden" name="_subject" value="New Urban Eye Website Lead">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="service_interest" value="homepage-risk-review"/>
-
+        <div class="form-card">
           <h3 style="margin-top:0;color:var(--deep-navy)">Request a security recommendation</h3>
 
           <p style="color:var(--muted);line-height:1.65">
             Share a few details and Urban Eye will advise on the right next step. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.
           </p>
 
-          <div class="form-grid">
-            <div>
-              <label for="lead-name">Name</label>
-              <input id="lead-name" name="name" autocomplete="name" placeholder="Your name" required>
-            </div>
-
-            <div>
-              <label for="lead-phone">Phone / WhatsApp</label>
-              <input id="lead-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+254..." required>
-            </div>
-
-            <div class="full">
-              <label for="property-or-service">Property or service need</label>
-              <select id="property-or-service" name="property_or_service" required>
-                <option value="">Select one</option>
-                <option>Home / Residential</option>
-                <option>Apartment / Estate</option>
-                <option>Office</option>
-                <option>Retail Shop</option>
-                <option>Warehouse</option>
-                <option>Airbnb / Short Stay</option>
-                <option>Construction Site</option>
-              </select>
-            </div>
-
-            <div class="full">
-              <label for="property-location">Property Location</label>
-              <input id="property-location" name="property_location" autocomplete="address-level2" placeholder="Example: Westlands, Karen, Kilimani">
-            </div>
-
-            <div class="full">
-              <label for="preferred-timeline">Preferred Timeline</label>
-              <select id="preferred-timeline" name="preferred_timeline">
-                <option value="">Select timeline</option>
-                <option>Urgent: within 7 days</option>
-                <option>Soon: within 2&ndash;4 weeks</option>
-                <option>Planning: next 1&ndash;3 months</option>
-                <option>Researching options</option>
-              </select>
-            </div>
-
-            <div class="full">
-              <label for="existing-security-system">Existing Security System</label>
-              <input id="existing-security-system" name="existing_security_system" placeholder="Example: CCTV, guards, alarms, access control, none">
-            </div>
-
-            <div class="full">
-              <label for="main-concern">Main Concern</label>
-              <textarea id="main-concern" name="main_concern" placeholder="Tell us what you want to protect or improve"></textarea>
-            </div>
-
-            <div class="full">
-              <button class="btn btn-primary btn-block" type="submit">Start my security risk review</button>
-              <a class="form-whatsapp-link" href="https://wa.me/254768055555">Or chat with us instantly on WhatsApp →</a>
-            </div>
-          </div>
-        </form>
+          <button type="button" class="btn btn-primary btn-block" data-drawer="1" data-drawer-source="homepage-risk-review" data-drawer-service="General Security Assessment" data-drawer-title="Request a Security Recommendation" data-drawer-intro="Share a few details and Urban Eye will advise on the right next step. Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.">Start my security risk review</button>
+          <a class="form-whatsapp-link" href="https://wa.me/254768055555">Or chat with us instantly on WhatsApp →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1345,7 +550,8 @@
         </div>
 
         <div class="system-bridge-actions">
-          <a class="btn btn-primary" href="/contact/?service=risk-review">Request a site assessment</a>
+          <a onclick="return openServiceDrawer('homepage-private','General Security Assessment','Design Your Protection Plan','Share a few details and Urban Eye will advise on the right next step for your home or estate.')" class="btn btn-primary" href="/contact/?service=risk-review">Design Your Protection Plan</a>
+          <a class="btn btn-outline" href="/corporate-risk-audit/">Book a Corporate Risk Audit</a>
           <a class="cta-whatsapp-link" href="https://wa.me/254768055555">Or chat with us instantly on WhatsApp →</a>
         </div>
       </div>
@@ -1354,46 +560,45 @@
 </main>
 <div id="site-footer"></div>
 <script>
-  (function () {
-    var accordion = document.querySelector('[data-who-serve-accordion]');
-    if (!accordion) return;
+(function(){
+  var accordion = document.querySelector('[data-who-serve-accordion]');
+  if(!accordion) return;
 
-    var panels = Array.prototype.slice.call(accordion.querySelectorAll('.who-serve-panel'));
-    var desktopQuery = window.matchMedia('(min-width: 901px)');
+  var panels = Array.prototype.slice.call(accordion.querySelectorAll('.who-serve-panel'));
+  var desktopQuery = window.matchMedia('(min-width: 901px)');
 
-    function setActive(panel) {
-      panels.forEach(function (item) {
-        var isActive = item === panel;
-        var button = item.querySelector('.who-serve-trigger');
-        var body = item.querySelector('.who-serve-panel-body');
-
-        item.classList.toggle('is-active', isActive);
-
-        if (button) {
-          button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-        }
-
-        if (body) {
-          body.hidden = !isActive;
-        }
-      });
-    }
-
-    panels.forEach(function (panel) {
+  function activate(targetPanel){
+    panels.forEach(function(panel){
+      var isTarget = panel === targetPanel;
+      panel.classList.toggle('is-active', isTarget);
       var button = panel.querySelector('.who-serve-trigger');
-      if (!button) return;
-
-      button.addEventListener('click', function () {
-        setActive(panel);
-      });
-
-      panel.addEventListener('mouseenter', function () {
-        if (desktopQuery.matches) {
-          setActive(panel);
+      var body = panel.querySelector('.who-serve-panel-body');
+      if(button) button.setAttribute('aria-expanded', isTarget ? 'true' : 'false');
+      if(body){
+        if(isTarget){
+          body.removeAttribute('hidden');
+        }else{
+          body.setAttribute('hidden', '');
         }
-      });
+      }
     });
-  }());
-</script><script src="/js/includes.js"></script>
+  }
+
+  panels.forEach(function(panel){
+    var button = panel.querySelector('.who-serve-trigger');
+    if(!button) return;
+
+    button.addEventListener('click', function(){
+      activate(panel);
+    });
+
+    panel.addEventListener('mouseenter', function(){
+      if(desktopQuery.matches) activate(panel);
+    });
+  });
+})();
+</script>
+<script src="/js/home.js" defer></script>
+<script src="/js/includes.js" defer></script>
 </body>
 </html>
