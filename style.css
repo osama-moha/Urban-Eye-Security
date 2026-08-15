@@ -391,7 +391,6 @@ body.menu-open .brand-wordmark-accent{
   visibility:hidden;
   transform:translateY(8px);
   transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
-  transition-delay: 0s, 0s, 0.15s;
   z-index:180;
 }
 
@@ -4992,7 +4991,6 @@ a.nav-serve-monitoring:hover strong{
     visibility:hidden;
     transform:translateY(-8px);
     transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
-  transition-delay: 0s, 0s, 0.15s;
     z-index:90;
   }
 
@@ -5178,6 +5176,7 @@ a.nav-serve-monitoring:hover strong{
   .desktop-nav{
     display:none;
   }
+}
 
 /* =========================================================
    MOBILE NAVBAR ONLY
@@ -8247,9 +8246,3 @@ h6{
   }
 }
 
-
-
-/* Tabular figures for indices and counters */
-.who-serve-index, .step-indicator-count, .pricing-tier-price, .stat-value {
-  font-variant-numeric: tabular-nums;
-}
