@@ -38,30 +38,51 @@ async function loadFooter(){
   }
 }
 
-// Cookie consent notice. Google tags load with consent defaulted to
-// "denied" on every page (see the gtag snippet in each page head).
-// This banner records the visitor's choice and updates Consent Mode.
+// Floating Brand Cookie Toast
 function initCookieNotice(){
   let stored = null;
-  try{ stored = localStorage.getItem("uec_cookie_consent"); }catch(e){}
-  if(stored === "granted" || stored === "denied") return;
+  try {
+    stored = localStorage.getItem("ue_cookie_consent") || localStorage.getItem("uec_cookie_consent");
+  } catch(e){}
 
-  const notice = document.createElement("div");
-  notice.className = "cookie-notice";
-  notice.setAttribute("role", "region");
-  notice.setAttribute("aria-label", "Cookie consent");
-  notice.innerHTML =
-    '<p class="cookie-notice-text">We use cookies for analytics and advertising measurement. ' +
-    'See our <a href="/privacy-policy/">Privacy Policy</a> for details.</p>' +
-    '<div class="cookie-notice-actions">' +
-      '<button type="button" class="btn btn-primary cookie-notice-accept">Accept</button>' +
-      '<button type="button" class="btn cookie-notice-decline">Decline</button>' +
-    '</div>';
+  let banner = document.getElementById("cookie-banner");
 
-  function resolveConsent(choice){
-    try{ localStorage.setItem("uec_cookie_consent", choice); }catch(e){}
+  if(stored){
+    if(banner){
+      banner.classList.add("is-hidden");
+      banner.style.display = "none";
+    }
+    return;
+  }
+
+  if(!banner){
+    banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.id = "cookie-banner";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Cookie consent");
+    banner.innerHTML =
+      '<p class="cookie-text">' +
+        'We use cookies for analytics and site optimization. Read our <a href="/privacy-policy/">Privacy Policy</a>.' +
+      '</p>' +
+      '<div class="cookie-actions">' +
+        '<button type="button" class="cookie-btn-accept" id="cookie-accept-btn">Accept</button>' +
+        '<button type="button" class="cookie-btn-decline" id="cookie-decline-btn">Decline</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+  }
+
+  const acceptBtn = document.getElementById("cookie-accept-btn") || banner.querySelector(".cookie-btn-accept");
+  const declineBtn = document.getElementById("cookie-decline-btn") || banner.querySelector(".cookie-btn-decline");
+
+  const dismissBanner = (choice) => {
+    try {
+      localStorage.setItem("ue_cookie_consent", choice);
+      localStorage.setItem("uec_cookie_consent", choice === "accepted" ? "granted" : "denied");
+    } catch(e){}
+
     if(typeof gtag === "function"){
-      const state = choice === "granted" ? "granted" : "denied";
+      const state = choice === "accepted" ? "granted" : "denied";
       gtag("consent", "update", {
         ad_storage: state,
         ad_user_data: state,
@@ -69,13 +90,15 @@ function initCookieNotice(){
         analytics_storage: state
       });
     }
-    notice.remove();
-  }
 
-  notice.querySelector(".cookie-notice-accept").addEventListener("click", ()=> resolveConsent("granted"));
-  notice.querySelector(".cookie-notice-decline").addEventListener("click", ()=> resolveConsent("denied"));
+    banner.classList.add("is-hidden");
+    setTimeout(() => {
+      banner.style.display = "none";
+    }, 300);
+  };
 
-  document.body.appendChild(notice);
+  if (acceptBtn) acceptBtn.addEventListener("click", () => dismissBanner("accepted"));
+  if (declineBtn) declineBtn.addEventListener("click", () => dismissBanner("declined"));
 }
 
 let drawerLastFocus = null;
@@ -780,16 +803,24 @@ function initHeaderScroll(){
   const header = document.querySelector(".topbar");
   if(!header) return;
 
+  let ticking = false;
+
   function onScroll(){
     if(window.scrollY > 40){
       header.classList.add("is-scrolled");
     }else{
       header.classList.remove("is-scrolled");
     }
+    ticking = false;
   }
 
   onScroll();
-  window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("scroll", ()=>{
+    if(!ticking){
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, {passive:true});
 }
 
 function initSmoothAnchors(){
@@ -878,15 +909,28 @@ function initPageProgress(){
   const bar = document.querySelector(".page-progress-bar");
   if(!bar) return;
 
+  let ticking = false;
+
   function update(){
     const max = document.documentElement.scrollHeight - window.innerHeight;
     const progress = max > 0 ? (window.scrollY / max) * 100 : 0;
     bar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    ticking = false;
   }
 
   update();
-  window.addEventListener("scroll", update, {passive:true});
-  window.addEventListener("resize", update);
+  window.addEventListener("scroll", ()=>{
+    if(!ticking){
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, {passive:true});
+  window.addEventListener("resize", ()=>{
+    if(!ticking){
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  });
 }
 
 function preselectInterestFromUrl(){
@@ -929,6 +973,32 @@ function initControlLines(){
   }
 }
 
+function initTaglineReveal(){
+  const container = document.querySelector("#tagline-reveal, [data-tagline-reveal]");
+  if(!container) return;
+
+  const words = container.querySelectorAll("span");
+  if(!words.length) return;
+
+  if("IntersectionObserver" in window){
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          words.forEach((word, idx)=>{
+            setTimeout(()=>{
+              word.classList.add("is-active");
+            }, idx * 60);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.25});
+    observer.observe(container);
+  }else{
+    words.forEach((w)=>w.classList.add("is-active"));
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async ()=>{
   await loadNavbar();
   await loadFooter();
@@ -938,6 +1008,7 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   initPageReveal();
   initScrollReveal();
   initHeroParallax();
+  initTaglineReveal();
   initPageProgress();
   initControlLines();
   preselectInterestFromUrl();
