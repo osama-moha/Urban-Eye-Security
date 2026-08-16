@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap"/>
 
-<link rel="stylesheet" href="/style.css?v=20260816f"/>
+<link rel="stylesheet" href="/style.css?v=20260816g"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
 </script>
@@ -104,6 +104,28 @@
 
     .office-hero .section-label{
       color:rgba(255,255,255,.72);
+    }
+
+    .office-hero-inner{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .office-hero-visual img{
+      width:100%;
+      height:auto;
+      border-radius:14px;
+      object-fit:cover;
+      box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 900px){
+      .office-hero-inner{
+        grid-template-columns:1fr;
+        gap:32px;
+      }
     }
 
     .office-split{
@@ -443,6 +465,17 @@
             <a class="cta-whatsapp-link" href="https://wa.me/254768055555" style="align-self:center;margin-left:12px;color:#fff;">Or chat on WhatsApp &rarr;</a>
           </div>
         </div>
+
+        <div class="office-hero-visual reveal-up reveal-delay-1">
+          <img
+            src="/urban-eye-assets/nairobi-commercial-tower.jpg"
+            alt="Modern commercial office tower and corporate business park in Nairobi"
+            width="800"
+            height="600"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
       </div>
     </section>
 
@@ -623,6 +656,6 @@
 
   <div id="site-footer"></div>
 
-  <script src="/js/includes.js?v=20260816f" defer></script>
+  <script src="/js/includes.js?v=20260816g" defer></script>
 </body>
 </html>
