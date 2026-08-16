@@ -23,7 +23,7 @@
           <li><a href="/electric-fencing/">Electric Fencing & Perimeter Security</a></li>
           <li><a href="/commercial-fire-alarm-systems/">Fire Alarm Systems</a></li>
           <li><a href="/professional-monitoring/">PRO Monitoring</a></li>
-          <li><a href="/risk-review/">Site Security Review</a></li>
+          <li><a onclick="return openServiceDrawer('footer','Technical Site Survey','Request a Technical Site Survey','Schedule an on-site engineering walkthrough and Bill of Quantities scoping.')" href="/contact/?service=site-survey">Technical Site Survey</a></li>
           <li><a href="/corporate-risk-audit/">Corporate Risk Audit</a></li>
         </ul>
       </div>
@@ -44,13 +44,10 @@
       <div>
         <h4>Quick Action</h4>
         <ul>
-          <li><a onclick="return openServiceDrawer('footer','General Security Assessment','Request a Site Assessment','Share a few details and Urban Eye will advise on the right next step for your property.')" href="/contact/?service=risk-review">Request a site assessment</a></li>
+          <li><a onclick="return openServiceDrawer('footer','Technical Site Survey','Request a Technical Site Survey','Schedule an on-site engineering walkthrough and Bill of Quantities scoping.')" href="/contact/?service=site-survey">Request a site survey</a></li>
           <li><a href="/partners/">Partner Programs</a></li>
           <li><a href="/careers/">Careers</a></li>
           <li><a href="/insights/">Security Insights</a></li>
-          <li><a href="/programs/">Programs</a></li>
-          <li><a href="/professional-monitoring/">Monitoring & Response</a></li>
-          <li><a href="https://wa.me/254768055555">Chat on WhatsApp</a></li>
         </ul>
       </div>
     </div>
@@ -62,56 +59,114 @@
   </div>
 </footer>
 
-<!-- Conversational Engine Styles Overrides -->
+<!-- Conversational Lead Generation System -->
 <style>
   .drawer-backdrop {
-    z-index: 2000 !important;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 20, 48, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 99998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
+  .drawer-backdrop.open {
+    display: block;
+    opacity: 1;
+  }
+
   .drawer {
-    z-index: 2001 !important;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    background: #FFFFFF;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
   }
-  #drawer .form-step {
-    display: none !important;
+  .drawer.open {
+    right: 0;
   }
-  #drawer .form-step.active {
-    display: block !important;
+  body.drawer-open {
+    overflow: hidden;
   }
-  #drawer .back-step-btn {
-    display: inline-flex;
-    align-items: center;
+  .drawer-close {
+    cursor: pointer;
     background: none;
     border: none;
-    color: #5B6472;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 12px;
-    padding: 0;
+    font-size: 24px;
+    line-height: 1;
   }
-  #drawer .back-step-btn:hover {
-    color: #C4272E;
+  .drawer-title-heading {
+    margin: 0;
+    font-size: 20px;
   }
-  #drawer .option-button {
-    display: block;
-    width: 100%;
-    padding: 14px 18px;
-    margin-bottom: 10px;
-    background: #fff;
+  .form-group-kicker {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: #9CA3AF;
+    margin: 0 0 12px;
+  }
+  .selection-tile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .selection-tile-label {
     border: 1px solid #D9DEE8;
     border-radius: 6px;
-    color: #0D1430;
-    font-family: "Source Sans 3", Arial, sans-serif;
-    font-size: 14.5px;
-    font-weight: 600;
-    text-align: left;
+    padding: 12px;
     cursor: pointer;
-    transition: all 0.2s ease;
   }
-  #drawer .option-button:hover,
-  #drawer .option-button.selected {
-    border-color: #C4272E;
-    background: #FFF7F8;
-    color: #C4272E;
+  .selection-tile-input {
+    display: none;
+  }
+  .selection-tile-content .tile-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .selection-tile-content .tile-desc {
+    font-size: 11px;
+    color: #6B7280;
+  }
+  .form-field-label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .form-field-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D9DEE8;
+    border-radius: 6px;
+  }
+  .btn {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: #C4272E;
+    color: white;
+    border: none;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
   }
 </style>
 
@@ -132,64 +187,64 @@
   </div>
 
   <div class="drawer-header" style="padding: 14px 24px 10px;">
-    <h3 id="drawerTitle" class="drawer-title-heading">Request a Security Recommendation</h3>
+    <h3 id="drawerTitle" class="drawer-title-heading">Request a Technical Site Survey</h3>
     <button class="drawer-close" onclick="closeFormDrawer()" aria-label="Close" type="button" style="top:14px;">&times;</button>
   </div>
 
   <div class="drawer-body" style="padding: 0 24px 24px;">
-    <p class="drawer-intro" id="drawerIntro" style="font-size:14px; margin:0 0 24px; color:#5B6472; line-height:1.5;">Share a few details and Urban Eye will advise on the right next step.</p>
+    <p class="drawer-intro" id="drawerIntro" style="font-size:14px; margin:0 0 24px; color:#5B6472; line-height:1.5;">Schedule an on-site engineering walkthrough, perimeter assessment, and Bill of Quantities (BoQ) scoping.</p>
 
     <form id="conversational-drawer-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleDrawerSubmit(event)">
-      <input type="hidden" name="_subject" value="New Conversational Protection Assessment Request">
+      <input type="hidden" name="_subject" value="Technical Site Survey Scoping Request">
       <input type="hidden" name="page_source" id="drawerPageSource" value="">
       <input type="hidden" name="service_interest" id="drawerServiceInterest" value="">
 
       <!-- Step 1: Site Details -->
       <div class="form-step active" data-step="1">
         <h4 class="form-group-kicker">SITE DETAILS</h4>
-        <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What type of property are we securing?</p>
+        <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">Select your property or facility sector:</p>
         
         <div class="selection-tile-grid">
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Commercial Real Estate & Office" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Commercial Offices &amp; Parks</span>
+              <span class="tile-desc">HQ suites, corporate towers &amp; business parks</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Financial Services & High-Value Retail" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Financial &amp; High-Value Retail</span>
+              <span class="tile-desc">Forex bureaus, SACCOs, jewelry &amp; cash points</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Warehousing, Logistics & Industrial" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Warehousing &amp; Logistics</span>
+              <span class="tile-desc">Distribution centers, yards &amp; cargo bays</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Construction & Active Project Sites" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Construction &amp; Active Sites</span>
+              <span class="tile-desc">Development plots, materials &amp; plant assets</span>
+            </div>
+          </label>
+          <label class="selection-tile-label" data-tile-category="commercial">
+            <input type="radio" name="drawer_property_type_radio" value="Retail Chains & Commercial Outlets" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <div class="selection-tile-content">
+              <span class="tile-title">Retail Storefronts &amp; Outlets</span>
+              <span class="tile-desc">Supermarkets, franchises &amp; commercial stores</span>
+            </div>
+          </label>
           <label class="selection-tile-label" data-tile-category="private">
-            <input type="radio" name="drawer_property_type_radio" value="Private Residence" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 1)">
+            <input type="radio" name="drawer_property_type_radio" value="Residential Estates & Private Compounds" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 1)">
             <div class="selection-tile-content">
-              <span class="tile-title">Private Residence</span>
-              <span class="tile-desc">Homes, townhouses &amp; apartments</span>
-            </div>
-          </label>
-          <label class="selection-tile-label" data-tile-category="commercial">
-            <input type="radio" name="drawer_property_type_radio" value="Retail Shop" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
-            <div class="selection-tile-content">
-              <span class="tile-title">Retail Shop</span>
-              <span class="tile-desc">Storefronts, boutiques &amp; cash points</span>
-            </div>
-          </label>
-          <label class="selection-tile-label" data-tile-category="commercial">
-            <input type="radio" name="drawer_property_type_radio" value="Office / Corporate" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
-            <div class="selection-tile-content">
-              <span class="tile-title">Office / Corporate</span>
-              <span class="tile-desc">Commercial suites, clinics &amp; agencies</span>
-            </div>
-          </label>
-          <label class="selection-tile-label" data-tile-category="commercial">
-            <input type="radio" name="drawer_property_type_radio" value="Warehouse &amp; Logistics" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
-            <div class="selection-tile-content">
-              <span class="tile-title">Warehouse &amp; Logistics</span>
-              <span class="tile-desc">Stockrooms, loading bays &amp; yards</span>
-            </div>
-          </label>
-          <label class="selection-tile-label" data-tile-category="private">
-            <input type="radio" name="drawer_property_type_radio" value="Airbnb / Short-Stay" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 1)">
-            <div class="selection-tile-content">
-              <span class="tile-title">Airbnb / Short-Stay</span>
-              <span class="tile-desc">Vacation rentals &amp; guest suites</span>
-            </div>
-          </label>
-          <label class="selection-tile-label" data-tile-category="commercial">
-            <input type="radio" name="drawer_property_type_radio" value="Construction Site" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
-            <div class="selection-tile-content">
-              <span class="tile-title">Construction Site</span>
-              <span class="tile-desc">Active builds, materials &amp; perimeter</span>
+              <span class="tile-title">Residential Estates &amp; Compounds</span>
+              <span class="tile-desc">Gated communities, private residences &amp; villas</span>
             </div>
           </label>
         </div>

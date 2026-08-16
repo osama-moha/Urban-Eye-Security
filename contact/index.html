@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap"/>
 
-<link rel="stylesheet" href="/style.css?v=20260816c"/>
+<link rel="stylesheet" href="/style.css?v=20260816d"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
 </script>
@@ -218,55 +218,55 @@
         </div>
 
         <form id="contact-step-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleContactPageSubmit(event)">
-          <input type="hidden" name="_subject" value="Contact Page Conversational Protection Request">
+          <input type="hidden" name="_subject" value="Technical Site Survey Scoping Request (Contact Page)">
           <input type="hidden" name="page_source" value="contact_page">
 
           <!-- Step 1: Site Details -->
           <div class="form-step active" data-step="1">
             <h4 class="form-group-kicker">SITE DETAILS</h4>
-            <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What type of property are we securing?</p>
+            <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">Select your property or facility sector:</p>
 
             <div class="selection-tile-grid">
-              <label class="selection-tile-label">
-                <input type="radio" name="contact_property_type_radio" value="Private Residence" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 1)">
+              <label class="selection-tile-label" data-tile-category="commercial">
+                <input type="radio" name="contact_property_type_radio" value="Commercial Real Estate & Office" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
-                  <span class="tile-title">Private Residence</span>
-                  <span class="tile-desc">Homes, townhouses &amp; apartments</span>
+                  <span class="tile-title">Commercial Offices &amp; Parks</span>
+                  <span class="tile-desc">HQ suites, corporate towers &amp; business parks</span>
                 </div>
               </label>
-              <label class="selection-tile-label">
-                <input type="radio" name="contact_property_type_radio" value="Retail Shop" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+              <label class="selection-tile-label" data-tile-category="commercial">
+                <input type="radio" name="contact_property_type_radio" value="Financial Services & High-Value Retail" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
-                  <span class="tile-title">Retail Shop</span>
-                  <span class="tile-desc">Storefronts, boutiques &amp; cash points</span>
+                  <span class="tile-title">Financial &amp; High-Value Retail</span>
+                  <span class="tile-desc">Forex bureaus, SACCOs, jewelry &amp; cash points</span>
                 </div>
               </label>
-              <label class="selection-tile-label">
-                <input type="radio" name="contact_property_type_radio" value="Office / Corporate" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+              <label class="selection-tile-label" data-tile-category="commercial">
+                <input type="radio" name="contact_property_type_radio" value="Warehousing, Logistics & Industrial" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
-                  <span class="tile-title">Office / Corporate</span>
-                  <span class="tile-desc">Commercial suites, clinics &amp; agencies</span>
+                  <span class="tile-title">Warehousing &amp; Logistics</span>
+                  <span class="tile-desc">Distribution centers, yards &amp; cargo bays</span>
                 </div>
               </label>
-              <label class="selection-tile-label">
-                <input type="radio" name="contact_property_type_radio" value="Warehouse &amp; Logistics" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+              <label class="selection-tile-label" data-tile-category="commercial">
+                <input type="radio" name="contact_property_type_radio" value="Construction & Active Project Sites" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
-                  <span class="tile-title">Warehouse &amp; Logistics</span>
-                  <span class="tile-desc">Stockrooms, loading bays &amp; yards</span>
+                  <span class="tile-title">Construction &amp; Active Sites</span>
+                  <span class="tile-desc">Development plots, materials &amp; plant assets</span>
                 </div>
               </label>
-              <label class="selection-tile-label">
-                <input type="radio" name="contact_property_type_radio" value="Airbnb / Short-Stay" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 1)">
+              <label class="selection-tile-label" data-tile-category="commercial">
+                <input type="radio" name="contact_property_type_radio" value="Retail Chains & Commercial Outlets" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
-                  <span class="tile-title">Airbnb / Short-Stay</span>
-                  <span class="tile-desc">Vacation rentals &amp; guest suites</span>
+                  <span class="tile-title">Retail Storefronts &amp; Outlets</span>
+                  <span class="tile-desc">Supermarkets, franchises &amp; commercial stores</span>
                 </div>
               </label>
-              <label class="selection-tile-label">
-                <input type="radio" name="contact_property_type_radio" value="Construction Site" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
+              <label class="selection-tile-label" data-tile-category="private">
+                <input type="radio" name="contact_property_type_radio" value="Residential Estates & Private Compounds" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
-                  <span class="tile-title">Construction Site</span>
-                  <span class="tile-desc">Active builds, materials &amp; perimeter</span>
+                  <span class="tile-title">Residential Estates &amp; Compounds</span>
+                  <span class="tile-desc">Gated communities, private residences &amp; villas</span>
                 </div>
               </label>
             </div>
@@ -441,6 +441,6 @@ document.addEventListener("DOMContentLoaded", () => {
   goToFormStep(1, CONTACT_FORM_CONFIG);
 });
 </script>
-<script src="/js/includes.js" defer></script>
+<script src="/js/includes.js?v=20260816d" defer></script>
 </body>
 </html>

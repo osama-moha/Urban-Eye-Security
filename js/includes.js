@@ -143,8 +143,8 @@ function openServiceDrawer(pageSource, serviceInterest, title, intro){
 
   pageSourceField.value = pageSource || "";
   serviceInterestField.value = serviceInterest || "";
-  titleElement.textContent = title || "Request a Security Recommendation";
-  introElement.textContent = intro || "Answer three quick questions to isolate your real layout vulnerabilities.";
+  titleElement.textContent = title || "Request a Technical Site Survey";
+  introElement.textContent = intro || "Schedule an on-site engineering walkthrough, perimeter assessment, and Bill of Quantities (BoQ) scoping.";
 
   currentDrawerCategory = getDrawerVariantCategory(serviceInterest, pageSource);
 

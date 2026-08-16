@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/risk-review",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/risk-review/",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    }
+  ]
+}
