@@ -1656,23 +1656,56 @@ body.drawer-open{
 }
 
 details{
-  background:#fff;
+  background:#FFFFFF;
   border:1px solid var(--border);
   border-radius:12px;
-  padding:18px 20px;
+  padding:18px 22px;
   box-shadow:var(--shadow);
+  transition:border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+details[open]{
+  border-color:rgba(16, 26, 68, 0.25);
+  box-shadow:0 10px 24px rgba(16, 26, 68, 0.06);
 }
 
 summary{
   cursor:pointer;
   color:var(--deep-navy);
-  font-family:var(--font-primary); font-weight:700; font-size:16px;
+  font-family:var(--font-primary);
+  font-weight:700;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  list-style:none;
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary::after{
+  content:"";
+  width:8px;
+  height:8px;
+  border-right:2px solid var(--deep-navy);
+  border-bottom:2px solid var(--deep-navy);
+  transform:rotate(45deg);
+  transition:transform 0.25s ease;
+  flex-shrink:0;
+}
+
+details[open] summary::after{
+  transform:rotate(-135deg);
 }
 
 details p{
   color:var(--muted);
-  line-height:1.68;
-  margin:12px 0 0;
+  line-height:1.7;
+  margin:14px 0 0;
+  font-size:14.5px;
 }
 
 /* ===============================
@@ -2633,9 +2666,21 @@ footer a:hover{
   .grid-2,
   .grid-3,
   .grid-4,
-  .form-grid,
-  .footer-grid{
+  .form-grid{
     grid-template-columns:1fr;
+  }
+
+  /* 2-Column Mobile Footer */
+  .footer-grid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px 16px;
+  }
+
+  /* Company Bio & Contact spans full width */
+  .footer-grid > div:first-child{
+    grid-column:1 / -1;
+    padding-bottom:16px;
+    border-bottom:1px solid rgba(255, 255, 255, 0.08);
   }
 
   .section-head{
