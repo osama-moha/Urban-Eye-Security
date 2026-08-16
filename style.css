@@ -8313,3 +8313,12 @@ h6{
   }
 }
 
+/* Conversational Multi-Step Form Rules */
+.form-step {
+  display: none !important;
+}
+.form-step.active {
+  display: block !important;
+}
+
+

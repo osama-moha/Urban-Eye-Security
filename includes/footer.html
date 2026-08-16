@@ -101,6 +101,29 @@
   body.drawer-open {
     overflow: hidden;
   }
+
+  #drawer .form-step {
+    display: none !important;
+  }
+  #drawer .form-step.active {
+    display: block !important;
+  }
+  #drawer .back-step-btn {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #5B6472;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    padding: 0;
+  }
+  #drawer .back-step-btn:hover {
+    color: #C4272E;
+  }
+
   .drawer-close {
     cursor: pointer;
     background: none;
@@ -121,13 +144,28 @@
   .selection-tile-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
   }
   .selection-tile-label {
     border: 1px solid #D9DEE8;
     border-radius: 6px;
-    padding: 12px;
+    padding: 10px 12px;
     cursor: pointer;
+    background: #FFFFFF;
+    transition: all 0.2s ease;
+  }
+  .selection-tile-label:hover {
+    border-color: #C4272E;
+    background-color: #FFFDFD;
+  }
+  .selection-tile-label:has(.selection-tile-input:checked),
+  .selection-tile-label.selected {
+    border-color: #C4272E !important;
+    background-color: #FFF7F8 !important;
+  }
+  .selection-tile-label:has(.selection-tile-input:checked) .tile-title,
+  .selection-tile-label.selected .tile-title {
+    color: #C4272E !important;
   }
   .selection-tile-input {
     display: none;
