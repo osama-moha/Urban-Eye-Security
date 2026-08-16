@@ -85,9 +85,15 @@
     }
 
     .monitor-page h1{
-      max-width:880px;
-      font-size:clamp(2.6rem,4.6vw,4.6rem);
-      font-weight:800;
+      max-width:780px;
+      font-size:clamp(2rem, 3.2vw, 2.75rem);
+      font-weight:700;
+      line-height:1.15;
+      letter-spacing:-0.015em;
+      text-wrap:balance;
+      background: linear-gradient(180deg, #FFFFFF 0%, #9B9B9B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .monitor-page h2{
@@ -113,7 +119,8 @@
     }
 
     .monitor-hero{
-      min-height:575px;
+      padding:clamp(52px, 5.5vw, 76px) 0;
+      min-height:auto;
       display:flex;
       align-items:center;
       background:
@@ -122,7 +129,6 @@
       color:#fff;
     }
 
-    .monitor-hero h1,
     .monitor-hero p,
     .monitor-hero .monitor-label{
       color:#fff;
@@ -133,9 +139,11 @@
     }
 
     .monitor-hero-copy p{
-      max-width:820px;
+      max-width:680px;
       color:rgba(255,255,255,.86);
-      font-weight:520;
+      font-size:clamp(1rem, 1.15vw, 1.1rem);
+      line-height:1.68;
+      font-weight:500;
     }
 
     .monitor-actions{

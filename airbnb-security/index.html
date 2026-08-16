@@ -72,7 +72,7 @@
   }
 
   .airbnb-hero{
-    padding:96px 0 108px;
+    padding:clamp(52px, 5.5vw, 76px) 0;
   }
 
   .airbnb-hero-inner{
@@ -565,11 +565,15 @@
   }
 
   .airbnb-hero h1{
-    max-width:760px;
-    font-size:clamp(44px, 5.1vw, 72px);
-    line-height:1.02;
-    letter-spacing:0;
+    max-width:780px;
+    font-size:clamp(2rem, 3.2vw, 2.75rem);
+    line-height:1.15;
+    letter-spacing:-0.015em;
     font-weight:700;
+    text-wrap:balance;
+    background: linear-gradient(180deg, #FFFFFF 0%, #9B9B9B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .airbnb-hero .hero-lead{

@@ -1049,7 +1049,7 @@ h2{
 .page-hero{
   background:linear-gradient(135deg,#0D1430 0%,#17245A 62%,#081026 100%);
   color:#fff;
-  padding:74px 0;
+  padding:clamp(52px, 5.5vw, 76px) 0;
   position:relative;
   overflow:hidden;
 }
@@ -1060,20 +1060,24 @@ h2{
 }
 
 .page-hero h1{
-  font-size:clamp(38px,4.7vw,60px);
-  line-height:1.07;
-  max-width:850px;
-  margin-bottom:18px;
-  letter-spacing:0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #9B9B9B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:clamp(2rem, 3.2vw, 2.75rem);
+  line-height:1.15;
+  letter-spacing:-0.015em;
+  max-width:780px;
+  margin-bottom:16px;
   font-weight:700;
+  text-wrap:balance;
 }
 
 .page-hero p{
-  max-width:760px;
-  color:rgba(255,255,255,.78);
-  font-size:18px;
-  line-height:1.72;
-  font-weight:500;
+  max-width:680px;
+  color:rgba(255,255,255,.82);
+  font-size:clamp(1rem, 1.15vw, 1.1rem);
+  line-height:1.68;
+  font-weight:400;
 }
 
 /* ===============================
@@ -7006,10 +7010,10 @@ h6{
 .page-hero h1{
   font-family:var(--font-display);
   font-weight:700;
-  letter-spacing:-0.02em;
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  line-height: 1.1;
-  max-width: 900px;
+  letter-spacing:-0.015em;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  line-height: 1.15;
+  max-width: 780px;
   text-wrap:balance;
 }
 
