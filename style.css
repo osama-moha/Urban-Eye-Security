@@ -14,9 +14,24 @@
   --white: #ffffff;
   --shadow: 0 10px 30px rgba(17,24,39,.06);
   --shadow-soft: 0 10px 30px rgba(17,24,39,.06);
-  --shadow-strong: 0 18px 45px rgba(17,24,39,.10);
   --radius: 3px;
   --radius-pill: 999px;
+
+  /* Three-Surface Rhythm Palette */
+  --surface-base: #FFFFFF;
+  --surface-subtle: #F5F7FA;
+  --surface-dark: #0D1430;
+  --surface-navy-accent: #101A44;
+
+  /* Vertical Spacing & Rhythm Grid */
+  --space-section-y: clamp(56px, 6vw, 80px);
+  --space-heading-mb: clamp(28px, 3.5vw, 40px);
+  --space-card-padding: clamp(24px, 3vw, 36px);
+  --space-cta-padding: clamp(36px, 4.5vw, 54px);
+
+  /* Grid Gaps */
+  --gap-grid: 24px;
+  --gap-split: clamp(32px, 4vw, 48px);
 
   /* Snapped Tailwind Type Scale Tokens */
   --text-xs: 0.75rem;     /* 12px / 16px */
@@ -581,12 +596,13 @@ button:active,
 .btn-outline-white{
   background:transparent;
   color:#fff;
-  border:1px solid rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.35);
+  transition:all 0.2s ease;
 }
 
 .btn-outline-white:hover{
-  background:#111827;
-  border-color:#111827;
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.85);
   color:#fff;
 }
 
@@ -802,7 +818,7 @@ button:active,
 section,
 .light-section,
 .dark-section {
-  padding: 64px 0;
+  padding: var(--space-section-y) 0;
 }
 
 section[id]{
@@ -818,7 +834,7 @@ section[id]{
   grid-template-columns:.85fr 1fr;
   gap:24px;
   align-items:end;
-  margin-bottom:24px;
+  margin-bottom:var(--space-heading-mb);
 }
 
 .section-label{
@@ -8178,19 +8194,21 @@ h6{
 }
 
 /* ===============================
-   Bottom CTA Card Section (Rule A4 & B9)
+   Bottom CTA Card Section (Seamless Dark to Footer)
 ================================ */
 .bottom-cta-section {
-  padding: 64px 0;
-  background: #ffffff;
+  background: var(--surface-dark, #0D1430);
+  padding: var(--space-section-y) 0 0;
+  margin-bottom: 0;
 }
 
 .bottom-cta-card {
-  background: var(--color-navy, #0b1726);
+  background: var(--surface-navy-accent, #101A44);
   border-radius: 16px;
-  padding: 48px 40px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-cta-padding);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 45px rgba(11, 23, 38, 0.18);
+  margin-bottom: var(--space-section-y);
 }
 
 .bottom-cta-title {

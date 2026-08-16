@@ -653,19 +653,21 @@
   }
 
   /* ===============================
-     Bottom CTA Card Section (Rule A4 & B9)
+     Bottom CTA Card Section (Seamless Dark to Footer)
   ================================ */
   .bottom-cta-section {
-    padding: 64px 0;
-    background: #ffffff;
+    background: var(--surface-dark, #0D1430);
+    padding: var(--space-section-y, clamp(56px, 6vw, 80px)) 0 0;
+    margin-bottom: 0;
   }
 
   .bottom-cta-card {
-    background: var(--color-navy, #0b1726);
+    background: var(--surface-navy-accent, #101A44);
     border-radius: 16px;
-    padding: 48px 40px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-cta-padding, clamp(36px, 4.5vw, 54px));
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 45px rgba(11, 23, 38, 0.18);
+    margin-bottom: var(--space-section-y, clamp(56px, 6vw, 80px));
   }
 
   .bottom-cta-title {
