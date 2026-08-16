@@ -178,10 +178,6 @@
     object-position:center center;
   }
 
-  .who-serve-panel--airbnb .who-serve-media img{
-    object-position:center center;
-  }
-
   @media(max-width:900px){
     .who-serve-section{
       padding-bottom:64px;
