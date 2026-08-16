@@ -8321,4 +8321,40 @@ h6{
   display: block !important;
 }
 
+/* Sector Hero Visual Card Framing */
+.sector-hero-inner {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+}
+.sector-hero-visual {
+  width: 100%;
+  max-width: 460px;
+  justify-self: end;
+}
+.sector-hero-visual img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+@media (max-width: 900px) {
+  .sector-hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .sector-hero-visual {
+    max-width: 100%;
+    justify-self: start;
+  }
+  .sector-hero-visual img {
+    max-height: 380px;
+  }
+}
+
 
