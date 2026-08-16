@@ -1691,14 +1691,18 @@ details p{
   overflow:hidden;
 }
 
-.cta-band h2{
-  color:#fff;
+.cta-band h2,
+.cta-band h3,
+.dark-section h2,
+.dark-section h3 {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
-.cta-band p{
-  color:rgba(255,255,255,.75);
-  line-height:1.68;
-  margin:0;
+.cta-band p,
+.dark-section p {
+  color: rgba(255,255,255,.78) !important;
+  line-height: 1.68;
 }
 
 .cta-quiet-note{
@@ -8194,77 +8198,118 @@ h6{
 }
 
 /* ===============================
-   Bottom CTA Card Section (Seamless Dark to Footer)
+   Pre-Footer Full-Bleed Dark CTA (Option A)
 ================================ */
+.pre-footer-cta,
+.dark-section.pre-footer-cta,
 .bottom-cta-section {
-  background: var(--surface-dark, #0D1430);
-  padding: var(--space-section-y) 0 0;
-  margin-bottom: 0;
+  background: var(--surface-dark, #0D1430) !important;
+  color: #FFFFFF !important;
+  padding: clamp(64px, 7vw, 96px) 0 !important;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0 !important;
 }
 
-.bottom-cta-card {
-  background: var(--surface-navy-accent, #101A44);
-  border-radius: 16px;
-  padding: var(--space-cta-padding);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 45px rgba(11, 23, 38, 0.18);
-  margin-bottom: var(--space-section-y);
+.pre-footer-cta .container,
+.bottom-cta-section .container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
 }
 
-.bottom-cta-title {
-  color: #ffffff;
-  font-size: var(--text-3xl, 30px);
+.pre-footer-cta .section-label,
+.bottom-cta-section .section-label {
+  color: var(--red, #C51E24) !important;
+  margin-bottom: 12px;
+  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pre-footer-cta h2,
+.bottom-cta-section h2,
+.bottom-cta-title {
+  color: #FFFFFF !important;
+  font-size: clamp(2rem, 3.2vw, 2.75rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.015em !important;
+  margin: 0 0 16px 0 !important;
   text-wrap: balance;
+  -webkit-text-fill-color: #FFFFFF !important;
+  background: none !important;
 }
 
+.pre-footer-cta p,
+.bottom-cta-section p,
 .bottom-cta-description {
-  color: #e2e8f0;
-  font-size: var(--text-base, 16px);
-  line-height: 24px;
-  max-width: 600px;
-  margin-bottom: 28px;
-  text-wrap: pretty;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: clamp(1rem, 1.15vw, 1.125rem) !important;
+  line-height: 1.68 !important;
+  margin: 0 !important;
+  max-width: 620px;
 }
 
+.pre-footer-cta .cta-actions,
 .bottom-cta-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
 }
 
-.bottom-cta-actions .btn {
-  min-height: 52px;
-  padding: 0 28px;
-  font-size: 16px;
-  font-weight: 600;
+.pre-footer-cta .cta-buttons,
+.bottom-cta-actions .cta-button-group {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 14px !important;
+  align-items: center !important;
 }
 
+.pre-footer-cta .cta-quiet-note,
 .bottom-cta-direct {
-  color: #94a3b8;
-  font-size: var(--text-sm, 14px);
-  margin: 0;
+  font-size: 14px !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  margin: 0 !important;
 }
 
-.cta-inline-link {
-  color: #ffffff;
+.pre-footer-cta .cta-quiet-note a,
+.bottom-cta-direct a {
+  color: rgba(255, 255, 255, 0.88) !important;
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: color 200ms ease;
 }
 
-.cta-inline-link:hover {
-  color: #e2e8f0;
+.pre-footer-cta .cta-quiet-note a:hover,
+.bottom-cta-direct a:hover {
+  color: #FFFFFF !important;
 }
 
-@media (max-width: 768px) {
-  .bottom-cta-card {
-    padding: 36px 24px;
+/* Eliminate nested card wrappers inside pre-footer-cta */
+.pre-footer-cta .cta-band,
+.bottom-cta-section .bottom-cta-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  display: contents !important;
+}
+
+@media (max-width: 900px) {
+  .pre-footer-cta .container,
+  .bottom-cta-section .container {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
   }
+  .pre-footer-cta h2,
+  .bottom-cta-section h2,
   .bottom-cta-title {
-    font-size: clamp(22px, 6vw, 26px);
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
   }
 }
 
