@@ -798,6 +798,43 @@
       color: rgba(255, 255, 255, .74);
     }
 
+    .packages-page .monitoring-callout-card {
+      padding: 32px;
+      background: #fff;
+      border: 1px solid #D9DEE8;
+      border-radius: 8px;
+      box-shadow: 0 12px 32px rgba(11, 23, 38, 0.05);
+    }
+
+    .packages-page .monitoring-callout-card h3 {
+      margin: 0 0 14px;
+      color: #07122f;
+      font-size: clamp(24px, 2.4vw, 30px);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .packages-page .monitoring-callout-card p {
+      margin: 0 0 18px;
+      color: #5d6878;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .packages-page .monitoring-callout-card .package-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #cf2630;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .packages-page .monitoring-callout-card .package-link:hover {
+      text-decoration: underline;
+    }
+
     .packages-page .lead-form-grid {
       display: grid;
       grid-template-columns: .9fr 1fr;
@@ -1387,9 +1424,9 @@
     </section>
 
     <!-- Shared Monitoring Section -->
-    <section class="package-section package-section-dark" id="monitoring-response">
+    <section class="package-section package-section-light" id="monitoring-response">
       <div class="package-container">
-        <div class="section-split section-split-dark reveal-up">
+        <div class="section-split reveal-up">
           <div>
             <p class="eyebrow">Monitoring and Response</p>
             <h2>Hardware is only half the solution.</h2>
@@ -1400,14 +1437,14 @@
             </p>
           </div>
 
-          <div class="dark-callout-card">
+          <div class="monitoring-callout-card">
             <h3>Urban Eye PRO Monitoring</h3>
             <p>
               Connect fire alerts, intrusion alerts, CCTV visibility, access events,
               and emergency workflows into a clearer response path for your property.
             </p>
-            <a href="/professional-monitoring/" class="package-link-light">
-              Explore Monitoring and Response
+            <a href="/professional-monitoring/" class="package-link">
+              Explore Monitoring and Response &rarr;
             </a>
           </div>
         </div>
