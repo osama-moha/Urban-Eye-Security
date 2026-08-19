@@ -20,6 +20,7 @@
   /* Three-Surface Rhythm Palette */
   --surface-base: #FFFFFF;
   --surface-subtle: #F5F7FA;
+  --surface-paper: #F1EFEA;
   --surface-dark: #0D1430;
   --surface-navy-accent: #101A44;
 
@@ -859,6 +860,10 @@ h2{
 
 .light-section{
   background:var(--light);
+}
+
+.paper-section{
+  background:var(--surface-paper, #F1EFEA);
 }
 
 .dark-section{
@@ -4507,6 +4512,23 @@ a.nav-serve-monitoring:hover strong{
   color:rgba(255,255,255,.72);
   font-size:15.5px;
   line-height:1.65;
+}
+
+.about-credentials-section.light-section .about-credentials-list{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.about-credentials-section.light-section .about-credential-row{
+  border-bottom:1px solid var(--border);
+}
+
+.about-credentials-section.light-section .about-credential-row strong{
+  color:var(--deep-navy);
+}
+
+.about-credentials-section.light-section .about-credential-row span{
+  color:var(--muted);
 }
 
 .about-client-balance-section{

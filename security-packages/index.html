@@ -763,13 +763,14 @@
     .packages-page .construction-options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      border: 1px solid rgba(255, 255, 255, .18);
+      border: 1px solid #d6deea;
+      background: #fff;
     }
 
     .packages-page .construction-card {
       padding: 32px;
-      background: rgba(255, 255, 255, .04);
-      border-right: 1px solid rgba(255, 255, 255, .18);
+      background: #fff;
+      border-right: 1px solid #d6deea;
     }
 
     .packages-page .construction-card:last-child {
@@ -777,13 +778,14 @@
     }
 
     .packages-page .construction-card-featured {
-      background: rgba(207, 38, 48, .09);
+      background: rgba(207, 38, 48, .035);
     }
 
     .packages-page .section-note-dark {
       margin: 24px 0 0;
       font-size: 16px;
       line-height: 1.6;
+      color: #5d6878;
     }
 
     .packages-page .dark-callout-card {
@@ -1126,7 +1128,7 @@
     </div>
 
     <!-- Tab 2: Commercial Frameworks -->
-    <section class="package-section package-section-light" id="commercial" style="padding-top: 20px;">
+    <section class="package-section" id="commercial" style="padding-top: 20px;">
       <div class="package-container">
         <div class="section-split reveal-up">
           <div>
@@ -1194,7 +1196,7 @@
     </section>
 
     <!-- Tab 3: Warehouse & Logistics Frameworks -->
-    <section class="package-section package-section-light" id="logistics-framework" style="display: none; padding-top: 20px;">
+    <section class="package-section" id="logistics-framework" style="display: none; padding-top: 20px;">
       <div class="package-container">
         <div class="section-split reveal-up" style="margin-bottom: 24px;">
           <div>
@@ -1245,9 +1247,9 @@
     </section>
 
     <!-- Tab 4: Construction Site Protection -->
-    <section class="package-section package-section-dark" id="construction" style="display: none; padding-top: 20px;">
+    <section class="package-section" id="construction" style="display: none; padding-top: 20px;">
       <div class="package-container">
-        <div class="section-split section-split-dark reveal-up">
+        <div class="section-split reveal-up">
           <div>
             <p class="eyebrow">Construction Site Protection</p>
             <h2>Flexible protection for active sites.</h2>
@@ -1283,7 +1285,7 @@
               to manage long-term.
             </p>
 
-            <a onclick="return openServiceDrawer('security-packages','The Equipment Purchase','Request Equipment Purchase Scope','Share a few details and Urban Eye will scope the Equipment Purchase option for your construction site.')" href="/contact/?service=packages" class="btn btn-outline-white">Request Equipment Purchase Scope</a>
+            <a onclick="return openServiceDrawer('security-packages','The Equipment Purchase','Request Equipment Purchase Scope','Share a few details and Urban Eye will scope the Equipment Purchase option for your construction site.')" href="/contact/?service=packages" class="btn btn-outline" style="border-color:var(--border); color:var(--deep-navy);">Request Equipment Purchase Scope</a>
           </article>
 
           <article class="construction-card construction-card-featured">
@@ -1315,7 +1317,7 @@
           </article>
         </div>
 
-        <p class="section-note-dark reveal-up">
+        <p class="section-note-dark reveal-up" style="color:var(--muted);">
           PSRA guarding personnel for gate control, patrols, access checks, and site
           supervision are quoted separately after site review.
         </p>
@@ -1323,7 +1325,7 @@
     </section>
 
     <!-- Tab 5: Commercial Fire Safety -->
-    <section class="package-section package-section-light" id="commercial-fire" style="display: none; padding-top: 20px;">
+    <section class="package-section" id="commercial-fire" style="display: none; padding-top: 20px;">
       <div class="package-container">
         <div class="section-split reveal-up">
           <div>
