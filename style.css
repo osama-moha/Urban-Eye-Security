@@ -6023,72 +6023,43 @@ a.nav-serve-monitoring:hover strong{
 .who-serve-desktop-tabs{
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 24px;
   background: var(--light, #F5F7FA);
   padding: 6px;
   border: 1px solid var(--border, #D9DEE8);
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .who-serve-tab-btn{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  padding: 12px 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
   border: 0;
   border-radius: 6px;
   background: transparent;
-  color: var(--deep-navy, #0B1726);
+  color: var(--muted, #5B6472);
   font-family: var(--font-primary);
   font-size: 13.5px;
   font-weight: 600;
-  line-height: 1.25;
-  text-align: left;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
   cursor: pointer;
   transition: background var(--motion-fast, 0.16s) ease, color var(--motion-fast, 0.16s) ease, box-shadow var(--motion-fast, 0.16s) ease;
 }
 
-.who-serve-tab-btn .tab-index{
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--red, #C51E24);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.who-serve-tab-btn .tab-label{
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted, #5B6472);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
 .who-serve-tab-btn:hover{
   background: rgba(13, 20, 48, 0.06);
-}
-
-.who-serve-tab-btn:hover .tab-label{
   color: var(--deep-navy, #0B1726);
 }
 
 .who-serve-tab-btn.is-active{
   background: var(--deep-navy, #0D1430);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(13, 20, 48, 0.2);
-}
-
-.who-serve-tab-btn.is-active .tab-index{
-  color: var(--red, #C51E24);
-}
-
-.who-serve-tab-btn.is-active .tab-label{
   color: #ffffff;
   font-weight: 700;
+  box-shadow: 0 4px 14px rgba(13, 20, 48, 0.18);
 }
 
 /* Desktop Showcase Panel */
