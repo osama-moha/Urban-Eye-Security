@@ -798,6 +798,43 @@
       color: rgba(255, 255, 255, .74);
     }
 
+    .packages-page .monitoring-callout-card {
+      padding: 32px;
+      background: #fff;
+      border: 1px solid #D9DEE8;
+      border-radius: 8px;
+      box-shadow: 0 12px 32px rgba(11, 23, 38, 0.05);
+    }
+
+    .packages-page .monitoring-callout-card h3 {
+      margin: 0 0 14px;
+      color: #07122f;
+      font-size: clamp(24px, 2.4vw, 30px);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .packages-page .monitoring-callout-card p {
+      margin: 0 0 18px;
+      color: #5d6878;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .packages-page .monitoring-callout-card .package-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #cf2630;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .packages-page .monitoring-callout-card .package-link:hover {
+      text-decoration: underline;
+    }
+
     .packages-page .lead-form-grid {
       display: grid;
       grid-template-columns: .9fr 1fr;
@@ -1387,9 +1424,9 @@
     </section>
 
     <!-- Shared Monitoring Section -->
-    <section class="package-section package-section-dark" id="monitoring-response">
+    <section class="package-section package-section-light" id="monitoring-response">
       <div class="package-container">
-        <div class="section-split section-split-dark reveal-up">
+        <div class="section-split reveal-up">
           <div>
             <p class="eyebrow">Monitoring and Response</p>
             <h2>Hardware is only half the solution.</h2>
@@ -1400,125 +1437,43 @@
             </p>
           </div>
 
-          <div class="dark-callout-card">
+          <div class="monitoring-callout-card">
             <h3>Urban Eye PRO Monitoring</h3>
             <p>
               Connect fire alerts, intrusion alerts, CCTV visibility, access events,
               and emergency workflows into a clearer response path for your property.
             </p>
-            <a href="/professional-monitoring/" class="package-link-light">
-              Explore Monitoring and Response
+            <a href="/professional-monitoring/" class="package-link">
+              Explore Monitoring and Response &rarr;
             </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Lead Intake Form Section -->
-    <section class="package-section package-section-light" id="lead-form">
-      <div class="package-container">
-        <div class="lead-form-grid">
-          <div class="reveal-slide">
-            <p class="eyebrow">Custom Protection Plan</p>
-            <h2>Custom Security Framework Design.</h2>
-            <p>
-              Share your details and Urban Eye will recommend the right starting
-              framework after understanding your property type, risk level, and
-              response requirements.
-            </p>
-            <p>
-              Site reviews are scheduled based on property type, urgency, location, and available deployment capacity.
-            </p>
-
-            <div class="pricing-notice">
-              <strong>Important note:</strong>
-              <p>
-                Final hardware requirements, transmitter counts, monitoring
-                subscriptions, and guarding requirements are quoted based on site
-                risks and property layout following a physical site review. Prices
-                shown are starting estimates for standard configurations.
-              </p>
-            </div>
+    <!-- Pre-Footer CTA Section -->
+    <section class="pre-footer-cta" id="lead-form">
+      <div class="container">
+        <div>
+          <p class="section-label">Custom Protection Plan</p>
+          <h2>Need a custom security framework for your site?</h2>
+          <p>
+            Hardware requirements, sensor counts, and guarding procedures are tailored to your physical property layout. Request a site review to get an itemized bill of quantities.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <div class="cta-buttons">
+            <a onclick="return openServiceDrawer('security-packages','Security Packages','Request a Site Assessment','Share a few details and Urban Eye will follow up to schedule a physical hazard walkthrough and custom package estimate.')" 
+               class="btn btn-primary" href="/contact/?service=packages">
+              Request a Site Assessment
+            </a>
+            <a class="btn btn-outline-white" href="https://wa.me/254768055555">
+              Chat on WhatsApp &rarr;
+            </a>
           </div>
-
-          <form class="package-form reveal-up" action="https://formspree.io/f/xkoegypv" method="POST">
-            <input type="hidden" name="_subject" value="New Urban Eye Packages Lead">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="service_interest" value="Security Packages">
-
-            <h3>Request a site assessment</h3>
-
-            <div class="form-row">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your name" required>
-              </label>
-
-              <label>
-                Phone / WhatsApp
-                <input type="tel" name="phone" placeholder="+254..." required>
-              </label>
-            </div>
-
-          <label>
-            Property Type
-            <select name="property_type" required>
-              <option value="">Select property type</option>
-              <option>Residential home or apartment</option>
-              <option>Retail shop or pharmacy</option>
-              <option>Office or clinic</option>
-              <option>Warehouse or logistics site</option>
-              <option>Construction site</option>
-              <option>Commercial fire safety</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label>
-            Main Interest
-            <select name="main_interest" required>
-              <option value="">Select one</option>
-              <option>Smart alarm system</option>
-              <option>CCTV installation</option>
-              <option>Access control</option>
-              <option>Fire safety system</option>
-              <option>Monitoring and response</option>
-              <option>Full security framework</option>
-            </select>
-          </label>
-
-          <label>
-            Property Location
-            <input type="text" name="property_location" placeholder="Example: Westlands, Karen, Industrial Area">
-          </label>
-
-          <label>
-            Preferred Timeline
-            <select name="preferred_timeline">
-              <option value="">Select timeline</option>
-              <option>Urgent: within 7 days</option>
-              <option>Soon: within 2&ndash;4 weeks</option>
-              <option>Planning: next 1&ndash;3 months</option>
-              <option>Researching options</option>
-            </select>
-          </label>
-
-          <label>
-            Existing Security System
-            <input type="text" name="existing_security_system" placeholder="Example: CCTV, guards, alarms, access control, none">
-          </label>
-
-          <label>
-            Main Concern
-            <textarea name="main_concern" placeholder="Example: break-ins, staff access, fire safety, monitoring, internal shrinkage"></textarea>
-          </label>
-
-          <button type="submit" class="btn btn-primary btn-block">Request My Site Assessment</button>
-
-          <a href="https://wa.me/254768055555" class="whatsapp-link">
-            Or chat with us instantly on WhatsApp
-          </a>
-        </form>
+          <p class="cta-quiet-note">
+            Prefer direct dispatch? Call us 24/7 at <a href="tel:+254768055555">+254 768 055 555</a>
+          </p>
         </div>
       </div>
     </section>

@@ -187,17 +187,33 @@
         </p>
       </div>
 
+      <div class="who-serve-desktop-tabs" role="tablist" aria-label="Sector Solutions">
+        <button class="who-serve-tab-btn is-active" type="button" role="tab" aria-selected="true" aria-controls="who-serve-home" data-target="who-serve-panel--home">
+          Residential Estates
+        </button>
+        <button class="who-serve-tab-btn" type="button" role="tab" aria-selected="false" aria-controls="who-serve-retail" data-target="who-serve-panel--retail">
+          Financial &amp; Retail
+        </button>
+        <button class="who-serve-tab-btn" type="button" role="tab" aria-selected="false" aria-controls="who-serve-office" data-target="who-serve-panel--office">
+          Commercial Offices
+        </button>
+        <button class="who-serve-tab-btn" type="button" role="tab" aria-selected="false" aria-controls="who-serve-warehouse" data-target="who-serve-panel--warehouse">
+          Warehousing &amp; Logistics
+        </button>
+        <button class="who-serve-tab-btn" type="button" role="tab" aria-selected="false" aria-controls="who-serve-construction" data-target="who-serve-panel--construction">
+          Construction Sites
+        </button>
+      </div>
+
       <div class="who-serve-accordion reveal-up" data-who-serve-accordion>
-        <article class="who-serve-panel who-serve-panel--home is-active">
-          <button class="who-serve-trigger" type="button" aria-expanded="true" aria-controls="who-serve-home">
+        <article class="who-serve-panel who-serve-panel--home is-active" role="tabpanel" id="who-serve-home">
+          <button class="who-serve-trigger" type="button" aria-expanded="true" aria-controls="who-serve-home-body">
             <span class="who-serve-index">01</span>
             <span class="who-serve-label">Residential Estates &amp; Private Compounds</span>
           </button>
-          <div class="who-serve-panel-body" id="who-serve-home">
-            <div class="who-serve-media">
-              <img src="/urban-eye-assets/House.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Secure residential property protected by Urban Eye security planning">
-            </div>
+          <div class="who-serve-panel-body" id="who-serve-home-body">
             <div class="who-serve-copy">
+              <span class="panel-eyebrow">Residential Protection</span>
               <h3>Layered protection for gated communities and family residences.</h3>
               <p>Smart alarms, CCTV, access control, and monitored response for homes and estates, because a perimeter wall and a gate guard are not enough.</p>
               <ul class="who-serve-features">
@@ -208,19 +224,20 @@
               </ul>
               <a class="btn btn-primary who-serve-cta" href="/residential-security/">View Residential Solutions &rarr;</a>
             </div>
+            <div class="who-serve-media">
+              <img src="/urban-eye-assets/House.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Secure residential property protected by Urban Eye security planning">
+            </div>
           </div>
         </article>
 
-        <article class="who-serve-panel who-serve-panel--retail">
-          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-retail">
+        <article class="who-serve-panel who-serve-panel--retail" role="tabpanel" id="who-serve-retail">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-retail-body">
             <span class="who-serve-index">02</span>
             <span class="who-serve-label">Financial Services &amp; High-Value Retail</span>
           </button>
-          <div class="who-serve-panel-body" id="who-serve-retail" hidden>
-            <div class="who-serve-media">
-              <img src="/urban-eye-assets/mall%20shop.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Retail storefront security planning for shops and mall units">
-            </div>
+          <div class="who-serve-panel-body" id="who-serve-retail-body" hidden>
             <div class="who-serve-copy">
+              <span class="panel-eyebrow">Financial &amp; Retail Security</span>
               <h3>Branch-level physical security for forex bureaus, pharmacies, jewelers, and financial premises.</h3>
               <p>CCTV, access control, alarm verification, and wired vault-grade detection for safes and cash points: physical premises security backed by documented event records.</p>
               <ul class="who-serve-features">
@@ -231,19 +248,20 @@
               </ul>
               <a class="btn btn-primary who-serve-cta" href="/financial-services/">View Financial Solutions &rarr;</a>
             </div>
+            <div class="who-serve-media">
+              <img src="/urban-eye-assets/mall%20shop.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Retail storefront security planning for shops and mall units">
+            </div>
           </div>
         </article>
 
-        <article class="who-serve-panel who-serve-panel--office">
-          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-office">
+        <article class="who-serve-panel who-serve-panel--office" role="tabpanel" id="who-serve-office">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-office-body">
             <span class="who-serve-index">03</span>
             <span class="who-serve-label">Commercial Real Estate &amp; Business Parks</span>
           </button>
-          <div class="who-serve-panel-body" id="who-serve-office" hidden>
-            <div class="who-serve-media">
-              <img src="/urban-eye-assets/Lobby%20turnstile.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Office lobby turnstiles for controlled commercial access">
-            </div>
+          <div class="who-serve-panel-body" id="who-serve-office-body" hidden>
             <div class="who-serve-copy">
+              <span class="panel-eyebrow">Commercial Facility Oversight</span>
               <h3>Access management and tenant safety for offices and mixed-use developments.</h3>
               <p>Keyless entry, visitor logging, CCTV coverage, and fire and life safety systems across single buildings or full campuses.</p>
               <ul class="who-serve-features">
@@ -254,19 +272,20 @@
               </ul>
               <a class="btn btn-primary who-serve-cta" href="/office-security/">View Commercial Solutions &rarr;</a>
             </div>
+            <div class="who-serve-media">
+              <img src="/urban-eye-assets/Lobby%20turnstile.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Office lobby turnstiles for controlled commercial access">
+            </div>
           </div>
         </article>
 
-        <article class="who-serve-panel who-serve-panel--warehouse">
-          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-warehouse">
+        <article class="who-serve-panel who-serve-panel--warehouse" role="tabpanel" id="who-serve-warehouse">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-warehouse-body">
             <span class="who-serve-index">04</span>
             <span class="who-serve-label">Warehousing, Logistics &amp; Industrial</span>
           </button>
-          <div class="who-serve-panel-body" id="who-serve-warehouse" hidden>
-            <div class="who-serve-media">
-              <img src="/urban-eye-assets/Warehouse%20aisle.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Warehouse aisle and inventory area for logistics security planning">
-            </div>
+          <div class="who-serve-panel-body" id="who-serve-warehouse-body" hidden>
             <div class="who-serve-copy">
+              <span class="panel-eyebrow">Logistics &amp; Yard Security</span>
               <h3>Loading-zone control and inventory protection for distribution sites.</h3>
               <p>CCTV, access control, electric fencing, and thermal surveillance for machinery and power infrastructure where equipment monitoring matters.</p>
               <ul class="who-serve-features">
@@ -277,19 +296,20 @@
               </ul>
               <a class="btn btn-primary who-serve-cta" href="/warehouse-security/">View Logistics Solutions &rarr;</a>
             </div>
+            <div class="who-serve-media">
+              <img src="/urban-eye-assets/Warehouse%20aisle.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="Warehouse aisle and inventory area for logistics security planning">
+            </div>
           </div>
         </article>
 
-        <article class="who-serve-panel who-serve-panel--construction">
-          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-construction">
+        <article class="who-serve-panel who-serve-panel--construction" role="tabpanel" id="who-serve-construction">
+          <button class="who-serve-trigger" type="button" aria-expanded="false" aria-controls="who-serve-construction-body">
             <span class="who-serve-index">05</span>
             <span class="who-serve-label">Construction &amp; Active Project Sites</span>
           </button>
-          <div class="who-serve-panel-body" id="who-serve-construction" hidden>
-            <div class="who-serve-media">
-              <img src="/urban-eye-assets/Construction%20Site%20Security%20at%20Night.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Construction site security monitoring at night">
-            </div>
+          <div class="who-serve-panel-body" id="who-serve-construction-body" hidden>
             <div class="who-serve-copy">
+              <span class="panel-eyebrow">Active Project Sites</span>
               <h3>Temporary, flexible protection for changing perimeters.</h3>
               <p>Portable CCTV, perimeter alerts, and material-control access logging that moves as the site does.</p>
               <ul class="who-serve-features">
@@ -299,6 +319,9 @@
                 <li>Redeployable setup</li>
               </ul>
               <a class="btn btn-primary who-serve-cta" href="/construction-site-security/">View Construction Solutions &rarr;</a>
+            </div>
+            <div class="who-serve-media">
+              <img src="/urban-eye-assets/Construction%20Site%20Security%20at%20Night.webp" width="1024" height="572" loading="lazy" decoding="async" alt="Construction site security monitoring at night">
             </div>
           </div>
         </article>
@@ -567,14 +590,24 @@
 <script>
 (function(){
   var accordion = document.querySelector('[data-who-serve-accordion]');
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.who-serve-tab-btn'));
   if(!accordion) return;
 
   var panels = Array.prototype.slice.call(accordion.querySelectorAll('.who-serve-panel'));
-  var desktopQuery = window.matchMedia('(min-width: 901px)');
 
-  function activate(targetPanel){
-    panels.forEach(function(panel){
-      var isTarget = panel === targetPanel;
+  function activate(targetIndex){
+    if(targetIndex < 0 || targetIndex >= panels.length) return;
+
+    // Update Desktop Tabs
+    tabButtons.forEach(function(btn, idx){
+      var isTarget = (idx === targetIndex);
+      btn.classList.toggle('is-active', isTarget);
+      btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+    });
+
+    // Update Panels & Mobile Triggers
+    panels.forEach(function(panel, idx){
+      var isTarget = (idx === targetIndex);
       panel.classList.toggle('is-active', isTarget);
       var button = panel.querySelector('.who-serve-trigger');
       var body = panel.querySelector('.who-serve-panel-body');
@@ -589,16 +622,20 @@
     });
   }
 
-  panels.forEach(function(panel){
+  // Desktop Tab Click
+  tabButtons.forEach(function(btn, idx){
+    btn.addEventListener('click', function(){
+      activate(idx);
+    });
+  });
+
+  // Mobile Accordion Trigger Click
+  panels.forEach(function(panel, idx){
     var button = panel.querySelector('.who-serve-trigger');
     if(!button) return;
 
     button.addEventListener('click', function(){
-      activate(panel);
-    });
-
-    panel.addEventListener('mouseenter', function(){
-      if(desktopQuery.matches) activate(panel);
+      activate(idx);
     });
   });
 })();
