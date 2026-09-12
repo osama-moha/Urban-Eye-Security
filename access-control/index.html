@@ -38,7 +38,7 @@
 {"@context":"https://schema.org","@type":"Service","name":"Smart Access Control Systems in Nairobi","description":"Access control systems using biometric readers, encrypted credentials, mobile access, gate automation, role-based permissions, digital logs, and video-verified entry.","provider":{"@type":"Organization","name":"Urban Eye Security"},"areaServed":{"@type":"City","name":"Nairobi"},"serviceType":"Access Control","url":"https://urbaneyesecurity.co.ke/access-control/"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I give temporary access to contractors or cleaning staff?","acceptedAnswer":{"@type":"Answer","text":"Yes. Temporary access codes or credentials can be configured for specific days, hours, or users, then revoked when no longer needed."}},{"@type":"Question","name":"Can access control systems control our main estate gate or warehouse barrier?","acceptedAnswer":{"@type":"Answer","text":"Yes. Smart relay modules and controllers can integrate gates, barriers, turnstiles, and selected doors into a central access-control plan."}},{"@type":"Question","name":"What happens to electronic locks if the power goes out?","acceptedAnswer":{"@type":"Answer","text":"Access-control design should include backup power and fail-safe or fail-secure planning so assets remain protected while emergency exits remain compliant with life-safety requirements."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will anti-passback stop someone tailgating in behind a colleague?","acceptedAnswer":{"@type":"Answer","text":"Not on its own. It does not stop a second person walking in behind someone who badged through, only a turnstile physically does that. It catches the sharing on the record afterwards, because the system has no entry logged for that second person."}},{"@type":"Question","name":"Can I give temporary access to contractors or cleaning staff?","acceptedAnswer":{"@type":"Answer","text":"Yes. Temporary access codes or credentials can be configured for specific days, hours, or users, then revoked when no longer needed."}},{"@type":"Question","name":"Can access control systems control our main estate gate or warehouse barrier?","acceptedAnswer":{"@type":"Answer","text":"Yes. Smart relay modules and controllers can integrate gates, barriers, turnstiles, and selected doors into a central access-control plan."}},{"@type":"Question","name":"What happens to our staff's fingerprint or face data?","acceptedAnswer":{"@type":"Answer","text":"Biometric data is treated as sensitive personal data in Kenya. We do not recommend collecting it by default, and any use should have a clear stated purpose for that building."}},{"@type":"Question","name":"Is access control only for big office buildings?","acceptedAnswer":{"@type":"Answer","text":"No. It also works well for residential estates, apartment blocks, clinics, warehouses, shops, and other properties that need controlled movement."}}]}
 </script>
 <style>
   .ac-page{
@@ -424,6 +424,135 @@
     margin-bottom:8px;
   }
 
+  .ac-tabs-wrap{
+    position:sticky;
+    top:82px;
+    z-index:90;
+    background:#fff;
+    border-bottom:1px solid var(--ac-border, #d7deea);
+  }
+
+  .ac-tabs{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 0;
+  }
+
+  .ac-tabs-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+
+  .ac-tabs-links a{
+    display:inline-block;
+    padding:8px 14px;
+    font-size:.92rem;
+    font-weight:700;
+    color:var(--ac-muted, #5f6b85);
+    border-bottom:2px solid transparent;
+  }
+
+  .ac-tabs-links a:hover{
+    color:var(--ac-text, #122046);
+    border-bottom-color:var(--ac-red, #c92a2f);
+  }
+
+  .ac-tabs .btn{
+    padding:10px 18px;
+    font-size:.88rem;
+    white-space:nowrap;
+  }
+
+  @media (max-width: 700px){
+    .ac-tabs-wrap{
+      top:0;
+    }
+
+    .ac-tabs{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:10px;
+      padding:12px 0;
+    }
+
+    .ac-tabs-links{
+      gap:2px;
+      overflow-x:auto;
+      flex-wrap:nowrap;
+      width:100%;
+    }
+
+    .ac-tabs-links a{
+      padding:8px 10px;
+      flex:0 0 auto;
+    }
+  }
+
+  .ac-icon-circle{
+    width:40px;
+    height:40px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    border:1px solid rgba(201,42,47,.28);
+    color:var(--ac-red);
+    background:#fff;
+    font-size:1.05rem;
+    margin-bottom:16px;
+  }
+
+  .ac-arrow-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-weight:700;
+    font-size:.94rem;
+    color:var(--ac-red);
+  }
+
+  .ac-arrow-link:hover{
+    text-decoration:underline;
+  }
+
+  .ac-related{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:26px;
+  }
+
+  .ac-related > a{
+    display:block;
+    padding:24px 26px;
+    background:#fff;
+    border:1px solid var(--ac-border, #d7deea);
+    border-radius:18px;
+    transition:border-color .2s;
+  }
+
+  .ac-related > a:hover{
+    border-color:var(--ac-red, #c92a2f);
+  }
+
+  .ac-related h3{
+    margin-bottom:8px;
+    font-size:1.08rem;
+  }
+
+  .ac-related p{
+    margin:0 0 14px;
+    font-size:.96rem;
+  }
+
+  @media (max-width: 900px){
+    .ac-related{
+      grid-template-columns:1fr;
+    }
+  }
+
   @media (max-width: 1100px){
     .ac-page .ac-feature-columns{
       grid-template-columns:repeat(2,1fr);
@@ -521,6 +650,18 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Access Control","item":"https://urbaneyesecurity.co.ke/access-control/"}]}
 </script>
 
+<div class="ac-tabs-wrap">
+  <div class="container ac-tabs">
+    <div class="ac-tabs-links">
+      <a href="#overview">Overview</a>
+      <a href="#how-it-fits">Where It Fits</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+    <a onclick="return openServiceDrawer('access-control','Access Control','Request an Access Control Assessment','Share a few details and Urban Eye will review keyless entry and access logs for your site.')" class="btn btn-primary" href="/contact/?service=access-control">Book an Assessment</a>
+  </div>
+</div>
+
 <main class="ac-page">
   <section class="ac-hero">
     <div class="container ac-grid-2">
@@ -549,7 +690,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="overview">
     <div class="container">
       <div class="reveal-up">
         <h2>Shared keys and unmanaged entry points create organizational risk.</h2>
@@ -595,7 +736,7 @@
         <div class="ac-feature-column">
           <span>02</span>
           <h3>Anti-Passback Protocols</h3>
-          <p>Enforce strict directional logic that prevents badge-sharing and tailgating through turnstiles and security doors.</p>
+          <p>Enforce directional logic so one credential cannot badge in twice without an exit recorded first. This does not stop someone walking in behind another person, only a turnstile does that, but it does mean sharing is caught on the record.</p>
         </div>
 
         <div class="ac-feature-column">
@@ -613,7 +754,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="how-it-fits">
     <div class="container">
       <div class="reveal-up">
         <p class="ac-label">Best Fit</p>
@@ -622,16 +763,19 @@
 
       <div class="ac-fit-list reveal-stagger">
         <div>
+          <div class="ac-icon-circle">01</div>
           <h3>Commercial Buildings</h3>
           <p>Control staff entrances, office suites, reception handoffs, parking access, and internal restricted zones.</p>
         </div>
 
         <div>
+          <div class="ac-icon-circle">02</div>
           <h3>Residential Estates &amp; Apartments</h3>
           <p>Manage common entrances, pedestrian gates, staff movement, service access, and shared amenities.</p>
         </div>
 
         <div>
+          <div class="ac-icon-circle">03</div>
           <h3>Retail, Warehouses &amp; Clinics</h3>
           <p>Protect stockrooms, records rooms, pharmacy or storage areas, back-office zones, and delivery points.</p>
         </div>
@@ -639,7 +783,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="how-it-works">
     <div class="container ac-process">
       <div class="reveal-up">
         <p class="ac-label">How It Works</p>
@@ -705,7 +849,7 @@
     </div>
   </section>
 
-  <section class="light-section">
+  <section id="faqs" class="light-section">
     <div class="container">
       <div class="reveal-up">
         <p class="ac-label">FAQs</p>
@@ -713,6 +857,11 @@
       </div>
 
       <div class="ac-faq reveal-stagger" style="margin-top:28px;">
+        <details>
+          <summary>Will anti-passback stop someone tailgating in behind a colleague?</summary>
+          <p>Not on its own. It does not stop a second person walking in behind someone who badged through, only a turnstile physically does that. What it does is catch it on the record afterwards, because the system has no entry logged for that second person.</p>
+        </details>
+
         <details>
           <summary>Can I give temporary access to contractors or cleaning staff?</summary>
           <p>Yes. Temporary credentials or codes can be configured for specific users, areas, or time windows and later revoked.</p>
@@ -724,9 +873,43 @@
         </details>
 
         <details>
+          <summary>What happens to our staff's fingerprint or face data?</summary>
+          <p>Biometric data is treated as sensitive personal data in Kenya. We do not recommend collecting it by default. Where it is used, it should have a clear purpose for that building, and we will tell you plainly if a use case does not need it.</p>
+        </details>
+
+        <details>
           <summary>Is access control only for big office buildings?</summary>
           <p>No. It can also work well for residential estates, apartment blocks, clinics, warehouses, shops, and other properties that need controlled movement.</p>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="reveal-up">
+        <p class="ac-label">Related Solutions</p>
+        <h2>Access control usually sits alongside these.</h2>
+      </div>
+
+      <div class="ac-related reveal-stagger">
+        <a href="/vault-protection/">
+          <h3>Vault Protection</h3>
+          <p>For the room where the risk is what happens once someone is inside, not just whether the door opened.</p>
+          <span class="ac-arrow-link">Learn more &rarr;</span>
+        </a>
+
+        <a href="/cctv-installation/">
+          <h3>CCTV Installation</h3>
+          <p>Pair entry logs with footage, so a disputed event has a record and a picture, not just one or the other.</p>
+          <span class="ac-arrow-link">Learn more &rarr;</span>
+        </a>
+
+        <a href="/corporate-risk-audit/">
+          <h3>Corporate Risk Audit</h3>
+          <p>Not sure what your current system can actually do? Start with a written audit before adding anything new.</p>
+          <span class="ac-arrow-link">Learn more &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
