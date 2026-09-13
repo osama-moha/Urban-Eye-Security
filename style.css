@@ -6644,6 +6644,50 @@ ul.breadcrumb-list li::marker,
   line-height:1.7;
 }
 
+.package-notice p + .package-fees,
+.package-notice .package-fees + p{
+  margin-top:18px;
+}
+
+.package-fees{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.package-fee{
+  padding:18px 20px;
+  background:#fff;
+  border:1px solid var(--border);
+}
+
+.package-fee h4{
+  margin:0 0 8px;
+  color:var(--deep-navy);
+  font-size:15.5px;
+  font-weight:700;
+  line-height:1.4;
+}
+
+.package-fee p{
+  margin:0;
+  font-size:15px;
+}
+
+.package-fee .package-fee-note{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+  color:var(--deep-navy);
+  font-size:14.5px;
+}
+
+@media (max-width: 860px){
+  .package-fees{
+    grid-template-columns:1fr;
+  }
+}
+
 .packages-monitoring-section{
   padding:86px 0;
   background:#0D1430;
