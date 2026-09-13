@@ -166,6 +166,13 @@ img{
   z-index:100;
 }
 
+/* Pages that carry their own section tab bar let the navbar scroll away, so
+   only one bar is ever pinned to the top. Two stacked bars cost ~21% of a
+   768px viewport. Add class="has-section-tabs" to <body> on those pages. */
+body.has-section-tabs #site-navbar{
+  position:static;
+}
+
 .topbar{
   position:sticky;
   top:0;

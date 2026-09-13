@@ -424,19 +424,19 @@
     margin-bottom:8px;
   }
 
+  /* The navbar scrolls away on this page (body.has-section-tabs), so the tab
+     bar is the only thing pinned to the top. */
   .ac-tabs-wrap{
     position:sticky;
-    top:82px; /* sits directly under the sticky navbar (.nav min-height) */
+    top:0;
     z-index:90;
     background:#fff;
     border-bottom:1px solid var(--ac-border, #d7deea);
   }
 
-  /* Anchor targets must clear navbar (82) + tab bar (79). The global rule in
-     style.css is section[id]{scroll-margin-top:100px}, which is only enough
-     for the navbar on its own. */
+  /* Anchor targets clear the tab bar (79) with a little breathing room. */
   .ac-page section[id]{
-    scroll-margin-top:175px;
+    scroll-margin-top:95px;
   }
 
   .ac-tabs{
@@ -473,24 +473,17 @@
     white-space:nowrap;
   }
 
-  /* Below 900px, 82px of navbar plus 79px of tab bar eats too much of the
-     screen, so the tab bar stops sticking and scrolls with the page. */
-  @media (max-width: 900px){
-    .ac-tabs-wrap{
-      position:static;
-    }
-
-    .ac-page section[id]{
-      scroll-margin-top:95px;
-    }
-  }
-
+  /* On small screens the tab bar stays pinned but sheds the button and lets
+     the links scroll sideways, so it stays a single slim row rather than
+     stacking into two. */
   @media (max-width: 700px){
     .ac-tabs{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:10px;
-      padding:12px 0;
+      gap:8px;
+      padding:8px 0;
+    }
+
+    .ac-tabs .btn{
+      display:none;
     }
 
     .ac-tabs-links{
@@ -498,11 +491,21 @@
       overflow-x:auto;
       flex-wrap:nowrap;
       width:100%;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+
+    .ac-tabs-links::-webkit-scrollbar{
+      display:none;
     }
 
     .ac-tabs-links a{
       padding:8px 10px;
       flex:0 0 auto;
+    }
+
+    .ac-page section[id]{
+      scroll-margin-top:64px;
     }
   }
 
@@ -651,7 +654,7 @@
 </style>
 </head>
 
-<body>
+<body class="has-section-tabs">
 <div id="site-navbar"></div>
   <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
     <div class="container">
