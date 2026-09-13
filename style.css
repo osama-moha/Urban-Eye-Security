@@ -156,6 +156,16 @@ img{
    Navbar
 ================================ */
 
+/* The navbar is injected by js/includes.js into <div id="site-navbar">.
+   That wrapper is sized to its own content, which left .topbar's
+   position:sticky with no room to hold, so the header scrolled away on every
+   page. Positioning the wrapper is what actually makes it stay. */
+#site-navbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
 .topbar{
   position:sticky;
   top:0;
