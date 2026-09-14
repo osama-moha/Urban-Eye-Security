@@ -11,6 +11,26 @@
       "source": "/risk-review/",
       "destination": "/corporate-risk-audit/",
       "permanent": true
+    },
+    {
+      "source": "/vault-protection",
+      "destination": "/financial-services/",
+      "permanent": true
+    },
+    {
+      "source": "/vault-protection/",
+      "destination": "/financial-services/",
+      "permanent": true
+    },
+    {
+      "source": "/thermal-surveillance",
+      "destination": "/warehouse-security/",
+      "permanent": true
+    },
+    {
+      "source": "/thermal-surveillance/",
+      "destination": "/warehouse-security/",
+      "permanent": true
     }
   ]
 }

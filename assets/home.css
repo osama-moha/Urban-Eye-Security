@@ -333,7 +333,7 @@
   }
 
   .client-proof-section{
-    padding:70px 0;
+    padding:var(--space-section-y) 0;
     background:#F5F7FA;
     border-top:1px solid #d6deea;
     border-bottom:1px solid #d6deea;
@@ -518,7 +518,7 @@
   #home .hero-actions .btn{
     min-height:52px;
     padding:0 28px;
-    border-radius:3px;
+    border-radius:2px;
     font-size:1rem;
     line-height:1.5rem;
     font-weight:600;
@@ -595,15 +595,12 @@
      ========================================================= */
 
   body .btn-primary{
-    border-radius:3px;
+    border-radius:2px;
     box-shadow:none !important;
     transform:none;
-    transition:background var(--motion-fast) ease, transform var(--motion-fast) ease, opacity var(--motion-fast) ease;
+    transition:background var(--motion-fast) ease, border-color var(--motion-fast) ease;
   }
 
-  body .btn-primary:active,
-  body .btn-outline:active,
-  body .btn-outline-white:active,
   body .client-logo-card:active{
     transform:scale(0.98) !important;
   }
@@ -612,15 +609,15 @@
   body .btn-outline:focus-visible,
   body .btn-outline-white:focus-visible{
     outline:2px solid var(--red, #C51E24) !important;
-    outline-offset:2px;
+    outline-offset:3px;
   }
 
   body .btn-outline,
   body .btn-outline-white{
-    border-radius:3px;
+    border-radius:2px;
     box-shadow:none !important;
     transform:none;
-    transition:background var(--motion-fast) ease, transform var(--motion-fast) ease, border-color var(--motion-fast) ease;
+    transition:background var(--motion-fast) ease, border-color var(--motion-fast) ease;
   }
 
   /* Problem section: tighter mobile spacing */
@@ -647,7 +644,7 @@
   ================================ */
   .tagline-reveal-section {
     background-color: var(--color-navy-dark, #070e18) !important;
-    padding: 80px 24px;
+    padding: var(--space-section-y) 24px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -667,7 +664,7 @@
 
   .tagline-reveal-text span {
     color: #ffffff;
-    opacity: 0.28;
+    opacity: 0.4;
     display: inline-block;
     transition: opacity 600ms cubic-bezier(0.32, 0.72, 0, 1);
     margin-right: 0.22em;
@@ -877,3 +874,296 @@
       max-width: none;
     }
   }
+
+/* =========================================================
+   Homepage hero trust line and client case
+   ========================================================= */
+
+#home .hero-trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 0;
+  margin:22px 0 0;
+  padding:0;
+  list-style:none;
+  color:rgba(255,255,255,.7);
+  font-size:.8125rem;
+}
+
+#home .hero-trust li + li::before{
+  content:"\00B7";
+  margin:0 10px;
+  color:rgba(255,255,255,.45);
+}
+
+.who-serve-secondary{
+  display:inline-block;
+  margin-top:14px;
+  color:rgba(255,255,255,.82);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.who-serve-secondary:hover{
+  color:#fff;
+}
+
+.client-case{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 24px;
+  margin-top:20px;
+  padding:20px 24px;
+  background:#fff;
+  border:1px solid #d6deea;
+  border-left:3px solid var(--red);
+}
+
+.client-case-label{
+  color:var(--red);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.client-case p{
+  flex:1 1 320px;
+  margin:0;
+  color:var(--ink);
+  line-height:1.6;
+}
+
+.client-case a{
+  color:var(--red);
+  font-weight:600;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.client-case a:hover{
+  text-decoration:underline;
+}
+
+@media(min-width:901px){
+  #home .hero-copy{
+    max-width:560px;
+  }
+}
+
+
+/* =========================================================
+   Phone scroll reduction: swipe rows, 2-column logos,
+   and a sticky action bar. Desktop is unchanged.
+   ========================================================= */
+
+.swipe-hint,
+.mobile-cta-bar{
+  display:none;
+}
+
+@media(max-width:767px){
+  .swipe-hint{
+    display:block;
+    margin:12px 0 0;
+    color:var(--muted);
+    font-size:13px;
+    font-weight:500;
+  }
+
+  #solutions .alarm-problem-grid,
+  #process .process-timeline{
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:20px;
+    margin-inline:-20px;
+    padding:0 20px 4px;
+    background:transparent;
+    border:0;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  #solutions .alarm-problem-grid::-webkit-scrollbar,
+  #process .process-timeline::-webkit-scrollbar{
+    display:none;
+  }
+
+  #solutions .alarm-problem{
+    flex:0 0 82%;
+    border:1px solid var(--border);
+    scroll-snap-align:start;
+  }
+
+  #process .process-timeline{
+    margin-top:28px;
+  }
+
+  #process .process-timeline-item,
+  #process .process-timeline-item:last-child{
+    flex:0 0 78%;
+    display:block;
+    padding:22px;
+    border:1px solid var(--border);
+    background:#fff;
+    scroll-snap-align:start;
+  }
+
+  #process .process-timeline-item span{
+    margin-bottom:14px;
+  }
+
+  .mobile-cta-bar{
+    display:flex;
+    gap:10px;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:150;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:#fff;
+    border-top:1px solid var(--border);
+    box-shadow:0 -8px 24px rgba(8,15,42,.12);
+    transform:translateY(110%);
+    transition:transform 250ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .mobile-cta-bar.is-visible{
+    transform:none;
+  }
+
+  .mobile-cta-bar .btn{
+    flex:1;
+    justify-content:center;
+    min-height:48px;
+  }
+
+  .mobile-cta-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 16px;
+    border:1px solid var(--border);
+    border-radius:2px;
+    color:var(--deep-navy);
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+  }
+}
+
+@media(max-width:520px){
+  .client-logo-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .client-logo-card,
+  .client-logo-card:nth-child(3n){
+    min-height:88px;
+    padding:12px;
+    border-right:1px solid #d6deea;
+    border-bottom:1px solid #d6deea;
+  }
+
+  .client-logo-card:nth-child(2n){
+    border-right:0;
+  }
+
+  .client-logo-card:nth-last-child(-n + 2){
+    border-bottom:0;
+  }
+
+  .client-logo-card img{
+    max-height:64px;
+  }
+
+  .client-logo-card.logo-torobo img,
+  .client-logo-card.logo-reliance img,
+  .client-logo-card.logo-bureau img{
+    max-height:72px;
+  }
+}
+
+@media(max-width:767px){
+  /* Keep the edge-to-edge swipe rows from widening the page. */
+  #solutions,
+  #process{
+    overflow-x:hidden;
+    overflow-x:clip;
+  }
+}
+
+@media(max-width:767px){
+  /* The hint sits in the two-column grid, so pull it up by the column gap. */
+  #process .swipe-hint{
+    margin-top:-16px;
+  }
+}
+
+
+@media(max-width:767px){
+  /* Compact director section on phones; all text kept. */
+  .commitment-section{
+    padding:48px 0;
+  }
+
+  .commitment-inner{
+    gap:24px;
+  }
+
+  .commitment-copy blockquote{
+    font-size:22px;
+    line-height:1.35;
+  }
+
+  .commitment-signoff{
+    margin-top:18px;
+    padding-top:14px;
+  }
+
+  .commitment-proof{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:16px;
+  }
+
+  .commitment-proof-row{
+    padding:14px 0;
+  }
+
+  .commitment-proof-row:last-child{
+    grid-column:1 / -1;
+  }
+
+  .commitment-proof-row strong{
+    margin-bottom:4px;
+    font-size:15px;
+  }
+
+  .commitment-proof-row span{
+    font-size:14px;
+    line-height:1.5;
+  }
+}
+
+
+.tagline-secondary-link{
+  display:block;
+  margin-top:18px;
+  color:rgba(255,255,255,.78);
+  font-size:15px;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.tagline-secondary-link:hover{
+  color:#fff;
+}
