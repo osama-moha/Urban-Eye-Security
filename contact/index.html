@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap"/>
 
-<link rel="stylesheet" href="/style.css?v=20260817a"/>
+<link rel="stylesheet" href="/style.css?v=20260914k"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
 </script>
@@ -218,7 +218,7 @@
         </div>
 
         <form id="contact-step-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleContactPageSubmit(event)">
-          <input type="hidden" name="_subject" value="Technical Site Survey Scoping Request (Contact Page)">
+          <input type="hidden" name="_subject" value="Free Site Survey Request (Contact Page)">
           <input type="hidden" name="page_source" value="contact_page">
 
           <!-- Step 1: Site Details -->
@@ -344,27 +344,27 @@
           <div class="form-step" data-step="3">
             <button type="button" class="back-step-btn" onclick="handleContactPrevStep(3)">&larr; Back to previous step</button>
             <h4 class="form-group-kicker">CONTACT DETAILS</h4>
-            <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your selections and respond on WhatsApp with the recommended next step.</p>
+            <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your answers and message you on WhatsApp within one business day.</p>
             
             <div class="form-field-group">
               <label for="contact-page-name" class="form-field-label">Full Name <span class="required-star">*</span></label>
-              <input id="contact-page-name" name="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateContactStep3()">
+              <input id="contact-page-name" name="name" autocomplete="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateContactStep3()">
               <span class="field-error-message" id="contact-name-error" style="display:none;">Please enter your full name.</span>
             </div>
 
             <div class="form-field-group">
               <label for="contact-page-phone" class="form-field-label">WhatsApp Number <span class="required-star">*</span></label>
-              <input id="contact-page-phone" name="phone" inputmode="tel" class="form-field-input" placeholder="e.g. 0768055555" required oninput="validateContactStep3()">
-              <span class="field-error-message" id="contact-phone-error" style="display:none;">Please enter a valid phone number.</span>
+              <input id="contact-page-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" class="form-field-input" placeholder="e.g. 0768055555" required oninput="validateContactStep3()">
+              <span class="field-error-message" id="contact-phone-error" style="display:none;">Enter a valid phone number, e.g. 0712 345 678.</span>
             </div>
 
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-            <button class="btn btn-primary btn-block" type="submit" id="contactSubmitBtn" disabled style="min-height:52px; width:100%; justify-content:center;">Request My Security Review on WhatsApp</button>
+            <button class="btn btn-primary btn-block" type="submit" id="contactSubmitBtn" disabled style="min-height:52px; width:100%; justify-content:center;">Book my free site survey</button>
 
             <p class="quiet-help-line">Prefer to talk first? <a href="https://wa.me/254768055555">Chat on WhatsApp</a></p>
             <p class="required-note">(* Required fields)</p>
-            <p style="font-size:12px; color:#5B6472; margin:12px 0 0; line-height:1.5;">Your details are used only to respond to this request. See our <a href="/privacy-policy/" style="color:#0D1430; text-decoration:underline;">Privacy Policy</a>.</p>
+            <p style="font-size:12px; color:#5B6472; margin:12px 0 0; line-height:1.5;">Urban Eye uses your details only to respond to this request, by phone or WhatsApp. See our <a href="/privacy-policy/" style="color:#0D1430; text-decoration:underline;">Privacy Policy</a>.</p>
           </div>
         </form>
       </div>
@@ -441,6 +441,6 @@ document.addEventListener("DOMContentLoaded", () => {
   goToFormStep(1, CONTACT_FORM_CONFIG);
 });
 </script>
-<script src="/js/includes.js?v=20260817a" defer></script>
+<script src="/js/includes.js?v=20260914i" defer></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
   <meta property="og:description" content="Built to make security clear, modern, and reliable for property owners and businesses in Kenya."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://urbaneyesecurity.co.ke/about/"/>
-  <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.png"/>
+  <meta property="og:image" content="https://urbaneyesecurity.co.ke/urban-eye-assets/guard3.webp"/>
 
   <link rel="icon" href="/urban-eye-assets/favicon-48.png" type="image/png"/>
   <link rel="apple-touch-icon" href="/urban-eye-assets/apple-touch-icon-180.png"/>
@@ -35,7 +35,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap"/>
 
-<link rel="stylesheet" href="/style.css?v=20260817a"/>
+<link rel="stylesheet" href="/style.css?v=20260914k"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
 </script>
@@ -68,7 +68,7 @@
           </p>
 
           <div class="hero-actions">
-            <a onclick="return openServiceDrawer('about','Technical Site Survey','Request a Technical Site Survey','Schedule an on-site engineering walkthrough and Bill of Quantities scoping.')" class="btn btn-primary" href="/contact/?service=site-survey">Request a Site Survey</a>
+            <a onclick="return openServiceDrawer('about','Free Site Survey','Book a Free Site Survey','Share a few property details and Urban Eye will schedule a free site survey.')" class="btn btn-primary" href="/contact/?service=site-survey">Book a Free Site Survey</a>
             <a class="cta-whatsapp-link" href="https://wa.me/254768055555" style="align-self:center;margin-left:12px;color:#fff;">Or chat on WhatsApp &rarr;</a>
           </div>
 
@@ -79,14 +79,17 @@
 
         <div class="about-hero-media reveal-up">
           <img
-            src="/urban-eye-assets/guard3.png"
-            alt="Urban Eye Security team representing integrated security services in Kenya"
-          >
+            src="/urban-eye-assets/guard3-800.webp"
+            srcset="/urban-eye-assets/guard3-480.webp 480w, /urban-eye-assets/guard3-800.webp 800w, /urban-eye-assets/guard3-1100.webp 1100w"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            alt="Urban Eye Security team representing integrated security services in Kenya" width="800" height="533">
         </div>
       </div>
     </section>
 
-    <section class="about-mission-section">
+    <nav class="jump-nav" data-jump-nav aria-label="On this page"></nav>
+
+    <section data-jump-label="Mission" class="about-mission-section">
       <div class="container two-col">
         <div class="reveal-slide">
           <p class="section-label">Our Mission</p>
@@ -116,7 +119,7 @@
       </div>
     </section>
 
-    <section class="dark-section">
+    <section data-jump-label="Four Pillars" class="dark-section phone-swipe-section">
       <div class="container">
         <div class="section-head reveal-up">
           <div>
@@ -127,7 +130,7 @@
           <p class="section-intro">We assess your risk across four categories, then engineer protection for all of them, not just the one everyone expects.</p>
         </div>
 
-        <div class="problem-matrix pillar-matrix reveal-stagger">
+        <div class="problem-matrix pillar-matrix reveal-stagger phone-swipe">
           <div class="problem-item">
             <span>01</span>
             <h3>Theft &amp; Intrusion</h3>
@@ -149,6 +152,7 @@
             <p>A building can be replaced. A person cannot. Round-the-clock monitoring and verified escalation exist to protect the people inside first.</p>
           </div>
         </div>
+        <p class="swipe-hint" aria-hidden="true">Swipe to see all four pillars &rarr;</p>
       </div>
     </section>
 
@@ -168,7 +172,7 @@
       </div>
     </section>
 
-    <section class="about-values-section">
+    <section data-jump-label="Values" class="about-values-section phone-swipe-section">
       <div class="container">
         <div class="section-head reveal-up">
           <div>
@@ -181,7 +185,7 @@
           </p>
         </div>
 
-        <div class="about-values-list reveal-stagger">
+        <div class="about-values-list reveal-stagger phone-swipe">
           <div class="about-value-row">
             <span>01</span>
             <div>
@@ -222,10 +226,11 @@
             </div>
           </div>
         </div>
+        <p class="swipe-hint" aria-hidden="true">Swipe to see all five values &rarr;</p>
       </div>
     </section>
 
-    <section class="light-section about-credentials-section">
+    <section data-jump-label="Credentials" class="light-section about-credentials-section phone-swipe-section">
       <div class="container two-col">
         <div class="reveal-slide">
           <p class="section-label">Credentials & Standards</p>
@@ -241,7 +246,7 @@
           </p>
         </div>
 
-        <div class="about-credentials-list reveal-slide slide-right">
+        <div class="about-credentials-list reveal-slide slide-right phone-swipe">
           <div class="about-credential-row">
             <strong>PSRA Registered</strong>
             <span>Licensed and compliant with Kenya's private security regulatory requirements.</span>
@@ -267,6 +272,7 @@
             <span>Our teams follow structured internal training and deployment standards for guarding, installation, reporting, and client support.</span>
           </div>
         </div>
+        <p class="swipe-hint" aria-hidden="true">Swipe to see all five &rarr;</p>
       </div>
     </section>
 
@@ -286,7 +292,7 @@
       </div>
     </section>
 
-    <section class="about-client-balance-section">
+    <section data-jump-label="Who We Work With" class="about-client-balance-section phone-swipe-section">
       <div class="container">
         <div class="section-head reveal-up">
           <div>
@@ -299,7 +305,7 @@
           </p>
         </div>
 
-        <div class="about-audience-table reveal-up">
+        <div class="about-audience-table reveal-up phone-swipe">
           <div class="about-audience-row about-audience-head">
             <div>Client type</div>
             <div>What they need</div>
@@ -345,6 +351,7 @@
             </div>
           </div>
         </div>
+        <p class="swipe-hint" aria-hidden="true">Swipe to see all three client types &rarr;</p>
       </div>
     </section>
 
@@ -360,7 +367,7 @@
 
         <div class="cta-actions">
           <div class="cta-buttons">
-            <a onclick="return openServiceDrawer('about','Technical Site Survey','Request a Technical Site Survey','Schedule an on-site engineering walkthrough and Bill of Quantities scoping.')" class="btn btn-primary" href="/contact/?service=site-survey">Request a Site Survey</a>
+            <a onclick="return openServiceDrawer('about','Free Site Survey','Book a Free Site Survey','Share a few property details and Urban Eye will schedule a free site survey.')" class="btn btn-primary" href="/contact/?service=site-survey">Book a Free Site Survey</a>
             <a class="btn btn-outline-white" href="https://wa.me/254768055555">Chat on WhatsApp</a>
           </div>
         </div>
@@ -370,6 +377,6 @@
 
   <div id="site-footer"></div>
 
-  <script src="/js/includes.js?v=20260817a" defer></script>
+  <script src="/js/includes.js?v=20260914i" defer></script>
 </body>
 </html>

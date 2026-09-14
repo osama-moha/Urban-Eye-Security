@@ -1,9 +1,12 @@
+// Bump when includes/navbar.html or includes/footer.html change, so browsers refetch them.
+const INCLUDES_VERSION = "20260914h";
+
 async function loadNavbar(){
   const navbarTarget = document.getElementById("site-navbar");
   if(!navbarTarget) return;
 
   try{
-    const response = await fetch("/includes/navbar.html");
+    const response = await fetch(`/includes/navbar.html?v=${INCLUDES_VERSION}`);
 
     if(!response.ok){
       throw new Error("Navbar file could not be loaded.");
@@ -24,7 +27,7 @@ async function loadFooter(){
   if(!footerTarget) return;
 
   try{
-    const response = await fetch("/includes/footer.html");
+    const response = await fetch(`/includes/footer.html?v=${INCLUDES_VERSION}`);
 
     if(!response.ok){
       throw new Error("Footer file could not be loaded.");
@@ -39,21 +42,30 @@ async function loadFooter(){
 }
 
 // Floating Brand Cookie Toast
-function initCookieNotice(){
-  let stored = null;
+function setCookieChoice(banner, choice){
   try {
-    stored = localStorage.getItem("ue_cookie_consent") || localStorage.getItem("uec_cookie_consent");
+    localStorage.setItem("ue_cookie_consent", choice);
+    localStorage.setItem("uec_cookie_consent", choice === "accepted" ? "granted" : "denied");
   } catch(e){}
 
-  let banner = document.getElementById("cookie-banner");
-
-  if(stored){
-    if(banner){
-      banner.classList.add("is-hidden");
-      banner.style.display = "none";
-    }
-    return;
+  if(typeof gtag === "function"){
+    const state = choice === "accepted" ? "granted" : "denied";
+    gtag("consent", "update", {
+      ad_storage: state,
+      ad_user_data: state,
+      ad_personalization: state,
+      analytics_storage: state
+    });
   }
+
+  banner.classList.add("is-hidden");
+  setTimeout(() => {
+    banner.style.display = "none";
+  }, 300);
+}
+
+function showCookieBanner(){
+  let banner = document.getElementById("cookie-banner");
 
   if(!banner){
     banner = document.createElement("div");
@@ -63,7 +75,7 @@ function initCookieNotice(){
     banner.setAttribute("aria-label", "Cookie consent");
     banner.innerHTML =
       '<p class="cookie-text">' +
-        'We use cookies for analytics and site optimization. Read our <a href="/privacy-policy/">Privacy Policy</a>.' +
+        'We use Google Analytics and Google Ads cookies to measure visits and advertising. Read our <a href="/privacy-policy/#cookies">Privacy Policy</a>.' +
       '</p>' +
       '<div class="cookie-actions">' +
         '<button type="button" class="cookie-btn-accept" id="cookie-accept-btn">Accept</button>' +
@@ -72,33 +84,42 @@ function initCookieNotice(){
     document.body.appendChild(banner);
   }
 
-  const acceptBtn = document.getElementById("cookie-accept-btn") || banner.querySelector(".cookie-btn-accept");
-  const declineBtn = document.getElementById("cookie-decline-btn") || banner.querySelector(".cookie-btn-decline");
+  if(!banner.dataset.wired){
+    banner.dataset.wired = "true";
+    const acceptBtn = document.getElementById("cookie-accept-btn") || banner.querySelector(".cookie-btn-accept");
+    const declineBtn = document.getElementById("cookie-decline-btn") || banner.querySelector(".cookie-btn-decline");
+    if (acceptBtn) acceptBtn.addEventListener("click", () => setCookieChoice(banner, "accepted"));
+    if (declineBtn) declineBtn.addEventListener("click", () => setCookieChoice(banner, "declined"));
+  }
 
-  const dismissBanner = (choice) => {
-    try {
-      localStorage.setItem("ue_cookie_consent", choice);
-      localStorage.setItem("uec_cookie_consent", choice === "accepted" ? "granted" : "denied");
-    } catch(e){}
+  banner.style.display = "";
+  banner.classList.remove("is-hidden");
+}
 
-    if(typeof gtag === "function"){
-      const state = choice === "accepted" ? "granted" : "denied";
-      gtag("consent", "update", {
-        ad_storage: state,
-        ad_user_data: state,
-        ad_personalization: state,
-        analytics_storage: state
-      });
-    }
+function initCookieNotice(){
+  // The footer "Cookie settings" link reopens the banner so visitors can change their choice.
+  document.addEventListener("click", (event)=>{
+    const link = event.target.closest("[data-cookie-settings]");
+    if(!link) return;
+    event.preventDefault();
+    showCookieBanner();
+  });
 
-    banner.classList.add("is-hidden");
-    setTimeout(() => {
+  let stored = null;
+  try {
+    stored = localStorage.getItem("ue_cookie_consent") || localStorage.getItem("uec_cookie_consent");
+  } catch(e){}
+
+  if(stored){
+    const banner = document.getElementById("cookie-banner");
+    if(banner){
+      banner.classList.add("is-hidden");
       banner.style.display = "none";
-    }, 300);
-  };
+    }
+    return;
+  }
 
-  if (acceptBtn) acceptBtn.addEventListener("click", () => dismissBanner("accepted"));
-  if (declineBtn) declineBtn.addEventListener("click", () => dismissBanner("declined"));
+  showCookieBanner();
 }
 
 let drawerLastFocus = null;
@@ -108,7 +129,7 @@ function getDrawerVariantCategory(serviceInterest, pageSource) {
   const service = (serviceInterest || "").toLowerCase();
   const source = (pageSource || "").toLowerCase();
 
-  if (service.includes("corporate risk audit") || source.includes("corporate-risk-audit") || source === "construction-site-security" || source === "warehouse-security" || source === "retail-storefronts" || source === "office-security") {
+  if (service.includes("corporate risk audit") || source.includes("corporate-risk-audit")) {
     return "CORPORATE_AUDIT";
   }
   
@@ -143,8 +164,8 @@ function openServiceDrawer(pageSource, serviceInterest, title, intro){
 
   pageSourceField.value = pageSource || "";
   serviceInterestField.value = serviceInterest || "";
-  titleElement.textContent = title || "Request a Technical Site Survey";
-  introElement.textContent = intro || "Schedule an on-site engineering walkthrough, perimeter assessment, and Bill of Quantities (BoQ) scoping.";
+  titleElement.textContent = title || "Book a Free Site Survey";
+  introElement.textContent = intro || "Share a few property details and Urban Eye will schedule a free site survey.";
 
   currentDrawerCategory = getDrawerVariantCategory(serviceInterest, pageSource);
 
@@ -352,6 +373,12 @@ function validateContactStep2() {
   }
 }
 
+// Kenyan mobile numbers (07.., 01.., 254.., +254..) or an international number starting with +.
+function isValidPhoneNumber(value) {
+  const digits = String(value || '').replace(/[\s().-]/g, '');
+  return /^(?:\+?254|0)?[17]\d{8}$/.test(digits) || /^\+(?!254)\d{8,15}$/.test(digits);
+}
+
 function validateDrawerStep3() {
   const nameVal = document.getElementById('drawer-name').value.trim();
   const phoneVal = document.getElementById('drawer-phone').value.trim();
@@ -361,7 +388,7 @@ function validateDrawerStep3() {
   const companyErr = document.getElementById('drawer-company-error');
 
   const isValidName = nameVal.length >= 2;
-  const isValidPhone = phoneVal.length >= 8;
+  const isValidPhone = isValidPhoneNumber(phoneVal);
   let isValidCompany = true;
 
   if (currentDrawerCategory === 'CORPORATE_AUDIT') {
@@ -386,7 +413,7 @@ function validateContactStep3() {
   const phoneErr = document.getElementById('contact-phone-error');
 
   const isValidName = nameVal.length >= 2;
-  const isValidPhone = phoneVal.length >= 8;
+  const isValidPhone = isValidPhoneNumber(phoneVal);
 
   if (nameErr) nameErr.style.display = (nameVal.length > 0 && !isValidName) ? 'block' : 'none';
   if (phoneErr) phoneErr.style.display = (phoneVal.length > 0 && !isValidPhone) ? 'block' : 'none';
@@ -427,17 +454,65 @@ function handleContactPrevStep(fromStep) {
   goToFormStep(fromStep - 1, CONTACT_FORM_CONFIG);
 }
 
+// Sends a Google Analytics event. `done` runs once the hit is sent, or after a short timeout.
+function trackEvent(name, params, done) {
+  let finished = false;
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    if (typeof done === 'function') done();
+  };
+
+  if (typeof window.gtag !== 'function') {
+    finish();
+    return;
+  }
+
+  window.gtag('event', name, Object.assign({}, params, { event_callback: finish, event_timeout: 1500 }));
+  setTimeout(finish, 1800);
+}
+
+// Records a generate_lead event (no name or phone number is sent), then opens the thank-you page.
+function completeLeadSubmission(form, serviceInterest) {
+  const pageSourceInput = form.querySelector('input[name="page_source"]');
+  const thankYouUrl = `/thank-you/?service=${encodeURIComponent(serviceInterest)}`;
+
+  trackEvent('generate_lead', {
+    form_name: form.id,
+    page_source: pageSourceInput ? pageSourceInput.value : '',
+    service_interest: serviceInterest
+  }, () => {
+    window.location.href = thankYouUrl;
+  });
+}
+
+// Counts WhatsApp and phone taps as Google Analytics events.
+function initContactClickTracking() {
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href^="https://wa.me/"], a[href^="tel:"]');
+    if (!link) return;
+
+    const isWhatsApp = link.getAttribute('href').indexOf('https://wa.me/') === 0;
+    trackEvent(isWhatsApp ? 'whatsapp_click' : 'phone_click', {
+      link_url: link.href,
+      page_path: window.location.pathname
+    });
+  });
+}
+
 async function handleUnifiedSubmit(event, config) {
   event.preventDefault();
   const form = event.target;
   const submitBtn = form.querySelector('button[type="submit"]');
+  const submitLabel = submitBtn ? submitBtn.textContent : '';
 
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending your request...";
   }
 
-  const serviceInterest = document.getElementById(config.surfacePrefix + 'ServiceInterest') ? document.getElementById(config.surfacePrefix + 'ServiceInterest').value : "Security Assessment";
+  const serviceField = document.getElementById(config.surfacePrefix + 'ServiceInterest');
+  const serviceInterest = (serviceField && serviceField.value) || "Free Site Survey";
 
   try {
     const response = await fetch(form.action, {
@@ -447,7 +522,7 @@ async function handleUnifiedSubmit(event, config) {
     });
 
     if (response.ok) {
-      window.location.href = `/thank-you/?service=${encodeURIComponent(serviceInterest || "Security Assessment")}`;
+      completeLeadSubmission(form, serviceInterest);
       return false;
     } else {
       throw new Error("Formspree response not ok");
@@ -468,7 +543,7 @@ async function handleUnifiedSubmit(event, config) {
     errEl.textContent = "There was an error submitting your form. Please try again or contact us on WhatsApp.";
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Submit Request";
+      submitBtn.textContent = submitLabel;
     }
     return false;
   }
@@ -491,110 +566,8 @@ function handleContactPageSubmit(event) {
 }
 
 /* ===============================
-   Dedicated Service Drawers
-   (Site Security Review + Corporate Risk Audit)
+   Corporate Risk Audit Drawer
 ================================ */
-
-// ---- Review Drawer ----
-let reviewDrawerLastFocus = null;
-
-function openReviewDrawer(pageSource) {
-  const backdrop = document.getElementById('reviewDrawerBackdrop');
-  const drawer = document.getElementById('reviewDrawer');
-  if (!backdrop || !drawer) return true;
-
-  if (window.event && typeof window.event.preventDefault === 'function') {
-    window.event.preventDefault();
-  }
-
-  reviewDrawerLastFocus = document.activeElement;
-
-  // Reset form
-  const form = document.getElementById('review-drawer-form');
-  if (form) form.reset();
-
-  const pageSourceField = document.getElementById('reviewPageSource');
-  if (pageSourceField) pageSourceField.value = pageSource || 'risk-review';
-
-  const submitBtn = document.getElementById('reviewSubmitBtn');
-  if (submitBtn) submitBtn.disabled = true;
-
-  backdrop.classList.add('open');
-  drawer.classList.add('open');
-  document.body.classList.add('drawer-open');
-  return false;
-}
-
-function closeReviewDrawer() {
-  const backdrop = document.getElementById('reviewDrawerBackdrop');
-  const drawer = document.getElementById('reviewDrawer');
-  if (backdrop) backdrop.classList.remove('open');
-  if (drawer) drawer.classList.remove('open');
-  document.body.classList.remove('drawer-open');
-  if (reviewDrawerLastFocus && typeof reviewDrawerLastFocus.focus === 'function') {
-    reviewDrawerLastFocus.focus();
-  }
-  return false;
-}
-
-function validateReviewForm() {
-  const propType = document.getElementById('review-property-type').value;
-  const location = document.getElementById('review-location').value.trim();
-  const name = document.getElementById('review-name').value.trim();
-  const phone = document.getElementById('review-phone').value.trim();
-  const submitBtn = document.getElementById('reviewSubmitBtn');
-
-  // main_concern is optional, skipping it does not block submission
-  const isValid = propType !== '' && location.length >= 2 && name.length >= 2 && phone.length >= 8;
-  if (submitBtn) submitBtn.disabled = !isValid;
-}
-
-async function handleReviewSubmit(event) {
-  event.preventDefault();
-  const form = event.target;
-  const submitBtn = document.getElementById('reviewSubmitBtn');
-
-  if (submitBtn) {
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending your request...';
-  }
-
-  const serviceInterest = document.getElementById('reviewServiceInterest') ? document.getElementById('reviewServiceInterest').value : 'Site Security Review';
-
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      window.location.href = `/thank-you/?service=${encodeURIComponent(serviceInterest)}`;
-      return false;
-    } else {
-      throw new Error("Formspree response not ok");
-    }
-  } catch (err) {
-    console.error('Review submit error:', err);
-    let errEl = form.querySelector('.form-submission-error');
-    if (!errEl) {
-      errEl = document.createElement('div');
-      errEl.className = 'form-submission-error';
-      errEl.style.cssText = 'color:#C4272E; font-size:13.5px; font-weight:600; margin-top:12px; text-align:center;';
-      if (submitBtn && submitBtn.parentNode) {
-        submitBtn.parentNode.insertBefore(errEl, submitBtn.nextSibling);
-      } else {
-        form.appendChild(errEl);
-      }
-    }
-    errEl.textContent = "Unable to send request right now. Please try again or chat on WhatsApp.";
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Book My Site Review";
-    }
-    return false;
-  }
-}
 
 // ---- Audit Drawer ----
 let auditDrawerLastFocus = null;
@@ -649,7 +622,7 @@ function validateAuditForm() {
   const submitBtn = document.getElementById('auditSubmitBtn');
 
   const isValid = company.length >= 2 && siteType !== '' && location.length >= 2 &&
-                  scale !== '' && timeframe !== '' && name.length >= 2 && phone.length >= 8;
+                  scale !== '' && timeframe !== '' && name.length >= 2 && isValidPhoneNumber(phone);
   if (submitBtn) submitBtn.disabled = !isValid;
 }
 
@@ -657,6 +630,7 @@ async function handleAuditSubmit(event) {
   event.preventDefault();
   const form = event.target;
   const submitBtn = document.getElementById('auditSubmitBtn');
+  const submitLabel = submitBtn ? submitBtn.textContent : '';
 
   if (submitBtn) {
     submitBtn.disabled = true;
@@ -673,7 +647,7 @@ async function handleAuditSubmit(event) {
     });
 
     if (response.ok) {
-      window.location.href = `/thank-you/?service=${encodeURIComponent(serviceInterest)}`;
+      completeLeadSubmission(form, serviceInterest);
       return false;
     } else {
       throw new Error("Formspree response not ok");
@@ -694,7 +668,7 @@ async function handleAuditSubmit(event) {
     errEl.textContent = "Unable to send request right now. Please try again or chat on WhatsApp.";
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Book Corporate Risk Audit";
+      submitBtn.textContent = submitLabel;
     }
     return false;
   }
@@ -709,23 +683,17 @@ function initLeadDrawer(){
   });
 }
 
-// Escape key support for dedicated drawers
+// Escape key support for the audit drawer
 function initServiceDrawers() {
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    const reviewDrawer = document.getElementById('reviewDrawer');
     const auditDrawer = document.getElementById('auditDrawer');
-    if (reviewDrawer && reviewDrawer.classList.contains('open')) closeReviewDrawer();
     if (auditDrawer && auditDrawer.classList.contains('open')) closeAuditDrawer();
   });
 }
 
 window.openServiceDrawer = openServiceDrawer;
 window.closeFormDrawer = closeFormDrawer;
-window.openReviewDrawer = openReviewDrawer;
-window.closeReviewDrawer = closeReviewDrawer;
-window.validateReviewForm = validateReviewForm;
-window.handleReviewSubmit = handleReviewSubmit;
 window.openAuditDrawer = openAuditDrawer;
 window.closeAuditDrawer = closeAuditDrawer;
 window.validateAuditForm = validateAuditForm;
@@ -802,6 +770,13 @@ function setActiveNav(){
 function initHeaderScroll(){
   const header = document.querySelector(".topbar");
   if(!header) return;
+
+  const wrapper = document.getElementById("site-navbar");
+  if(wrapper){
+    const syncHeight = ()=> document.documentElement.style.setProperty("--header-h", `${wrapper.offsetHeight}px`);
+    syncHeight();
+    if("ResizeObserver" in window) new ResizeObserver(syncHeight).observe(wrapper);
+  }
 
   let ticking = false;
 
@@ -999,9 +974,156 @@ function initTaglineReveal(){
   }
 }
 
+function initJumpNav(){
+  const nav = document.querySelector("[data-jump-nav]");
+  if(!nav) return;
+
+  const sections = Array.from(document.querySelectorAll("section[data-jump-label]"));
+  if(sections.length < 3){
+    nav.remove();
+    return;
+  }
+
+  const inner = document.createElement("div");
+  inner.className = "container jump-nav-inner";
+
+  // Phones get a single "current section" button that opens a menu of all sections.
+  const mobile = document.createElement("div");
+  mobile.className = "jump-nav-mobile";
+  mobile.innerHTML = `
+    <div class="container">
+      <button type="button" class="jump-nav-toggle" aria-expanded="false" aria-controls="jump-nav-menu">
+        <span class="jump-nav-toggle-hint">On this page</span>
+        <span class="jump-nav-toggle-current"></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+    </div>
+    <div class="jump-nav-menu" id="jump-nav-menu" hidden><div class="container"></div></div>`;
+
+  const toggle = mobile.querySelector(".jump-nav-toggle");
+  const currentLabel = mobile.querySelector(".jump-nav-toggle-current");
+  const menu = mobile.querySelector(".jump-nav-menu");
+  const menuList = menu.querySelector(".container");
+
+  const links = [];
+  const menuLinks = [];
+
+  sections.forEach((section)=>{
+    if(!section.id){
+      section.id = "jump-" + section.dataset.jumpLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
+    const link = document.createElement("a");
+    link.href = `#${section.id}`;
+    link.textContent = section.dataset.jumpLabel;
+    inner.appendChild(link);
+    links.push(link);
+
+    const menuLink = link.cloneNode(true);
+    menuList.appendChild(menuLink);
+    menuLinks.push(menuLink);
+  });
+
+  nav.appendChild(inner);
+  nav.appendChild(mobile);
+
+  function setMenuOpen(open){
+    menu.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    nav.classList.toggle("is-open", open);
+  }
+
+  toggle.addEventListener("click", ()=> setMenuOpen(menu.hidden));
+  menuLinks.forEach((menuLink)=> menuLink.addEventListener("click", ()=> setMenuOpen(false)));
+
+  document.addEventListener("click", (event)=>{
+    if(!menu.hidden && !nav.contains(event.target)) setMenuOpen(false);
+  });
+
+  document.addEventListener("keydown", (event)=>{
+    if(event.key === "Escape" && !menu.hidden){
+      setMenuOpen(false);
+      toggle.focus();
+    }
+  });
+
+  let activeIndex = -2;
+  let ticking = false;
+
+  function setActive(index){
+    if(index === activeIndex) return;
+    activeIndex = index;
+    links.forEach((item, i)=> item.classList.toggle("is-active", i === index));
+    menuLinks.forEach((item, i)=>{
+      item.classList.toggle("is-active", i === index);
+      if(i === index) item.setAttribute("aria-current", "true");
+      else item.removeAttribute("aria-current");
+    });
+    currentLabel.textContent = sections[Math.max(index, 0)].dataset.jumpLabel;
+    if(index < 0) return;
+
+    const link = links[index];
+    const offset = link.getBoundingClientRect().left - inner.getBoundingClientRect().left;
+    if(inner.clientWidth && (offset < 0 || offset + link.offsetWidth > inner.clientWidth)){
+      inner.scrollBy({left: offset - 24, behavior: "smooth"});
+    }
+  }
+
+  function update(){
+    ticking = false;
+    const line = nav.getBoundingClientRect().bottom + 8;
+    let current = -1;
+    sections.forEach((section, index)=>{
+      if(section.getBoundingClientRect().top <= line) current = index;
+    });
+    setActive(current);
+  }
+
+  update();
+  window.addEventListener("scroll", ()=>{
+    if(!ticking){
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, {passive:true});
+  window.addEventListener("resize", update);
+}
+
+// Details marked data-phone-collapsed start closed on phones, so long open panels do not add scroll.
+function initPhoneCollapsedDetails(){
+  if(!window.matchMedia("(max-width: 767px)").matches) return;
+  document.querySelectorAll("details[data-phone-collapsed]").forEach((item)=>{
+    item.open = false;
+  });
+}
+
+function initFooterAccordion(){
+  const groups = document.querySelectorAll("footer .footer-group");
+  if(!groups.length) return;
+
+  // Link groups collapse on phones only; on larger screens they stay open.
+  const phone = window.matchMedia("(max-width: 767px)");
+
+  function apply(){
+    groups.forEach((group)=>{ group.open = !phone.matches; });
+  }
+
+  groups.forEach((group)=>{
+    group.querySelector("summary").addEventListener("click", (event)=>{
+      if(!phone.matches) event.preventDefault();
+    });
+  });
+
+  apply();
+  phone.addEventListener("change", apply);
+}
+
 document.addEventListener("DOMContentLoaded", async ()=>{
+  initPhoneCollapsedDetails();
+  initJumpNav();
   await loadNavbar();
   await loadFooter();
+  initFooterAccordion();
   initServiceDrawers();
   initHeaderScroll();
   initSmoothAnchors();
@@ -1013,4 +1135,5 @@ document.addEventListener("DOMContentLoaded", async ()=>{
   initControlLines();
   preselectInterestFromUrl();
   initCookieNotice();
+  initContactClickTracking();
 });
