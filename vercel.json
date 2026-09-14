@@ -16,14 +16,14 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.urbaneyesecurity.co.ke"
         }
       ],
-      "destination": "https://urbaneyesecurity.co.ke/:path*",
+      "destination": "https://urbaneyesecurity.co.ke/:path",
       "permanent": true
     },
     {
