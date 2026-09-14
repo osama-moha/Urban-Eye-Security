@@ -1,19 +1,21 @@
-// Bump when includes/navbar.html or includes/footer.html change, so browsers refetch them.
-const INCLUDES_VERSION = "20260914h";
+// Deployed pages have the navbar and footer written in by scripts/build.mjs.
+// Local previews fetch them; bump this when they change so browsers refetch.
+const INCLUDES_VERSION = "20260914i";
 
 async function loadNavbar(){
   const navbarTarget = document.getElementById("site-navbar");
   if(!navbarTarget) return;
 
   try{
-    const response = await fetch(`/includes/navbar.html?v=${INCLUDES_VERSION}`);
+    if(!navbarTarget.children.length){
+      const response = await fetch(`/includes/navbar.html?v=${INCLUDES_VERSION}`);
 
-    if(!response.ok){
-      throw new Error("Navbar file could not be loaded.");
+      if(!response.ok){
+        throw new Error("Navbar file could not be loaded.");
+      }
+
+      navbarTarget.innerHTML = await response.text();
     }
-
-    const html = await response.text();
-    navbarTarget.innerHTML = html;
 
     initNavbar();
     setActiveNav();
@@ -27,14 +29,15 @@ async function loadFooter(){
   if(!footerTarget) return;
 
   try{
-    const response = await fetch(`/includes/footer.html?v=${INCLUDES_VERSION}`);
+    if(!footerTarget.children.length){
+      const response = await fetch(`/includes/footer.html?v=${INCLUDES_VERSION}`);
 
-    if(!response.ok){
-      throw new Error("Footer file could not be loaded.");
+      if(!response.ok){
+        throw new Error("Footer file could not be loaded.");
+      }
+
+      footerTarget.innerHTML = await response.text();
     }
-
-    const html = await response.text();
-    footerTarget.innerHTML = html;
     initLeadDrawer();
   }catch(error){
     console.error(error);

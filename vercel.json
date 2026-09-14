@@ -1,7 +1,31 @@
 {
+  "buildCommand": "node scripts/build.mjs",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/includes/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.urbaneyesecurity.co.ke"
+        }
+      ],
+      "destination": "https://urbaneyesecurity.co.ke/:path*",
+      "permanent": true
+    },
     {
       "source": "/risk-review",
       "destination": "/corporate-risk-audit/",
