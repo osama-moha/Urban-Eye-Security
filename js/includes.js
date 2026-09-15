@@ -1,6 +1,6 @@
 // Deployed pages have the navbar and footer written in by scripts/build.mjs.
 // Local previews fetch them; bump this when they change so browsers refetch.
-const INCLUDES_VERSION = "20260914i";
+const INCLUDES_VERSION = "20260915a";
 
 async function loadNavbar(){
   const navbarTarget = document.getElementById("site-navbar");
