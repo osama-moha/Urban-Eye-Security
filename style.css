@@ -9402,3 +9402,13 @@ body p.hero-price-note.hero-price-note a{
   grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
   gap:20px;
 }
+
+.package-kit-link{
+  margin:10px 0 0;
+  font-size:13px;
+}
+.package-kit-link a{
+  color:var(--navy, #001F3F);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
