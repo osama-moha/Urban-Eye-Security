@@ -132,7 +132,7 @@ function getDrawerVariantCategory(serviceInterest, pageSource) {
   const service = (serviceInterest || "").toLowerCase();
   const source = (pageSource || "").toLowerCase();
 
-  if (service.includes("corporate risk audit") || source.includes("corporate-risk-audit")) {
+  if (service.includes("corporate risk audit") || service.includes("vulnerability assessment") || service.includes("risk & vulnerability") || source.includes("corporate-risk-audit")) {
     return "CORPORATE_AUDIT";
   }
   
@@ -640,7 +640,7 @@ async function handleAuditSubmit(event) {
     submitBtn.textContent = 'Sending your request...';
   }
 
-  const serviceInterest = document.getElementById('auditServiceInterest') ? document.getElementById('auditServiceInterest').value : 'Corporate Risk Audit';
+  const serviceInterest = document.getElementById('auditServiceInterest') ? document.getElementById('auditServiceInterest').value : 'Security Risk & Vulnerability Assessment';
 
   try {
     const response = await fetch(form.action, {
