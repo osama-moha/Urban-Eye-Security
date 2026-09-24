@@ -108,7 +108,7 @@ function getDrawerVariantCategory(serviceInterest, pageSource) {
   const service = (serviceInterest || "").toLowerCase();
   const source = (pageSource || "").toLowerCase();
 
-  if (service.includes("corporate risk audit") || source.includes("corporate-risk-audit") || source === "construction-site-security" || source === "warehouse-security" || source === "retail-storefronts" || source === "office-security") {
+  if (service.includes("corporate risk audit") || service.includes("vulnerability assessment") || service.includes("risk & vulnerability") || source.includes("corporate-risk-audit") || source === "construction-site-security" || source === "warehouse-security" || source === "retail-storefronts" || source === "office-security") {
     return "CORPORATE_AUDIT";
   }
   
@@ -663,7 +663,7 @@ async function handleAuditSubmit(event) {
     submitBtn.textContent = 'Sending your request...';
   }
 
-  const serviceInterest = document.getElementById('auditServiceInterest') ? document.getElementById('auditServiceInterest').value : 'Corporate Risk Audit';
+  const serviceInterest = document.getElementById('auditServiceInterest') ? document.getElementById('auditServiceInterest').value : 'Security Risk & Vulnerability Assessment';
 
   try {
     const response = await fetch(form.action, {
@@ -694,7 +694,7 @@ async function handleAuditSubmit(event) {
     errEl.textContent = "Unable to send request right now. Please try again or chat on WhatsApp.";
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Book Corporate Risk Audit";
+      submitBtn.textContent = "Book Assessment via WhatsApp";
     }
     return false;
   }
