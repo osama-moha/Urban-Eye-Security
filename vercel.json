@@ -55,6 +55,56 @@
       "source": "/thermal-surveillance/",
       "destination": "/warehouse-security/",
       "permanent": true
+    },
+    {
+      "source": "/security-risk-assessment",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/security-risk-assessment/",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/vulnerability-assessment",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/vulnerability-assessment/",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/risk-and-vulnerability-assessment",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/risk-and-vulnerability-assessment/",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/security-risk-and-vulnerability-assessment",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/security-risk-and-vulnerability-assessment/",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/risk-assessment",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
+    },
+    {
+      "source": "/risk-assessment/",
+      "destination": "/corporate-risk-audit/",
+      "permanent": true
     }
   ]
 }
