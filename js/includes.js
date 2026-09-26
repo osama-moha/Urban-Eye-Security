@@ -136,7 +136,7 @@ function getDrawerVariantCategory(serviceInterest, pageSource) {
     return "CORPORATE_AUDIT";
   }
   
-  if (service.includes("cctv") || service.includes("smart alarm") || service.includes("access control") || service.includes("electric fencing") || service.includes("fire") || service.includes("equipment purchase")) {
+  if (service.includes("cctv") || service.includes("alarm") || service.includes("access control") || service.includes("electric fencing") || service.includes("fire") || service.includes("equipment purchase") || service.includes("health-check") || service.includes("health check")) {
     return "EQUIPMENT";
   }
 

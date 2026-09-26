@@ -14,7 +14,7 @@
   --white: #ffffff;
   --shadow: 0 10px 30px rgba(17,24,39,.06);
   --shadow-soft: 0 10px 30px rgba(17,24,39,.06);
-  --radius: 3px;
+  --radius: 4px;
   --radius-pill: 999px;
 
   /* Three-Surface Rhythm Palette */
@@ -532,7 +532,7 @@ button.btn,
   gap:12px;
   min-height:50px;
   padding:0 24px;
-  border-radius:2px;
+  border-radius:var(--radius, 4px);
   border:1px solid transparent;
   font-size:15px;
   font-weight:600;
@@ -609,6 +609,59 @@ button.btn:active,
   border-color:var(--deep-navy);
   background:transparent;
   box-shadow:none;
+}
+
+.btn-outline-navy{
+  background:transparent;
+  color:var(--deep-navy);
+  border:1.5px solid var(--deep-navy);
+  box-shadow:none;
+  transition:background-color var(--motion-fast) var(--ease-standard),
+             border-color var(--motion-fast) var(--ease-standard),
+             color var(--motion-fast) var(--ease-standard);
+}
+
+.btn-outline-navy:hover{
+  background:var(--deep-navy);
+  color:#fff;
+  border-color:var(--deep-navy);
+}
+
+.btn-whatsapp{
+  background:#fff;
+  color:var(--deep-navy);
+  border:1px solid #CBD5E1;
+  box-shadow:0 1px 2px rgba(11,23,38,.05);
+  font-weight:600;
+  gap:10px;
+  transition:
+    background-color var(--motion-fast) var(--ease-standard),
+    border-color var(--motion-fast) var(--ease-standard),
+    color var(--motion-fast) var(--ease-standard),
+    box-shadow var(--motion-fast) var(--ease-standard),
+    transform var(--motion-fast) var(--ease-standard);
+}
+
+.btn-whatsapp:hover{
+  background:#F8FAFC;
+  border-color:#94A3B8;
+  color:var(--deep-navy);
+  box-shadow:0 2px 4px rgba(11,23,38,.08);
+}
+
+.btn-whatsapp svg,
+.btn-whatsapp .wa-icon{
+  width:20px;
+  height:20px;
+  flex-shrink:0;
+  display:inline-block;
+  vertical-align:middle;
+  transition:transform var(--motion-fast) var(--ease-standard);
+}
+
+.btn-whatsapp:hover svg,
+.btn-whatsapp:hover .wa-icon{
+  transform:scale(1.08);
 }
 
 .btn-outline-white{
@@ -1969,9 +2022,18 @@ footer a:hover{
   display:grid;
   grid-template-columns:.8fr 1.2fr;
   gap:32px;
-  padding:22px 0;
+  padding:20px 14px;
+  margin:0 -14px;
   border-bottom:1px solid var(--border);
   align-items:start;
+  border-radius:4px;
+  transition:background-color var(--motion-fast) var(--ease-standard);
+}
+
+@media (hover: hover){
+  .b2b-feature-row:hover{
+    background-color:rgba(245, 247, 250, 0.75);
+  }
 }
 
 .b2b-feature-row h3{
@@ -2564,7 +2626,8 @@ footer a:hover{
 
   .b2b-feature-row{
     gap:10px;
-    padding:24px 0;
+    padding:20px 0;
+    margin:0;
   }
 
   .smart-alarm-image-panel,
@@ -8723,7 +8786,21 @@ section[data-jump-label]{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:12px 24px;
+  gap:12px 20px;
+}
+
+.faq-help-actions .text-link{
+  margin-top:0;
+  font-size:14.5px;
+  color:var(--deep-navy);
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  transition:color var(--motion-fast) var(--ease-standard);
+}
+
+.faq-help-actions .text-link:hover{
+  color:var(--red);
 }
 
 .faq-items{
@@ -9430,3 +9507,78 @@ body p.hero-price-note.hero-price-note a{
   text-decoration:underline;
   text-underline-offset:3px;
 }
+
+/* ===============================
+   Commercial System Health Check Components
+================================ */
+
+.hero-micro-callout {
+  max-width: 760px;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.hero-micro-callout a {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--motion-fast) var(--ease-standard);
+}
+
+.hero-micro-callout a:hover {
+  color: #FF6B72;
+}
+
+.diagnostic-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 979px) {
+  .diagnostic-split-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.health-check-card {
+  /* default for mobile: not sticky */
+}
+
+@media (min-width: 980px) {
+  .health-check-card {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.health-check-credit {
+  margin: 16px 0;
+  padding: 12px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 30, 36, 0.2);
+  background: rgba(197, 30, 36, 0.04);
+  color: var(--deep-navy);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.health-check-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.health-check-pilot-note {
+  margin: 12px 0 16px;
+  color: #737373;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
