@@ -369,3 +369,14 @@
 @media(max-width:760px){.home-redesign .proof{padding:30px 0}.home-redesign .proof>.wrap{grid-template-columns:1fr;gap:22px}.home-redesign .proof-top h2 br{display:none}.home-redesign .proof-top p{margin-top:8px}.home-redesign .proof-top p br{display:none}.home-redesign .logos>div{height:82px;padding:10px}.home-redesign .logos img{max-height:58px}.home-redesign .logos .logo-torobo img,.home-redesign .logos .logo-reliance img{max-height:64px}.home-redesign .intro{padding:48px 0 66px}.home-redesign .intro .two{grid-template-columns:1fr;gap:24px}.home-redesign .intro p{font-size:18px;margin-bottom:22px}.home-redesign .faq{padding:48px 0}.home-redesign .faq .two{gap:26px}.home-redesign .faq details>summary{font-size:14px;min-height:64px}.home-redesign .faq details>p{padding-right:12px}.home-redesign .faq .arrow{margin-top:18px}}
 /* Use one section join instead of overlapping decorative cuts. */
 .home-redesign .intro+.services:before{display:none}
+/* Expand additional services in place; keep every property category visible. */
+.home-redesign .service-tab[hidden],.home-redesign .monitoring-link[hidden]{display:none!important}
+.home-redesign .service-toggle{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;margin-top:20px;padding:15px 17px;background:transparent;border:1px solid #9aaebd;color:var(--navy);font-size:13px;font-weight:600;text-align:left}
+.home-redesign .service-toggle:after{content:'+';color:var(--red);font-size:20px;font-weight:400}
+.home-redesign .service-toggle[aria-expanded=true]:after{content:'−'}
+.home-redesign .service-toggle:hover{background:#ffffff80;border-color:var(--navy)}
+.home-redesign .service-toggle:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+.home-redesign .monitoring-link{margin-left:22px}
+.home-redesign .sector-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
+.home-redesign .sector-tab{min-width:0;overflow-wrap:normal;line-height:1.5}
+@media(max-width:760px){.home-redesign .sector-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.home-redesign .sector-tab{font-size:12px;padding:14px 12px}.home-redesign .sector-tab:last-child{grid-column:1/-1}.home-redesign .monitoring-link{margin-left:0;display:flex;margin-top:15px}}

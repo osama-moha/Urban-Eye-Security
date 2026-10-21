@@ -1,18 +1,138 @@
-(function(){
-"use strict";
+(function () {
+  'use strict';
 
-const services=[['Smart alarm systems','Receive intrusion alerts on your phone. Add compatible photo-verification detectors to see what triggered an alarm.','home.webp','ajax-smart-alarms'],['CCTV installation','Cover entrances, tills, stockrooms and loading bays. Review footage and check cameras remotely with a suitable connection.','warehouse.jpg','cctv-installation'],['Access control','Control entry to your premises and restricted rooms. Assign permissions, cancel lost credentials and review access records.','access.jpg','access-control'],['Manned guarding','Place guards at gates, receptions and patrol points, with written duties and reporting procedures for your site.','guards.webp','manned-guarding'],['Electric fencing','Add a physical deterrent along your boundary and raise an alert when the fence detects tampering.','home.webp','electric-fencing'],['Fire alarm systems','Install detectors and alarms suited to your building’s use, with testing and guidance for the people responsible for the premises.','warehouse.jpg','commercial-fire-alarm-systems'],['PRO Monitoring','Have operators review supported alerts and coordinate escalation according to your selected plan and agreed procedures.','access.jpg','professional-monitoring'],['Risk assessments','Get a written report identifying security gaps and recommended actions in priority order. This is a separate paid service.','warehouse.jpg','corporate-risk-audit']];
-services.forEach((service,i)=>{service[2]=["alarm system.webp", "cctv installl.webp", "access.webp", "guard3-800.webp", "Residential-Electric-Fence.webp", "fire alarm.png", "urban_eye_patrol_slight_blur.webp", "risksurvey.jpg"][i]});
-const tabs=document.querySelector('.service-tabs');services.forEach((s,i)=>{const b=document.createElement('button');b.className='service-tab';b.setAttribute('role','tab');b.id='tab-'+i;b.setAttribute('aria-controls','service-panel');b.innerHTML='<span>0'+(i+1)+'</span>'+s[0]+'<i>↗</i>';b.onclick=()=>select(i);b.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')select(i)});b.addEventListener('focus',()=>select(i));b.onkeydown=e=>{if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();const n=e.key==='Home'?0:e.key==='End'?7:(i+(e.key==='ArrowDown'?1:7))%8;select(n);tabs.children[n].focus()}};tabs.appendChild(b)});
-function select(i){[...tabs.children].forEach((b,n)=>{b.setAttribute('aria-selected',n===i);b.tabIndex=n===i?0:-1});document.getElementById('service-panel').setAttribute('aria-labelledby','tab-'+i);document.getElementById('service-title').textContent=services[i][0];document.getElementById('service-copy').textContent=services[i][1];document.getElementById('service-img').src='/urban-eye-assets/'+services[i][2];document.getElementById('service-img').alt=services[i][0]+' equipment and service';const link=document.getElementById('service-link');link.href='/'+services[i][3]+'/';link.textContent='Explore '+services[i][0].toLowerCase()};select(0);
-const sectors=[["Homes & estates", "Protect the boundary. Stay connected to home.", "Plan security around your gates, perimeter and living spaces, with alerts and camera access that help you check what needs attention.", ["Perimeter protection", "Photo-verification options", "Remote camera access", "Gate access control"], "home.webp", "residential-security", "Explore home security"], ["Shops & retail", "Keep an eye on your entrance, tills and stock.", "Bring cameras, alarms and access control together around the daily movement of customers, staff and deliveries.", ["Entrance coverage", "Till and stockroom cameras", "Intrusion alerts", "Staff access control"], "access.jpg", "retail-storefronts", "Explore retail security"], ["Offices", "Make everyday access easier to manage.", "Build a security plan around reception, shared spaces and restricted areas, with clear responsibilities for staff and guards.", ["Visitor entry", "Staff permissions", "Reception coverage", "Guarding procedures"], "access.jpg", "office-security", "Explore office security"], ["Warehouses", "Cover the places where goods change hands.", "Focus on loading bays, storage aisles and vehicle entry points to support oversight of stock, deliveries and site access.", ["Loading-bay cameras", "Vehicle entry control", "Storage-area coverage", "Perimeter alerts"], "warehouse.jpg", "warehouse-security", "Explore warehouse security"], ["Construction sites", "Plan protection as your site changes.", "Coordinate guarding, access and camera coverage around your site layout, working hours and the areas holding tools and materials.", ["Guard patrol planning", "Contractor access", "Materials-area coverage", "After-hours alerts"], "guards.webp", "construction-site-security", "Explore site security"], ["Airbnb & short-stay", "Manage guest access with greater clarity.", "Consider entry control and security for shared and external areas, with guest privacy built into the plan.", ["Guest entry planning", "External-area cameras", "Remote access options", "Privacy-aware placement"], "home.webp", "airbnb-security", "Explore short-stay security"]];
-sectors.forEach((sector,i)=>{sector[4]=["nairobi-residential-estate.webp", "retail.webp", "nairobi-commercial-tower.webp", "warehouse.jpg", "construction-security.webp", "Smart door lock apartment.jpg"][i]});
-const sectorTabs=document.querySelector('.sector-tabs');
-function chooseSector(i){const d=sectors[i];sectorTabs.querySelectorAll('button').forEach((b,n)=>{b.setAttribute('aria-selected',String(n===i));b.tabIndex=n===i?0:-1});document.querySelector('#sector-panel').setAttribute('aria-labelledby','sector-tab-'+i);document.querySelector('#sector-label').textContent=d[0];document.querySelector('#sector-title').textContent=d[1];document.querySelector('#sector-description').textContent=d[2];document.querySelector('#sector-benefits').replaceChildren(...d[3].map(t=>{const li=document.createElement('li');li.textContent=t;return li}));document.querySelector('#sector-image').src='/urban-eye-assets/'+d[4];document.querySelector('#sector-image').alt=d[0]+' property';document.querySelector('#sector-link').href='/'+d[5]+'/';document.querySelector('#sector-link').textContent=d[6];document.querySelector('.sector-count').textContent=String(i+1).padStart(2,'0')+' / 06'}
-sectors.forEach((d,i)=>{const b=document.createElement('button');b.className='sector-tab';b.id='sector-tab-'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','sector-panel');const n=document.createElement('small');n.textContent=String(i+1).padStart(2,'0');b.append(n,document.createTextNode(d[0]));b.onpointerenter=e=>{if(e.pointerType==='mouse')chooseSector(i)};b.onfocus=()=>chooseSector(i);b.onclick=()=>chooseSector(i);b.onkeydown=e=>{let j;if(e.key==='ArrowRight')j=(i+1)%sectors.length;if(e.key==='ArrowLeft')j=(i+sectors.length-1)%sectors.length;if(e.key==='Home')j=0;if(e.key==='End')j=sectors.length-1;if(j!==undefined){e.preventDefault();sectorTabs.children[j].focus()}};sectorTabs.append(b)});chooseSector(0);
+  const services = [
+    ['Manned Guarding', 'Guards at your gates, reception and patrol points, with written duties and reporting procedures.', 'guard3-800.webp', 'manned-guarding'],
+    ['CCTV Installation', 'Cover entrances, tills and stockrooms. Review footage and check cameras remotely with an internet connection.', 'cctv installl.webp', 'cctv-installation'],
+    ['Alarm Systems & Monitoring', 'Receive intrusion alerts on your phone. Add optional PRO Monitoring for operators to review supported alerts and contact the people named in your plan.', 'alarm system.webp', 'ajax-smart-alarms'],
+    ['Access Control', 'Manage entry to your premises. Set staff permissions, cancel lost credentials and review access records.', 'access.webp', 'access-control'],
+    ['Electric Fencing', 'Protect your boundary with an electric fence that raises an alert when it detects tampering.', 'Residential-Electric-Fence.webp', 'electric-fencing'],
+    ['Fire Alarm Systems', 'Fire detectors and alarms selected for your building, with testing and instructions for your staff.', 'fire alarm.png', 'commercial-fire-alarm-systems'],
+    ['Risk Assessments', 'A paid assessment with a written report of security gaps and recommended fixes in priority order.', 'risksurvey.jpg', 'corporate-risk-audit']
+  ];
+  const tabs = document.querySelector('.service-tabs');
+  const toggle = document.getElementById('service-toggle');
+  let expanded = false;
+  let selectedService = 0;
+  const visibleServiceCount = () => expanded ? services.length : 4;
 
+  function selectService(index) {
+    selectedService = index;
+    [...tabs.children].forEach((button, i) => {
+      button.setAttribute('aria-selected', String(i === index));
+      button.tabIndex = i === index ? 0 : -1;
+    });
+    const service = services[index];
+    document.getElementById('service-panel').setAttribute('aria-labelledby', 'tab-' + index);
+    document.getElementById('service-title').textContent = service[0];
+    document.getElementById('service-copy').textContent = service[1];
+    document.getElementById('service-img').src = '/urban-eye-assets/' + service[2];
+    document.getElementById('service-img').alt = service[0] + ' equipment and service';
+    const link = document.getElementById('service-link');
+    link.href = '/' + service[3] + '/';
+    link.textContent = 'Explore ' + service[0].toLowerCase();
+    document.getElementById('service-monitoring-link').hidden = index !== 2;
+  }
 
-// Use the production shared drawer; preserve a contact-page fallback while includes load.
-document.querySelectorAll('[data-survey]').forEach(link=>link.addEventListener('click',event=>{if(typeof window.openServiceDrawer==='function'&&document.getElementById('drawer')){event.preventDefault();window.openServiceDrawer('homepage','Free Site Survey','Book a Free Site Survey','Share a few property details and Urban Eye will schedule a free site survey.')}}));
+  services.forEach((service, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'service-tab';
+    button.setAttribute('role', 'tab');
+    button.id = 'tab-' + index;
+    button.setAttribute('aria-controls', 'service-panel');
+    button.hidden = index >= 4;
+    const number = document.createElement('span');
+    number.textContent = String(index + 1).padStart(2, '0');
+    const arrow = document.createElement('i');
+    arrow.textContent = '↗';
+    arrow.setAttribute('aria-hidden', 'true');
+    button.append(number, document.createTextNode(service[0]), arrow);
+    button.onclick = () => selectService(index);
+    button.onpointerenter = event => {
+      if (event.pointerType === 'mouse') selectService(index);
+    };
+    button.onfocus = () => selectService(index);
+    button.onkeydown = event => {
+      if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const count = visibleServiceCount();
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? count - 1 :
+        (index + (event.key === 'ArrowDown' ? 1 : count - 1)) % count;
+      tabs.children[next].focus();
+    };
+    tabs.append(button);
+  });
+  toggle.onclick = () => {
+    expanded = !expanded;
+    [...tabs.children].forEach((button, index) => { button.hidden = index >= visibleServiceCount(); });
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? 'Show fewer services' : 'Show all services';
+    if (!expanded && selectedService >= 4) selectService(0);
+  };
+  selectService(0);
 
+  const sectors = [
+    ['Commercial Buildings & Offices', 'Manage staff and visitor access.', 'Guarding, cameras and access control for reception, shared spaces and restricted rooms.', ['Visitor entry', 'Staff permissions', 'Reception cameras', 'Guarding procedures'], 'nairobi-commercial-tower.webp', 'office-security', 'Explore office security'],
+    ['Warehouses', 'Cover loading bays and stock areas.', 'Monitor deliveries, vehicle entry and storage aisles with cameras, access control and guarding.', ['Loading-bay cameras', 'Vehicle entry control', 'Storage-area coverage', 'Perimeter alerts'], 'warehouse.jpg', 'warehouse-security', 'Explore warehouse security'],
+    ['Shops & Retail', 'Keep an eye on tills and stock.', 'Cameras and alarms for entrances, sales floors and stockrooms, with access control for staff areas.', ['Entrance cameras', 'Till and stockroom cameras', 'Intrusion alerts', 'Staff access control'], 'retail.webp', 'retail-storefronts', 'Explore retail security'],
+    ['Construction Sites', 'Protect tools and materials on site.', 'Plan guarding, entry checks and cameras around working hours and changes to your site layout.', ['Guard patrol planning', 'Contractor access', 'Materials-area cameras', 'After-hours alerts'], 'construction-security.webp', 'construction-site-security', 'Explore site security'],
+    ['Homes & Residential Properties', 'Check your home when you are away.', 'Security for homes, estates, Airbnb and short-stay properties. Manage guest access and check cameras in permitted external or shared areas.', ['Perimeter protection', 'Photo-verification options', 'Remote camera access', 'Guest and gate access'], 'nairobi-residential-estate.webp', 'residential-security', 'Explore residential security']
+  ];
+  const sectorTabs = document.querySelector('.sector-tabs');
+
+  function chooseSector(index) {
+    const sector = sectors[index];
+    [...sectorTabs.children].forEach((button, i) => {
+      button.setAttribute('aria-selected', String(i === index));
+      button.tabIndex = i === index ? 0 : -1;
+    });
+    document.getElementById('sector-panel').setAttribute('aria-labelledby', 'sector-tab-' + index);
+    document.getElementById('sector-label').textContent = sector[0];
+    document.getElementById('sector-title').textContent = sector[1];
+    document.getElementById('sector-description').textContent = sector[2];
+    document.getElementById('sector-benefits').replaceChildren(...sector[3].map(text => {
+      const item = document.createElement('li');
+      item.textContent = text;
+      return item;
+    }));
+    document.getElementById('sector-image').src = '/urban-eye-assets/' + sector[4];
+    document.getElementById('sector-image').alt = sector[0] + ' property';
+    document.getElementById('sector-link').href = '/' + sector[5] + '/';
+    document.getElementById('sector-link').textContent = sector[6];
+    document.querySelector('.sector-count').textContent = String(index + 1).padStart(2, '0') + ' / ' + String(sectors.length).padStart(2, '0');
+  }
+
+  sectors.forEach((sector, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'sector-tab';
+    button.id = 'sector-tab-' + index;
+    button.setAttribute('role', 'tab');
+    button.setAttribute('aria-controls', 'sector-panel');
+    const number = document.createElement('small');
+    number.textContent = String(index + 1).padStart(2, '0');
+    button.append(number, document.createTextNode(sector[0]));
+    button.onpointerenter = event => { if (event.pointerType === 'mouse') chooseSector(index); };
+    button.onfocus = () => chooseSector(index);
+    button.onclick = () => chooseSector(index);
+    button.onkeydown = event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % sectors.length;
+      if (event.key === 'ArrowLeft') next = (index + sectors.length - 1) % sectors.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = sectors.length - 1;
+      if (next !== undefined) { event.preventDefault(); sectorTabs.children[next].focus(); }
+    };
+    sectorTabs.append(button);
+  });
+  chooseSector(0);
+
+  // Use the connected survey drawer, with a contact-page fallback while it loads.
+  document.querySelectorAll('[data-survey]').forEach(link => link.addEventListener('click', event => {
+    if (typeof window.openServiceDrawer === 'function' && document.getElementById('drawer')) {
+      event.preventDefault();
+      window.openServiceDrawer('homepage', 'Free Site Survey', 'Book a Free Site Survey', 'Share a few property details and Urban Eye will schedule a free site survey.');
+    }
+  }));
 })();
