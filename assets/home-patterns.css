@@ -90,3 +90,16 @@
 /* Product visuals remain fully visible inside the existing photo frame. */
 .home-redesign .service-media img.product-visual{object-fit:contain;background:#fff}
 .home-redesign .service-media img.fire-visual{background:#050201;object-fit:cover}
+
+/* Temporary image-free monitoring section. */
+.home-redesign .monitor-scene.monitor-text{min-height:370px;padding:48px 0;background:#0b213b;overflow:hidden;isolation:isolate;clip-path:polygon(0 0,calc(100% - 38px) 0,100% 38px,100% 100%,38px 100%,0 calc(100% - 38px))}
+.home-redesign .monitor-text .monitor-pattern{position:absolute;left:-45px;bottom:-65px;width:36%;height:390px;background:repeating-linear-gradient(135deg,transparent 0 32px,#c63632 32px 50px,transparent 50px 84px);clip-path:polygon(0 0,100% 45%,100% 100%,0 100%);opacity:.8;pointer-events:none}
+.home-redesign .monitor-text .monitor-panel{width:68%;padding:12px 52px 12px 20px;border:0;clip-path:none;filter:none;background:transparent;color:#fff}
+.home-redesign .monitor-text .monitor-panel h2{color:#fff}
+.home-redesign .monitor-text .monitor-panel p{color:#cbd8e3;margin:20px 0}
+@media(max-width:760px){
+ .home-redesign .monitor-scene.monitor-text{min-height:0;padding:36px 26px 42px}
+ .home-redesign .monitor-text .monitor-panel{width:100%;padding:0;margin:0}
+ .home-redesign .monitor-text .monitor-panel h2{font-size:31px}
+ .home-redesign .monitor-text .monitor-pattern{width:165px;height:230px;left:auto;right:-100px;bottom:-70px;opacity:.16;z-index:-1}
+}
