@@ -333,3 +333,39 @@
 
 .home-redesign .hero h1{background:none;-webkit-text-fill-color:#fff;color:#fff}.home-redesign .hero .eyebrow{color:#fff}.home-redesign .sector-copy .btn:after{content:"↗"}
 .home-redesign h2,.home-redesign h3{color:inherit;background:none;-webkit-text-fill-color:currentColor}.home-redesign .faq details{border:0;border-bottom:1px solid #d6dfe5;border-radius:0;box-shadow:none;background:transparent;padding:0}.home-redesign .faq summary:before{display:none}.home-redesign .faq summary:after{background:none;border:0;transform:none}.home-redesign .contact h2,.home-redesign .sector-copy h3{color:white}
+
+/* Client proof: quiet logo gallery, with a clear editorial heading. */
+.home-redesign .proof{padding:40px 0 42px;background:#fff;border:0}
+.home-redesign .proof>.wrap{display:grid;grid-template-columns:240px 1fr;gap:42px;align-items:center}
+.home-redesign .proof-top{display:block;margin:0;border-left:3px solid var(--red);padding-left:22px}
+.home-redesign .proof-top h2{font-size:25px;line-height:1.2;letter-spacing:-.8px}
+.home-redesign .proof-top h2 span{color:var(--red)}
+.home-redesign .proof-top p{font-size:12px;line-height:1.6;color:#637686;margin-top:12px}
+.home-redesign .logos{border:0;padding:0;gap:0;grid-template-columns:repeat(3,1fr);align-items:center}
+.home-redesign .logos>div{height:88px;padding:12px 22px;border:0;border-radius:0;box-shadow:none;background:#fff;overflow:hidden}
+.home-redesign .logos>div:nth-child(-n+3){border-bottom:1px solid #e7ecef}
+.home-redesign .logos>div:not(:nth-child(3n)){border-right:1px solid #e7ecef}
+.home-redesign .logos img{max-height:64px;max-width:100%;filter:none;opacity:1}
+.home-redesign .logos .logo-torobo img,.home-redesign .logos .logo-reliance img{max-height:80px;transform:scale(1.2)}
+/* Short, angular statement band, inspired by the supplied reference. */
+.home-redesign .intro{position:relative;isolation:isolate;background:#0b213b;color:#fff;padding:76px 0 92px;overflow:hidden;border:0}
+.home-redesign .intro:after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:32px;background:#edf1f3;clip-path:polygon(0 0,46% 0,49% 100%,100% 100%,100% 100%,0 100%);z-index:-1}
+.home-redesign .intro .two{grid-template-columns:1fr 1.22fr;gap:80px;align-items:center;position:relative}
+.home-redesign .intro h2{font-size:clamp(32px,3.6vw,46px);line-height:1.13;max-width:none;color:white}
+.home-redesign .intro h2 span{color:#ff8c84}
+.home-redesign .intro p{font-size:clamp(18px,2vw,24px);line-height:1.55;color:#edf3f7;margin:0 0 23px;max-width:590px}
+.home-redesign .intro .arrow{color:white;margin:0;font-size:13px;border-bottom:1px solid #ffffff50;padding-bottom:7px}
+.home-redesign .approach-pattern{position:absolute;width:240px;height:240px;left:32%;top:-95px;border:1px solid #ffffff09;transform:rotate(45deg);box-shadow:0 0 0 18px #ffffff03,0 0 0 36px #ffffff03;z-index:-1}
+/* FAQ rows have a readable hit area, a single icon, and properly spaced answers. */
+.home-redesign .faq{padding:72px 0}
+.home-redesign .faq .two{gap:72px;align-items:start}
+.home-redesign .faq details{margin:0;padding:0;border-bottom:1px solid #d6dfe5;background:transparent}
+.home-redesign .faq details:first-child{border-top:1px solid #d6dfe5}
+.home-redesign .faq details>summary{position:relative;display:flex;align-items:center;min-height:66px;padding:19px 38px 19px 0;margin:0;line-height:1.5;font-size:15px;font-weight:600;color:#0b213b}
+.home-redesign .faq details>summary::after{position:absolute;right:0;top:50%;transform:translateY(-50%);width:24px;height:24px;display:grid;place-items:center;content:'+';color:#b3292e;font-size:22px;font-weight:400;line-height:1;background:none;border:0}
+.home-redesign .faq details[open]>summary::after{content:'−'}
+.home-redesign .faq details>p{margin:0;padding:0 36px 21px 0;font-size:14px;line-height:1.75;color:#526779}
+.home-redesign .faq details>summary:focus-visible{outline:2px solid #b3292e;outline-offset:3px}
+@media(max-width:760px){.home-redesign .proof{padding:30px 0}.home-redesign .proof>.wrap{grid-template-columns:1fr;gap:22px}.home-redesign .proof-top h2 br{display:none}.home-redesign .proof-top p{margin-top:8px}.home-redesign .proof-top p br{display:none}.home-redesign .logos>div{height:82px;padding:10px}.home-redesign .logos img{max-height:58px}.home-redesign .logos .logo-torobo img,.home-redesign .logos .logo-reliance img{max-height:64px}.home-redesign .intro{padding:48px 0 66px}.home-redesign .intro .two{grid-template-columns:1fr;gap:24px}.home-redesign .intro p{font-size:18px;margin-bottom:22px}.home-redesign .faq{padding:48px 0}.home-redesign .faq .two{gap:26px}.home-redesign .faq details>summary{font-size:14px;min-height:64px}.home-redesign .faq details>p{padding-right:12px}.home-redesign .faq .arrow{margin-top:18px}}
+/* Use one section join instead of overlapping decorative cuts. */
+.home-redesign .intro+.services:before{display:none}
