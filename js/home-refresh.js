@@ -3,11 +3,11 @@
 
   const services = [
     ['Manned Guarding', 'Guards at your gates, reception and patrol points, with written duties and reporting procedures.', 'guard3-800.webp', 'manned-guarding'],
-    ['CCTV Installation', 'Cover entrances, tills and stockrooms. Review footage and check cameras remotely with an internet connection.', 'cctv installl.webp', 'cctv-installation'],
-    ['Alarm Systems & Monitoring', 'Receive intrusion alerts on your phone. Add optional PRO Monitoring for operators to review supported alerts and contact the people named in your plan.', 'alarm system.webp', 'ajax-smart-alarms'],
+    ['CCTV Installation', 'Cover entrances, tills and stockrooms. Review footage and check cameras remotely with an internet connection.', 'nfence.jpg', 'cctv-installation'],
+    ['Alarm Systems & Monitoring', 'Receive intrusion alerts on your phone. Add optional PRO Monitoring for operators to review supported alerts and contact the people named in your plan.', 'ajax.png', 'ajax-smart-alarms'],
     ['Access Control', 'Manage entry to your premises. Set staff permissions, cancel lost credentials and review access records.', 'access.webp', 'access-control'],
-    ['Electric Fencing', 'Protect your boundary with an electric fence that raises an alert when it detects tampering.', 'Residential-Electric-Fence.webp', 'electric-fencing'],
-    ['Fire Alarm Systems', 'Fire detectors and alarms selected for your building, with testing and instructions for your staff.', 'fire alarm.png', 'commercial-fire-alarm-systems'],
+    ['Electric Fencing', 'Protect your boundary with an electric fence that raises an alert when it detects tampering.', 'electric fence install.jpg', 'electric-fencing'],
+    ['Fire Alarm Systems', 'Fire detectors and alarms selected for your building, with testing and instructions for your staff.', 'Key visual - Ajax EN54 Line - black.png', 'commercial-fire-alarm-systems'],
     ['Risk Assessments', 'A paid assessment with a written report of security gaps and recommended fixes in priority order.', 'risksurvey.jpg', 'corporate-risk-audit']
   ];
   const tabs = document.querySelector('.service-tabs');
@@ -27,6 +27,8 @@
     document.getElementById('service-title').textContent = service[0];
     document.getElementById('service-copy').textContent = service[1];
     document.getElementById('service-img').src = '/urban-eye-assets/' + service[2];
+    document.getElementById('service-img').classList.toggle('product-visual', index === 2 || index === 5);
+    document.getElementById('service-img').classList.toggle('fire-visual', index === 5);
     document.getElementById('service-img').alt = service[0] + ' equipment and service';
     const link = document.getElementById('service-link');
     link.href = '/' + service[3] + '/';

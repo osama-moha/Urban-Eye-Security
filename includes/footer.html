@@ -593,3 +593,47 @@
 #site-footer>footer .footer-grid{gap:36px}
 #site-footer>footer .footer-bottom{padding-top:22px;margin-top:36px}
 </style>
+
+<style>
+/* Compact footer on phones; keep accordion targets easy to tap. */
+@media(max-width:767px){
+  #site-footer>footer{padding:30px 0 24px}
+  #site-footer>footer .footer-grid{gap:0}
+  #site-footer>footer .footer-grid>div:first-child{margin:0 0 20px;padding:0}
+  #site-footer>footer .footer-grid>div:first-child p{margin:10px 0;line-height:1.65}
+  #site-footer>footer .footer-group,#site-footer>footer .footer-group[open]{margin:0;border-bottom:1px solid #ccd6de}
+  #site-footer>footer .footer-group summary{min-height:50px;padding:12px 0;line-height:1.5}
+  #site-footer>footer .footer-group summary::after{border-color:#40576a}
+  #site-footer>footer .footer-group ul{padding-bottom:12px}
+  #site-footer>footer .footer-bottom{margin-top:22px;padding-top:18px;gap:8px;line-height:1.8}
+}
+/* Match the mobile menu to the site's white header and navy panels. */
+@media(max-width:1023px){
+  #header #nav-toggle{width:44px;height:44px;border:1px solid #dce4ea;border-radius:2px;display:grid!important;place-items:center}
+  #header #nav-menu,#header #nav-menu .mobile-menu-scroll,#header #nav-menu .mobile-nav,#header #nav-menu .mobile-accordion,#header #nav-menu .mobile-accordion[open],#header #nav-menu .mobile-subnav,#header #nav-menu .mobile-accordion summary{background:#0b213b!important}
+  #header #nav-menu{border-top:4px solid #c63632}
+  #header #nav-menu .mobile-menu-header{height:72px;min-height:72px;padding:0 22px;background:#fff;border-bottom:1px solid #dce4ea}
+  #header #nav-menu .brand-wordmark-main{color:#0b213b}
+  #header #nav-menu .brand-wordmark-accent{color:#c63632}
+  #header #nav-menu .mobile-menu-close{width:44px;height:44px;border:1px solid #dce4ea;border-radius:2px;background:#fff}
+  #header #nav-menu .mobile-menu-close .ui-icon{color:#0b213b;width:22px;height:22px}
+  #header #nav-menu .mobile-menu-scroll{padding:15px 22px 20px;min-height:0;overscroll-behavior:contain}
+  #header #nav-menu .mobile-nav-link,#header #nav-menu .mobile-accordion summary{min-height:49px;padding:13px 12px;font-size:16px;font-weight:600;line-height:1.4;border-bottom:1px solid #ffffff20;gap:10px}
+  #header #nav-menu .mobile-nav-link::before,#header #nav-menu .mobile-accordion summary::before{display:none}
+  #header #nav-menu .mobile-nav-link.is-active{background:#ffffff0d;box-shadow:inset 3px 0 #e15a52;color:#fff}
+  #header #nav-menu .mobile-accordion summary::after{font-size:22px;font-weight:400;color:#b8c9d7}
+  #header #nav-menu .mobile-subnav{padding:14px 12px 18px 18px!important;border-left:2px solid #c63632!important}
+  #header #nav-menu .mobile-subnav a{padding:10px 0!important;font-size:14px!important;line-height:1.5!important}
+  #header #nav-menu .mobile-subnav-label{color:#ff9a91!important;font-size:10px!important;letter-spacing:.1em!important}
+  #header #nav-menu .mobile-feature-link{padding:14px!important;margin-top:12px!important}
+  #header #nav-menu .mobile-feature-link strong{font-size:15px}
+  #header #nav-menu .mobile-feature-link span{font-size:12px}
+  #header #nav-menu .mobile-menu-footer{flex:0 0 auto;padding:16px 22px max(16px,env(safe-area-inset-bottom));background:#07182b;border-top:1px solid #ffffff20}
+  #header #nav-menu .mobile-menu-actions{margin:0;gap:8px}
+  #header #nav-menu .mobile-menu-actions .btn{min-height:46px;padding:11px 16px;font-size:13px;border-radius:0}
+  #header #nav-menu .mobile-menu-actions .btn-primary{background:#c63632}
+  #header #nav-menu .mobile-quick-links{display:flex;justify-content:center;gap:30px;margin-top:12px}
+  #header #nav-menu .mobile-quick-links a{font-size:12px;color:#c8d6e0;text-decoration:underline;text-underline-offset:3px}
+  #header #nav-menu a:focus-visible,#header #nav-menu summary:focus-visible,#header #nav-menu button:focus-visible{outline:2px solid #ff9a91;outline-offset:2px}
+}
+</style>

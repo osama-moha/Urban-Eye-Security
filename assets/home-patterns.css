@@ -86,3 +86,7 @@
   .home-redesign .contact>.stripes{width:320px;height:320px;left:-190px;bottom:-120px;opacity:.25}
   .home-redesign .survey-launch{transform:none;box-shadow:8px 10px 0 #ffffff12,0 14px 32px #0002}
 }
+
+/* Product visuals remain fully visible inside the existing photo frame. */
+.home-redesign .service-media img.product-visual{object-fit:contain;background:#fff}
+.home-redesign .service-media img.fire-visual{background:#050201;object-fit:cover}

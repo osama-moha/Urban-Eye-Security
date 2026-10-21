@@ -1,6 +1,6 @@
 // Deployed pages have the navbar and footer written in by scripts/build.mjs.
 // Local previews fetch them; bump this when they change so browsers refetch.
-const INCLUDES_VERSION = "20261021b";
+const INCLUDES_VERSION = "20261021d";
 
 async function loadNavbar(){
   const navbarTarget = document.getElementById("site-navbar");
@@ -729,30 +729,49 @@ function initNavbar(){
   const navMenu = document.getElementById("nav-menu");
   const navToggle = document.getElementById("nav-toggle");
   const navClose = document.getElementById("nav-close");
+  if(!navMenu || !navToggle) return;
+  let previousFocus = null;
 
   function openMenu(){
-    if(!navMenu) return;
+    previousFocus = document.activeElement;
+    navMenu.inert = false;
+    navMenu.setAttribute("aria-hidden", "false");
+    navToggle.setAttribute("aria-expanded", "true");
     navMenu.classList.add("show-menu");
     document.body.classList.add("menu-open");
+    navClose?.focus();
   }
 
-  function closeMenu(){
-    if(!navMenu) return;
+  function closeMenu(restoreFocus = true){
+    if(!navMenu.classList.contains("show-menu")) return;
     navMenu.classList.remove("show-menu");
+    navMenu.setAttribute("aria-hidden", "true");
+    navMenu.inert = true;
+    navToggle.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-open");
+    if(restoreFocus) (previousFocus || navToggle).focus();
   }
 
-  if(navToggle) navToggle.addEventListener("click", openMenu);
-  if(navClose) navClose.addEventListener("click", closeMenu);
-
-  document.querySelectorAll(
-    ".nav-link, .nav-dropdown-menu a, .mobile-nav-link, .mobile-subnav a, .mobile-menu-actions a, .mobile-contact-icons a"
-  ).forEach((link)=>{
-    link.addEventListener("click", closeMenu);
+  navToggle.addEventListener("click", openMenu);
+  navClose?.addEventListener("click", () => closeMenu());
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => closeMenu(false));
+    if(link.getAttribute("href") === window.location.pathname){
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
+    }
   });
 
-  document.addEventListener("keydown",(event)=>{
-    if(event.key === "Escape") closeMenu();
+  navMenu.addEventListener("keydown", event => {
+    if(event.key === "Escape") {event.preventDefault();closeMenu();}
+    if(event.key !== "Tab") return;
+    const items = [...navMenu.querySelectorAll('a[href],button,summary')].filter(el => !el.disabled && el.getClientRects().length);
+    const first = items[0], last = items[items.length - 1];
+    if(event.shiftKey && document.activeElement === first) {event.preventDefault();last?.focus();}
+    else if(!event.shiftKey && document.activeElement === last) {event.preventDefault();first?.focus();}
+  });
+  window.matchMedia("(min-width:1024px)").addEventListener("change", event => {
+    if(event.matches) closeMenu(false);
   });
 }
 
