@@ -168,7 +168,15 @@
     color: #C4272E !important;
   }
   .selection-tile-input {
-    display: none;
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .selection-tile-content .tile-title {
     display: block;
@@ -242,7 +250,7 @@
         <h4 class="form-group-kicker">SITE DETAILS</h4>
         <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">Select your property or facility sector:</p>
         
-        <div class="selection-tile-grid">
+        <div class="selection-tile-grid" role="radiogroup" aria-label="Property type">
           <label class="selection-tile-label" data-tile-category="commercial">
             <input type="radio" name="drawer_property_type_radio" value="Commercial Real Estate & Office" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
             <div class="selection-tile-content">
@@ -305,7 +313,7 @@
         <h4 class="form-group-kicker">SECURITY CONCERNS</h4>
         <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What is your primary security objective?</p>
 
-        <div style="display:grid; gap:10px;">
+        <div style="display:grid; gap:10px;" role="radiogroup" aria-label="Main security concern">
           <label class="selection-tile-label" data-concern-scope="residential">
             <input type="radio" name="drawer_security_concern_radio" value="Stopping night break-ins" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 2)">
             <div class="selection-tile-content">

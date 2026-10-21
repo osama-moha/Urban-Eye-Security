@@ -737,6 +737,7 @@ function initNavbar(){
     navMenu.inert = false;
     navMenu.setAttribute("aria-hidden", "false");
     navToggle.setAttribute("aria-expanded", "true");
+    navToggle.setAttribute("aria-label", "Close menu");
     navMenu.classList.add("show-menu");
     document.body.classList.add("menu-open");
     navClose?.focus();
@@ -748,11 +749,12 @@ function initNavbar(){
     navMenu.setAttribute("aria-hidden", "true");
     navMenu.inert = true;
     navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open menu");
     document.body.classList.remove("menu-open");
     if(restoreFocus) (previousFocus || navToggle).focus();
   }
 
-  navToggle.addEventListener("click", openMenu);
+  navToggle.addEventListener("click", () => navMenu.classList.contains("show-menu") ? closeMenu() : openMenu());
   navClose?.addEventListener("click", () => closeMenu());
   navMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => closeMenu(false));
