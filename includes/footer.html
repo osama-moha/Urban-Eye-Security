@@ -549,3 +549,37 @@
     </form>
   </div>
 </aside>
+<style>
+/* Shared header/footer and connected survey refresh. */
+#header .brand-wordmark{font-family:var(--font-primary)}
+#header .nav-dropdown-menu{border-radius:0;border-top:3px solid #c63632;box-shadow:0 18px 45px #0b213b20}
+#header .nav-dropdown-menu a{border-radius:0}
+#site-footer>footer{background:#edf1f3;color:#0b213b;border-top:0;padding-top:65px}
+#site-footer .footer-heading{color:#0b213b;font-family:var(--font-primary)}
+#site-footer .footer-bottom{border-top:1px solid #ccd6de}
+#site-footer .footer-grid a:hover{color:#c63632}
+#drawer{max-width:620px;border-top:4px solid #c63632;font-family:var(--font-primary)}
+#drawer .drawer-title-heading{font-family:var(--font-primary);font-size:28px;line-height:1.2;letter-spacing:-.7px}
+#drawer .step-segment{border-radius:0;height:4px}
+#drawer .step-segment.active{background:#c63632}
+#drawer .selection-tile-content{border-radius:2px;background:#f8fafb;border-color:#d8e0e6;padding:16px 14px;min-height:86px;box-shadow:none}
+#drawer .selection-tile-label:hover .selection-tile-content{border-color:#8e9eac}
+#drawer .selection-tile-input:checked+.selection-tile-content{border-color:#c63632;background:#fff4f2;box-shadow:inset 3px 0 #c63632}
+#drawer .selection-tile-input:focus-visible+.selection-tile-content{outline:2px solid #0b213b;outline-offset:3px}
+#drawer .tile-title{font-family:var(--font-primary);font-size:13px;color:#0b213b}
+#drawer .tile-desc{font-family:var(--font-primary);font-size:11px;line-height:1.6;color:#627282}
+#drawer .form-field-input{border-radius:2px;min-height:48px;border-color:#bac7d1;font-family:var(--font-primary)}
+#drawer .btn{border-radius:0;min-height:50px;background:#c63632}
+#drawer .btn:disabled{opacity:.45;cursor:not-allowed}
+#drawer .form-group-kicker{font-family:var(--font-primary);letter-spacing:.12em;font-size:11px}
+@media(max-width:480px){#drawer .selection-tile-grid{grid-template-columns:1fr}#drawer .selection-tile-content{min-height:68px}#drawer .drawer-title-heading{font-size:24px}}
+@media(prefers-reduced-motion:reduce){#drawer,.drawer-backdrop{transition:none}}
+</style>
+
+<style>
+#drawer,#auditDrawer{visibility:hidden}#drawer.open,#auditDrawer.open{visibility:visible}
+#drawer .selection-tile-label{padding:0;border:0;background:transparent;border-radius:0}
+#drawer .selection-tile-content{border:1px solid #d8e0e6}
+#drawer .tile-title{text-transform:none;letter-spacing:0}
+</style>
+<style>#drawer:not(.open) *,#auditDrawer:not(.open) *{visibility:hidden!important}</style>

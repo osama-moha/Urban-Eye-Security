@@ -1,6 +1,6 @@
 // Deployed pages have the navbar and footer written in by scripts/build.mjs.
 // Local previews fetch them; bump this when they change so browsers refetch.
-const INCLUDES_VERSION = "20260915a";
+const INCLUDES_VERSION = "20261021a";
 
 async function loadNavbar(){
   const navbarTarget = document.getElementById("site-navbar");
@@ -230,6 +230,7 @@ function openServiceDrawer(pageSource, serviceInterest, title, intro){
   backdrop.classList.add("open");
   drawer.classList.add("open");
   document.body.classList.add("drawer-open");
+  drawer.querySelector(".drawer-close")?.focus();
 
   return false;
 }
@@ -312,6 +313,8 @@ function goToFormStep(stepNum, config) {
   });
 
   updateStepIndicator(config.surfacePrefix, stepNum);
+  const heading = document.querySelector(config.formSelector + ' .form-step.active h4');
+  if (heading) { heading.tabIndex = -1; heading.focus(); }
 }
 
 function handleTileRadioChange(radioEl, surface, stepNum) {
@@ -682,7 +685,14 @@ function initLeadDrawer(){
   if(!drawer) return;
 
   document.addEventListener("keydown",(event)=>{
+    if(!drawer.classList.contains("open")) return;
     if(event.key === "Escape") closeFormDrawer();
+    if(event.key === "Tab") {
+      const items = [...drawer.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')].filter(el => !el.disabled && el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden');
+      const first = items[0], last = items[items.length - 1];
+      if(event.shiftKey && document.activeElement === first) {event.preventDefault();last?.focus();}
+      else if(!event.shiftKey && document.activeElement === last) {event.preventDefault();first?.focus();}
+    }
   });
 }
 
