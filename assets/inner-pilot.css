@@ -151,3 +151,21 @@
 @media(max-width:760px){
  .inner-pilot .faq-items details::details-content{transition:none}
 }
+
+/* Package summaries inherit a global flex rule. Keep price hierarchy vertical. */
+.inner-pilot .pilot-package-disclosure>summary{display:block;white-space:normal;overflow-wrap:break-word}
+.inner-pilot .pilot-package-disclosure>summary>*{max-width:100%;min-width:0}
+.inner-pilot .pilot-package-disclosure .package-tag{display:inline-block}
+.inner-pilot .pilot-package-disclosure .package-price{display:block;line-height:1.2;margin:16px 0 10px}
+.inner-pilot .pilot-package-disclosure .alarm-package-monthly{display:block;margin:0;padding-top:12px;border-top:1px solid #d7e0e6}
+.inner-pilot .package-card{position:relative;overflow:hidden}
+.inner-pilot .package-card.featured{background:linear-gradient(135deg,#fff 78%,#f7e9e8 78%,#fff 79%,#fff 85%,#f7e9e8 85%,#fff 86%)}
+.inner-pilot .alarm-costs{border-top:4px solid var(--pilot-red);scroll-margin-top:150px}
+.inner-pilot .pilot-health .b2b-feature-list{border:0;border-radius:0;box-shadow:none;padding:0;background:transparent}
+.inner-pilot .pilot-health .b2b-feature-row{padding:22px 0;border-radius:0}
+.inner-pilot .pilot-health .package-card{background:var(--pilot-paper)}
+.inner-pilot .pilot-health .b2b-feature-row h3{font-size:18px}
+.inner-pilot .pilot-health .b2b-feature-row p{font-size:15px}
+.inner-pilot .faq-items details>summary{padding-right:30px}
+.inner-pilot .faq-items details::details-content{transition:none}
+@media(max-width:760px){.inner-pilot .alarm-costs{scroll-margin-top:112px}.inner-pilot .pilot-package-disclosure .package-price{margin:10px 0}.inner-pilot .pilot-package-disclosure .alarm-package-monthly{padding-top:10px}}
