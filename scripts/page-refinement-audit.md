@@ -43,3 +43,9 @@ Closing banners now share one full-width navy component, typography, spacing, re
 Fixed stylesheet version references on nested articles, which still had the older cache key. Homepage asset versions updated for the new sector behaviour.
 
 Verification: 29-page build, JSON-LD/ID/fragment and whitespace checks passed. Browser checked twelve representative routes at 320 px and 390 px frame widths: shared closing background and button font agree, with no document overflow. Both image-free tabs have no image source. Fixed a narrow residential CTA that overflowed its inner panel; retest shows panel scroll width equals client width. Contact section headings use 11 px primary type with no heading focus outline. Insights card reading-time estimates now match the shortened articles.
+
+## Live enquiry endpoint check
+
+22 October 2026: completed all three Contact form steps in the local branch preview and submitted exactly one clearly labelled test to the configured live Formspree endpoint. Test name: WEBSITE TEST - no survey required; location also marked test-only/do not schedule. Used Urban Eye's public business number. The success path displayed /thank-you/?service=Free%20Site%20Survey after the asynchronous submission. This verifies the application's accepted-response path; recipient inbox delivery is not independently visible and needs owner confirmation. No second test or paid-assessment request submitted.
+
+Final source check corrected the homepage meta description's older unconditional 24/7 monitoring claim. Current credential documents and the five-working-day report / 90-day fee-credit policy still need owner confirmation. Branch has not been merged.
