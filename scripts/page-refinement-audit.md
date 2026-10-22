@@ -49,3 +49,9 @@ Verification: 29-page build, JSON-LD/ID/fragment and whitespace checks passed. B
 22 October 2026: completed all three Contact form steps in the local branch preview and submitted exactly one clearly labelled test to the configured live Formspree endpoint. Test name: WEBSITE TEST - no survey required; location also marked test-only/do not schedule. Used Urban Eye's public business number. The success path displayed /thank-you/?service=Free%20Site%20Survey after the asynchronous submission. This verifies the application's accepted-response path; recipient inbox delivery is not independently visible and needs owner confirmation. No second test or paid-assessment request submitted.
 
 Final source check corrected the homepage meta description's older unconditional 24/7 monitoring claim. Current credential documents and the five-working-day report / 90-day fee-credit policy still need owner confirmation. Branch has not been merged.
+
+## Owner-confirmed credentials and release
+
+Owner confirmed successful inbox delivery of the labelled test, the five-working-day single-site report turnaround and full assessment-fee credit within 90 days. Owner also confirmed PSRA licensing, PSIA membership, Ajax Systems partnership and 2021 registration, while declining publication of documents/badges. Added plain-text credentials on About and relevant service copy; no document-availability promise, licence number, seal or partner logo was invented. Credentials are owner-confirmed rather than independently document-verified. The proposed deposit condition was not added to the confirmed credit policy.
+
+Owner authorised merging after final checks. Preserve existing Vercel configuration, canonical URLs and form endpoint. Run the final build and checks against the final branch head before merge.
