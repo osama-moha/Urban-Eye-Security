@@ -72,3 +72,10 @@
  .business-packages .bp-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
  .business-packages .bp-logos img{height:65px;max-width:140px}
 }
+
+.business-packages .bp-cards.bp-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.business-packages .bp-price.bp-price-quoted{font-size:24px;letter-spacing:-.02em}
+.business-packages .bp-growth{margin-top:26px;padding:22px 0 0;border-top:2px solid #c63632}
+.business-packages .bp-growth h3{font-size:23px;margin:0 0 12px}
+.business-packages .bp-growth>p{font-size:15px;max-width:760px}
+@media(max-width:1000px){.business-packages .bp-cards.bp-three{grid-template-columns:minmax(0,1fr)}}

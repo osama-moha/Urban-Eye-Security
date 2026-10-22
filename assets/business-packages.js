@@ -3,8 +3,11 @@
   const contactForm = document.getElementById('contact-step-form');
   if (contactForm) {
     const packages = {
-      'essential-retail': 'Essential Retail',
-      'storefront-guardian': 'Storefront Guardian',
+      'essential-retail': 'Business Essential',
+      'business-essential': 'Business Essential',
+      'business-photo': 'Business Photo',
+      'business-outdoor': 'Business Outdoor',
+      'storefront-guardian': 'Business Outdoor',
       'office-access-plans': 'Office Access Plans',
       'warehouse-protection-plan': 'Warehouse Protection Plan',
       'site-equipment-purchase': 'Site Equipment Purchase',
