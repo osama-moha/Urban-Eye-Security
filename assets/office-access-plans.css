@@ -32,7 +32,24 @@
 .inner-pilot .office-plan-notes p,.inner-pilot .office-quote-note p{font-size:15px;margin:0}
 .inner-pilot .office-quote-note{margin-top:28px;padding:24px 28px;background:#fff;border-left:3px solid #c63632}
 @media(max-width:760px){
- .inner-pilot .office-plan-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+ .inner-pilot .office-access-plans{overflow-x:clip}
+ .inner-pilot .office-plan-grid{
+   display:flex;
+   overflow-x:auto;
+   scroll-snap-type:x mandatory;
+   gap:16px;
+   padding:0 20px 12px;
+   margin:0 -20px;
+   scrollbar-width:none;
+   -webkit-overflow-scrolling:touch;
+ }
+ .inner-pilot .office-plan-grid::-webkit-scrollbar{display:none}
+ .inner-pilot .office-plan{
+   flex:0 0 85%;
+   max-width:85%;
+   scroll-snap-align:start;
+   scroll-snap-stop:always;
+ }
  .inner-pilot .office-plan-art{padding:8px 20px 0}
  .inner-pilot .office-plan-art svg{height:190px}
  .inner-pilot .office-plan-content{padding:20px}
