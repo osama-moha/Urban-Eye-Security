@@ -77,9 +77,9 @@
   const sectors = [
     ['Commercial Buildings & Offices', 'Manage staff and visitor access.', 'Guarding, cameras and access control for reception, shared spaces and restricted rooms.', ['Visitor entry', 'Staff permissions', 'Reception cameras', 'Guarding procedures'], 'nairobi-commercial-tower.webp', 'office-security', 'Explore office security'],
     ['Warehouses', 'Cover loading bays and stock areas.', 'Monitor deliveries, vehicle entry and storage aisles with cameras, access control and guarding.', ['Loading-bay cameras', 'Vehicle entry control', 'Storage-area coverage', 'Perimeter alerts'], 'warehouse.jpg', 'warehouse-security', 'Explore warehouse security'],
-    ['Shops & Retail', 'Keep an eye on tills and stock.', 'Cameras and alarms for entrances, sales floors and stockrooms, with access control for staff areas.', ['Entrance cameras', 'Till and stockroom cameras', 'Intrusion alerts', 'Staff access control'], 'retail.webp', 'retail-storefronts', 'Explore retail security'],
+    ['Shops & Retail', 'Keep an eye on tills and stock.', 'Cameras and alarms for entrances, sales floors and stockrooms, with access control for staff areas.', ['Entrance cameras', 'Till and stockroom cameras', 'Intrusion alerts', 'Staff access control'], null, 'retail-storefronts', 'Explore retail security'],
     ['Construction Sites', 'Protect tools and materials on site.', 'Plan guarding, entry checks and cameras around working hours and changes to your site layout.', ['Guard patrol planning', 'Contractor access', 'Materials-area cameras', 'After-hours alerts'], 'construction-security.webp', 'construction-site-security', 'Explore site security'],
-    ['Homes & Residential Properties', 'Check your home when you are away.', 'Security for homes, estates, Airbnb and short-stay properties. Manage guest access and check cameras in permitted external or shared areas.', ['Perimeter protection', 'Photo options for private homes', 'Remote camera access', 'Guest and gate access'], 'nairobi-residential-estate.webp', 'residential-security', 'Explore residential security']
+    ['Homes & Residential Properties', 'Check your home when you are away.', 'Security for homes, estates, Airbnb and short-stay properties. Manage guest access and check cameras in permitted external or shared areas.', ['Perimeter protection', 'Photo options for private homes', 'Remote camera access', 'Guest and gate access'], null, 'residential-security', 'Explore residential security']
   ];
   const sectorTabs = document.querySelector('.sector-tabs');
 
@@ -98,8 +98,17 @@
       item.textContent = text;
       return item;
     }));
-    document.getElementById('sector-image').src = '/urban-eye-assets/' + sector[4];
-    document.getElementById('sector-image').alt = sector[0] + ' property';
+    const panel = document.getElementById('sector-panel');
+    const photo = document.getElementById('sector-image');
+    panel.classList.toggle('sector-text-only', !sector[4]);
+    photo.hidden = !sector[4];
+    if (sector[4]) {
+      photo.src = '/urban-eye-assets/' + sector[4];
+      photo.alt = sector[0] + ' property';
+    } else {
+      photo.removeAttribute('src');
+      photo.alt = '';
+    }
     document.getElementById('sector-link').href = '/' + sector[5] + '/';
     document.getElementById('sector-link').textContent = sector[6];
     document.querySelector('.sector-count').textContent = String(index + 1).padStart(2, '0') + ' / ' + String(sectors.length).padStart(2, '0');

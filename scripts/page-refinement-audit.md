@@ -33,3 +33,13 @@ Rewrote all three Insights articles as practical guides; aligned headings, summa
 No hardware prices or shop links added; Monitoring prices retained. Homepage changes are copy only, including private-home photo option context; images and layout unchanged. No new credentials, case-study outcomes, response guarantees or conversion claims introduced. Owner confirmation of current credentials, the existing five-day risk-report promise and fee-credit policy remains outstanding; these cannot be established by editing copy.
 
 Final checks for this batch: all 29 pages build; source HTML has one main and H1, unique IDs, valid JSON-LD, matching Article headlines and working main-content local fragments. No shop links or sector images; homepage image sources unchanged. Browser checked 20 pages in both 320 px and 390 px frames without horizontal overflow. Residential optional detail expands; Home Essential opens the correctly labelled enquiry with property choices. No live form submission made. Final guide heading and summary visually reviewed on desktop.
+
+## Screenshot consistency fixes
+
+22 October 2026: reviewed all seven supplied screenshots. Residential and retail imagery was in the homepage sector tabs; those two tabs now use a text-led layout without an image source. Other homepage photographs and all five visible categories retained. Sector pages remain image-free.
+
+Closing banners now share one full-width navy component, typography, spacing, red primary action and secondary contact link across service/sector pages and Insights. Contact uses WhatsApp and telephone actions; articles use a free-survey action rather than labelling it a paid assessment. Related service links remain accessible. Removed Contact's nested rounded CTA and condensed its next-step explanation into three relevant steps. Contact hero now uses the same architectural geometry as service pages. Form section-heading typography and programmatic-focus treatment are scoped to Contact; input/button focus remains visible.
+
+Fixed stylesheet version references on nested articles, which still had the older cache key. Homepage asset versions updated for the new sector behaviour.
+
+Verification: 29-page build, JSON-LD/ID/fragment and whitespace checks passed. Browser checked twelve representative routes at 320 px and 390 px frame widths: shared closing background and button font agree, with no document overflow. Both image-free tabs have no image source. Fixed a narrow residential CTA that overflowed its inner panel; retest shows panel scroll width equals client width. Contact section headings use 11 px primary type with no heading focus outline. Insights card reading-time estimates now match the shortened articles.

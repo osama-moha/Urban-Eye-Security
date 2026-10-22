@@ -180,3 +180,28 @@
  .page-refined .copy-card h3{font-size:19px}
  .page-refined .copy-card p,.page-refined .copy-section>.container>p{font-size:14px}
 }
+
+/* Shared closing section: same surface, spacing and actions across inner pages. */
+.page-refined main>.closing-cta{padding:48px 0;margin:0;background:#0b213b;color:#fff;border:0;border-radius:0;box-shadow:none;clip-path:none}
+.page-refined main>.closing-cta>.container{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+.page-refined .closing-cta .closing-copy{max-width:760px}
+.page-refined .closing-cta h2{font-size:clamp(27px,3vw,38px);line-height:1.2;color:white;margin:0 0 16px;max-width:740px}
+.page-refined .closing-cta p{font-size:15px;line-height:1.7;color:#d0dce6;margin:0;max-width:720px}
+.page-refined .closing-cta .cta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;position:relative;z-index:1}
+.page-refined .closing-cta .btn{min-height:48px;padding:14px 22px;line-height:1.4;font-size:14px;margin:0;text-align:center;white-space:normal}
+.page-refined .closing-cta .cta-whatsapp-link{font-size:14px;line-height:1.5;color:white;margin:0!important;min-height:44px;display:inline-flex;align-items:center}
+.page-refined .closing-cta .closing-related{font-size:13px;margin-top:16px}
+.page-refined .closing-cta .closing-related a{color:#fff;text-underline-offset:4px}
+.page-refined main>.closing-cta::after{width:22%;opacity:.18}
+.page-refined.contact-page main .form-group-kicker{font-family:var(--font-primary);font-size:11px;line-height:1.5;letter-spacing:.08em;padding-left:0;border:0;margin:0 0 18px;outline:none}
+.page-refined .contact-next .container{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.page-refined .contact-next .copy-steps{margin:0}
+@media(max-width:760px){
+ .page-refined main>.closing-cta{padding:36px 0}
+ .page-refined main>.closing-cta>.container{grid-template-columns:minmax(0,1fr);gap:24px}
+ .page-refined .closing-cta h2{font-size:28px}
+ .page-refined .closing-cta p{font-size:14px}
+ .page-refined .closing-cta .cta-actions{align-items:stretch;width:100%;gap:8px}
+ .page-refined .closing-cta .cta-whatsapp-link{justify-content:center}
+ .page-refined .contact-next .container{grid-template-columns:minmax(0,1fr);gap:20px}
+}

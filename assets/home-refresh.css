@@ -380,3 +380,25 @@
 .home-redesign .sector-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
 .home-redesign .sector-tab{min-width:0;overflow-wrap:normal;line-height:1.5}
 @media(max-width:760px){.home-redesign .sector-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}.home-redesign .sector-tab{font-size:12px;padding:14px 12px}.home-redesign .sector-tab:last-child{grid-column:1/-1}.home-redesign .monitoring-link{margin-left:0;display:flex;margin-top:15px}}
+
+/* Residential and retail tabs use a deliberate text layout instead of photography. */
+.home-redesign .sector-stage.sector-text-only{position:relative;isolation:isolate;grid-template-columns:minmax(0,1fr)}
+.home-redesign .sector-text-only:before{content:'';position:absolute;right:0;top:0;width:220px;height:180px;background:repeating-linear-gradient(to bottom,#c63632 0 9px,transparent 9px 28px);clip-path:polygon(60% 0,100% 0,100% 100%,0 100%);opacity:.28;z-index:-1;pointer-events:none}
+.home-redesign .sector-text-only .sector-photo{display:none}
+.home-redesign .sector-text-only .sector-copy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);column-gap:64px;align-content:center}
+.home-redesign .sector-text-only .sector-copy>.eyebrow{grid-column:1;grid-row:1}
+.home-redesign .sector-text-only .sector-copy h3{grid-column:1;grid-row:2;font-size:36px}
+.home-redesign .sector-text-only .sector-copy>p{grid-column:1;grid-row:3;min-height:0}
+.home-redesign .sector-text-only .sector-copy>.btn{grid-column:1;grid-row:4;justify-self:start;margin-top:26px}
+.home-redesign .sector-text-only .sector-copy ul{grid-column:2;grid-row:2 / 5;align-self:center;grid-template-columns:minmax(0,1fr);gap:0;border:0;border-left:1px solid #ffffff30;padding:0 0 0 40px;margin:0;font-size:17px}
+.home-redesign .sector-text-only .sector-copy li{padding:18px 0;border-bottom:1px solid #ffffff25}
+.home-redesign .sector-text-only .sector-copy li:last-child{border:0}
+@media(max-width:760px){
+ .home-redesign .sector-stage.sector-text-only{min-height:0}
+ .home-redesign .sector-text-only .sector-copy{display:flex;flex-direction:column;align-items:stretch;padding:30px 24px}
+ .home-redesign .sector-text-only .sector-copy h3{font-size:28px}
+ .home-redesign .sector-text-only .sector-copy ul{order:3;border-left:0;border-top:1px solid #ffffff30;margin-top:22px;padding:0;font-size:14px}
+ .home-redesign .sector-text-only .sector-copy>.btn{order:4;margin-top:22px;align-self:flex-start}
+ .home-redesign .sector-text-only .sector-copy li{padding:14px 0}
+}
+@media(max-width:760px){.home-redesign .sector-text-only .sector-copy>.btn{max-width:100%;box-sizing:border-box;white-space:normal;font-size:12px;padding:14px 16px;line-height:1.5;gap:14px}}
