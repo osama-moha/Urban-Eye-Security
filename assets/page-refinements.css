@@ -1,4 +1,12 @@
 /* Shared refinements for inner pages. Keep navigation and footer typography independent. */
+.page-refined .shared-equipment{padding:24px;border:1px solid #ccd8e2;border-left:4px solid #c63632;background:white;margin:0 0 24px}
+.page-refined .shared-equipment h4{font-size:20px;color:#0b213b;margin:0 0 16px}
+.page-refined .shared-equipment ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 36px;padding-left:20px;color:#40586b;font-size:14px;line-height:1.65}
+.page-refined .shared-equipment .plan-scope-note{font-size:13px;color:#526575;max-width:900px}
+.page-refined .copy-options{margin-top:24px;border-top:1px solid #cbd8e1;border-bottom:1px solid #cbd8e1;padding:0 4px}
+.page-refined .copy-options>summary{min-height:48px;padding:16px 0;cursor:pointer;color:#a62c29;font-weight:600;font-size:15px}
+.page-refined .copy-options>p{font-size:14px;max-width:800px;color:#40586b;margin:0 0 20px}
+@media(max-width:760px){.page-refined .shared-equipment{padding:20px}.page-refined .shared-equipment ul{grid-template-columns:minmax(0,1fr);gap:10px}.page-refined .shared-equipment h4{font-size:18px}}
 .page-refined{--refine-ink:#0b213b;--refine-red:#c63632;--refine-paper:#f2f5f7}
 .page-refined main{overflow:clip}
 .page-refined main section{scroll-margin-top:145px}
