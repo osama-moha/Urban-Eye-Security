@@ -781,7 +781,7 @@ function setActiveNav(){
   const path = window.location.pathname;
   let activeSection = "";
 
-  document.querySelectorAll('.desktop-nav .nav-dropdown-menu a[href]').forEach(link => {
+  document.querySelectorAll('.desktop-nav .nav-dropdown-menu .mobile-menu-group a[href]').forEach(link => {
     if(new URL(link.href, window.location.origin).pathname !== path) return;
     link.classList.add('is-active');
     link.setAttribute('aria-current', 'page');
