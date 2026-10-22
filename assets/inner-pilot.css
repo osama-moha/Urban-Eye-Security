@@ -169,3 +169,7 @@
 .inner-pilot .faq-items details>summary{padding-right:30px}
 .inner-pilot .faq-items details::details-content{transition:none}
 @media(max-width:760px){.inner-pilot .alarm-costs{scroll-margin-top:112px}.inner-pilot .pilot-package-disclosure .package-price{margin:10px 0}.inner-pilot .pilot-package-disclosure .alarm-package-monthly{padding-top:10px}}
+
+.inner-pilot .pilot-faq .faq-aside{position:static;top:auto}
+.inner-pilot .pilot-faq .faq-items{min-width:0}
+@media(max-width:900px){.inner-pilot .pilot-faq .faq-block{display:block}.inner-pilot .pilot-faq .faq-aside{display:block}.inner-pilot .pilot-faq .faq-items{margin-top:20px}}

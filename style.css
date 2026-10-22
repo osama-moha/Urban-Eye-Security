@@ -9601,3 +9601,20 @@ body p.hero-price-note.hero-price-note a{
  .faq-block .faq-answer{padding:0 0 16px}
  .faq-block .faq-answer p,.faq-block .faq-answer li{font-size:15px;line-height:1.65}
 }
+
+/* Stacked FAQs must not retain the desktop sticky introduction. */
+@media(max-width:900px){
+ .faq-block .faq-aside{position:static;top:auto;display:block;align-self:auto}
+ .faq-block .faq-aside h2{margin-bottom:12px}
+ .faq-block .faq-items{margin-top:20px;min-width:0}
+ .faq-block .faq-help{margin-top:14px;padding-top:14px}
+}
+@media(min-width:1001px){
+ #header .nav-services-menu .mega-menu-inner{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+ #header .nav-serve-menu .mega-menu-inner{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:28px}
+ #header .nav-dropdown-menu-wide a small{font-size:12px;line-height:1.45}
+}
+@media(max-width:767px){
+ .faq-block .faq-aside h2{font-size:25px;line-height:1.2}
+ #header .mobile-subnav>a{min-height:44px;padding-top:11px;padding-bottom:11px}
+}
