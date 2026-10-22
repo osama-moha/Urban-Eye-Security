@@ -1106,6 +1106,10 @@ function initJumpNav(){
   function update(){
     ticking = false;
     const line = nav.getBoundingClientRect().bottom + 8;
+    const pastContent = window.matchMedia("(max-width: 767px)").matches && sections[sections.length - 1].getBoundingClientRect().bottom <= line;
+    nav.classList.toggle("is-past-content", pastContent);
+    nav.inert = pastContent;
+    if(pastContent && !menu.hidden) setMenuOpen(false);
     let current = -1;
     sections.forEach((section, index)=>{
       if(section.getBoundingClientRect().top <= line) current = index;
@@ -1125,10 +1129,14 @@ function initJumpNav(){
 
 // Details marked data-phone-collapsed start closed on phones, so long open panels do not add scroll.
 function initPhoneCollapsedDetails(){
-  if(!window.matchMedia("(max-width: 767px)").matches) return;
-  document.querySelectorAll("details[data-phone-collapsed]").forEach((item)=>{
-    item.open = false;
-  });
+  const phone = window.matchMedia("(max-width: 760px)");
+  const items = [...document.querySelectorAll("details[data-phone-collapsed]")];
+  if(phone.matches) items.forEach(item => { item.open = false; });
+  const responsive = items.filter(item => item.hasAttribute("data-responsive-disclosure"));
+  responsive.forEach(item => item.querySelector(":scope > summary")?.addEventListener("click", event => {
+    if(!phone.matches) event.preventDefault();
+  }));
+  phone.addEventListener("change", () => responsive.forEach(item => { item.open = !phone.matches; }));
 }
 
 function initFooterAccordion(){

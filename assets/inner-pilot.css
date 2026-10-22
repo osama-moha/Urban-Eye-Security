@@ -2,9 +2,9 @@
 .inner-pilot{--pilot-navy:#0b213b;--pilot-red:#c63632;--pilot-paper:#f2f5f7}
 .inner-pilot main{overflow:clip}
 .inner-pilot main section{padding:64px 0;position:relative;background:#fff;border:0;scroll-margin-top:145px}
-.inner-pilot h1,.inner-pilot h2,.inner-pilot h3{font-family:var(--font-primary);font-weight:600;letter-spacing:-.035em}
-.inner-pilot h2{font-size:clamp(28px,3vw,40px);line-height:1.14;max-width:740px;margin:0 0 22px}
-.inner-pilot h3{font-size:20px;line-height:1.3;letter-spacing:-.02em}
+.inner-pilot main h1,.inner-pilot main h2,.inner-pilot main h3{font-family:var(--font-primary);font-weight:600;letter-spacing:-.035em}
+.inner-pilot main h2{font-size:clamp(28px,3vw,40px);line-height:1.14;max-width:740px;margin:0 0 22px}
+.inner-pilot main h3{font-size:20px;line-height:1.3;letter-spacing:-.02em}
 .inner-pilot main p{line-height:1.75;color:#526575}
 .inner-pilot main a:not(.btn){text-underline-offset:4px}
 .inner-pilot main .page-hero{padding:70px 0 82px;background:var(--pilot-navy);isolation:isolate;clip-path:polygon(0 0,100% 0,100% calc(100% - 26px),78% calc(100% - 26px),74% 100%,70% calc(100% - 26px),0 calc(100% - 26px))}
@@ -98,4 +98,56 @@
 .inner-pilot .pilot-final h2{font-size:32px}
 .inner-pilot .pilot-final .cta-actions{margin-top:26px;align-items:stretch}
 .inner-pilot .pilot-equipment figure{max-width:440px}
+}
+
+/* Phone reading density: disclose detail while retaining visible prices and fees. */
+.inner-pilot .pilot-package-disclosure>summary{padding:0;cursor:default;list-style:none}
+.inner-pilot .pilot-package-disclosure>summary::-webkit-details-marker{display:none}
+.inner-pilot .pilot-package-disclosure>summary:after{display:none}
+.inner-pilot .pilot-details-hint{display:none}
+.inner-pilot .pilot-scope-disclosure>summary,.inner-pilot .pilot-faq-more>summary{display:none}
+.inner-pilot .pilot-package-disclosure{border:0;padding:0;background:none;box-shadow:none}
+@media(max-width:760px){
+ .inner-pilot main section{padding:32px 0;scroll-margin-top:112px}
+ .inner-pilot main .page-hero{padding:30px 0 44px}
+ .inner-pilot .page-hero h1{font-size:34px;margin:12px 0 18px}
+ .inner-pilot .page-hero .pilot-lead{margin-bottom:20px;line-height:1.6}
+ .inner-pilot .page-hero .hero-price-note{margin-top:18px}
+ .inner-pilot .hero-actions{gap:12px}
+ .inner-pilot .pilot-overview .pilot-related{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .inner-pilot .pilot-overview .pilot-related h2{grid-column:1/-1;padding:15px 18px;font-size:17px;margin:0}
+ .inner-pilot .pilot-overview .pilot-related a{padding:12px 14px;font-size:13px;border-bottom:1px solid #d7e0e6;min-height:44px}
+ .inner-pilot .package-card{padding:18px;min-height:0}
+ .inner-pilot .package-card h3{font-size:19px;margin:10px 0}
+ .inner-pilot .package-card .package-price{font-size:23px;line-height:1.25}
+ .inner-pilot .package-card .alarm-package-monthly{margin:8px 0 0;line-height:1.5}
+ .inner-pilot .pilot-package-disclosure>summary{cursor:pointer}
+ .inner-pilot .pilot-package-disclosure>summary:focus-visible{outline:2px solid #c63632;outline-offset:6px}
+ .inner-pilot .pilot-details-hint{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#0b213b;margin-top:14px;padding-top:10px;border-top:1px solid #d7e0e6}
+ .inner-pilot .pilot-details-hint>span{font-size:21px;line-height:1;font-weight:400}
+ .inner-pilot .pilot-package-disclosure[open] .pilot-details-hint>span{transform:rotate(45deg)}
+ .inner-pilot .pilot-package-body{padding-top:8px}
+ .inner-pilot .pilot-package-body>.text-link{display:inline-flex;min-height:44px;align-items:center}
+ .inner-pilot .pilot-process ol{gap:16px;margin-top:22px}
+ .inner-pilot .pilot-process li{padding-top:18px}
+ .inner-pilot .pilot-health .section-intro{font-size:15px}
+ .inner-pilot .pilot-health .diagnostic-split-grid{gap:22px;margin-top:22px!important}
+ .inner-pilot .pilot-scope-disclosure>summary{display:flex;padding:14px 0;min-height:48px;font-size:15px;line-height:1.4;cursor:pointer}
+ .inner-pilot .pilot-scope-disclosure .b2b-feature-row{padding:16px 0;gap:8px}
+ .inner-pilot .pilot-faq .faq-block{display:block}
+ .inner-pilot .pilot-faq .faq-aside{display:block}
+ .inner-pilot .pilot-faq .faq-aside h2{margin-bottom:10px}
+ .inner-pilot .pilot-faq .faq-aside p{margin:0 0 10px;font-size:14px}
+ .inner-pilot .pilot-faq .faq-items{margin-top:18px}
+ .inner-pilot .pilot-faq-more>summary{display:flex;justify-content:space-between;padding:15px 0;font-size:15px;min-height:48px;color:#a6272c;cursor:pointer}
+ .inner-pilot .pilot-faq-more>summary:after{display:none}
+ .inner-pilot .pilot-faq-more .pilot-more-answers{padding:0}
+ .inner-pilot .pilot-question-count{font-weight:400}
+ .inner-pilot .pilot-final h2{font-size:28px;margin-bottom:14px}
+ .inner-pilot .pilot-final p{font-size:15px;margin:0}
+ .inner-pilot main .pilot-final{padding:32px 0}
+ .inner-pilot .pilot-final .cta-actions{margin-top:20px}
+}
+@media(max-width:760px){
+ .inner-pilot .faq-items details::details-content{transition:none}
 }
