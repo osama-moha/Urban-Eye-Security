@@ -218,6 +218,8 @@
         </div>
 
         <form id="contact-step-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleContactPageSubmit(event)">
+          <input type="hidden" name="service_interest" id="contactServiceInterest" value="Free Site Survey">
+          <p class="quiet-help-line" id="contact-package-context" hidden></p>
           <input type="hidden" name="_subject" value="Free Site Survey Request (Contact Page)">
           <input type="hidden" name="page_source" value="contact_page">
 
@@ -442,5 +444,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script src="/js/includes.js?v=20261022b" defer></script>
+<script src="/assets/business-packages.js?v=20261022a" defer></script>
 </body>
 </html>
