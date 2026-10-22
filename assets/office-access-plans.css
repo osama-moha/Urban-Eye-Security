@@ -1,0 +1,46 @@
+.office-access-plans .plate{fill:#fff;stroke:#bacbd6;stroke-width:1.2}
+.office-access-plans .edge{fill:#cbd7df;stroke:#a7bbc9;stroke-width:.8}
+.office-access-plans .side{fill:#dfe7ed;stroke:#a7bbc9;stroke-width:.8}
+.office-access-plans .wall{fill:#e7edf1;stroke:#97aebb;stroke-width:1}
+.office-access-plans .furniture{fill:#dce6ec;stroke:#9db2bf;stroke-width:.9}
+.office-access-plans .glass{fill:#d9e8ef;fill-opacity:.55;stroke:#adc3cf;stroke-width:.8}
+.office-access-plans .deskline{stroke:#a6bbc7;stroke-width:.7;fill:none}
+.office-access-plans .route{stroke:#c63632;stroke-width:1.3;stroke-dasharray:3 4;fill:none;opacity:.6}
+.office-access-plans .access{fill:#c63632;stroke:#fff;stroke-width:2}
+.office-access-plans .reader{fill:#10273d;stroke:#fff;stroke-width:1}
+.office-access-plans .shadow{fill:#10273d;opacity:.055}
+.inner-pilot .office-plan-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:stretch}
+.inner-pilot .office-plan{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid #d2dce4}
+.inner-pilot .office-plan-art{position:relative;background:#edf2f5;overflow:hidden;border-bottom:1px solid #dce4e9;padding:12px 34px 0}
+.inner-pilot .office-plan-art:after{content:'';position:absolute;top:0;right:0;width:64px;height:4px;background:#c63632}
+.inner-pilot .office-plan-art svg{display:block;width:100%;height:240px;max-width:380px;margin:auto}
+.inner-pilot .office-plan-content{padding:26px 28px;display:flex;flex-direction:column;flex:1;min-width:0}
+.inner-pilot .office-plan-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin:0 0 10px;color:#526575}
+.inner-pilot .office-plan h3{font-size:25px;margin:0 0 14px}
+.inner-pilot .office-plan-fit{font-weight:600;color:#0b213b;font-size:15px;margin:0 0 12px}
+.inner-pilot .office-plan-content>p:not(.office-plan-label):not(.office-plan-fit){font-size:15px;margin:0 0 18px}
+.inner-pilot .office-plan-scope{padding:0;border:0;background:none;box-shadow:none;border-radius:0;margin:0 0 14px}
+.inner-pilot .office-plan-scope>summary{display:none}
+.inner-pilot .office-plan-scope ul{margin:0 0 12px;padding:0 0 0 18px;font-size:14px;line-height:1.65;color:#526575}
+.inner-pilot .office-plan-scope li{margin-bottom:8px}
+.inner-pilot .office-plan-scope p{font-size:14px;margin:0}
+.inner-pilot .office-plan-content>.text-link{margin-top:auto;display:inline-flex;align-items:center;min-height:44px;padding-top:10px;align-self:flex-start}
+.inner-pilot .office-plan-legend{display:flex;align-items:center;gap:8px;font-size:12px;margin:18px 0 30px}
+.inner-pilot .office-plan-legend span{width:7px;height:7px;border-radius:50%;background:#c63632;flex-shrink:0}
+.inner-pilot .office-plan-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;border-top:1px solid #cbd7df;padding-top:26px}
+.inner-pilot .office-plan-notes h3,.inner-pilot .office-quote-note h3{font-size:19px;margin:0 0 12px}
+.inner-pilot .office-plan-notes p,.inner-pilot .office-quote-note p{font-size:15px;margin:0}
+.inner-pilot .office-quote-note{margin-top:28px;padding:24px 28px;background:#fff;border-left:3px solid #c63632}
+@media(max-width:760px){
+ .inner-pilot .office-plan-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+ .inner-pilot .office-plan-art{padding:8px 20px 0}
+ .inner-pilot .office-plan-art svg{height:190px}
+ .inner-pilot .office-plan-content{padding:20px}
+ .inner-pilot .office-plan h3{font-size:22px}
+ .inner-pilot .office-plan-scope>summary{display:flex;justify-content:space-between;gap:12px;padding:12px 0;min-height:48px;font-size:14px;border-top:1px solid #d7e0e6;cursor:pointer}
+ .inner-pilot .office-plan-scope>summary:after{content:'+';position:static;transform:none;border:0;width:auto;height:auto;font-size:20px;font-weight:400}
+ .inner-pilot .office-plan-scope[open]>summary:after{content:'−'}
+ .inner-pilot .office-plan-scope::details-content{transition:none}
+ .inner-pilot .office-plan-notes{grid-template-columns:minmax(0,1fr);gap:22px}
+ .inner-pilot .office-quote-note{padding:20px}
+}

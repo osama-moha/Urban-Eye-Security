@@ -4,7 +4,7 @@
       <div>
         <h2 class="footer-heading">Urban Eye Security</h2>
         <p>
-          Integrated security for Nairobi homes, estates, offices, retail shops, warehouses, Airbnb properties, and institutions, supported by site surveys, clear response procedures, and monitoring options.
+          Guarding and security systems for homes and businesses across Kenya. Planned around your property.
         </p>
         <p>
           <strong>Office:</strong> St. Ellis, Wabera Street, Nairobi CBD<br>
@@ -33,7 +33,7 @@
           <li><a href="/residential-security/">Residential Estates &amp; Private Compounds</a></li>
           <li><a href="/financial-services/">Financial Services &amp; High-Value Assets</a></li>
           <li><a href="/retail-storefronts/">Retail Chains &amp; Commercial Stores</a></li>
-          <li><a href="/office-security/">Commercial Real Estate &amp; Business Parks</a></li>
+          <li><a href="/office-security/">Commercial Buildings &amp; Offices</a></li>
           <li><a href="/warehouse-security/">Warehousing, Logistics &amp; Industrial</a></li>
           <li><a href="/construction-site-security/">Construction &amp; Active Project Sites</a></li>
           <li><a href="/airbnb-security/">Airbnb &amp; Short Stay</a></li>
@@ -45,7 +45,7 @@
         <ul>
           <li><a onclick="return openServiceDrawer('footer','Free Site Survey','Book a Free Site Survey','Share a few property details and Urban Eye will schedule a free site survey.')" href="/contact/?service=site-survey">Book a free site survey</a></li>
           <li><a href="/partners/">Partner Programs</a></li>
-          <li><a href="https://shop.urbaneyesecurity.co.ke/?utm_source=main-site&utm_medium=footer&utm_campaign=site-link">Equipment supply for installers</a></li>
+          
           <li><a href="/careers/">Careers</a></li>
           <li><a href="/insights/">Security Insights</a></li>
         </ul>
@@ -168,7 +168,15 @@
     color: #C4272E !important;
   }
   .selection-tile-input {
-    display: none;
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .selection-tile-content .tile-title {
     display: block;
@@ -242,7 +250,7 @@
         <h4 class="form-group-kicker">SITE DETAILS</h4>
         <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">Select your property or facility sector:</p>
         
-        <div class="selection-tile-grid">
+        <div class="selection-tile-grid" role="radiogroup" aria-label="Property type">
           <label class="selection-tile-label" data-tile-category="commercial">
             <input type="radio" name="drawer_property_type_radio" value="Commercial Real Estate & Office" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'drawer', 1)">
             <div class="selection-tile-content">
@@ -305,19 +313,19 @@
         <h4 class="form-group-kicker">SECURITY CONCERNS</h4>
         <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What is your primary security objective?</p>
 
-        <div style="display:grid; gap:10px;">
+        <div style="display:grid; gap:10px;" role="radiogroup" aria-label="Main security concern">
           <label class="selection-tile-label" data-concern-scope="residential">
             <input type="radio" name="drawer_security_concern_radio" value="Stopping night break-ins" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 2)">
             <div class="selection-tile-content">
               <span class="tile-title">Stopping Night Break-Ins</span>
-              <span class="tile-desc">Perimeter detection &amp; instant alert routing</span>
+              <span class="tile-desc">Perimeter detection and agreed alert contacts</span>
             </div>
           </label>
           <label class="selection-tile-label" data-concern-scope="residential">
             <input type="radio" name="drawer_security_concern_radio" value="Keeping the property secure while we're away" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'drawer', 2)">
             <div class="selection-tile-content">
               <span class="tile-title">Vacant Property Protection</span>
-              <span class="tile-desc">Remote app status &amp; 24/7 PRO monitoring</span>
+              <span class="tile-desc">App alerts and optional operator monitoring</span>
             </div>
           </label>
           <label class="selection-tile-label" data-concern-scope="commercial">
@@ -409,7 +417,7 @@
       <div class="form-step" data-step="3">
         <button type="button" class="back-step-btn" onclick="prevDrawerStep(3)">&larr; Back to previous step</button>
         <h4 class="form-group-kicker">CONTACT DETAILS</h4>
-        <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your answers and message you on WhatsApp within one business day.</p>
+        <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your answers and contact you on WhatsApp during business hours.</p>
         
         <!-- Corporate Audit Extra: Company Name -->
         <div id="drawer-company-group" class="form-field-group" style="display:none;">
@@ -549,3 +557,105 @@
     </form>
   </div>
 </aside>
+<style>
+/* Shared header/footer and connected survey refresh. */
+#header .brand-wordmark{font-family:var(--font-primary)}
+#header .nav-dropdown-menu{border-radius:0;border-top:3px solid #c63632;box-shadow:0 18px 45px #0b213b20}
+#header .nav-dropdown-menu a{border-radius:0}
+#site-footer>footer{background:#edf1f3;color:#0b213b;border-top:0;padding-top:65px}
+#site-footer .footer-heading{color:#0b213b;font-family:var(--font-primary)}
+#site-footer .footer-bottom{border-top:1px solid #ccd6de}
+#site-footer .footer-grid a:hover{color:#c63632}
+#drawer{max-width:620px;border-top:4px solid #c63632;font-family:var(--font-primary)}
+#drawer .drawer-title-heading{font-family:var(--font-primary);font-size:28px;line-height:1.2;letter-spacing:-.7px}
+#drawer .step-segment{border-radius:0;height:4px}
+#drawer .step-segment.active{background:#c63632}
+#drawer .selection-tile-content{border-radius:2px;background:#f8fafb;border-color:#d8e0e6;padding:16px 14px;min-height:86px;box-shadow:none}
+#drawer .selection-tile-label:hover .selection-tile-content{border-color:#8e9eac}
+#drawer .selection-tile-input:checked+.selection-tile-content{border-color:#c63632;background:#fff4f2;box-shadow:inset 3px 0 #c63632}
+#drawer .selection-tile-input:focus-visible+.selection-tile-content{outline:2px solid #0b213b;outline-offset:3px}
+#drawer .tile-title{font-family:var(--font-primary);font-size:13px;color:#0b213b}
+#drawer .tile-desc{font-family:var(--font-primary);font-size:11px;line-height:1.6;color:#627282}
+#drawer .form-field-input{border-radius:2px;min-height:48px;border-color:#bac7d1;font-family:var(--font-primary)}
+#drawer .btn{border-radius:0;min-height:50px;background:#c63632}
+#drawer .btn:disabled{opacity:.45;cursor:not-allowed}
+#drawer .form-group-kicker{font-family:var(--font-primary);letter-spacing:.12em;font-size:11px}
+@media(max-width:480px){#drawer .selection-tile-grid{grid-template-columns:1fr}#drawer .selection-tile-content{min-height:68px}#drawer .drawer-title-heading{font-size:24px}}
+@media(prefers-reduced-motion:reduce){#drawer,.drawer-backdrop{transition:none}}
+</style>
+
+<style>
+#drawer,#auditDrawer{visibility:hidden}#drawer.open,#auditDrawer.open{visibility:visible}
+#drawer .selection-tile-label{padding:0;border:0;background:transparent;border-radius:0}
+#drawer .selection-tile-content{border:1px solid #d8e0e6}
+#drawer .tile-title{text-transform:none;letter-spacing:0}
+</style>
+<style>#drawer:not(.open) *,#auditDrawer:not(.open) *{visibility:hidden!important}</style>
+
+<style>
+/* Explicit text colours prevent the previous dark-footer palette from leaking in. */
+#site-footer>footer p,#site-footer>footer li,#site-footer>footer a,#site-footer>footer .footer-bottom{color:#40576a}
+#site-footer>footer strong,#site-footer>footer .footer-heading{color:#0b213b}
+#site-footer>footer a:hover,#site-footer>footer a:focus-visible{color:#a6272c;text-decoration:underline}
+#site-footer>footer .footer-group summary::after{color:#0b213b}
+#site-footer>footer .footer-grid{gap:36px}
+#site-footer>footer .footer-bottom{padding-top:22px;margin-top:36px}
+</style>
+
+<style>
+/* Compact footer on phones; keep accordion targets easy to tap. */
+@media(max-width:767px){
+  #site-footer>footer{padding:30px 0 24px}
+  #site-footer>footer .footer-grid{gap:0}
+  #site-footer>footer .footer-grid>div:first-child{margin:0 0 20px;padding:0}
+  #site-footer>footer .footer-grid>div:first-child p{margin:10px 0;line-height:1.65}
+  #site-footer>footer .footer-group,#site-footer>footer .footer-group[open]{margin:0;border-bottom:1px solid #ccd6de}
+  #site-footer>footer .footer-group summary{min-height:50px;padding:12px 0;line-height:1.5}
+  #site-footer>footer .footer-group summary::after{border-color:#40576a}
+  #site-footer>footer .footer-group ul{padding-bottom:12px}
+  #site-footer>footer .footer-bottom{margin-top:22px;padding-top:18px;gap:8px;line-height:1.8}
+}
+/* Match the mobile menu to the site's white header and navy panels. */
+@media(max-width:1023px){
+  #header #nav-toggle{width:44px;height:44px;border:1px solid #dce4ea;border-radius:2px;display:grid!important;place-items:center}
+  #header #nav-menu,#header #nav-menu .mobile-menu-scroll,#header #nav-menu .mobile-nav,#header #nav-menu .mobile-accordion,#header #nav-menu .mobile-accordion[open],#header #nav-menu .mobile-subnav,#header #nav-menu .mobile-accordion summary{background:#0b213b!important}
+  #header #nav-menu{border-top:4px solid #c63632}
+  #header #nav-menu .mobile-menu-header{height:72px;min-height:72px;padding:0 22px;background:#fff;border-bottom:1px solid #dce4ea}
+  #header #nav-menu .brand-wordmark-main{color:#0b213b}
+  #header #nav-menu .brand-wordmark-accent{color:#c63632}
+  #header #nav-menu .mobile-menu-close{width:44px;height:44px;border:1px solid #dce4ea;border-radius:2px;background:#fff}
+  #header #nav-menu .mobile-menu-close .ui-icon{color:#0b213b;width:22px;height:22px}
+  #header #nav-menu .mobile-menu-scroll{padding:15px 22px 20px;min-height:0;overscroll-behavior:contain}
+  #header #nav-menu .mobile-nav-link,#header #nav-menu .mobile-accordion summary{min-height:49px;padding:13px 12px;font-size:16px;font-weight:600;line-height:1.4;border-bottom:1px solid #ffffff20;gap:10px}
+  #header #nav-menu .mobile-nav-link::before,#header #nav-menu .mobile-accordion summary::before{display:none}
+  #header #nav-menu .mobile-nav-link.is-active{background:#ffffff0d;box-shadow:inset 3px 0 #e15a52;color:#fff}
+  #header #nav-menu .mobile-accordion summary::after{font-size:22px;font-weight:400;color:#b8c9d7}
+  #header #nav-menu .mobile-subnav{padding:14px 12px 18px 18px!important;border-left:2px solid #c63632!important}
+  #header #nav-menu .mobile-subnav a{padding:10px 0!important;font-size:14px!important;line-height:1.5!important}
+  #header #nav-menu .mobile-subnav-label{color:#ff9a91!important;font-size:10px!important;letter-spacing:.1em!important}
+  #header #nav-menu .mobile-feature-link{padding:14px!important;margin-top:12px!important}
+  #header #nav-menu .mobile-feature-link strong{font-size:15px}
+  #header #nav-menu .mobile-feature-link span{font-size:12px}
+  #header #nav-menu .mobile-menu-footer{flex:0 0 auto;padding:16px 22px max(16px,env(safe-area-inset-bottom));background:#07182b;border-top:1px solid #ffffff20}
+  #header #nav-menu .mobile-menu-actions{margin:0;gap:8px}
+  #header #nav-menu .mobile-menu-actions .btn{min-height:46px;padding:11px 16px;font-size:13px;border-radius:0}
+  #header #nav-menu .mobile-menu-actions .btn-primary{background:#c63632}
+  #header #nav-menu .mobile-quick-links{display:flex;justify-content:center;gap:30px;margin-top:12px}
+  #header #nav-menu .mobile-quick-links a{font-size:12px;color:#c8d6e0;text-decoration:underline;text-underline-offset:3px}
+  #header #nav-menu a:focus-visible,#header #nav-menu summary:focus-visible,#header #nav-menu button:focus-visible{outline:2px solid #ff9a91;outline-offset:2px}
+}
+</style>
+
+<style>
+@media(max-width:767px){
+ #header .nav{min-height:64px}
+ #site-footer>footer{padding:24px 0 20px}
+ #site-footer>footer .footer-heading{font-size:18px;line-height:1.35;letter-spacing:-.02em;margin:0 0 12px;font-weight:600}
+ #site-footer>footer .footer-group summary .footer-heading{font-size:16px;line-height:1.4;margin:0;font-weight:600}
+ #site-footer>footer .footer-grid>div:first-child{margin-bottom:12px}
+ #site-footer>footer .footer-grid>div:first-child p{font-size:13px;line-height:1.6;margin:8px 0}
+ #site-footer>footer .footer-group summary{min-height:46px;padding:11px 0}
+ #site-footer>footer .footer-group li a{font-size:13px;line-height:1.5;padding:10px 0}
+ #site-footer>footer .footer-bottom{font-size:11px;line-height:1.6;margin-top:16px;padding-top:14px;gap:6px}
+}
+</style>

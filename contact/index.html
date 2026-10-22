@@ -35,10 +35,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap"/>
 
-<link rel="stylesheet" href="/style.css?v=20260921a"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SecurityService","name":"Urban Eye Security","url":"https://urbaneyesecurity.co.ke/","logo":"https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png","telephone":"+254 768 055 555","email":"info@urbaneyesecurity.co.ke","address":{"@type":"PostalAddress","streetAddress":"St. Ellis, Wabera Street, Nairobi CBD","addressLocality":"Nairobi","addressCountry":"KE"},"areaServed":["Nairobi","Kenya"],"slogan":"Smart Protection. Human Response."}
-</script>
+<link rel="stylesheet" href="/style.css?v=20261022c"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SecurityService", "name": "Urban Eye Security", "url": "https://urbaneyesecurity.co.ke/", "logo": "https://urbaneyesecurity.co.ke/urban-eye-assets/Icon-only%20version.png", "telephone": "+254 768 055 555", "email": "info@urbaneyesecurity.co.ke", "address": {"@type": "PostalAddress", "streetAddress": "St. Ellis, Wabera Street, Nairobi CBD", "addressLocality": "Nairobi", "addressCountry": "KE"}, "areaServed": ["Nairobi", "Kenya"], "slogan": "Smart Protection. Human Response."}</script>
 
   <style>
     .contact-intake-grid{
@@ -123,7 +121,7 @@
       border: 1px solid #D9DEE8;
       border-radius: 6px;
       color: #0D1430;
-      font-family: "Source Sans 3", Arial, sans-serif;
+      font-family: var(--font-primary);
       font-size: 14.5px;
       font-weight: 600;
       text-align: left;
@@ -144,9 +142,10 @@
       }
     }
   </style>
+<link rel="stylesheet" href="/assets/page-refinements.css?v=20261022g">
 </head>
 
-<body>
+<body class="contact-page architectural-hero page-refined">
 <div id="site-navbar"></div>
   <nav class="breadcrumb-bar" aria-label="Breadcrumb" style="background:#F5F7FA;border-bottom:1px solid #D9DEE8;padding:12px 0;">
     <div class="container">
@@ -156,9 +155,7 @@
       </ul>
     </div>
   </nav>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbaneyesecurity.co.ke/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://urbaneyesecurity.co.ke/contact/"}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://urbaneyesecurity.co.ke/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://urbaneyesecurity.co.ke/contact/"}]}</script>
 
 <main class="contact-page">
   <section class="hero page-hero contact-hero">
@@ -167,10 +164,10 @@
         <p class="eyebrow">Contact Urban Eye Security</p>
         <h1>Tell us what you need protected.</h1>
         <p>
-          Share your property type and main concern. Urban Eye will review your requirements and respond with a clear recommendation covering guarding, CCTV, alarms, access control, and monitoring.
+          Share your property type and main concern. We review your location and requirements, then confirm the appropriate service and next step.
         </p>
         <div class="hero-actions">
-          <a href="#contact-form-container" class="btn btn-primary">Start My Security Review</a>
+          <a href="#contact-form-container" class="btn btn-primary">Book a Free Site Survey</a>
           <a href="https://wa.me/254768055555" class="btn btn-outline-white">Chat on WhatsApp</a>
         </div>
       </div>
@@ -180,10 +177,10 @@
   <section class="light-section" id="contact-form-container">
     <div class="container two-col contact-intake-grid">
       <div class="section-copy">
-        <p class="eyebrow">Security Review Request</p>
-        <h2>Tell us what you want to protect.</h2>
+        <p class="eyebrow">Free Site Survey</p>
+        <h2>Share your property details.</h2>
         <p class="section-intro">
-          Answer two short questions and share your contact details. Urban Eye will review your submission and respond on WhatsApp with the recommended next step.
+          Tell us about your property, security priorities and contact details in three short steps. Urban Eye will review your submission and respond on WhatsApp with the recommended next step.
         </p>
 
         <div class="card contact-info-card">
@@ -198,7 +195,7 @@
           <h3>Direct Contact</h3>
           <p><strong>Phone:</strong> +254 768 055 555</p>
           <p><strong>Email:</strong> info@urbaneyesecurity.co.ke</p>
-          <p><strong>Service Area:</strong> Monitoring across Kenya. Site deployments and response coordination centered on Nairobi.</p>
+          <p><strong>Service Area:</strong> Enquiries across Kenya. Installation visits and response availability are confirmed for your location.</p>
         </div>
       </div>
 
@@ -218,6 +215,9 @@
         </div>
 
         <form id="contact-step-form" action="https://formspree.io/f/xkoegypv" method="POST" onsubmit="return handleContactPageSubmit(event)">
+          <input type="hidden" name="service_interest" id="contactServiceInterest" value="Free Site Survey">
+          <p class="quiet-help-line" id="contact-package-context" hidden></p>
+
           <input type="hidden" name="_subject" value="Free Site Survey Request (Contact Page)">
           <input type="hidden" name="page_source" value="contact_page">
 
@@ -226,7 +226,7 @@
             <h4 class="form-group-kicker">SITE DETAILS</h4>
             <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">Select your property or facility sector:</p>
 
-            <div class="selection-tile-grid">
+            <div class="selection-tile-grid" role="radiogroup" aria-label="Property type">
               <label class="selection-tile-label" data-tile-category="commercial">
                 <input type="radio" name="contact_property_type_radio" value="Commercial Real Estate & Office" class="selection-tile-input" data-track="enterprise" onchange="handleTileRadioChange(this, 'contact', 1)">
                 <div class="selection-tile-content">
@@ -289,19 +289,19 @@
             <h4 class="form-group-kicker">SECURITY CONCERNS</h4>
             <p style="color:#111827; font-size:15px; font-weight:600; margin:0 0 14px;">What is your primary security objective?</p>
 
-            <div style="display:grid; gap:10px;">
+            <div style="display:grid; gap:10px;" role="radiogroup" aria-label="Main security concern">
               <label class="selection-tile-label">
                 <input type="radio" name="contact_security_concern_radio" value="Stopping night break-ins" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 2)">
                 <div class="selection-tile-content">
                   <span class="tile-title">Stopping Night Break-Ins</span>
-                  <span class="tile-desc">Perimeter detection &amp; instant alert routing</span>
+                  <span class="tile-desc">Perimeter detection and agreed alert contacts</span>
                 </div>
               </label>
               <label class="selection-tile-label">
                 <input type="radio" name="contact_security_concern_radio" value="Keeping the property secure while we're away" class="selection-tile-input" data-track="private" onchange="handleTileRadioChange(this, 'contact', 2)">
                 <div class="selection-tile-content">
                   <span class="tile-title">Vacant Property Protection</span>
-                  <span class="tile-desc">Remote app status &amp; 24/7 PRO monitoring</span>
+                  <span class="tile-desc">App alerts and optional operator monitoring</span>
                 </div>
               </label>
               <label class="selection-tile-label">
@@ -344,8 +344,8 @@
           <div class="form-step" data-step="3">
             <button type="button" class="back-step-btn" onclick="handleContactPrevStep(3)">&larr; Back to previous step</button>
             <h4 class="form-group-kicker">CONTACT DETAILS</h4>
-            <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your answers and message you on WhatsApp within one business day.</p>
-            
+            <p style="font-size:14px; color:#5B6472; margin:0 0 20px; line-height:1.5;">Share your contact details below. An Urban Eye consultant will review your answers and contact you on WhatsApp during business hours.</p>
+
             <div class="form-field-group">
               <label for="contact-page-name" class="form-field-label">Full Name <span class="required-star">*</span></label>
               <input id="contact-page-name" name="name" autocomplete="name" class="form-field-input" placeholder="e.g. David Ochieng" required oninput="validateContactStep3()">
@@ -371,67 +371,10 @@
     </div>
   </section>
 
-  <section>
-    <div class="container two-col contact-intake-grid">
-      <div class="section-copy">
-        <p class="eyebrow">What Happens Next</p>
-        <h2>Next steps after submitting your inquiry.</h2>
-      </div>
+  <section class="copy-section contact-next"><div class="container"><h2>What happens after your enquiry.</h2><ol class="copy-steps"><li><strong>We review your request.</strong> We check your property, location and the service you need.</li><li><strong>We agree the right visit.</strong> New installation work starts with a free survey. A formal risk report or technical diagnosis has a separate scope and fee.</li><li><strong>You review the proposal.</strong> Confirm equipment, installation, ongoing charges and responsibilities before approving work.</li></ol></div></section>
 
-      <div class="process-list">
-        <div class="process-item">
-          <span>01</span>
-          <div>
-            <h3>Initial review</h3>
-            <p>We review your inquiry, property type, location, and service interest.</p>
-          </div>
-        </div>
-
-        <div class="process-item">
-          <span>02</span>
-          <div>
-            <h3>Site survey scheduling</h3>
-            <p>We contact you to confirm the site visit or request more information.</p>
-          </div>
-        </div>
-
-        <div class="process-item">
-          <span>03</span>
-          <div>
-            <h3>Risk assessment</h3>
-            <p>We identify entry points, blind spots, response gaps, and practical security priorities.</p>
-          </div>
-        </div>
-
-        <div class="process-item">
-          <span>04</span>
-          <div>
-            <h3>Written recommendation</h3>
-            <p>You receive a clear starting framework, scope, and quotation based on the actual site.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="dark-section">
-    <div class="container">
-      <div class="cta-band">
-        <div>
-          <h2>Need urgent help deciding where to start?</h2>
-          <p>
-            Send us a WhatsApp message with your property type and location.
-            Urban Eye will guide you toward the right next step.
-          </p>
-        </div>
-
-        <div class="system-bridge-actions">
-          <a href="https://wa.me/254768055555" class="btn btn-primary">Chat on WhatsApp</a>
-          <a href="tel:+254768055555" class="btn btn-outline-white">Call Urban Eye</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="pre-footer-cta closing-cta"><div class="container"><div class="closing-copy"><h2>Discuss your property with us.</h2><p>Share your location and main concern on WhatsApp, or call during business hours.</p></div><div class="cta-actions"><a href="https://wa.me/254768055555" class="btn btn-primary">Chat on WhatsApp</a>
+          <a class="cta-whatsapp-link" href="tel:+254768055555">Call Urban Eye &rarr;</a></div></div></section>
 </main>
 
 <div id="site-footer"></div>
@@ -441,6 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
   goToFormStep(1, CONTACT_FORM_CONFIG);
 });
 </script>
-<script src="/js/includes.js?v=20260914j" defer></script>
+<script src="/js/includes.js?v=20261022f" defer></script>
+<script src="/assets/business-packages.js?v=20261022a" defer></script>
 </body>
 </html>

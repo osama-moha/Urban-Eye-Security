@@ -1,6 +1,6 @@
 // Deployed pages have the navbar and footer written in by scripts/build.mjs.
 // Local previews fetch them; bump this when they change so browsers refetch.
-const INCLUDES_VERSION = "20260915a";
+const INCLUDES_VERSION = "20261021d";
 
 async function loadNavbar(){
   const navbarTarget = document.getElementById("site-navbar");
@@ -230,6 +230,7 @@ function openServiceDrawer(pageSource, serviceInterest, title, intro){
   backdrop.classList.add("open");
   drawer.classList.add("open");
   document.body.classList.add("drawer-open");
+  drawer.querySelector(".drawer-close")?.focus();
 
   return false;
 }
@@ -312,6 +313,8 @@ function goToFormStep(stepNum, config) {
   });
 
   updateStepIndicator(config.surfacePrefix, stepNum);
+  const heading = document.querySelector(config.formSelector + ' .form-step.active h4');
+  if (heading) { heading.tabIndex = -1; heading.focus(); }
 }
 
 function handleTileRadioChange(radioEl, surface, stepNum) {
@@ -682,7 +685,14 @@ function initLeadDrawer(){
   if(!drawer) return;
 
   document.addEventListener("keydown",(event)=>{
+    if(!drawer.classList.contains("open")) return;
     if(event.key === "Escape") closeFormDrawer();
+    if(event.key === "Tab") {
+      const items = [...drawer.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')].filter(el => !el.disabled && el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden');
+      const first = items[0], last = items[items.length - 1];
+      if(event.shiftKey && document.activeElement === first) {event.preventDefault();last?.focus();}
+      else if(!event.shiftKey && document.activeElement === last) {event.preventDefault();first?.focus();}
+    }
   });
 }
 
@@ -719,36 +729,64 @@ function initNavbar(){
   const navMenu = document.getElementById("nav-menu");
   const navToggle = document.getElementById("nav-toggle");
   const navClose = document.getElementById("nav-close");
+  if(!navMenu || !navToggle) return;
+  let previousFocus = null;
 
   function openMenu(){
-    if(!navMenu) return;
+    previousFocus = document.activeElement;
+    navMenu.inert = false;
+    navMenu.setAttribute("aria-hidden", "false");
+    navToggle.setAttribute("aria-expanded", "true");
+    navToggle.setAttribute("aria-label", "Close menu");
     navMenu.classList.add("show-menu");
     document.body.classList.add("menu-open");
+    navClose?.focus();
   }
 
-  function closeMenu(){
-    if(!navMenu) return;
+  function closeMenu(restoreFocus = true){
+    if(!navMenu.classList.contains("show-menu")) return;
     navMenu.classList.remove("show-menu");
+    navMenu.setAttribute("aria-hidden", "true");
+    navMenu.inert = true;
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open menu");
     document.body.classList.remove("menu-open");
+    if(restoreFocus) (previousFocus || navToggle).focus();
   }
 
-  if(navToggle) navToggle.addEventListener("click", openMenu);
-  if(navClose) navClose.addEventListener("click", closeMenu);
-
-  document.querySelectorAll(
-    ".nav-link, .nav-dropdown-menu a, .mobile-nav-link, .mobile-subnav a, .mobile-menu-actions a, .mobile-contact-icons a"
-  ).forEach((link)=>{
-    link.addEventListener("click", closeMenu);
+  navToggle.addEventListener("click", () => navMenu.classList.contains("show-menu") ? closeMenu() : openMenu());
+  navClose?.addEventListener("click", () => closeMenu());
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => closeMenu(false));
+    if(link.getAttribute("href") === window.location.pathname){
+      link.classList.add("is-active");
+      link.setAttribute("aria-current", "page");
+    }
   });
 
-  document.addEventListener("keydown",(event)=>{
-    if(event.key === "Escape") closeMenu();
+  navMenu.addEventListener("keydown", event => {
+    if(event.key === "Escape") {event.preventDefault();closeMenu();}
+    if(event.key !== "Tab") return;
+    const items = [...navMenu.querySelectorAll('a[href],button,summary')].filter(el => !el.disabled && el.getClientRects().length);
+    const first = items[0], last = items[items.length - 1];
+    if(event.shiftKey && document.activeElement === first) {event.preventDefault();last?.focus();}
+    else if(!event.shiftKey && document.activeElement === last) {event.preventDefault();first?.focus();}
+  });
+  window.matchMedia("(min-width:1024px)").addEventListener("change", event => {
+    if(event.matches) closeMenu(false);
   });
 }
 
 function setActiveNav(){
   const path = window.location.pathname;
   let activeSection = "";
+
+  document.querySelectorAll('.desktop-nav .nav-dropdown-menu .mobile-menu-group a[href]').forEach(link => {
+    if(new URL(link.href, window.location.origin).pathname !== path) return;
+    link.classList.add('is-active');
+    link.setAttribute('aria-current', 'page');
+    link.closest('.nav-dropdown')?.querySelector('.nav-parent')?.classList.add('is-active');
+  });
 
   if(path === "/" || path === "/index.html"){
     activeSection = "home";
@@ -1075,6 +1113,10 @@ function initJumpNav(){
   function update(){
     ticking = false;
     const line = nav.getBoundingClientRect().bottom + 8;
+    const pastContent = window.matchMedia("(max-width: 767px)").matches && sections[sections.length - 1].getBoundingClientRect().bottom <= line;
+    nav.classList.toggle("is-past-content", pastContent);
+    nav.inert = pastContent;
+    if(pastContent && !menu.hidden) setMenuOpen(false);
     let current = -1;
     sections.forEach((section, index)=>{
       if(section.getBoundingClientRect().top <= line) current = index;
@@ -1094,10 +1136,14 @@ function initJumpNav(){
 
 // Details marked data-phone-collapsed start closed on phones, so long open panels do not add scroll.
 function initPhoneCollapsedDetails(){
-  if(!window.matchMedia("(max-width: 767px)").matches) return;
-  document.querySelectorAll("details[data-phone-collapsed]").forEach((item)=>{
-    item.open = false;
-  });
+  const phone = window.matchMedia("(max-width: 760px)");
+  const items = [...document.querySelectorAll("details[data-phone-collapsed]")];
+  if(phone.matches) items.forEach(item => { item.open = false; });
+  const responsive = items.filter(item => item.hasAttribute("data-responsive-disclosure"));
+  responsive.forEach(item => item.querySelector(":scope > summary")?.addEventListener("click", event => {
+    if(!phone.matches) event.preventDefault();
+  }));
+  phone.addEventListener("change", () => responsive.forEach(item => { item.open = !phone.matches; }));
 }
 
 function initFooterAccordion(){
