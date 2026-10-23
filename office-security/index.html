@@ -38,8 +38,13 @@
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is the plan quoted?", "acceptedAnswer": {"@type": "Answer", "text": "The survey confirms controlled doors, credential choices and software requirements. Your quotation lists equipment, installation, licences and any recurring charges."}}, {"@type": "Question", "name": "Can each team have different access?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Permissions can be set for selected rooms, floors and working hours. Multi-site administration and any lift controls are scoped for the selected platform."}}, {"@type": "Question", "name": "How do we remove staff access?", "acceptedAnswer": {"@type": "Answer", "text": "An authorised administrator disables the credential in the selected platform. Updates must reach the relevant devices; we confirm how changes are managed across your doors and sites."}}, {"@type": "Question", "name": "What about power cuts and emergency exits?", "acceptedAnswer": {"@type": "Answer", "text": "Lock type, backup power, exit hardware and any fire-alarm interface are assessed together. The agreed operation is tested during commissioning."}}]}</script>
 <link rel="stylesheet" href="/assets/inner-pilot.css?v=20261022b">
-<link rel="stylesheet" href="/assets/office-access-plans.css?v=20261022a">
+<link rel="stylesheet" href="/assets/office-access-plans.css?v=20261023a">
 <link rel="stylesheet" href="/assets/page-refinements.css?v=20261022g">
+<link rel="stylesheet" href="/assets/credential-demo.css?v=20261023a">
+<script src="/js/credential-demo.js?v=20261023a" defer></script>
+<link rel="stylesheet" href="/assets/plan-comparison.css?v=20261023a">
+<script src="/js/plan-comparison.js?v=20261023a" defer></script>
+<link rel="stylesheet" href="/assets/numbered-steps.css?v=20261023a">
 </head>
 
 <body class="architectural-hero inner-pilot page-refined">
@@ -110,7 +115,7 @@
 </section>
 <section id="office-packages" class="pilot-pricing office-access-plans" data-jump-label="Access plans">
 <div class="container"><div class="section-head"><div><p class="section-label">Suprema office access</p><h2>Control who enters, room by room.</h2></div><p class="section-intro">Choose an access plan for your office layout. Urban Eye designs Suprema access control around your doors, staff and working hours.</p></div><p class="protection-plan-note">Starting scope is shown below. A free survey and written quotation confirm final equipment, installation and ongoing services.</p>
-<div class="office-plan-grid"><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Isometric open-plan office with workstations, meeting table and one controlled entrance">
+<div class="office-plan-grid" data-plan-row><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Isometric open-plan office with workstations, meeting table and one controlled entrance">
 <path class="shadow" d="M25 149L164 215L285 145L146 82Z"/>
 <path class="plate" d="M25 112L152 42L277 108L150 183Z"/>
 <path class="edge" d="M25 112L150 183V192L25 121Z"/>
@@ -128,7 +133,7 @@
 <path stroke="#c63632" stroke-width="4" d="M114 163L140 178"/>
 <rect class="reader" x="105" y="149" width="6" height="10" rx="1"/>
 <circle class="access" cx="128" cy="172" r="5"/>
-</svg></div><div class="office-plan-content"><p class="office-plan-label">One controlled entrance</p><h3>Single-Entrance Office</h3><p class="office-plan-fit">For an open-plan office with one controlled entrance.</p><p>Give each employee their own access credential. Set entry hours and remove access when someone leaves.</p><div class="office-plan-scope plan-equipment"><h4>Proposed equipment and setup</h4><ul><li>Suprema reader or terminal at the selected entrance.</li><li>Suitable controller, door lock and exit devices.</li><li>Power supply, backup power and required cabling.</li><li>Staff credentials, schedules, administrator setup and handover.</li></ul></div><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Single-Entrance Office','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Book a free site survey &rarr;</a></div></article><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Isometric office with internal partitions, workstations and controlled doors to restricted rooms">
+</svg></div><div class="office-plan-content"><p class="office-plan-label">One controlled entrance</p><h3>Single-Entrance Office</h3><p class="office-plan-fit">For an open-plan office with one entrance.</p><p>Give staff individual access, set entry hours and remove permissions when they leave.</p><details class="office-plan-scope plan-equipment plan-equipment-toggle" open><summary>View included equipment</summary><div class="plan-equipment-content"><ul><li>Suprema reader or terminal at the selected entrance.</li><li>Suitable controller, door lock and exit devices.</li><li>Power supply, backup power and required cabling.</li><li>Staff credentials, schedules, administrator setup and handover.</li></ul></div></details><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Single-Entrance Office','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Book a free site survey &rarr;</a></div></article><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Isometric office with internal partitions, workstations and controlled doors to restricted rooms">
 <path class="shadow" d="M25 149L164 215L285 145L146 82Z"/>
 <path class="plate" d="M25 112L152 42L277 108L150 183Z"/>
 <path class="edge" d="M25 112L150 183V192L25 121Z"/><path class="side" d="M150 183L277 108V117L150 192Z"/>
@@ -140,7 +145,7 @@
 <path class="deskline" d="M63 120L88 106M151 150L178 135"/>
 <path stroke="#c63632" stroke-width="3" d="M154 111L176 123M155 99L172 90M114 163L140 178"/>
 <circle class="access" cx="165" cy="118" r="5"/><circle class="access" cx="164" cy="94" r="5"/><circle class="access" cx="128" cy="172" r="5"/>
-</svg></div><div class="office-plan-content"><p class="office-plan-label">Selected internal doors</p><h3>Multi-Room Office</h3><p class="office-plan-fit">For offices with separate departments or restricted rooms.</p><p>Let staff enter the areas they need while limiting access to rooms such as finance, management, stores and IT.</p><div class="office-plan-scope plan-equipment"><h4>Proposed equipment and setup</h4><ul><li>Suprema readers or terminals at the main entrance and selected internal doors.</li><li>Controllers, locks, exit devices and power for each controlled door.</li><li>Network/cabling and configured management software.</li><li>Permissions by room, department and working hours, with administrator training.</li></ul></div><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Multi-Room Office','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Book a free site survey &rarr;</a></div></article><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Three architectural floor plates with controlled access on each floor">
+</svg></div><div class="office-plan-content"><p class="office-plan-label">Selected internal doors</p><h3>Multi-Room Office</h3><p class="office-plan-fit">For departments and restricted rooms.</p><p>Give each team access to the rooms they need. Restrict finance, stores and IT.</p><details class="office-plan-scope plan-equipment plan-equipment-toggle" open><summary>View included equipment</summary><div class="plan-equipment-content"><ul><li>Suprema readers or terminals at the main entrance and selected internal doors.</li><li>Controllers, locks, exit devices and power for each controlled door.</li><li>Network/cabling and configured management software.</li><li>Permissions by room, department and working hours, with administrator training.</li></ul></div></details><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Multi-Room Office','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Book a free site survey &rarr;</a></div></article><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Three architectural floor plates with controlled access on each floor">
 <g transform="translate(24 43) scale(.82)">
 <path class="shadow" d="M38 175L150 218L266 162L158 119Z"/>
 <g>
@@ -161,7 +166,7 @@
 <path class="route" d="M139 79V197"/>
 
 </g>
-</svg></div><div class="office-plan-content"><p class="office-plan-label">Two or more floors</p><h3>Multi-Floor Office</h3><p class="office-plan-fit">For a business occupying two or more floors.</p><p>Give employees access to the floors and rooms their work requires. Manage permissions across the office from the selected Suprema platform.</p><div class="office-plan-scope plan-equipment"><h4>Proposed equipment and setup</h4><ul><li>Suprema readers or terminals at selected floor entrances and restricted rooms.</li><li>Controllers, locks, exit devices and power for the controlled doors.</li><li>Network links and management software for the agreed floors.</li><li>Staff permissions, access records and administrator training.</li></ul><p>Lift access can be added where the lift equipment and building permissions allow.</p></div><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Multi-Floor Office','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Book a free site survey &rarr;</a></div></article><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Three office buildings linked to shared access administration">
+</svg></div><div class="office-plan-content"><p class="office-plan-label">Two or more floors</p><h3>Multi-Floor Office</h3><p class="office-plan-fit">For offices across two or more floors.</p><p>Manage staff permissions across selected floors and rooms from one agreed platform.</p><details class="office-plan-scope plan-equipment plan-equipment-toggle" open><summary>View included equipment</summary><div class="plan-equipment-content"><ul><li>Suprema readers or terminals at selected floor entrances and restricted rooms.</li><li>Controllers, locks, exit devices and power for the controlled doors.</li><li>Network links and management software for the agreed floors.</li><li>Staff permissions, access records and administrator training.</li></ul><p>Lift access can be added where the lift equipment and building permissions allow.</p></div></details><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Multi-Floor Office','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Book a free site survey &rarr;</a></div></article><article class="office-plan"><div class="office-plan-art"><svg viewBox="0 0 300 220" role="img" aria-label="Three office buildings linked to shared access administration">
 <path class="route" d="M64 148L146 100L236 145M146 100L146 172"/>
 <g transform="translate(14 66)">
 <path class="shadow" d="M0 70L48 96L97 69L49 44Z"/>
@@ -179,7 +184,18 @@
 <path class="glass" d="M15 45L39 58V69L15 56ZM54 61L78 47V58L54 72Z"/><circle class="access" cx="46" cy="85" r="5"/>
 </g>
 <path class="plate" d="M124 175L146 163L169 175L146 188Z"/><path class="edge" d="M124 175V179L146 192V188Z"/><path class="side" d="M146 188L169 175V179L146 192Z"/>
-</svg></div><div class="office-plan-content"><p class="office-plan-label">Separate locations</p><h3>Multi-Site Business</h3><p class="office-plan-fit">For a business with two or more offices or locations.</p><p>Manage access across your locations through an agreed Suprema platform. Give staff permission for one site or several, with local administrators responsible for their own locations where needed.</p><div class="office-plan-scope plan-equipment"><h4>Proposed equipment and setup</h4><ul><li>Suprema readers or terminals and suitable door hardware at each agreed site.</li><li>Local controllers, exit devices, power and network connections.</li><li>An agreed central management platform with site-level permissions.</li><li>Credential enrolment, rollout, administrator training and handover.</li></ul><p>Cloud or on-premises management is selected after reviewing your sites and IT requirements.</p></div><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Multi-Site Business','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Plan a multi-site survey &rarr;</a></div></article></div><p class="office-plan-legend"><span aria-hidden="true"></span>Controlled access point · Illustrative layouts</p><div class="office-plan-notes"><div><h3>Choose how your staff enter</h3><p>Card, mobile and biometric options are available with compatible Suprema equipment. We recommend the reader and credential method for each door during the survey.</p></div><div><h3>Add other protection where needed</h3><p><a href="/cctv-installation/">CCTV</a>, <a href="/ajax-smart-alarms/">intrusion alarms</a> and <a href="/commercial-fire-alarm-systems/">fire detection</a> can be quoted alongside your access plan.</p></div></div><div class="office-quote-note"><h3>Know the scope before you approve</h3><p>Your quotation lists the controlled doors, equipment, installation work, software licences and any recurring charges. Emergency exit arrangements and any fire-alarm interface are assessed before installation.</p></div></div></section>
+</svg></div><div class="office-plan-content"><p class="office-plan-label">Separate locations</p><h3>Multi-Site Business</h3><p class="office-plan-fit">For businesses with two or more locations.</p><p>Manage access across locations. Assign staff to one site or several, with local administrators where needed.</p><details class="office-plan-scope plan-equipment plan-equipment-toggle" open><summary>View included equipment</summary><div class="plan-equipment-content"><ul><li>Suprema readers or terminals and suitable door hardware at each agreed site.</li><li>Local controllers, exit devices, power and network connections.</li><li>An agreed central management platform with site-level permissions.</li><li>Credential enrolment, rollout, administrator training and handover.</li></ul><p>Cloud or on-premises management is selected after reviewing your sites and IT requirements.</p></div></details><a class="text-link" href="/contact/?service=office-security" onclick="return openServiceDrawer('office-security','Multi-Site Business','Book a Free Site Survey','Share your office layout and Urban Eye will arrange a free site survey.')">Plan a multi-site survey &rarr;</a></div></article></div><p class="office-plan-legend"><span aria-hidden="true"></span>Controlled access point · Illustrative layouts</p><div class="office-plan-notes"><div><h3>Add other protection where needed</h3><p><a href="/cctv-installation/">CCTV</a>, <a href="/ajax-smart-alarms/">intrusion alarms</a> and <a href="/commercial-fire-alarm-systems/">fire detection</a> can be quoted alongside your access plan.</p></div></div><div class="office-quote-note"><h3>Know the scope before you approve</h3><p>Your quotation lists the controlled doors, equipment, installation work, software licences and any recurring charges. Emergency exit arrangements and any fire-alarm interface are assessed before installation.</p></div></div></section>
+<section class="credential-demo credential-demo-compact" id="credential-demo" data-jump-label="Demo" aria-labelledby="credential-demo-heading"><div class="container credential-demo-grid"><div class="credential-demo-copy"><h2 id="credential-demo-heading">See the entry options in action.</h2><p>Card, mobile, fingerprint, face or PIN: see our Suprema demo, then choose a method around your doors, staff and working hours.</p><p class="credential-demo-note">Available methods depend on the reader and system configuration.</p><a class="credential-demo-link" href="/access-control/">Explore access control &rarr;</a></div><figure class="credential-demo-media">
+<div class="credential-demo-player" data-credential-demo>
+<video id="credential-demo-video" controls playsinline preload="none" width="512" height="910" poster="/urban-eye-assets/credential-choice-poster.jpg" aria-label="Urban Eye demonstration of card, mobile, fingerprint, face and PIN entry" aria-describedby="credential-demo-caption">
+<source src="/urban-eye-assets/Urban-Eye-Credential-Choice-Trimmed.mp4" type="video/mp4">
+Your browser does not support this video. <a href="/urban-eye-assets/Urban-Eye-Credential-Choice-Trimmed.mp4">Watch the credential demo</a>.
+</video>
+<button class="credential-demo-play" type="button" aria-controls="credential-demo-video" hidden><span class="credential-demo-play-icon" aria-hidden="true">&#9654;</span><span>Watch credential demo <span class="credential-demo-duration">31 sec</span></span></button>
+</div>
+<figcaption id="credential-demo-caption">Urban Eye demo. Captions are included in the video.</figcaption>
+<a class="credential-demo-direct" href="/urban-eye-assets/Urban-Eye-Credential-Choice-Trimmed.mp4">Open video separately &rarr;</a>
+</figure></div></section>
 <section class="pilot-band" id="jump-how-it-works" data-jump-label="Site planning">
 <div class="container">
 <h2>Check the details that change the design.</h2>
@@ -198,23 +214,20 @@
 <section class="pilot-process" id="jump-installation" data-jump-label="Installation">
 <div class="container">
 <h2>From survey to a working system.</h2>
-<ol>
-<li>
-<span aria-hidden="true">01</span>
+<ol class="numbered-flow numbered-flow-columns">
+<li class="numbered-item"><span class="numbered-marker" aria-hidden="true">01</span>
 <div>
 <h3>Survey the property</h3>
 <p>We check entry points, coverage, existing equipment and how the property is used.</p>
 </div>
 </li>
-<li>
-<span aria-hidden="true">02</span>
+<li class="numbered-item"><span class="numbered-marker" aria-hidden="true">02</span>
 <div>
 <h3>Review the quotation</h3>
 <p>You receive the equipment list, installation scope and recurring fees before approving work.</p>
 </div>
 </li>
-<li>
-<span aria-hidden="true">03</span>
+<li class="numbered-item"><span class="numbered-marker" aria-hidden="true">03</span>
 <div>
 <h3>Install and hand over</h3>
 <p>We fit and test the agreed system, set up authorised users and explain how to use it.</p>

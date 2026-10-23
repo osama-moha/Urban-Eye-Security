@@ -41,6 +41,9 @@
 <link rel="stylesheet" href="/assets/inner-pilot.css?v=20261022b">
 <link rel="stylesheet" href="/assets/service-refresh.css?v=20261022a">
 <link rel="stylesheet" href="/assets/page-refinements.css?v=20261022g">
+<link rel="stylesheet" href="/assets/plan-comparison.css?v=20261023a">
+<script src="/js/plan-comparison.js?v=20261023a" defer></script>
+<link rel="stylesheet" href="/assets/numbered-steps.css?v=20261023a">
 </head>
 
 <body class="architectural-hero inner-pilot service-refresh page-refined">
@@ -85,7 +88,7 @@
 <p class="section-intro">Connect is the connection and support service. Operator monitoring is optional. Your quotation itemises setup, connection and monitoring charges.</p>
 </div>
 <p class="protection-plan-note">Starting monthly rates exclude VAT. Your quotation confirms service scope, monitoring hours, local response coverage and any setup or connection charges. Connect and operator monitoring are separate services unless expressly bundled.</p>
-<div class="grid-3 alarm-package-grid">
+<div class="grid-3 alarm-package-grid" data-plan-row>
 <article class="card package-card">
 <header class="plan-card-heading"><span class="package-tag">You handle alerts</span>
 <h3>App monitoring</h3></header>
@@ -126,23 +129,20 @@
 <section class="pilot-process" id="how-it-works" data-jump-label="How it works">
 <div class="container">
 <h2>From alert to agreed action.</h2>
-<ol>
-<li>
-<span aria-hidden="true">01</span>
+<ol class="numbered-flow numbered-flow-columns">
+<li class="numbered-item"><span class="numbered-marker" aria-hidden="true">01</span>
 <div>
 <h3>Receive the alert</h3>
 <p>A supported detector or panic button reports an event through the configured connection.</p>
 </div>
 </li>
-<li>
-<span aria-hidden="true">02</span>
+<li class="numbered-item"><span class="numbered-marker" aria-hidden="true">02</span>
 <div>
 <h3>Review and escalate</h3>
 <p>Operators use available event information and contact the people named in your plan.</p>
 </div>
 </li>
-<li>
-<span aria-hidden="true">03</span>
+<li class="numbered-item"><span class="numbered-marker" aria-hidden="true">03</span>
 <div>
 <h3>Record the outcome</h3>
 <p>Attendance or further escalation follows the agreed arrangements. Contacts and events are recorded for follow-up.</p>

@@ -55,3 +55,28 @@ Final source check corrected the homepage meta description's older unconditional
 Owner confirmed successful inbox delivery of the labelled test, the five-working-day single-site report turnaround and full assessment-fee credit within 90 days. Owner also confirmed PSRA licensing, PSIA membership, Ajax Systems partnership and 2021 registration, while declining publication of documents/badges. Added plain-text credentials on About and relevant service copy; no document-availability promise, licence number, seal or partner logo was invented. Credentials are owner-confirmed rather than independently document-verified. The proposed deposit condition was not added to the confirmed credit policy.
 
 Owner authorised merging after final checks. Preserve existing Vercel configuration, canonical URLs and form endpoint. Run the final build and checks against the final branch head before merge.
+
+### Credential demo on service and office pages, 23 October 2026
+
+- Added the existing 31-second portrait demo after the Access Control introduction and after Office Access Plans.
+- Both pages reuse the uploaded MP4. Added one still poster, native controls, inline playback, a keyboard-accessible play button and a separate video link.
+- `preload="none"` and no autoplay keep the MP4 deferred until visitors choose to play it. Burned-in captions remain visible without cropping.
+- Access Control uses a 304px desktop player and a mobile player below 440px tall; Office Access Plans uses a smaller 230px desktop player and 377px mobile player.
+- Removed the repeated office credential paragraph. Copy states that available methods depend on the selected reader and configuration.
+- Validation: 29-page build, JS syntax and diff checks; browser playback with native controls; 320px/390px mobile frames without horizontal overflow. Video readyState remained 0 before play and reached 4 during playback.
+
+### Compact plan comparisons, 23 October 2026
+
+- Office access plans retain two columns on desktop, with illustrations reduced to 170px; phone illustrations are 130px and copy is shorter.
+- Added 14 phone comparison rows across 12 pages: office, business packages, alarms, monitoring, CCTV, fencing, residential, retail, construction, Airbnb, programs and the free-versus-paid risk assessment comparison.
+- Rows show one card and a glimpse of the next. Swipe, arrow buttons, labelled dots, a position counter and keyboard arrows provide navigation without automatic rotation.
+- Equipment lists in comparison cards are collapsed on phones and open on desktop. Prices, benefits and enquiry actions remain outside the disclosures. Shared equipment sections and single cards are unchanged.
+- Native horizontal scrolling and native details work without JavaScript; enhanced controls respect reduced motion. Category visibility and viewport changes refresh the navigation state.
+- Validation: 29-page build, JavaScript syntax, whitespace, card structure and asset checks; phone browser checks on the updated page set with no page overflow; tested arrows, dots, equipment expansion and Business Packages category switching. Desktop office layout checked separately.
+
+### Shared architectural number markers, 23 October 2026
+
+- Reused the homepage's red two-digit numbers, red top-right corner and blue-grey bottom-left corner across 59 markers on 16 pages.
+- Applied to process lists, sector/audit timelines, numbered copy checklists, package quotation steps and the homepage survey preview. Prices, FAQ counts, carousel counters and active form progress retain their own controls.
+- Stacked sequences use a light vertical connector; desktop process rows keep their columns and compact markers. No new sections or additional numbered eyebrows were introduced.
+- Validation: 29-page build and diff checks; all headings and paragraph copy preserved; mobile marker sizes and page overflow checked, with desktop column layout verified.

@@ -38,6 +38,8 @@
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I install cameras inside an Airbnb?", "acceptedAnswer": {"@type": "Answer", "text": "No. Since 30 April 2024, Airbnb does not allow security cameras inside listings, whatever their location, purpose, or disclosure. Outdoor cameras are allowed if you disclose their presence and general location before guests book, as long as they do not look into indoor spaces or private outdoor areas such as an outdoor shower or sauna."}}, {"@type": "Question", "name": "Can each guest get their own access code?", "acceptedAnswer": {"@type": "Answer", "text": "Supported lock and access platforms can issue separate credentials for guests and caretakers. Remote code changes, expiry and any key override depend on the selected hardware and configuration."}}, {"@type": "Question", "name": "Does a motion detector that takes photos count as a camera?", "acceptedAnswer": {"@type": "Answer", "text": "A detector that captures images indoors could fall under Airbnb's ban on indoor cameras, so for listings we use standard motion sensors inside and keep any image-capturing devices outdoors."}}, {"@type": "Question", "name": "Can the system protect the unit between bookings?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Between stays you arm the alarm from your phone, and door and motion sensors, smoke detectors, and leak detectors alert you the moment something happens, wherever you are."}}, {"@type": "Question", "name": "How much does Airbnb security cost?", "acceptedAnswer": {"@type": "Answer", "text": "A free survey confirms the equipment needed for your property. The quotation separates hardware, installation and required Connect charges. Indoor alarm detection uses non-camera sensors. Exterior cameras, fire detectors and leak protection are assessed separately for the property."}}, {"@type": "Question", "name": "Do I need 24/7 monitoring?", "acceptedAnswer": {"@type": "Answer", "text": "Operator monitoring is optional. Operators review supported alerts and follow the agreed contacts and escalation plan. We confirm monitoring hours, local coverage and response arrangements before service starts."}}, {"@type": "Question", "name": "I manage several listings. Can I see them all in one place?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each property's alarm hub can be added to the same Ajax app account, so you can arm, disarm, and check alerts for every listing from one phone."}}]}</script>
 <link rel="stylesheet" href="/assets/page-refinements.css?v=20261022g">
+<link rel="stylesheet" href="/assets/plan-comparison.css?v=20261023a">
+<script src="/js/plan-comparison.js?v=20261023a" defer></script>
 </head>
 
 <body class="architectural-hero page-refined sector-refined">
@@ -88,12 +90,12 @@
       </div>
 
       <p class="protection-plan-note">Starting scope is shown below. A free survey and written quotation confirm final equipment, installation and ongoing services. Alarm plans require Connect; operator monitoring is optional.</p>
-<div class="grid-3 alarm-package-grid phone-swipe">
+<div class="grid-3 alarm-package-grid phone-swipe" data-plan-row>
         <article class="card package-card">
 <header class="plan-card-heading"><p class="package-tag">Apartments and smaller homes</p>
 <h3>Home Essential</h3></header>
 <p class="plan-benefit">Detect opening at two selected doors or windows and movement in one indoor area.</p>
-<div class="plan-equipment"><h4>Equipment included</h4><ul><li>1 Ajax Hub 2</li><li>2 door or window opening detectors</li><li>1 indoor motion detector</li><li>1 panic button</li><li>1 indoor siren</li></ul><p class="plan-scope-note">Detector positions and guest use are checked during the survey. Indoor cameras and photo detectors are excluded.</p></div>
+<details class="plan-equipment plan-equipment-toggle" open><summary>View included equipment</summary><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2</li><li>2 door or window opening detectors</li><li>1 indoor motion detector</li><li>1 panic button</li><li>1 indoor siren</li></ul><p class="plan-scope-note">Detector positions and guest use are checked during the survey. Indoor cameras and photo detectors are excluded.</p></div></details>
 <a onclick="return openServiceDrawer('airbnb-security','Urban Eye Home Essential','Request Home Essential','Share a few details and Urban Eye will confirm whether Home Essential fits your rental.')" class="text-link" href="/contact/?service=airbnb">Request this package &rarr;</a>
 
 </article>

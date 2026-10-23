@@ -1,0 +1,48 @@
+/* Comparable choices stay readable while avoiding a long phone stack. */
+.plan-row-controls{display:none}
+main details.plan-equipment-toggle{border:0;border-top:1px solid #d2dce4;border-radius:0;background:transparent;box-shadow:none;padding:0;margin:12px 0 18px}
+main details.plan-equipment-toggle>summary{display:flex!important;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 0;color:#0b213b;font-size:14px;font-weight:600;line-height:1.4;list-style:none;cursor:pointer}
+main details.plan-equipment-toggle>summary::-webkit-details-marker{display:none}
+main details.plan-equipment-toggle>summary:after{content:'+';position:static;transform:none;border:0;width:auto;height:auto;font-size:21px;font-weight:400}
+main details.plan-equipment-toggle[open]>summary:after{content:'\2212'}
+main details.plan-equipment-toggle::details-content{transition:none}
+main .plan-equipment-content{padding:0 0 10px}
+main .plan-equipment-content ul{padding-left:18px;margin:0;font-size:14px;line-height:1.65;color:#526575}
+main .plan-equipment-content li{padding:3px 0;overflow-wrap:anywhere}
+main .plan-equipment-content p{margin:10px 0 0;font-size:13px;line-height:1.6}
+.inner-pilot .office-plan-art svg{height:170px}
+.inner-pilot .office-plan-art{padding:8px 24px 0}
+.inner-pilot .office-plan-content{padding:20px 22px}
+.inner-pilot .office-plan h3{font-size:23px;margin-bottom:10px}
+.inner-pilot .office-plan-label{margin-bottom:8px}
+.inner-pilot .office-plan-fit{font-size:14px;margin-bottom:10px}
+.inner-pilot .office-plan-content>p:not(.office-plan-label):not(.office-plan-fit){font-size:14px;margin-bottom:12px}
+@media(max-width:760px){
+ body.page-refined main [data-plan-row][data-plan-row]{display:flex;flex-wrap:nowrap;align-items:flex-start;gap:12px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:0;margin:0;padding:2px 0 10px;max-width:100%;min-width:0;scrollbar-width:thin;scrollbar-color:#9eb0bf #edf2f5}
+ body.page-refined main [data-plan-row][data-plan-row]>article{flex:0 0 88%;width:88%;min-width:0;max-width:none;scroll-snap-align:start;scroll-snap-stop:normal;margin:0;box-sizing:border-box;height:auto}
+ body main .office-plan-grid[data-plan-row]>article{display:flex}
+ .inner-pilot .office-plan-art svg{height:130px}
+ .inner-pilot .office-plan-art{padding:6px 12px 0}
+ .inner-pilot .office-plan-content{padding:16px}
+ .inner-pilot .office-plan h3{font-size:21px;line-height:1.2}
+ .inner-pilot .office-plan-label{font-size:10px;letter-spacing:.08em}
+ .page-refined main [data-plan-row] .package-card{padding:18px;min-height:0}
+ .page-refined main [data-plan-row] .plan-benefit{min-height:0;font-size:14px}
+ .business-packages [data-plan-row] .bp-card-head{padding:18px;min-height:0}
+ .business-packages [data-plan-row] .bp-card-head h3{font-size:23px}
+ .business-packages [data-plan-row] .bp-card-body{padding:18px}
+ .business-packages [data-plan-row] .bp-benefit{font-size:15px}
+ main details.plan-equipment-toggle{flex:0 0 auto;margin:8px 0 12px}
+ main details.plan-equipment-toggle>summary{font-size:13px}
+ .plan-row-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px;color:#526575;font-size:12px}
+ .plan-row-controls .plan-row-hint{margin-right:auto}
+ .plan-row-nav{display:flex;align-items:center;gap:2px}
+ .plan-row-nav button{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid #bdcbd6;border-radius:0;background:white;color:#0b213b;cursor:pointer;font-size:20px;font-family:inherit}
+ .plan-row-nav button:disabled{opacity:.35;cursor:default}
+ .plan-row-position{min-width:38px;text-align:center;font-variant-numeric:tabular-nums}
+ .plan-row-dots{display:flex;align-items:center}
+ .plan-row-dots button{display:grid;place-items:center;width:22px;height:44px;min-width:0;min-height:0;border:0;background:transparent;font-size:0;padding:0}
+ .plan-row-dots button:before{content:'';width:6px;height:6px;border-radius:50%;background:#bccbd6}
+ .plan-row-dots button[aria-current=true]:before{background:#c63632}
+ .plan-row-controls button:focus-visible,[data-plan-row]:focus-visible{outline:2px solid #c63632;outline-offset:2px}
+}
