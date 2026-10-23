@@ -55,3 +55,12 @@ Final source check corrected the homepage meta description's older unconditional
 Owner confirmed successful inbox delivery of the labelled test, the five-working-day single-site report turnaround and full assessment-fee credit within 90 days. Owner also confirmed PSRA licensing, PSIA membership, Ajax Systems partnership and 2021 registration, while declining publication of documents/badges. Added plain-text credentials on About and relevant service copy; no document-availability promise, licence number, seal or partner logo was invented. Credentials are owner-confirmed rather than independently document-verified. The proposed deposit condition was not added to the confirmed credit policy.
 
 Owner authorised merging after final checks. Preserve existing Vercel configuration, canonical URLs and form endpoint. Run the final build and checks against the final branch head before merge.
+
+### Credential demo on service and office pages, 23 October 2026
+
+- Added the existing 31-second portrait demo after the Access Control introduction and after Office Access Plans.
+- Both pages reuse the uploaded MP4. Added one still poster, native controls, inline playback, a keyboard-accessible play button and a separate video link.
+- `preload="none"` and no autoplay keep the MP4 deferred until visitors choose to play it. Burned-in captions remain visible without cropping.
+- Access Control uses a 304px desktop player and a mobile player below 440px tall; Office Access Plans uses a smaller 230px desktop player and 377px mobile player.
+- Removed the repeated office credential paragraph. Copy states that available methods depend on the selected reader and configuration.
+- Validation: 29-page build, JS syntax and diff checks; browser playback with native controls; 320px/390px mobile frames without horizontal overflow. Video readyState remained 0 before play and reached 4 during playback.
