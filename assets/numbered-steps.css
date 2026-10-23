@@ -1,0 +1,32 @@
+/* Shared architectural number marker for process lists and numbered checklists. */
+body main .numbered-flow{--number-size:64px;--number-ink:#c63632;--number-line:#bacbd7;list-style:none;padding:0;border:0;counter-reset:none}
+body main .numbered-flow:before{content:none}
+body main .numbered-flow>.numbered-item{position:relative;display:grid;grid-template-columns:var(--number-size) minmax(0,1fr);column-gap:18px;row-gap:0;align-items:start;border:0;padding:0;margin:0;min-width:0;counter-increment:none}
+body main .numbered-flow>.numbered-item:before{content:none}
+body main .numbered-flow>.numbered-item>.numbered-marker{position:relative;grid-column:1;grid-row:1/3;display:flex;align-items:center;justify-content:center;width:var(--number-size);height:60px;flex:none;box-sizing:border-box;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:var(--number-ink);font-size:30px;line-height:1;font-weight:400;letter-spacing:-.04em;isolation:isolate}
+body main .numbered-flow .numbered-marker:before{content:'';position:absolute;right:0;top:0;width:24px;height:24px;border-top:4px solid #c63632;border-right:4px solid #c63632;box-sizing:border-box}
+body main .numbered-flow .numbered-marker:after{content:'';position:absolute;left:0;bottom:0;width:15px;height:15px;border-left:2px solid #93a9b9;border-bottom:2px solid #93a9b9;box-sizing:border-box}
+body main .numbered-item>div,body main .numbered-item>h3,body main .numbered-item>p{grid-column:2;min-width:0}
+body main .numbered-item>h3{margin-top:3px}
+body main .numbered-flow-stacked{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+body main .numbered-flow-stacked>.numbered-item:not(:last-child):after{content:'';position:absolute;left:calc(var(--number-size)/2);top:68px;bottom:-20px;width:1px;background:var(--number-line)}
+body main .numbered-flow.numbered-flow-columns>.numbered-item{padding-top:0}
+body main .numbered-flow.numbered-flow-columns>.numbered-item:after{content:none}
+body main .copy-steps.numbered-flow .numbered-copy{font-size:15px;line-height:1.7;color:#40586b;padding-top:4px}
+body.home-redesign main .survey-launch .numbered-flow{--number-size:48px;gap:20px}
+body.home-redesign main .survey-launch .numbered-marker{height:48px;font-size:23px}
+body.home-redesign main .survey-launch .numbered-marker:before{width:18px;height:18px;border-width:3px}
+body.home-redesign main .survey-launch .numbered-marker:after{width:11px;height:11px}
+body.home-redesign main .survey-launch .numbered-item:not(:last-child):after{top:55px;bottom:-12px}
+body main .bp-quote-grid.numbered-flow>.numbered-item>h3{margin:3px 0 10px;font-size:19px}
+body main .bp-quote-grid.numbered-flow>.numbered-item>p{margin:0}
+@media(max-width:760px){
+ body main .numbered-flow{--number-size:56px}
+ body main .numbered-flow>.numbered-item{column-gap:16px}
+ body main .numbered-flow>.numbered-item>.numbered-marker{height:54px;font-size:28px}
+ body main .numbered-flow .numbered-marker:before{width:22px;height:22px}
+ body main .numbered-flow .numbered-marker:after{width:13px;height:13px}
+ body main .numbered-flow.numbered-flow-columns,body main .numbered-flow.numbered-flow-home{display:grid;grid-template-columns:minmax(0,1fr);gap:26px}
+ body main .numbered-flow.numbered-flow-columns>.numbered-item:not(:last-child):after,body main .numbered-flow.numbered-flow-home>.numbered-item:not(:last-child):after,body main .numbered-flow-stacked>.numbered-item:not(:last-child):after{content:'';position:absolute;left:calc(var(--number-size)/2);top:62px;bottom:-18px;width:1px;background:var(--number-line)}
+ body main .copy-steps.numbered-flow .numbered-copy{font-size:14px}
+}

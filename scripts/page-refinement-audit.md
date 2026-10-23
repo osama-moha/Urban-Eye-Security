@@ -73,3 +73,10 @@ Owner authorised merging after final checks. Preserve existing Vercel configurat
 - Equipment lists in comparison cards are collapsed on phones and open on desktop. Prices, benefits and enquiry actions remain outside the disclosures. Shared equipment sections and single cards are unchanged.
 - Native horizontal scrolling and native details work without JavaScript; enhanced controls respect reduced motion. Category visibility and viewport changes refresh the navigation state.
 - Validation: 29-page build, JavaScript syntax, whitespace, card structure and asset checks; phone browser checks on the updated page set with no page overflow; tested arrows, dots, equipment expansion and Business Packages category switching. Desktop office layout checked separately.
+
+### Shared architectural number markers, 23 October 2026
+
+- Reused the homepage's red two-digit numbers, red top-right corner and blue-grey bottom-left corner across 59 markers on 16 pages.
+- Applied to process lists, sector/audit timelines, numbered copy checklists, package quotation steps and the homepage survey preview. Prices, FAQ counts, carousel counters and active form progress retain their own controls.
+- Stacked sequences use a light vertical connector; desktop process rows keep their columns and compact markers. No new sections or additional numbered eyebrows were introduced.
+- Validation: 29-page build and diff checks; all headings and paragraph copy preserved; mobile marker sizes and page overflow checked, with desktop column layout verified.
