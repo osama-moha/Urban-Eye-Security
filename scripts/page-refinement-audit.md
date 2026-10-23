@@ -64,3 +64,12 @@ Owner authorised merging after final checks. Preserve existing Vercel configurat
 - Access Control uses a 304px desktop player and a mobile player below 440px tall; Office Access Plans uses a smaller 230px desktop player and 377px mobile player.
 - Removed the repeated office credential paragraph. Copy states that available methods depend on the selected reader and configuration.
 - Validation: 29-page build, JS syntax and diff checks; browser playback with native controls; 320px/390px mobile frames without horizontal overflow. Video readyState remained 0 before play and reached 4 during playback.
+
+### Compact plan comparisons, 23 October 2026
+
+- Office access plans retain two columns on desktop, with illustrations reduced to 170px; phone illustrations are 130px and copy is shorter.
+- Added 14 phone comparison rows across 12 pages: office, business packages, alarms, monitoring, CCTV, fencing, residential, retail, construction, Airbnb, programs and the free-versus-paid risk assessment comparison.
+- Rows show one card and a glimpse of the next. Swipe, arrow buttons, labelled dots, a position counter and keyboard arrows provide navigation without automatic rotation.
+- Equipment lists in comparison cards are collapsed on phones and open on desktop. Prices, benefits and enquiry actions remain outside the disclosures. Shared equipment sections and single cards are unchanged.
+- Native horizontal scrolling and native details work without JavaScript; enhanced controls respect reduced motion. Category visibility and viewport changes refresh the navigation state.
+- Validation: 29-page build, JavaScript syntax, whitespace, card structure and asset checks; phone browser checks on the updated page set with no page overflow; tested arrows, dots, equipment expansion and Business Packages category switching. Desktop office layout checked separately.
