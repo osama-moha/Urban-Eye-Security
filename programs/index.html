@@ -41,6 +41,12 @@
 <link rel="stylesheet" href="/assets/plan-comparison.css?v=20261023a">
 <script src="/js/plan-comparison.js?v=20261023a" defer></script>
 <style>
+/* Package comparisons must remain visible before horizontal scrolling. */
+#home-packages>article{opacity:1!important;visibility:visible!important;transform:none!important;transition:none!important}
+@media(max-width:760px){
+ body.page-refined main #home-packages>article{flex:0 0 88%;width:88%}
+}
+
 #home-packages{scroll-margin-top:145px}
 
 #home-programs .plan-equipment-visible{border-top:1px solid #d2dce4;margin:12px 0 18px;padding-top:14px}
