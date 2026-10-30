@@ -36,7 +36,7 @@
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Urban Eye Home Security Programs", "description": "Published-price home security programs for apartments, family homes, and large compounds in Kenya: smart alarms, photo-verified detection, and optional 24/7 monitoring.", "provider": {"@type": "Organization", "name": "Urban Eye Security"}, "areaServed": {"@type": "Country", "name": "Kenya"}, "serviceType": "Home Security Programs", "url": "https://urbaneyesecurity.co.ke/programs/"}</script>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is my protection plan confirmed?", "acceptedAnswer": {"@type": "Answer", "text": "The equipment lists are starting configurations. A free survey checks entrances, indoor areas, outdoor approaches and signal coverage. Your written proposal confirms the devices and installation required for your property."}}, {"@type": "Question", "name": "Is the site survey free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We visit your home, check entry points, blind spots, and the compound, and then send you a written quotation."}}, {"@type": "Question", "name": "Which program should I choose?", "acceptedAnswer": {"@type": "Answer", "text": "Home Essential suits apartments and smaller homes. Home Verified suits family homes and anyone who travels, because it sends a photo of what triggered the alarm. Home Complete suits large homes and compounds with outdoor areas that need their own sensors."}}, {"@type": "Question", "name": "What will I pay every month?", "acceptedAnswer": {"@type": "Answer", "text": "Connect provides the agreed connectivity, maintenance and remote support. App monitoring means you handle alerts yourself. Operator monitoring is optional and follows a separately agreed service and response plan. All recurring charges are itemised in your quotation."}}, {"@type": "Question", "name": "Can I stop Urban Eye Connect and keep my system?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You buy the hardware outright with no lease obligations, and you can stop the service at any time while keeping your equipment."}}, {"@type": "Question", "name": "Will my pets set off the alarm?", "acceptedAnswer": {"@type": "Answer", "text": "Pet-aware detectors can reduce nuisance alarms when chosen and positioned for your animals and room layout. We confirm their limits and settings during the survey."}}, {"@type": "Question", "name": "Do you have packages for businesses?", "acceptedAnswer": {"@type": "Answer", "text": "The warehouse plan is designed around loading bays, stock areas, doors and perimeter risks. Equipment quantities, monitoring and guarding are separately scoped in the written proposal."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How is my protection plan confirmed?", "acceptedAnswer": {"@type": "Answer", "text": "The equipment lists are starting configurations. A free survey checks entrances, indoor areas, outdoor approaches and signal coverage. Your written proposal confirms the devices and installation required for your property."}}, {"@type": "Question", "name": "Is the site survey free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We visit your home, check entry points, blind spots, and the compound, and then send you a written quotation."}}, {"@type": "Question", "name": "Which program should I choose?", "acceptedAnswer": {"@type": "Answer", "text": "Home Verified provides opening and indoor motion detection, with alarm photos from one indoor area. Home Verified Plus combines indoor photo detection with photo detection at one selected outdoor approach. Home Complete provides wider indoor and outdoor detection, confirmed after a site survey."}}, {"@type": "Question", "name": "What will I pay every month?", "acceptedAnswer": {"@type": "Answer", "text": "Connect provides the agreed connectivity, maintenance and remote support. App monitoring means you handle alerts yourself. Operator monitoring is optional and follows a separately agreed service and response plan. All recurring charges are itemised in your quotation."}}, {"@type": "Question", "name": "Can I stop Urban Eye Connect and keep my system?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You buy the hardware outright with no lease obligations, and you can stop the service at any time while keeping your equipment."}}, {"@type": "Question", "name": "Will my pets set off the alarm?", "acceptedAnswer": {"@type": "Answer", "text": "Pet-aware detectors can reduce nuisance alarms when chosen and positioned for your animals and room layout. We confirm their limits and settings during the survey."}}, {"@type": "Question", "name": "Do you have packages for businesses?", "acceptedAnswer": {"@type": "Answer", "text": "The warehouse plan is designed around loading bays, stock areas, doors and perimeter risks. Equipment quantities, monitoring and guarding are separately scoped in the written proposal."}}]}</script>
 <link rel="stylesheet" href="/assets/page-refinements.css?v=20261022g">
 <link rel="stylesheet" href="/assets/plan-comparison.css?v=20261023a">
 <script src="/js/plan-comparison.js?v=20261023a" defer></script>
@@ -49,6 +49,12 @@
 
 #home-packages{scroll-margin-top:145px}
 
+#home-programs .package-price{font-variant-numeric:tabular-nums}
+#home-programs .package-tax{display:block;font-size:12px;font-weight:400;letter-spacing:0;color:#526575;margin-top:4px}
+#home-programs .package-quote{font-size:18px;font-weight:600;color:#0b213b;margin:0 0 14px}
+#home-programs .package-coverage,#home-programs .package-app{margin:0 0 14px}
+#home-programs .package-installation{font-weight:600;color:#0b213b;margin:0 0 18px}
+#home-programs .protection-plan-note{font-size:13px;line-height:1.65;color:#526575;margin:18px 0 0;max-width:940px}
 #home-programs .plan-equipment-visible{border-top:1px solid #d2dce4;margin:12px 0 18px;padding-top:14px}
 #home-programs .plan-equipment-visible>h4{margin:0 0 10px;color:#0b213b;font-size:14px;font-weight:600;line-height:1.4}
 </style>
@@ -87,46 +93,52 @@
 
 
 
-  <section class="copy-section" data-jump-label="Plan differences"><div class="container"><h2>Compare the coverage first.</h2><div class="copy-grid"><article class="copy-card"><h3>Essential</h3><p>Opening detection at two selected points and movement in one indoor area. Choose this starting scope when alarm notifications are enough.</p></article><article class="copy-card"><h3>Verified</h3><p>Opening detection at two selected points plus photographs from one indoor photo detector. For private homes, subject to positioning and privacy needs.</p></article><article class="copy-card"><h3>Complete</h3><p>More opening and indoor detection points, plus two selected outdoor photo-detection areas. Coverage still follows the surveyed layout.</p></article></div></div></section><section id="home-programs" class="light-section phone-swipe-section" data-jump-label="Programs">
+  <section class="copy-section" data-jump-label="Plan differences"><div class="container"><h2>Choose where you want photo alerts.</h2><div class="copy-grid"><article class="copy-card"><h3>Verified</h3><p>Two selected openings and two indoor detection areas, with alarm photos from one indoor area.</p></article><article class="copy-card"><h3>Verified Plus</h3><p>Two selected openings, one indoor photo-detection area and one selected outdoor photo-detection approach.</p></article><article class="copy-card"><h3>Complete</h3><p>More opening and indoor detection points, plus two selected outdoor photo-detection areas. Final coverage follows the surveyed layout.</p></article></div></div></section><section id="home-programs" class="light-section phone-swipe-section" data-jump-label="Programs">
     <div class="container">
       <div class="section-head">
         <div>
           <p class="section-label">The programs</p>
           <h2>Three programs, from apartments to large compounds.</h2>
         </div>
-        <p class="section-intro">Each step up adds more coverage. You buy the hardware outright, plus a monthly Urban Eye Connect fee that keeps the system online.</p>
+        <p class="section-intro">Choose indoor photo verification, add outdoor photo detection, or plan wider coverage. You buy the hardware outright; monthly Urban Eye Connect is charged separately.</p>
       </div>
 
-      <p class="protection-plan-note">Starting scope is shown below. A free survey and written quotation confirm final equipment, installation and ongoing services. Alarm plans require Connect; operator monitoring is optional.</p>
 <div id="home-packages" class="grid-3 alarm-package-grid phone-swipe" data-plan-row>
         <article class="card package-card">
-<header class="plan-card-heading"><p class="package-tag">Apartments and smaller homes</p>
-<h3>Home Essential</h3></header>
-<p class="plan-benefit">Detect opening at two selected doors or windows and movement in one indoor area.</p>
-<div class="plan-equipment plan-equipment-visible"><h4>Included equipment</h4><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2</li><li>2 door or window opening detectors</li><li>1 indoor motion detector</li><li>1 panic button</li><li>1 indoor siren</li></ul><p class="plan-scope-note">Detector positioning and pet settings are confirmed for your home.</p></div></div>
-<a onclick="return openServiceDrawer('programs','Urban Eye Home Essential','Request Home Essential','Share a few details and Urban Eye will confirm whether Home Essential fits your home.')" class="text-link" href="/contact/?service=programs">Request this program &rarr;</a>
-
+<header class="plan-card-heading"><p class="package-tag">Indoor alarm photos</p><h3>Home Verified</h3></header>
+<p class="plan-benefit">Get a phone alert—and photos to help check an indoor alarm.</p>
+<p class="package-price">From KSh123,300<span class="package-tax">excluding VAT</span></p>
+<p class="package-coverage">Protect two selected doors or windows and detect movement in two indoor areas. One indoor detector sends alarm photos to help you check what happened.</p>
+<div class="plan-equipment plan-equipment-visible"><h4>Included equipment</h4><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2 Plus</li><li>2 DoorProtect door/window opening detectors</li><li>1 MotionProtect indoor motion detector</li><li>1 MotionCam (PhOD) indoor photo motion detector</li><li>1 SpaceControl key fob with panic function</li><li>1 Button dedicated panic device</li><li>1 HomeSiren indoor siren</li></ul></div></div>
+<p class="package-app"><strong>App control included:</strong> Arm or disarm remotely, check system status and receive alerts and indoor alarm photos.</p>
+<p class="package-installation">Installation, setup, testing and user training included.</p>
+<a onclick="return openServiceDrawer('programs','Urban Eye Home Verified','Get a Home Verified Quote','Tell us about your home and Urban Eye will confirm coverage and prepare your quotation.')" class="text-link" href="/contact/?service=programs">Get a Home Verified Quote &rarr;</a>
 </article>
 
         <article class="card package-card">
-<header class="plan-card-heading"><p class="package-tag">Homes needing indoor alarm photographs</p>
-<h3>Home Verified</h3></header>
-<p class="plan-benefit">Add photo confirmation from one indoor area and opening detection at two selected points.</p>
-<div class="plan-equipment plan-equipment-visible"><h4>Included equipment</h4><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2</li><li>2 door or window opening detectors</li><li>1 indoor photo motion detector</li><li>1 key fob with panic function</li><li>1 indoor siren</li></ul><p class="plan-scope-note">Indoor photo detectors are for private homes, not short-stay guest spaces.</p></div></div>
-<a onclick="return openServiceDrawer('programs','Urban Eye Home Verified','Request Home Verified','Share a few details and Urban Eye will confirm whether Home Verified fits your home.')" class="text-link" href="/contact/?service=programs">Request this program &rarr;</a>
-
+<header class="plan-card-heading"><p class="package-tag">Indoor and outdoor alarm photos</p><h3>Home Verified Plus</h3></header>
+<p class="plan-benefit">Add outdoor detection before an intruder reaches the house.</p>
+<p class="package-price">From KSh162,100<span class="package-tax">excluding VAT</span></p>
+<p class="package-coverage">Protect two selected doors or windows, with photo detection in one indoor area and at one selected outdoor approach.</p>
+<div class="plan-equipment plan-equipment-visible"><h4>Included equipment</h4><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2 Plus</li><li>2 DoorProtect door/window opening detectors</li><li>1 MotionCam (PhOD) indoor photo motion detector</li><li>1 MotionCam Outdoor (PhOD) detector</li><li>1 SpaceControl key fob with panic function</li><li>1 Button dedicated panic device</li><li>1 HomeSiren indoor siren</li></ul></div></div>
+<p class="package-app"><strong>App control included:</strong> Arm or disarm remotely, check system status and receive alerts and indoor/outdoor alarm photos.</p>
+<p class="package-installation">Installation, setup, testing and user training included.</p>
+<a onclick="return openServiceDrawer('programs','Urban Eye Home Verified Plus','Get a Home Verified Plus Quote','Tell us about your home and Urban Eye will confirm coverage and prepare your quotation.')" class="text-link" href="/contact/?service=programs">Get a Home Verified Plus Quote &rarr;</a>
 </article>
 
         <article class="card package-card">
-<header class="plan-card-heading"><p class="package-tag">Larger homes and private compounds</p>
-<h3>Home Complete</h3></header>
-<p class="plan-benefit">Combine indoor detection with photo alerts at two selected outdoor approaches.</p>
-<div class="plan-equipment plan-equipment-visible"><h4>Included equipment</h4><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2 Plus</li><li>5 door or window opening detectors</li><li>3 indoor motion detectors</li><li>2 outdoor photo motion detectors</li><li>2 glass-break detectors</li><li>2 keypads and 1 outdoor siren</li></ul><p class="plan-scope-note">A compatible range extender is added where signal tests require it. Final coverage depends on the layout.</p></div></div>
-<a onclick="return openServiceDrawer('programs','Urban Eye Home Complete','Request Home Complete','Share a few details and Urban Eye will confirm whether Home Complete fits your home.')" class="text-link" href="/contact/?service=programs">Request this program &rarr;</a>
-
+<header class="plan-card-heading"><p class="package-tag">Larger homes and private compounds</p><h3>Home Complete</h3></header>
+<p class="plan-benefit">Cover more entrances and indoor areas, with outdoor photo alerts.</p>
+<p class="package-quote">Price confirmed after a site survey</p>
+<p class="package-coverage">Opening detection at five selected points, movement detection in three indoor areas and photo detection at two selected outdoor approaches.</p>
+<div class="plan-equipment plan-equipment-visible"><h4>Included equipment</h4><div class="plan-equipment-content"><ul><li>1 Ajax Hub 2 Plus</li><li>5 DoorProtect door/window opening detectors</li><li>3 MotionProtect indoor motion detectors</li><li>2 MotionCam Outdoor (PhOD) detectors</li><li>2 GlassProtect glass-break detectors</li><li>1 SpaceControl key fob with panic function</li><li>1 Button dedicated panic device</li><li>1 HomeSiren indoor siren</li><li>2 KeyPads</li><li>1 StreetSiren outdoor siren</li></ul><p class="plan-scope-note">Final placement and equipment availability are confirmed in your quotation. A ReX 2 range extender is quoted separately if signal tests require it.</p></div></div>
+<p class="package-app"><strong>App control included:</strong> Arm or disarm remotely, check system status and receive alerts and outdoor alarm photos.</p>
+<p class="package-installation">Installation, setup, testing and user training included.</p>
+<a onclick="return openServiceDrawer('programs','Urban Eye Home Complete','Request a Site Survey','Tell us about your home and Urban Eye will confirm coverage and prepare your quotation.')" class="text-link" href="/contact/?service=programs">Request a Site Survey &rarr;</a>
 </article>
       </div>
       <p class="swipe-hint" aria-hidden="true">Swipe to compare all three programs &rarr;</p>
+      <p class="protection-plan-note">Starting prices cover the listed equipment and installation. Additional coverage is quoted after a site survey. Monthly Urban Eye Connect is required under these packages and charged separately; professional monitoring and response are optional and quoted separately. Remote app functions require connectivity.</p>
     </div>
   </section>
 
@@ -190,7 +202,7 @@
         <details name="faq">
           <summary>Which program should I choose?</summary>
           <div class="faq-answer">
-            <p>Home Essential suits apartments and smaller homes. Home Verified suits family homes and anyone who travels, because it sends a photo of what triggered the alarm. Home Complete suits large homes and compounds with outdoor areas that need their own sensors.</p>
+            <p>Home Verified provides opening and indoor motion detection, with alarm photos from one indoor area. Home Verified Plus combines indoor photo detection with photo detection at one selected outdoor approach. Home Complete provides wider indoor and outdoor detection, confirmed after a site survey.</p>
           </div>
         </details>
         <details name="faq">
