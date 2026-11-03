@@ -1,3 +1,28 @@
+const hikvisionRange = document.querySelector('#range-2');
+const hikvisionFilter = document.querySelector('#hikvision-filter');
+const hikvisionGrid = hikvisionRange.querySelector('.trade-grid');
+const moreProducts = document.querySelector('#hikvision-more');
+const types = new Set();
+let visibleLimit = 24;
+
+for (const [type, title, model, source] of hikvisionCatalogue) {
+  const card = document.querySelector('#hikvision-card').content.firstElementChild.cloneNode(true);
+  card.dataset.type = type;
+  card.querySelector('h3').textContent = `Hikvision ${model}`;
+  const lens = model.match(/\((\d+(?:\.\d+)?)mm\)/i);
+  card.querySelector('.trade-spec').textContent = lens && !title.includes(lens[0])
+    ? `${title} · ${lens[1]} mm lens`
+    : title;
+  card.querySelector('a').href = source;
+  hikvisionGrid.append(card);
+  types.add(type);
+}
+
+for (const type of [...types].sort()) {
+  hikvisionFilter.add(new Option(type, type));
+}
+document.querySelector('#hikvision-filter-label').hidden = false;
+
 const search = document.querySelector('#trade-search');
 const ranges = [...document.querySelectorAll('section[id^="range-"]')];
 const cards = [...document.querySelectorAll('.trade-card')];
@@ -10,24 +35,48 @@ const quoteCount = document.querySelector('#quote-count');
 document.querySelector('.trade-search').hidden = false;
 document.querySelector('#quote-builder').hidden = false;
 
-search.addEventListener('input', () => {
+function filterCatalogue() {
   const terms = search.value.trim().toLowerCase().split(/\s+/);
+  const type = hikvisionFilter.value;
   let matches = 0;
+  let hikvisionMatches = 0;
 
   for (const range of ranges) {
     let rangeMatches = 0;
     for (const card of range.querySelectorAll('.trade-card')) {
-      const description = card.textContent.toLowerCase();
-      card.hidden = !terms.every(term => description.includes(term));
-      rangeMatches += Number(!card.hidden);
+      const description = `${card.dataset.type || ''} ${card.textContent}`.toLowerCase();
+      const typeMatches = range !== hikvisionRange || !type || card.dataset.type === type;
+      const matchesQuery = typeMatches && terms.every(term => description.includes(term));
+      rangeMatches += Number(matchesQuery);
+      card.hidden = !matchesQuery || (range === hikvisionRange && rangeMatches > visibleLimit);
     }
-    range.hidden = rangeMatches === 0;
+    if (range === hikvisionRange) hikvisionMatches = rangeMatches;
+    range.hidden = range !== hikvisionRange && rangeMatches === 0;
     matches += rangeMatches;
   }
 
-  document.querySelector('#trade-results').textContent =
-    matches ? `${matches} products found` : 'No matches. Try a brand or a shorter model number.';
+  moreProducts.hidden = hikvisionMatches <= visibleLimit;
+  document.querySelector('#hikvision-count').textContent = hikvisionMatches
+    ? `Showing ${Math.min(visibleLimit, hikvisionMatches)} of ${hikvisionMatches} Hikvision models`
+    : 'No Hikvision models match these filters.';
+  document.querySelector('#trade-results').textContent = search.value.trim()
+    ? `${matches} products match your search`
+    : '';
+}
+
+for (const control of [search, hikvisionFilter]) {
+  control.addEventListener('input', () => {
+    visibleLimit = 24;
+    filterCatalogue();
+  });
+}
+moreProducts.addEventListener('click', () => {
+  const hiddenCards = [...hikvisionGrid.children].filter(card => card.hidden);
+  visibleLimit += 24;
+  filterCatalogue();
+  hiddenCards.find(card => !card.hidden)?.querySelector('a').focus();
 });
+filterCatalogue();
 
 function updateQuote() {
   const rows = [...quoteItems.children];

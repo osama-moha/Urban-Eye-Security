@@ -135,3 +135,14 @@
 #quote-items label { margin: 0; }
 #quote-items input { width: 5rem; }
 .trade-quote-link { position: sticky; bottom: 1rem; margin-top: 1rem; }
+
+#hikvision-filter {
+  padding: .55rem;
+  margin: .5rem 0 1rem;
+  max-width: 100%;
+  font: inherit;
+}
+
+#installation-pilot { scroll-margin-top: 8rem; }
+#installation-pilot .trade-card { background: white; }
+.trade-page li label { cursor: pointer; }
