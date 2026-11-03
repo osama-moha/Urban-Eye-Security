@@ -60,3 +60,78 @@
   border-radius: .35rem;
   font: inherit;
 }
+
+.trade-page [hidden] { display: none; }
+
+.trade-hero {
+  background: var(--deep-navy, #17243b);
+  border-radius: var(--radius, 4px);
+}
+
+.trade-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.trade-actions a:not(.btn) { color: inherit; }
+
+.trade-search label { display: block; font-weight: 700; }
+
+.trade-search input {
+  width: min(100%, 32rem);
+  padding: .75rem;
+  margin-top: .5rem;
+  border: 1px solid #929db1;
+  border-radius: var(--radius, 4px);
+  font: inherit;
+}
+
+.trade-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr)); }
+
+.trade-card, .trade-form { border-radius: var(--radius, 4px); }
+
+.trade-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  gap: .5rem;
+}
+
+.trade-card { display: flex; flex-direction: column; }
+.trade-card-body a { margin-top: auto; }
+
+.trade-add, #quote-items button {
+  padding: .45rem .8rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius, 4px);
+  background: white;
+  color: var(--deep-navy, #17243b);
+  font: inherit;
+  cursor: pointer;
+}
+
+.trade-support {
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: var(--light, #f5f7fa);
+}
+
+.trade-support .trade-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr)); }
+
+#quote-items { padding-left: 0; list-style: none; }
+
+#quote-items li {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .5rem 0;
+  border-bottom: 1px solid var(--border, #d8dee7);
+}
+
+#quote-items label { margin: 0; }
+#quote-items input { width: 5rem; }
+.trade-quote-link { position: sticky; bottom: 1rem; margin-top: 1rem; }
