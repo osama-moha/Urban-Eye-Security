@@ -141,3 +141,11 @@ for (const card of cards) {
     quoteStatus.textContent = `${product} quantity in quote: ${row.querySelector('input').value}.`;
   });
 }
+
+const matchingPackButton = document.querySelector('#trade-add-matching-pack');
+if (matchingPackButton) {
+  matchingPackButton.hidden = false;
+  matchingPackButton.addEventListener('click', () => {
+    document.querySelector('#installation-pilot .trade-add').click();
+  });
+}

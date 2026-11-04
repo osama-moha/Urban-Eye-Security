@@ -16,14 +16,16 @@
 <div id="site-navbar"></div>
 <main class="trade-page">
   <header class="trade-hero">
-    <p class="trade-eyebrow">Urban Eye Technologies · For installers</p>
-    <h1>Security equipment and project support for installers</h1>
-    <p>Send us your equipment list or project requirements. We’ll help you select compatible products, prepare a trade quote and arrange commissioning support if you need it.</p>
-    <div class="trade-actions"><a class="btn btn-primary" href="#catalogue">Browse equipment</a><a href="#project-quote">Send your equipment list</a></div>
+    <div class="trade-hero-copy">
+      <p class="trade-eyebrow">Urban Eye Technologies · For installers</p>
+      <h1>Security equipment for installers</h1>
+      <p>Find Hikvision and Ajax equipment, match the fittings, and request one quote for the job.</p>
+      <div class="trade-actions"><a class="btn btn-primary" href="#project-quote">Send your equipment list</a></div>
+    </div>
+    <img class="trade-hero-image" src="/urban-eye-assets/cctv%20installl.webp" alt="Urban Eye technician installing a CCTV camera" fetchpriority="high">
   </header>
   <section id="catalogue" aria-labelledby="catalogue-title">
-  <p class="trade-eyebrow">Equipment catalogue</p>
-  <h2 id="catalogue-title">Find equipment for your next job</h2>
+  <h2 id="catalogue-title">Find equipment</h2>
   <div class="trade-search" hidden>
     <label for="trade-search">Search by product name or model</label>
     <input id="trade-search" type="search" placeholder="Try MotionCam or DS-7608">
@@ -58,7 +60,7 @@
   <p>Models listed by Kenyan suppliers. Listing specs are a starting point. The specifications shown summarize the supplier listings. Ask us to verify the datasheet, exact variant, availability and selling price before ordering.</p>
   <label id="hikvision-filter-label" hidden>Hikvision product type <select id="hikvision-filter"><option value="">All types</option></select></label>
   <div class="trade-grid">
-  <article class="trade-card" data-type="IP cameras &amp; NVRs"><div class="trade-card-body"><p class="trade-stock">Confirm availability</p><h3>Hikvision DS-2CD2143G2-I</h3><p>4 MP AcuSense fixed dome IP camera with infrared night vision and human and vehicle classification.</p><a href="https://wa.me/254768055555?text=Hi%20Urban%20Eye%20Technologies%2C%20please%20quote%20Hikvision%20DS-2CD2143G2-I%20and%20confirm%20availability.">Request trade price</a><a href="#installation-pilot">See matching installation pack</a><button class="trade-add" type="button" hidden>Add to quote</button></div></article>
+  <article class="trade-card" data-type="IP cameras &amp; NVRs"><div class="trade-card-body"><p class="trade-stock">Confirm availability</p><h3>Hikvision DS-2CD2143G2-I</h3><p>4 MP AcuSense fixed dome IP camera with infrared night vision and human and vehicle classification.</p><a href="https://wa.me/254768055555?text=Hi%20Urban%20Eye%20Technologies%2C%20please%20quote%20Hikvision%20DS-2CD2143G2-I%20and%20confirm%20availability.">Request trade price</a><a href="#installation-pilot">See matching installation pack</a><button id="trade-add-matching-pack" class="trade-add" type="button" hidden>Add matching fitting pack</button><button class="trade-add" type="button" hidden>Add to quote</button></div></article>
   <article class="trade-card" data-type="IP cameras &amp; NVRs"><img src="https://shopit.co.ke/images/detailed/51/c81f22e489e7481517edfbf06992e35a.jpg" alt="Hikvision DS-7608NI-K2/8P" loading="lazy" decoding="async"><div class="trade-card-body"><p class="trade-stock">Confirm availability</p><h3>Hikvision DS-7608NI-K2/8P</h3><p>Eight-channel IP recorder with eight built-in PoE ports and two drive bays. Ask for a storage recommendation based on your retention target.</p><a href="https://wa.me/254768055555?text=Hi%20Urban%20Eye%20Technologies%2C%20please%20quote%20Hikvision%20DS-7608NI-K2/8P%20and%20confirm%20availability.">Request trade price</a><button class="trade-add" type="button" hidden>Add to quote</button></div></article>
   </div>
   <p id="hikvision-count" role="status"></p>

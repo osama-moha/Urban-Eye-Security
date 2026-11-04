@@ -146,3 +146,32 @@
 #installation-pilot { scroll-margin-top: 8rem; }
 #installation-pilot .trade-card { background: white; }
 .trade-page li label { cursor: pointer; }
+
+.trade-hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(100px, 40%);
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.trade-hero-copy { padding: clamp(1rem, 3vw, 2rem); }
+.trade-hero h1 { margin-block: .4rem .7rem; }
+.trade-hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.trade-page #catalogue { margin-top: 1.25rem; }
+.trade-categories { border-bottom: 1px solid var(--border, #d8dee7); }
+.trade-card, .trade-form, .trade-add { border-radius: 0; }
+
+@media (max-width: 600px) {
+  .trade-hero { grid-template-columns: 1fr 70px; }
+  .trade-hero h1 { font-size: 1.65rem; }
+  .trade-hero-copy { padding: 1rem .5rem 1rem 1rem; }
+  .trade-hero .trade-actions { margin-top: .65rem; }
+}
