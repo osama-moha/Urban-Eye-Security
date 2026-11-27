@@ -102,6 +102,23 @@
     overflow: hidden;
   }
 
+  @media (max-width: 767px) {
+    #drawer {
+      height: auto;
+      bottom: 0;
+      height: 100dvh;
+      box-sizing: border-box;
+      overflow: hidden;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    #drawer .drawer-body {
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+    }
+  }
+
   #drawer .form-step {
     display: none !important;
   }
